@@ -2,7 +2,7 @@
 
 ## Naming Pattern
 
-We provide custom code to export your XNAT imaging session to BIDS format. The process relies on the naming of your sequences. It is helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/) to better understand the heuristics used. 
+We provide custom code to export your XNAT imaging session to BIDS format. The process relies on the naming of your sequences. It is helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/) to better understand the heuristics used. We also provide a short overview in [this section](../bids/introduction-to-bids.md).
 
 We rely on [Heudiconv](https://github.com/nipy/heudiconv) to convert files to the BIDS format. More specifically we use the [ReproIn specification](https://github.com/repronim/reproin) and [heuristic file](https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py). In general, it is expected that names at the scanner follow the following pattern
 
@@ -73,7 +73,7 @@ __<custom> (optional)
   name to start with since everything could have been expressed in BIDS fields.
 ```
 
-## Things to watch for
+## Things to Watch
 
 * All **scout** and **localizer** sequences need to have a `scout` label. For example:
   * `anat-scout_acq-localizer`
@@ -87,6 +87,21 @@ __<custom> (optional)
   and only the last one would remain.  The others would acquire
 
   \_\_dup0  suffix.
+
+* Currently the **fieldmaps** collected with our Siemens scanner use the "old way" described [here](https://osf.io/2hjhx/wiki/Brain%20Imaging%20Data%20Structure%20%28BIDS%29/#LCNI_fieldmapshttpslcniuoregonedukbarticleskb0003_29)
+* To indicate **runs** in your protocol, without explicitly indicating the run number, simply label the run as `run+`
+
+## Sample Protocols
+
+```text
+anat-scout_acq-aascout
+anat-scout_acq-localizer
+anat-T1w_acq-memprage
+fmap_acq-greAP
+func-bold_task-TSSblock_acq-2dot4mmSMS4TR1200AP_run+
+```
+
+
 
 
 
