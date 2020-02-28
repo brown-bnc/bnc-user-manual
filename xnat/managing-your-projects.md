@@ -1,6 +1,6 @@
 # Managing your Projects
 
-XNAT Projects are created by a BNC XNAT administrator. 
+Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamedlined.
 
 ## Naming convention inside XNAT
 
@@ -30,7 +30,7 @@ The fields should follow that order and be separated by **spaces**
 
 Both the **Running Title and Project ID** must contain the following fields:
 
-1.  PI's lastname
+1. PI's lastname
 2. Study reference number
 
 The above fields should follow the order above and follow the following rules
