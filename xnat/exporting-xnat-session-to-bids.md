@@ -21,19 +21,19 @@ In order to export an imagin session, we need to find XNAT's ID for that session
 
 #### 1. Navigate to project of interest
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
 #### 2. Navigate to subject of interest
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image.png)
 
 #### 3. Navigate to MR Session 
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 #### 4. Find Acession \#
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 ### XNA2BIDS Software
 
