@@ -16,5 +16,5 @@
 
 ## Analysis Pipelines
 
-* [AFNI\_uber\_script.py](analysis-pipelines/untitled.md)
+* [fMRI Analysis](analysis-pipelines/untitled.md)
 
