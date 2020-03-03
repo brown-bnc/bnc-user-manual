@@ -16,5 +16,5 @@
 
 ## Analysis Pipelines
 
-* [fMRI Analysis](analysis-pipelines/untitled.md)
+* [fMRI Analysis using AFNI](analysis-pipelines/untitled.md)
 

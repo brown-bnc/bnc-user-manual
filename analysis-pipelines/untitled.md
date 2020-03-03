@@ -1,2 +1,2 @@
-# fMRI Analysis
+# fMRI Analysis using AFNI
 
