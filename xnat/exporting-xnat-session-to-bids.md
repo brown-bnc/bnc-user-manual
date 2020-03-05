@@ -17,7 +17,7 @@ We provide custom code to export your XNAT imaging session to BIDS format. Our p
 
 ### Image Session Identifier
 
-In order to export an imagin session, we need to find XNAT's ID for that session. You can do so as follows:
+In order to export an imaging session, we need to find XNAT's ID for that session. You can do so as follows:
 
 #### 1. Navigate to project of interest
 
