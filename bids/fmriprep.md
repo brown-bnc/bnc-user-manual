@@ -14,7 +14,7 @@ We keep up-to-date Singularity images for `fmriprep` for the community. In order
 #SBATCH -N 1
 #SBATCH -c 8
 #SBATCH --mem=24G
-#SBATCH --time 12:00:00
+#SBATCH --time 18:00:00
 #SBATCH -J fmriprep
 #SBATCH --output fmriprep-log-%J.txt
 
@@ -27,16 +27,17 @@ fmriprep_version=20.0.1
 #---------END OF VARIABLES------------------------
 
 
-singularity run --cleanenv                                       \
---bind ${root_dir}/${investigator}/study-${study_label}:/data    \
---bind /gpfs/scratch/${USER}:/scratch                            \
---bind /gpfs/data/bnc/licenses:/licenses                         \
-/gpfs/data/bnc/simgs/fmriprep-${fmriprep_version}.sif            \
-/data/bids /data/bids/derivatives/fmriprep-${fmriprep-version}   \
-participant --participant-label ${participant_label}             \
---fs-license-file /licenses/freesurfer-license.txt               \
--w /scratch/fmriprep                                             \
---omp-nthreads 16 --nthreads 16
+singularity run --cleanenv                                         \
+  --bind ${root_dir}/${investigator}/study-${study_label}:/data    \
+  --bind /gpfs/scratch/${USER}:/scratch                            \
+  --bind /gpfs/data/bnc/licenses:/licenses                         \
+  /gpfs/data/bnc/simgs/fmriprep-${fmriprep_version}.sif            \
+  /data/bids /data/bids/derivatives/fmriprep-${fmriprep-version}   \
+  participant --participant-label ${participant_label}             \
+  --fs-license-file /licenses/freesurfer-license.txt               \
+  -w /scratch/fmriprep                                             \
+  --omp-nthreads 16 --nthreads 16 --stop-on-first-crash
+
 
 ```
 {% endcode %}
@@ -48,6 +49,13 @@ participant --participant-label ${participant_label}             \
   * Singularity containers run as your user, and therefore should have the same read/write permissions as your local user in the cluster
   * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
   * You must specify the location **inside the container** of the Free Surfer license.
+
+✋ **Troubleshooting:**
+
+`fmriprep` may fail for many reasons. Here are few tips:
+
+* Freesurfer is often difficult to get to completion, if it helps troubleshooting, you can turn FreeSurfer reconstruction foo by adding the flag `--fs-no-reconall`
+* Familiarize yourself with the inputs and don't hesitate to ask the developers for questions. Good places to look/ask for help are their GitHub issues and the [Neurostars forum](https://neurostars.org)
 
 ## 2. Run the batch script
 
@@ -63,6 +71,8 @@ For more information about managing your job, see the [Oscar documentation](http
 
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Getting a different version than what is installed in Oscar.
 
