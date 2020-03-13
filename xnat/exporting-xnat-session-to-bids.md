@@ -37,7 +37,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 ### XNA2BIDS Software
 
-The BNC maintains a python package [xnat\_tools](https://github.com/brown-bnc/xnat-tools), to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environmet. Below we explain all possibilities
+The BNC maintains a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environmet. Below we explain all possibilities
 
 ## XNAT2BIDS: Installation and Execution
 
@@ -185,7 +185,7 @@ singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
 * `latest`: Is the build of master
 * `vX.X.X`: Latest tagged stable release
 
-You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat_tools/tags?page=1)
+You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat-tools/tags?page=1). Also inside Oscar you can run `ls /gpfs/data/bnc/simgs | grep xnat-tools` to verify which versions are currently installed in Oscar.
 
 ⚠️  **bids\_root\_dir:** The value that we pass to this input, corresponds to the value of the bids root directory as mapped inside of the container, which in our examble is `/data/xnat/bids-export`
 
@@ -194,7 +194,7 @@ You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbn
 * The value of `bids_root_dir` as specified by `-B ${bids_root_dir}:/data/xnat/bids-export`
 * `home` singularity does that by default
 
-So the simpliest approach would be to place your `json` somewhere inside `bids_root_dir` and pass the argument `--bidsmap_file /data/xnat/bids-export/bidsmaps/${session}.json` assuming that is the name of your file.
+So the simpliest approach would be to place your `json` somewhere inside `bids_root_dir` and pass the argument `--bidsmap_file /data/xnat/bids-export/bidsmaps/${session}.json` assuming that is the name of your file. An **example**\(s\) of a bidsmap file\(s\) lives [here](https://github.com/brown-bnc/xnat-tools/tree/master/bidsmaps)
 
 ⚠️ **Familiarize yourself with the inputs to xnat2bids**
 
