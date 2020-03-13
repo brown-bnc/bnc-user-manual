@@ -57,7 +57,11 @@ docker pull brownbnc/xnat_tools:${version}
 * `latest`: Is the build of master
 * `vX.X.X`: Latest tagged stable release
 
-You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat_tools/tags?page=1)
+{% hint style="info" %}
+ To support scientific reproducibility, it is recommeded to use a specifc tag e.g., `v0.1.2` instead of `latest`
+{% endhint %}
+
+You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat-tools/tags?page=1)
 
 ### Running XNAT2BIDS
 
@@ -188,6 +192,10 @@ singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
 
 * `latest`: Is the build of master
 * `vX.X.X`: Latest tagged stable release
+
+{% hint style="info" %}
+ To support scientific reproducibility, it is recommeded to use a specifc tag e.g., `v0.1.2` instead of `latest`
+{% endhint %}
 
 You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat-tools/tags?page=1). Also inside Oscar you can run `ls /gpfs/data/bnc/simgs | grep xnat-tools` to verify which versions are currently installed in Oscar.
 
