@@ -163,7 +163,11 @@ The xnat\_tools package provides a convinience `xnat2bids` script to facilitate 
 For use in Oscar we need to put wrap our commands in a batch file or use an interactive or VNC  session. Please **remember to not run processing on the login nodes**
 {% endhint %}
 
-Here we start the software as an interactive job of one hour. In the terminal
+### Interactive session
+
+Here we start the software as an **interactive** job of one hour. At the end of this section we show an equivalent **batch** script
+
+Login into oscar and start an interactive section by typing
 
 ```text
 interact -n 2 -t 01:00:00 -m 8g
@@ -204,6 +208,42 @@ For a full list of the inputs, you can run:
 singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
 /gpfs/data/bnc/simgs/xnat-tools-${version}.sif xnat2bids --help
 ```
+
+### Batch Script
+
+{% code title="~/src/xnat2bids.sh -- Filename and not part of the script!" %}
+```bash
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -c 2
+#SBATCH --mem=18G
+#SBATCH --time 2:00:00
+#SBATCH -J xnat2bids
+#SBATCH --output xnat2bids-log-%J.txt
+
+#---------CONFIGURE THESE VARIABLES--------------
+version=<write version here e.g v0.1.2>
+xnat_user=<write username>
+session=<xnat_accession_number>
+bids_root_dir=<root_directory_for_exporting e.g /gpfs/data/bnc/mrestrep/bids-export>
+#---------END OF VARIABLES------------------------
+
+
+singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
+  /gpfs/data/bnc/simgs/xnat-tools-${version}.sif xnat2bids  \
+  --user ${xnat_user} --session ${session}                  \
+  --bids_root_dir /data/xnat/bids-export
+```
+{% endcode %}
+
+### Run the batch script
+
+```text
+cd ~/src
+sbatch xnat2bids.sh
+```
+
+For more information about managing your jobs, see the [Oscar documentation](https://docs.ccv.brown.edu/oscar/submitting-jobs/managing-jobs)
 {% endtab %}
 {% endtabs %}
 
