@@ -35,9 +35,9 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
-### XNA2BIDS Software
+### XNAT2BIDS Software
 
-The BNC maintains a python package [xnat\_tools](https://github.com/brown-bnc/xnat-tools), to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environmet. Below we explain all possibilities
+The BNC maintains a python package [xnat\_tools](https://github.com/brown-bnc/xnat-tools), to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environment. Below we explain all possibilities
 
 ## XNAT2BIDS: Installation and Execution
 
@@ -75,7 +75,7 @@ brownbnc/xnat-tools:${version} xnat2bids --user ${xnat_user}       \
 
 The previous command starts the `brownnbnc/xnat-tools` container. `-it` indicates that the container is interactive `--rm` tells docker to remove the container once it is done. `v` tells docker to map the local \(in your computer\) directory `bids_root_dir` to `/data/xnat/bids-export` inside of the container. We are also telling docker to launch the `xnat2bids` executable and we are passing the inputs to that executable. 
 
-⚠️ **bids\_root\_dir:** The value that we pass to this input, corresponds to the value of the bids root directory as mapped inside of the container, which in our examble is `/data/xnat/bids-export`
+⚠️ **bids\_root\_dir:** The value that we pass to this input, corresponds to the value of the bids root directory as mapped inside of the container, which in our example is `/data/xnat/bids-export`
 
 ⚠️ **Correcting for misslabeled sequences at the scanner: `xnat2bids`** can take a `json` file with a dictionary of sequence names to correct/change. It is important to remember that the path passed is the pass **inside** of the container. In our previous example, the only shared location between the host and the container is:
 
