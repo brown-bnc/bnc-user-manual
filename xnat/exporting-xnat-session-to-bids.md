@@ -5,7 +5,7 @@ We provide custom code to export your XNAT imaging session to BIDS format. Our p
 * Naming of sequences in a BIDS friendly manner at the scanner
 * DICOMS exported from XNAT using our software can be converted to BIDS using [Heudiconv](https://github.com/nipy/heudiconv)
 * We rely on the [ReproIn](https://github.com/repronim/reproin) specification and heuristic 
-* Our code is available in the [xnat\_tools repository](https://github.com/brown-bnc/xnat-tools)
+* Our code is available in the [xnat-tools repository](https://github.com/brown-bnc/xnat-tools)
 
 ## Requirements
 
