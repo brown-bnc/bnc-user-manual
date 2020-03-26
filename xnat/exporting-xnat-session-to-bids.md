@@ -184,7 +184,7 @@ session=<xnat_accession_number>
 bids_root_dir=<root_directory_for_exporting>
 
 singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
-/gpfs/data/bnc/simgs/xnat-tools-${version}.sif xnat2bids --user ${xnat_user}       \
+/gpfs/data/bnc/simgs/xnat-tools/xnat-tools-${version}.sif xnat2bids --user ${xnat_user}       \
 --session ${session} --bids_root_dir /data/xnat/bids-export
 ```
 
@@ -238,7 +238,7 @@ bids_root_dir=<root_directory_for_exporting e.g /gpfs/data/bnc/mrestrep/bids-exp
 
 
 singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
-  /gpfs/data/bnc/simgs/xnat-tools-${version}.sif xnat2bids  \
+  /gpfs/data/bnc/simgs/xnat-tools/xnat-tools-${version}.sif xnat2bids  \
   --user ${xnat_user} --session ${session}                  \
   --bids_root_dir /data/xnat/bids-export
 ```
@@ -277,7 +277,7 @@ version=v1.4.3 #check latest available version
 bids_directory=<bids directory>
 
 singularity exec -B ${bids_directory}:/data:ro \
-/gpfs/data/bnc/simgs/bids-validator-${version}.sif bids-validator /data
+/gpfs/data/bnc/simgs/bids-validator/bids-validator-${version}.sif bids-validator /data
 ```
 {% endtab %}
 {% endtabs %}

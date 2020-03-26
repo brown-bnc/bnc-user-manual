@@ -31,7 +31,7 @@ singularity run --cleanenv                                         \
   --bind ${root_dir}/${investigator}/study-${study_label}:/data    \
   --bind /gpfs/scratch/${USER}:/scratch                            \
   --bind /gpfs/data/bnc/licenses:/licenses                         \
-  /gpfs/data/bnc/simgs/fmriprep-${fmriprep_version}.sif            \
+  /gpfs/data/bnc/simgs/fmriprep/fmriprep-${fmriprep_version}.sif            \
   /data/bids /data/bids/derivatives/fmriprep-${fmriprep-version}   \
   participant --participant-label ${participant_label}             \
   --fs-license-file /licenses/freesurfer-license.txt               \
@@ -68,7 +68,7 @@ For more information about managing your job, see the [Oscar documentation](http
 {% endtab %}
 
 {% tab title="Docker" %}
-
+Let us know if you are interested in this documentation!
 {% endtab %}
 {% endtabs %}
 
