@@ -76,7 +76,7 @@ Let us know if you are interested in this documentation!
 
 ## Getting a different version than what is installed in Oscar.
 
-If you wish to use version not available under `/gpfs/data/bnc/simg` you'll need to build the image. Singularity images can be large, therefore consider using a place with suffiecient quota and changing the default location singularity uses to cache these files. Please see Oscar dosumentation.
+If you wish to use version not available under `/gpfs/data/bnc/simg` you'll need to build the image. Singularity images can be large, therefore consider using a place with sufficient quota and changing the default location singularity uses to cache these files. Please see Oscar documentation.
 
 To build the image, you can run:
 
@@ -88,6 +88,6 @@ singularity build /my_images/fmriprep-${version}.sif docker://poldracklab/fmripr
 Replace `version` in the command above with the desired docker tag. You can find, the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
 
 {% hint style="info" %}
- To support scientific reproducibility, it is recommeded to use a specifc tag e.g., `1.5.8` instead of `latest` 
+ To support scientific reproducibility, it is recommended to use a specific tag e.g., `1.5.8` instead of `latest` 
 {% endhint %}
 
