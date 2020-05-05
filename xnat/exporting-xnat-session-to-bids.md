@@ -31,7 +31,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 ![](../.gitbook/assets/image%20%282%29.png)
 
-#### 4. Find Acession \#
+#### 4. Find Accession \#
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
