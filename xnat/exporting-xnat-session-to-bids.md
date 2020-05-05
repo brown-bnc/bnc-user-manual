@@ -161,7 +161,7 @@ For a full list of the inputs, you can run:
 
 ### Running XNAT2BIDS
 
-The xnat\_tools package provides a convinience `xnat2bids` script to facilitate data export and conversion to BIDS. 
+The xnat\_tools package provides a convenience `xnat2bids` script to facilitate data export and conversion to BIDS. 
 
 {% hint style="info" %}
 For use in Oscar we need to put wrap our commands in a batch file or use an interactive or VNC  session. Please **remember to not run processing on the login nodes**
