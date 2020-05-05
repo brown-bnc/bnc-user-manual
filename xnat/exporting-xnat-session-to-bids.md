@@ -35,7 +35,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 ![](../.gitbook/assets/image%20%281%29.png)
 
-### XNA2BIDS Software
+### XNAT2BIDS Software
 
 The BNC maintains a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environmet. Below we explain all possibilities
 
