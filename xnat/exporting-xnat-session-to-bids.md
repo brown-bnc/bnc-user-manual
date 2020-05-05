@@ -157,7 +157,7 @@ For a full list of the inputs, you can run:
 {% tab title="Oscar" %}
 ### Installation
 
-**🎉 Skip -** We keep a Singularity image of the most recent tagged relase of `xnat-tools`in Oscar.
+**🎉 Skip -** We keep a Singularity image of the most recent tagged release of `xnat-tools`in Oscar.
 
 ### Running XNAT2BIDS
 
@@ -194,19 +194,19 @@ singularity exec -B ${bids_root_dir}:/data/xnat/bids-export \
 * `vX.X.X`: Latest tagged stable release
 
 {% hint style="info" %}
- To support scientific reproducibility, it is recommeded to use a specifc tag e.g., `v0.1.2` instead of `latest`
+ To support scientific reproducibility, it is recommended to use a specific tag e.g., `v0.1.2` instead of `latest`
 {% endhint %}
 
 You can confirm the tags [here](https://hub.docker.com/repository/docker/brownbnc/xnat-tools/tags?page=1). Also inside Oscar you can run `ls /gpfs/data/bnc/simgs | grep xnat-tools` to verify which versions are currently installed in Oscar.
 
-⚠️  **bids\_root\_dir:** The value that we pass to this input, corresponds to the value of the bids root directory as mapped inside of the container, which in our examble is `/data/xnat/bids-export`
+⚠️  **bids\_root\_dir:** The value that we pass to this input, corresponds to the value of the bids root directory as mapped inside of the container, which in our example is `/data/xnat/bids-export`
 
-⚠️ **Correcting for misslabeled sequences at the scanner: `xnat2bids`** can take a `json` file with a dictionary of sequence names to correct/change. It is important to remember that the path passed is the pass **inside** of the container. In our previous example, the only shared location between the host and the container are:
+⚠️ **Correcting for mislabeled sequences at the scanner: `xnat2bids`** can take a `json` file with a dictionary of sequence names to correct/change. It is important to remember that the path passed is the pass **inside** of the container. In our previous example, the only shared location between the host and the container are:
 
 * The value of `bids_root_dir` as specified by `-B ${bids_root_dir}:/data/xnat/bids-export`
 * `home` singularity does that by default
 
-So the simpliest approach would be to place your `json` somewhere inside `bids_root_dir` and pass the argument `--bidsmap_file /data/xnat/bids-export/bidsmaps/${session}.json` assuming that is the name of your file. An **example**\(s\) of a bidsmap file\(s\) lives [here](https://github.com/brown-bnc/xnat-tools/tree/master/bidsmaps)
+So the simplest approach would be to place your `json` somewhere inside `bids_root_dir` and pass the argument `--bidsmap_file /data/xnat/bids-export/bidsmaps/${session}.json` assuming that is the name of your file. An **example**\(s\) of a bidsmap file\(s\) lives [here](https://github.com/brown-bnc/xnat-tools/tree/master/bidsmaps)
 
 ⚠️ **Familiarize yourself with the inputs to xnat2bids**
 
