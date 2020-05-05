@@ -7,7 +7,15 @@
 * [Accessing XNAT](xnat/accessing-xnat.md)
 * [Managing your Projects](xnat/managing-your-projects.md)
 * [BIDS Compliant Protocols](xnat/bids-compliant-protocols.md)
-* [Exporting XNAT Session to BIDS](xnat/exporting-xnat-session-to-bids.md)
+
+## Export XNAT to BIDS Format
+
+* [Getting Started](export-xnat-to-bids-format/getting-started.md)
+* [Using Oscar](export-xnat-to-bids-format/using-oscar.md)
+* [Using Docker](export-xnat-to-bids-format/using-docker.md)
+* [Python](export-xnat-to-bids-format/python.md)
+* [Understanding XNAT2BIDS](export-xnat-to-bids-format/understanding-xnat2bids.md)
+* [BIDS Validation](export-xnat-to-bids-format/bids-validation.md)
 
 ## BIDS and BIDS Containters <a id="bids"></a>
 
