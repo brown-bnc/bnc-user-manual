@@ -23,7 +23,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 #### 2.1 Navigate to project of interest
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%285%29.png)
 
 #### 2.2 Navigate to subject of interest
 

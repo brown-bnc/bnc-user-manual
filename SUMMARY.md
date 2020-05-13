@@ -7,6 +7,7 @@
 * [Accessing XNAT](xnat/accessing-xnat.md)
 * [Managing your Projects](xnat/managing-your-projects.md)
 * [BIDS Compliant Protocols](xnat/bids-compliant-protocols.md)
+* [Uploading Data](xnat/uploading-data.md)
 
 ## Export XNAT to BIDS Format
 
