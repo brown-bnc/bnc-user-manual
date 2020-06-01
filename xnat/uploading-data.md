@@ -12,11 +12,11 @@ Details of the console settings coming soon
 
 ### Method 1: Using Globus and XNAT's inbox
 
-This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resiliant transferring service that is enabled for Brown's reaserach storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/). 
+This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resilient transferring service that is enabled for Brown's reaserach storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/). 
 
 #### Pre-requisites
 
-Before uploading data to a project the following pre-requisits need to be completed
+Before uploading data to a project the following pre-requisites need to be completed
 
 1. The project **must** exist in XNAT
 2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media&token=e49aa5ef-7a68-418d-8955-6198a510a857)
