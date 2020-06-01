@@ -21,7 +21,7 @@ Before uploading data to a project the following pre-requisits need to be comple
 1. The project **must** exist in XNAT
 2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media&token=e49aa5ef-7a68-418d-8955-6198a510a857)
 3. You to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access 
-4. Afte reciving an email confirmation from XNAT maintainers, you will be able to transfer data using globus.
+4. After receiving an email confirmation from XNAT maintainers, you will be able to transfer data using globus.
 
 
 
