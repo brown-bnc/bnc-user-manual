@@ -29,9 +29,9 @@ Before uploading data to a project the following pre-requisites need to be compl
 
 {% tabs %}
 {% tab title="1. Have you enpoints ready" %}
-XNAT's administrator should have shared a new folder in Glubus named with you XNAT's Project ID.
+XNAT's administrator should have shared a new folder in Globus named with you XNAT's Project ID.
 
-You should have the ebdpoint where you data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your enpoints for files.brown.edu and Oscar's GPFS. 
+You should have the endpoint where you data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your endpoints for files.brown.edu and Oscar's GPFS. 
 {% endtab %}
 
 {% tab title="2. Organizing the Data" %}
