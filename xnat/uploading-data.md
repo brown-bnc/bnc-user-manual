@@ -12,7 +12,7 @@ Details of the console settings coming soon
 
 ### Method 1: Using Globus and XNAT's inbox
 
-This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resilient transferring service that is enabled for Brown's reaserach storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/). 
+This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resilient transferring service that is enabled for Brown's reserach storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/). 
 
 #### Pre-requisites
 
