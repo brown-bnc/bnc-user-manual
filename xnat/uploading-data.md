@@ -48,12 +48,12 @@ PROJECT\_ID\(ROOT\)/participant-id/SESSION. For instance to upload data for part
 3. Make a REST call to XNAT as follows. For more details on using XNAT's inbox, see [`here`](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/using-dicom-inbox-to-import-an-image-session)\`\`
 
 ```text
-export XNAT_USER = test_user
+export XNAT_USER=test_user
 export PROJECT_ID=SANES_SADLUM
 export PARTICIPANT_ID=123
 export SESSION_LABEL=ses-01
 
-curl -u ${XNAT_USER} -X POST "https://bnc.brown.edu/xnat/data/services/import?import-handler=inbox&cleanupAfterImport=true&PROJECT_ID=${PROJECT_ID}&SUBJECT_ID=${PARTICIPANT_ID}&EXPT_LABEL=${SESSION_LABEL}p&path=/data/xnat/inbox/${PROJECT_ID}/${PARTICIPANT_ID}" -k
+curl -u ${XNAT_USER} -X POST "https://bnc.brown.edu/xnat/data/services/import?import-handler=inbox&cleanupAfterImport=true&PROJECT_ID=${PROJECT_ID}&SUBJECT_ID=${PARTICIPANT_ID}&EXPT_LABEL=${SESSION_LABEL}&path=/data/xnat/inbox/${PROJECT_ID}/${PARTICIPANT_ID}" -k
 ```
 {% endtab %}
 {% endtabs %}
