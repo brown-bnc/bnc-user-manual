@@ -7,3 +7,11 @@ description: >-
 
 # CONN Toolbox
 
+Install the software on your local machine or use Oscar matlab and conn toolbox modules.
+
+![](.gitbook/assets/screen-shot-2020-09-14-at-4.28.01-pm.png)
+
+Step 1 : Click on the SETUP tab
+
+               Click on Project.New \(the wizard will allow a gui setup tp import functional, anatomical data and optionally preprocess your data using standard settings \(segmentation, realignment, slice timing correction, coregistration, normalization, smoothing, and outlier detection.scrubbing\) using either defaultMNI for analyses in MNI space or default SS for analyses in subject-space or surface based analysis.
+
