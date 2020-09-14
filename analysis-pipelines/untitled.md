@@ -102,5 +102,9 @@ If the resulting tract does not look like the track in \#4 box above, create exc
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-12.09.25-pm.png)
 
+All exclusion regions should be created using the same ROA region. For example in the image below three exclusion regions \(two on a coronal slice and one on an axial slice were drawn but only one ROA region was created.
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.13.42-pm.png)
+
 
 
