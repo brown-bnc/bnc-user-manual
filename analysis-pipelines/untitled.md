@@ -126,3 +126,5 @@ Save the density map by selecting "tract density image" then "diffusion space", 
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-12.24.21-pm.png)
 
+NOTE: There are many other white matter fiber tracts of interest. I can provide  details on how to reconstruct other tracts if you send a request.
+
