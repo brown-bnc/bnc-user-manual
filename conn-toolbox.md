@@ -15,5 +15,15 @@ Step 1 : Click on the SETUP tab
 
                Click on Project.New \(the wizard will allow a gui setup tp import functional, anatomical data and optionally preprocess your data using standard settings \(segmentation, realignment, slice timing correction, co-registration, normalization, smoothing, and outlier detection.scrubbing\) using either defaultMNI for analyses in MNI space or default SS for analyses in subject-space or surface based analysis.If you have already done SPM preprocessing you can skip the preprocessing steps and import the SPM.mat file for each subject.
 
+Structural files Setup;
 
+load structural Images
+
+![](.gitbook/assets/screen-shot-2020-09-14-at-5.45.21-pm.png)
+
+Functional Files setup
+
+load functional files
+
+![](.gitbook/assets/screen-shot-2020-09-14-at-5.48.28-pm.png)
 
