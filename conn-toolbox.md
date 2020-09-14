@@ -11,7 +11,7 @@ Install the software on your local machine or use Oscar matlab and conn toolbox 
 
 ![](.gitbook/assets/screen-shot-2020-09-14-at-4.28.01-pm.png)
 
-Step 1 : Click on the SETUP tab
+ QUICK Start: Step 1 : Click on the SETUP tab
 
                Click on Project.New \(the wizard will allow a gui setup tp import functional, anatomical data and optionally preprocess your data using standard settings \(segmentation, realignment, slice timing correction, co-registration, normalization, smoothing, and outlier detection.scrubbing\) using either defaultMNI for analyses in MNI space or default SS for analyses in subject-space or surface based analysis.If you have already done SPM preprocessing you can skip the preprocessing steps and import the SPM.mat file for each subject.
 
@@ -37,5 +37,9 @@ Click on ROI's button on the left side to load ROI masks files  \(.img or .nii v
 
 ![](.gitbook/assets/screen-shot-2020-09-14-at-5.57.26-pm.png)
 
+Rest or Task conditions setup
 
+Click on conditions button to enter onsets and durations \(in seconds\) of each experimental condition \(blocks/events\). enter 0 and inf in the onset and duration fields respectively to indicate that the selected condition\(s\) encompass the entire scan time. Leave empty in the onset and duration fields to indicate that the selected condition\(s\) was not present during the selected session.
+
+![](.gitbook/assets/screen-shot-2020-09-14-at-6.07.36-pm.png)
 
