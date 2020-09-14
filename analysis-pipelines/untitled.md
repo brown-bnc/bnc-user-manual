@@ -1,4 +1,4 @@
-# Whole Brain Tractography:DSI Studio
+# Tractography:DSI Studio
 
 **Whole Brain Protocol for Tractography with Diffusion MRI**
 

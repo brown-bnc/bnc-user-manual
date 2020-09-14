@@ -25,7 +25,7 @@
 
 ## Analysis Pipelines
 
-* [Whole Brain Tractography:DSI Studio](analysis-pipelines/untitled.md)
+* [Tractography:DSI Studio](analysis-pipelines/untitled.md)
 
 ---
 
