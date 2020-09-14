@@ -4,7 +4,7 @@
 
 **Tutorial**
 
-Software: Download [DSI Studio](http://dsi-studio.labsolver.org/dsi-studio-download)
+Software: Download [DSI Studio](http://dsi-studio.labsolver.org/dsi-studio-download) to you local machine or access the DSI studio module on oscar.
 
 Instructions:
 
