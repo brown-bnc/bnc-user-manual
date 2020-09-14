@@ -32,3 +32,7 @@ Select "Step 3: Fiber Tracking" and open the subject.fib file.
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.25.41-am.png)
 
+Select "color" under the Slice dropdown menu:
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.27.41-am.png)
+
