@@ -27,3 +27,7 @@
 
 * [Whole Brain Tractography:DSI Studio](analysis-pipelines/untitled.md)
 
+---
+
+* [Conn Toolbox](conn-toolbox.md)
+
