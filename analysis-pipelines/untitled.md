@@ -78,3 +78,7 @@ Output format= trk.gz
 
 
 
+For each brain slice create a new region. In general you should have about 1-2 seed regions per tract and 0-2 ROI regions per tract.  Under "type" select "seed" for seed regions or "ROI" for ROI regions.
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.48.10-am.png)
+
