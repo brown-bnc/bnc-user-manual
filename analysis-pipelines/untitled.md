@@ -86,3 +86,11 @@ REVIEW this diagram to acquaint yourself with the toolbar.
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.50.51-am.png)
 
+RECONSTRUCTING the corticospinal tract \(cst\):
+
+Move the axial slide bar until you reach a slice that looks similar to one of the boxes.Then using the freeform option, make a circle around the region that the arrow is pointing to.  Follow these steps for the remaining three boxes.  Be sure to make a new region with each slice/box.
+
+ 
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.57.37-am.png)
+
