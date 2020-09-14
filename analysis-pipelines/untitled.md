@@ -24,5 +24,9 @@ A new window will appear. Confirm the appearance of the mask and select the reco
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-10.31.49-am.png)
 
+Select "Step 3: Fiber Tracking" and open the subject.fib file.
 
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.23.24-am.png)
+
+ 
 
