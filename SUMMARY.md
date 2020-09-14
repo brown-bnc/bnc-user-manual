@@ -29,5 +29,5 @@
 
 ---
 
-* [Conn Toolbox](conn-toolbox.md)
+* [CONN Toolbox](conn-toolbox.md)
 
