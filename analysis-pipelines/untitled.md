@@ -28,5 +28,7 @@ Select "Step 3: Fiber Tracking" and open the subject.fib file.
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.23.24-am.png)
 
- 
+ The following screens will appear:
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.25.41-am.png)
 
