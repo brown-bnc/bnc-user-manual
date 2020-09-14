@@ -82,3 +82,7 @@ For each brain slice create a new region. In general you should have about 1-2 s
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.48.10-am.png)
 
+REVIEW this diagram to acquaint yourself with the toolbar.
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.50.51-am.png)
+
