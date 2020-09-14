@@ -98,3 +98,7 @@ Make sure all four ROI regions are checked and then select "Fiber Tracking"
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-12.00.07-pm.png)
 
+If the resulting tract does not look like the track in \#4 box above, create exclusion regions to remove erroneous streamline fibers.  To do this select "ROA".  Then using the square or the freeform option enclose the area where the erroneous fiber is located.
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.09.25-pm.png)
+
