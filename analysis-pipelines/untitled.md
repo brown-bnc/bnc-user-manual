@@ -120,5 +120,9 @@ Save the tract image then select the save button
 
 Save the density map by selecting "tract density image" then "diffusion space", select "no" in response to whether to export directional color, then select "yes" in response to selecting the whole tract.
 
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.24.10-pm.png)
 
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.24.15-pm.png)
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.24.21-pm.png)
 
