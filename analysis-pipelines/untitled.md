@@ -1,3 +1,9 @@
+---
+description: >-
+  DSI studio is a tractography software tool that maps brain connections using
+  diffusion weighted images.
+---
+
 # Tractography:DSI Studio
 
 **Whole Brain Protocol for Tractography with Diffusion MRI**
