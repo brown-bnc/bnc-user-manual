@@ -112,5 +112,13 @@ FINAL STEP: save all of the files: tract image, regions and density image.make s
 
 Save the regions by selection "Save all regions as multiple files" then open when the appropriate folder location is created
 
-![](../.gitbook/assets/screen-shot-2020-09-14-at-12.19.28-pm.png)
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.19.28-pm%20%281%29.png)
+
+Save the tract image then select the save button
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.20.50-pm.png)
+
+Save the density map by selecting "tract density image" then "diffusion space", select "no" in response to whether to export directional color, then select "yes" in response to selecting the whole tract.
+
+
 
