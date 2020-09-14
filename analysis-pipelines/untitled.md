@@ -106,5 +106,11 @@ All exclusion regions should be created using the same ROA region. For example i
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-12.13.42-pm.png)
 
+FINAL STEP: save all of the files: tract image, regions and density image.make sure the file names are unique. Example:
 
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.18.02-pm.png)
+
+Save the regions by selection "Save all regions as multiple files" then open when the appropriate folder location is created
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.19.28-pm.png)
 
