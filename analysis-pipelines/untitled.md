@@ -36,3 +36,9 @@ Select "color" under the Slice dropdown menu:
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.27.41-am.png)
 
+Load the following "Tracking Parameters into dsi studio
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-11.29.53-am.png)
+
+
+
