@@ -43,3 +43,9 @@ Click on conditions button to enter onsets and durations \(in seconds\) of each 
 
 ![](.gitbook/assets/screen-shot-2020-09-14-at-6.07.36-pm.png)
 
+First-level \(within subjects\) covariates setup
+
+Click on covariates: first level button to define covariates such as realignment parameters to be used in the first level BOLD model. For each covariate select a .txt of .mat file containing the covariate time series \(ie select the realignment parameters file rp\_\*.txt to include movement parameters as covariates.\)
+
+![](.gitbook/assets/screen-shot-2020-09-14-at-6.07.36-pm%20%281%29.png)
+
