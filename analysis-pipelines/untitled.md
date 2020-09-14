@@ -94,3 +94,7 @@ Move the axial slide bar until you reach a slice that looks similar to one of th
 
 ![](../.gitbook/assets/screen-shot-2020-09-14-at-11.57.37-am.png)
 
+Make sure all four ROI regions are checked and then select "Fiber Tracking"
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-12.00.07-pm.png)
+
