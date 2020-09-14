@@ -49,5 +49,5 @@ Click on covariates: first level button to define covariates such as realignment
 
 ![](.gitbook/assets/screen-shot-2020-09-14-at-6.11.56-pm.png)
 
-
+MORE TO COME......
 
