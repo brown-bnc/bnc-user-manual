@@ -25,5 +25,5 @@
 
 ## Analysis Pipelines
 
-* [fMRI Analysis using AFNI](analysis-pipelines/untitled.md)
+* [Whole Brain Tractography:DSI Studio](analysis-pipelines/untitled.md)
 

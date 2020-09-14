@@ -1,4 +1,4 @@
-# fMRI Analysis using AFNI
+# Whole Brain Tractography:DSI Studio
 
 Coming Soon!
 
