@@ -10,11 +10,19 @@ Instructions:
 
  Select “Step 1: Open Source Image” to load diffusion MR images \(DICOM, NIFTI, Bruker 2dseq, Varian fdf\) in order to create a .src file. The .src will be created and located in the main window
 
+![](../.gitbook/assets/screen-shot-2020-09-14-at-10.20.59-am.png)
+
 Select "Step2: Reconstruction"
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-10.26.56-am.png)
 
 
 
 A new window will appear. Confirm the appearance of the mask and select the reconstruction method to be QBI. The reconstructed image will appear in the main window but it will have a filename ending in ".src.gz".
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-10.36.09-am.png)
+
+![](../.gitbook/assets/screen-shot-2020-09-14-at-10.31.49-am.png)
 
 
 
