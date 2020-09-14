@@ -33,7 +33,7 @@ If the functional images are not preprocessed; you select "functional tools: ind
 
 ROI files setup
 
-Click on ROI's button on the left side to load ROI masks files  \(.img or ,nii volumes\), MNI coordinates \(.tal files\), or atlas files \(.nii files with multiple labels\)
+Click on ROI's button on the left side to load ROI masks files  \(.img or .nii volumes\), MNI coordinates \(.tal files\), or atlas files \(.nii files with multiple labels\)
 
 ![](.gitbook/assets/screen-shot-2020-09-14-at-5.57.26-pm.png)
 
