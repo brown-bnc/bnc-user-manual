@@ -50,37 +50,24 @@ Load the following "Tracking Parameters into dsi studio
 
 The tracking parameters settings should be:
 
+```text
 termination index =nqa
-
 Threshold = 0.1
-
 Angular Threshold = 0
-
-Stepsize\(mm\) = 0.0
-
+Stepsize(mm) = 0.0
 Smoothing = 1.0
-
-Min length \(mm\) =30.0
-
-Max length \(mm\) = 300.0
-
+Min length (mm) =30.0
+Max length (mm) = 300.0
 Seed orientation = primary
-
 Seed position = subvoxel
-
 Randomize Seeding = off
-
 Check ending = off
-
 Direction Interpolation= trilinear
-
-Tracking algorithm = streamline\(euler\)
-
+Tracking algorithm = streamline(euler)
 Terminate if= 100,000 tracts
-
 Thread Count =2
-
 Output format= trk.gz
+```
 
 
 
