@@ -25,9 +25,6 @@
 
 ## Analysis Pipelines
 
+* [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography:DSI Studio](analysis-pipelines/untitled.md)
-
----
-
-* [CONN Toolbox](conn-toolbox.md)
 
