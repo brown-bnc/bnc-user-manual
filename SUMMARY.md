@@ -28,3 +28,7 @@
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography:DSI Studio](analysis-pipelines/untitled.md)
 
+## SOFTWARE
+
+* [LCModel](software/lcmodel.md)
+
