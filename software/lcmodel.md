@@ -16,15 +16,11 @@ Please follow the instructions in the [Oscar Manual](https://docs.ccv.brown.edu/
 
 After logging in, you will need to **launch the Terminal application**
 
-### 1. Make a directory to store your downloads under your HOME
+### 1. Download LCModel tar under your HOME
 
 ```text
 # change directory to your HOME 
 cd ~
-# make a directory called LCModel
-mkdir LCModel
-# change into the new LCModel directory
-cd LCModel
 ```
 
 ### 2. Download LCModel binaries and uncompress file
@@ -55,6 +51,10 @@ At this point a GUI window will pop as follows:
 ![Confirmation Screen for a Successful LCModel Test](../.gitbook/assets/image%20%288%29.png)
 
 Finally, you can **Exit LCMgui**
+
+{% hint style="info" %}
+You may see the following error message: Infiniband hardware address can be incorrect! Please read BUGS section in ifconfig\(8\). This should have any effect. It is known message in Oscar that will go away in a future update
+{% endhint %}
 
 ### **4. Install the License**
 
