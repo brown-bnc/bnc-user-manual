@@ -14,9 +14,10 @@ For expansive documentation on using and understanding FreeSurfer tools, please 
 
 To run recon-all on an t1w.nii data
 
+```text
 /module load freesurfer/6.0.0
-
-/recon-all -s t1w.nii.gz -all -sd /gpfs/&gt;path to your folder&lt;/
+/recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder<//recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder</
+```
 
 This processing takes 6-8 hours to run.
 
@@ -36,7 +37,10 @@ if not already: log into Oscar:
 
 module load freesurfer/6.0.0
 
+```text
+module load freesurfer/6.0.0
 freeview
+```
 
 {% embed url="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/OutputData\_freeview" %}
 
