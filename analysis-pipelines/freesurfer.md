@@ -48,9 +48,11 @@ freeview
 
 &gt;load volume  \(navigate to where the mri output is\)
 
+load "orig' &gt;grayscale
 
+then load aparc.a2009s+aseg
 
-![](../.gitbook/assets/screen-shot-2020-10-22-at-8.42.24-am.png)
+![](../.gitbook/assets/screen-shot-2020-10-22-at-9.16.35-am.png)
 
 
 
