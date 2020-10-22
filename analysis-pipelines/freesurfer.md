@@ -12,7 +12,7 @@ FreeSurfer provides full processing streams for structural and functional MRI an
 
 For expansive documentation on using and understanding FreeSurfer tools, please visit the [FS Wiki](https://surfer.nmr.mgh.harvard.edu/fswiki). 
 
-To run recon-all on an t1w.nii data
+To run recon-all on a  t1w.nii or t1w.nii.gz dataset
 
 ```text
 /module load freesurfer/6.0.0
