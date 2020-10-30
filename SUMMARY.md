@@ -12,10 +12,8 @@
 ## Export XNAT to BIDS Format
 
 * [Getting Started](export-xnat-to-bids-format/getting-started.md)
+* [XNAT2BIDS Software](export-xnat-to-bids-format/xnat2bids-software.md)
 * [Using Oscar](export-xnat-to-bids-format/using-oscar.md)
-* [Using Docker](export-xnat-to-bids-format/using-docker.md)
-* [Python](export-xnat-to-bids-format/python.md)
-* [Understanding XNAT2BIDS](export-xnat-to-bids-format/understanding-xnat2bids.md)
 * [BIDS Validation](export-xnat-to-bids-format/bids-validation.md)
 
 ## BIDS and BIDS Containters <a id="bids"></a>
