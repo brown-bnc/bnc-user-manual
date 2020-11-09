@@ -31,4 +31,5 @@
 ## LCModel <a id="software"></a>
 
 * [Installation](software/lcmodel.md)
+* [Example Run](software/example-run.md)
 
