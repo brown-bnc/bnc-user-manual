@@ -15,8 +15,8 @@ For expansive documentation on using and understanding FreeSurfer tools, please 
 To run recon-all on a  t1w.nii or t1w.nii.gz dataset
 
 ```text
-/module load freesurfer/6.0.0
-/recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder<//recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder</
+module load freesurfer/6.0.0
+recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder<//recon-all -s t1w.nii.gz -all -sd /gpfs/>path to your folder</
 ```
 
 This processing takes 6-8 hours to run.
