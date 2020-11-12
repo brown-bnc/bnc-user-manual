@@ -4,6 +4,12 @@ description: An example of running LCModel on a test data set
 
 # Example Run
 
+### 0. Make sure you have installed LCModel
+
+{% hint style="warning" %}
+**Every user must install LCModel** for their own user. If you haven't, please refer to the [Installation Guide](lcmodel.md#installing-lcmodel-in-oscar) 
+{% endhint %}
+
 ### 1. Start a VNC session
 
 To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc). LCModel is not very resource intensive so you can request a basic session
