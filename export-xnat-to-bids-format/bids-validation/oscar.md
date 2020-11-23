@@ -50,7 +50,6 @@ The following command runs the `bids-validator` executable \(via singularity\)  
 {% tab title="Oscar" %}
 ```text
 singularity exec -B ${data_dir}:ro ${simg} \
-${simgs_dir}/validator-${version}.sif \
 bids-validator ${bids_directory}
 ```
 {% endtab %}
