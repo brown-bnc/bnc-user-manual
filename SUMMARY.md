@@ -14,7 +14,8 @@
 * [Getting Started](export-xnat-to-bids-format/getting-started.md)
 * [XNAT2BIDS Software](export-xnat-to-bids-format/xnat2bids-software.md)
 * [Using Oscar](export-xnat-to-bids-format/using-oscar.md)
-* [BIDS Validation](export-xnat-to-bids-format/bids-validation.md)
+* [BIDS Validation](export-xnat-to-bids-format/bids-validation/README.md)
+  * [Oscar](export-xnat-to-bids-format/bids-validation/oscar.md)
 
 ## BIDS and BIDS Containters <a id="bids"></a>
 
