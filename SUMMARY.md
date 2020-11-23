@@ -16,6 +16,7 @@
 * [Using Oscar](export-xnat-to-bids-format/using-oscar.md)
 * [BIDS Validation](export-xnat-to-bids-format/bids-validation/README.md)
   * [Oscar](export-xnat-to-bids-format/bids-validation/oscar.md)
+  * [Docker](export-xnat-to-bids-format/bids-validation/docker.md)
 
 ## BIDS and BIDS Containters <a id="bids"></a>
 
