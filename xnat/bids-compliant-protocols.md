@@ -75,25 +75,44 @@ __<custom> (optional)
 
 ## Things to Watch
 
-* All **scout** and **localizer** sequences need to have a `scout` label. For example:
+### Scouts and Localizers
 
-  * `anat-scout_acq-localizer`
-  * `anat-scout_acq-aascout`
+All **scout** and **localizer** sequences need to have a `scout` label. For example:
 
-  Scout series will remain in the `sourcedata` directory of your bids output, but will not be present in you `anat` folder. 
+* `anat-scout_acq-localizer`
+* `anat-scout_acq-aascout`
 
-* Functional runs **must** have \_task- field defined
-* Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID
-* If run was canceled -- just copy canceled run \(with the same index\) and re-run
+Scout series will remain in the `sourcedata` directory of your bids output, but will not be present in you `anat` folder. 
 
-  it. Files with overlapping name will be considered duplicate/canceled session
+### Incompatible symbols
 
-  and only the last one would remain.  The others would acquire
+Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID. The only execption is the use of `run+`
 
-  \_\_dup0  suffix.
+### Naming Runs
 
-* Currently the **fieldmaps** collected with our Siemens scanner use the "old way" described [here](https://osf.io/2hjhx/wiki/Brain%20Imaging%20Data%20Structure%20%28BIDS%29/#LCNI_fieldmapshttpslcniuoregonedukbarticleskb0003_29)
-* To indicate **runs** in your protocol, without explicitly indicating the run number, simply label the run as `run+`
+To indicate **runs** in your protocol, without explicitly indicating the run number, simply label the run as `run+`
+
+### Cancelled Runs
+
+If run was canceled you will need to skip that series when callaing `xnat2bids.` We encourage adding a note to that series in XNAT to indicate that the run was cancelled. This will improve bookeeping and maintainability
+
+### Functional
+
+Functional runs **must** have \_task- field defined
+
+### MEMPRAGE
+
+Typically the scanner is configured to send the mutiple echoes and the RMS series. At the moment, BIDS does not support multi-echoes in the `anat` category. When calling our `xnat2bids` software, please skip the multi-echo series. \(This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details\)
+
+### Fieldmaps
+
+Currently the **fieldmaps** collected with our Siemens scanner use the "old way" described [here](https://osf.io/2hjhx/wiki/Brain%20Imaging%20Data%20Structure%20%28BIDS%29/#LCNI_fieldmapshttpslcniuoregonedukbarticleskb0003_29)
+
+### Scanner derivatives
+
+Some sequences are derivatives of the scanner and are not yet handled by our `xnat2bids` software smoothly. We recommend, not exporting those sequences to BIDS at the moment.\(This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details\)
+
+
 
 ## Sample Protocols
 
