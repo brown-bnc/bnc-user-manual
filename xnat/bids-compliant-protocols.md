@@ -2,7 +2,7 @@
 
 ## Naming Pattern
 
-We provide custom code to export your XNAT imaging session to BIDS format. The process relies on the naming of your sequences. It is helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/) to better understand the heuristics used. We also provide a short overview in [this section](../bids/introduction-to-bids.md).
+We provide custom code to export your XNAT imaging session to BIDS format. The process relies on the naming of your series. It is helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/) to better understand the heuristics used. We also provide a short overview in [this section](../bids/introduction-to-bids.md).
 
 We rely on [Heudiconv](https://github.com/nipy/heudiconv) to convert files to the BIDS format. More specifically we use the [ReproIn specification](https://github.com/repronim/reproin) and [heuristic file](https://github.com/nipy/heudiconv/blob/master/heudiconv/heuristics/reproin.py). In general, it is expected that names at the scanner follow the following pattern
 
@@ -76,8 +76,12 @@ __<custom> (optional)
 ## Things to Watch
 
 * All **scout** and **localizer** sequences need to have a `scout` label. For example:
+
   * `anat-scout_acq-localizer`
   * `anat-scout_acq-aascout`
+
+  Scout series will remain in the `sourcedata` directory of your bids output, but will not be present in you `anat` folder. 
+
 * Functional runs **must** have \_task- field defined
 * Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID
 * If run was canceled -- just copy canceled run \(with the same index\) and re-run
