@@ -5,7 +5,7 @@
 ## XNAT
 
 * [Accessing XNAT](xnat/accessing-xnat.md)
-* [Managing your Projects](xnat/managing-your-projects.md)
+* [Project and Protocol Naming](xnat/managing-your-projects.md)
 * [BIDS Compliant Protocols](xnat/bids-compliant-protocols.md)
 * [Uploading Data](xnat/uploading-data.md)
 

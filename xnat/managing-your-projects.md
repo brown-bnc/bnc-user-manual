@@ -1,12 +1,10 @@
-# Managing your Projects
+# Project and Protocol Naming
 
 Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamedlined.
 
-## Naming convention inside XNAT
+## Required fields inside XNAT
 
 When creating new projects, XNAT asks for the following  fields
-
-### **Required Fields**
 
 | Variable  | Description |
 | :--- | :--- |
@@ -14,32 +12,100 @@ When creating new projects, XNAT asks for the following  fields
 | Running Title | This is an abbreviated project name, which will appear in search listings and data tables. |
 | Project ID | This ID is used within the XNAT database and in all API calls related to your project and its data. Once set, it cannot be changed. |
 
-{% hint style="danger" %}
-The **Project ID** must be unique. To improve book-keeping, we use **brownuser\_projectname**. The brownuser corresponds to the brown user of the Principal Investigator. Use only lowercase and a maximum of X characters
-{% endhint %}
-
 Further details can be found in [this section of XNAT's documentation](https://wiki.xnat.org/documentation/how-to-use-xnat/creating-and-managing-projects)
 
-The **Project Title** should follow the contain the following fields:
+## Choosing your values
 
-1.  PI's lastname
-2. Study reference number
-3.  Study pretty name
+The values we choose, have implications on the way that protocols trees must be named at the scanner. More precisely, the `Project ID` entered in XNAT, must match the `Study Desciption` field in the scanner \(shown in the next section\). At the scanner, the `Study Description` is automatically built by concatenating the protocol tree. Traditionally, protocol trees used to be named to easily identify them and they were often re-used among studies. New limitations exist which greatly impact the naming scheme:
 
-The fields should follow that order and be separated by **spaces**
+1. The protocol tree must start with the PI's brown username
+2. The concatenated field for `Study Description` must be at most 13 characters
+3. The concatenated field for `Study Description` must be unique
 
-Both the **Running Title and Project ID** must contain the following fields:
+With those considerations in mind, we make the following recommendations
+
+### **Option 1: Using Study Reference Number \(recommended\)**
+
+Using the reference number provides a convenient mechanisim for generating short unique identidiers. In this case your values will look as follows
+
+#### **Project Title** 
+
+The Project Title ****should contain the following fields:
 
 1. PI's lastname
 2. Study reference number
+3. Study pretty name
 
-The above fields should follow the order above and follow the following rules
+The fields should follow that order and be **separated by spaces.** Below we present examples
+
+```text
+| PI  | |Ref #| |Name |
+Shenhav 20-1226 TSS-TCB
+Shenhav 17-1149 TSS-OA
+```
+
+#### **Running Title and Project ID** 
+
+Both the **Running Title and Project ID** must contain the following fields:
+
+1. PI's short brown name
+2. Last four digits of study reference number
+
+and follow these rules
 
 * Use ALL CAPS
 * Seprate only with underscores
 * Maximum of 13 characters
 
-## Automated routing from scanner
+For instance,
+
+```text
+ASHENHAV_1226
+ASHENHAV_1149
+```
+
+### **Option 2: Using pretty name only**
+
+Some groups feel strongly about using an identifyiable string only. In this case, please follow these suggested recommendations
+
+#### **Project Title** 
+
+The Project Title ****should contain the following fields:
+
+1. PI's lastname
+2. Study pretty name
+
+The fields should follow that order and be **separated by spaces.** Below we present examples
+
+```text
+| PI  | |Ref #| |Name |
+Shenhav TSS-TCB
+Shenhav TSS-OA
+```
+
+#### **Running Title and Project ID** 
+
+Both the **Running Title and Project ID** must contain the following fields:
+
+1. PI's short brown name
+2. A pretty name that fits the length limit
+
+and follow these rules
+
+* Use ALL CAPS
+* Seprate only with underscores
+* Maximum of 13 characters
+
+For instance,
+
+```text
+ASHENHAV_TCB
+ASHENHAV_OA
+```
+
+As you can see, the 13 character limits considerably the name that you can choose as an identifier. 
+
+## Automated routing from scanner to XNAT
 
 XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. 
 
