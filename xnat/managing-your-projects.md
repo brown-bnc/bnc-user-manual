@@ -66,7 +66,7 @@ ASHENHAV_1149
 
 ### **Option 2: Using pretty name only**
 
-Some groups feel strongly about using an identifyiable string only. In this case, please follow these suggested recommendations
+Some groups prefer using an identifiable string only. In this case, please follow these suggested recommendations
 
 #### **Project Title** 
 
