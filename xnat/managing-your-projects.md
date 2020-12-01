@@ -1,6 +1,6 @@
 # Project and Protocol Naming
 
-Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamedlined.
+Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined.
 
 ## Required fields inside XNAT
 
@@ -122,7 +122,7 @@ At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.x
 | \(0010,0020\) | Patient ID | Session Label |
 
 {% hint style="danger" %}
-The only action required at the scanner is to set the **Study Description = XNAT's Project ID.** See image indicating where the Study Description field is in the scanner console
+The only action required at the scanner is to set the **Study Description = XNAT's Project ID.** Typically, this means **replacing a space with underscore**. See image indicating where the Study Description field is in the scanner console
 {% endhint %}
 
 {% hint style="info" %}
