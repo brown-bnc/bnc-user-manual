@@ -16,7 +16,7 @@ Further details can be found in [this section of XNAT's documentation](https://w
 
 ## Choosing your values
 
-The values we choose, have implications on the way that protocols trees must be named at the scanner. More precisely, the `Project ID` entered in XNAT, must match the `Study Desciption` field in the scanner \(shown in the next section\). At the scanner, the `Study Description` is automatically built by concatenating the protocol tree. Traditionally, protocol trees used to be named to easily identify them and they were often re-used among studies. New limitations exist which greatly impact the naming scheme:
+The values we choose have implications on the way that protocols trees must be named at the scanner. More precisely, the `Project ID` entered in XNAT, must match the `Study Desciption` field in the scanner \(shown in the next section\). At the scanner, the `Study Description` is automatically built by concatenating the protocol tree. Traditionally, protocol trees used to be named to easily identify them and they were often re-used among studies. New limitations exist which greatly impact the naming scheme:
 
 1. The protocol tree must start with the PI's brown username
 2. The concatenated field for `Study Description` must be at most 13 characters
