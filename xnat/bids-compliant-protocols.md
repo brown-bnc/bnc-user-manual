@@ -6,9 +6,9 @@ description: How to name your protocols so they are easily converted to BIDS for
 
 ## BIDS Naming Pattern
 
-We provide custom code \([xnat-tools package](https://github.com/brown-bnc/xnat-tools)\) to export your XNAT imaging sessions to BIDS format. The process relies on the naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide a short overview of BIDS in [this section](../bids/introduction-to-bids.md).
+We provide custom code \([xnat-tools package](https://github.com/brown-bnc/xnat-tools)\) to export your XNAT imaging sessions to BIDS format. The process relies on naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide a short overview of BIDS in [this section](../bids/introduction-to-bids.md).
 
-When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type \(i.e, antomical, functional, etc\), task information, aquisition parameters, the run id, among others. The diagram bellow shows the parts of the BIDS name that you **need to pay attention when naming you series at the scanner**. These are only a subset of the full set of that are part of the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference. 
+When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type \(i.e, antomical, functional, etc\), task information, aquisition parameters, the run id, among others. The diagram bellow shows the parts of the BIDS name that you **need to pay attention when naming you series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference. 
 
 ![Parts of the BIDS name that are important when building protocols at the scanner](../.gitbook/assets/bids-naming.svg)
 
@@ -73,10 +73,4 @@ Currently the **fieldmaps** collected with our Siemens scanner use the "old way"
 ### Scanner derivatives
 
 Some sequences are derivatives of the scanner and are not yet handled by our `xnat2bids` software smoothly. We recommend, not exporting those sequences to BIDS at the moment.\(This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details\)
-
-
-
-
-
-
 
