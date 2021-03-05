@@ -9,7 +9,7 @@ We provide custom code to export your XNAT imaging session to BIDS format. Our p
 
 ## Requirements
 
-Before exorting, you'll need to have available, XNAT authentication and session information as well as our software.
+Before exporting, you'll need to have available, XNAT authentication and session information as well as our software.
 
 ### 1. XNAT Login Information
 
