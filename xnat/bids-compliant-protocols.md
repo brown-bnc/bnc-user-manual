@@ -26,6 +26,15 @@ fmap_acq-greAP
 func-bold_task-TSSblock_acq-2dot4mmSMS4TR1200AP_run+
 ```
 
+```text
+anat-scout_acq-localizer
+anat-scout_acq-aascout
+anat-t1w_acq-memprage
+func-bold_task-lum_run+
+dwi_acq-122_dir-ap
+dwi_acq-b0_dir-pa
+```
+
 ## Important considerations
 
 ### Scouts and Localizers
