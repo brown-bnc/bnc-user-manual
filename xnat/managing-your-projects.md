@@ -1,12 +1,20 @@
+---
+description: Naming your XNAT Project and your Protocol Tree
+---
+
 # Project and Protocol Naming
 
-Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined.
+When a session is collected at the scanner, the data will be sent to XNAT and placed in an XNAT Project that is accessible only to the associated researchers. 
 
-## Required fields inside XNAT
+## Creating a new project in XNAT
 
-When creating new projects, XNAT asks for the following  fields
+Every protocol should have will need an XNAT project, Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined.
 
-| Variable  | Description |
+### Required fields
+
+When creating new projects, XNAT asks for the following fields
+
+| Variable | Description |
 | :--- | :--- |
 | Project Title | The full title of the project, which will appear in the site-wide project listing. |
 | Running Title | This is an abbreviated project name, which will appear in search listings and data tables. |
@@ -14,7 +22,7 @@ When creating new projects, XNAT asks for the following  fields
 
 Further details can be found in [this section of XNAT's documentation](https://wiki.xnat.org/documentation/how-to-use-xnat/creating-and-managing-projects)
 
-## Choosing your values
+### Choosing your values
 
 The values we choose have implications on the way that protocols trees must be named at the scanner. More precisely, the `Project ID` entered in XNAT, must match the `Study Desciption` field in the scanner \(shown in the next section\). At the scanner, the `Study Description` is automatically built by concatenating the protocol tree. Traditionally, protocol trees used to be named to easily identify them and they were often re-used among studies. New limitations exist which greatly impact the naming scheme:
 
@@ -24,53 +32,9 @@ The values we choose have implications on the way that protocols trees must be n
 
 With those considerations in mind, we make the following recommendations
 
-### **Option 1: Using Study Reference Number \(recommended\)**
+#### **Project Title**
 
-Using the reference number provides a convenient mechanisim for generating short unique identidiers. In this case your values will look as follows
-
-#### **Project Title** 
-
-The Project Title ****should contain the following fields:
-
-1. PI's lastname
-2. Study reference number
-3. Study pretty name
-
-The fields should follow that order and be **separated by spaces.** Below we present examples
-
-```text
-| PI  | |Ref #| |Name |
-Shenhav 20-1226 TSS-TCB
-Shenhav 17-1149 TSS-OA
-```
-
-#### **Running Title and Project ID** 
-
-Both the **Running Title and Project ID** must contain the following fields:
-
-1. PI's short brown name
-2. Last four digits of study reference number
-
-and follow these rules
-
-* Use ALL CAPS
-* Seprate only with underscores
-* Maximum of 13 characters
-
-For instance,
-
-```text
-ASHENHAV_1226
-ASHENHAV_1149
-```
-
-### **Option 2: Using pretty name only**
-
-Some groups prefer using an identifiable string only. In this case, please follow these suggested recommendations
-
-#### **Project Title** 
-
-The Project Title ****should contain the following fields:
+The Project Title should contain the following fields:
 
 1. PI's lastname
 2. Study pretty name
@@ -83,7 +47,7 @@ Shenhav TSS-TCB
 Shenhav TSS-OA
 ```
 
-#### **Running Title and Project ID** 
+#### **Running Title and Project ID**
 
 Both the **Running Title and Project ID** must contain the following fields:
 
@@ -103,23 +67,11 @@ ASHENHAV_TCB
 ASHENHAV_OA
 ```
 
-As you can see, the 13 character limits considerably the name that you can choose as an identifier. 
+As you can see, the 13 character limits considerably the name that you can choose as an identifier.
 
 ## Automated routing from scanner to XNAT
 
-XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. 
-
-At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session), explicitly: 
-
-**Third Pass \(Our choice\)**
-
- XNAT looks for each metadata field in individual DICOM fields, as below:
-
-| DICOM Tag | Tag name | XNAT Field |
-| :--- | :--- | :--- |
-| \(0008,1030\) | Study Description | Project ID |
-| \(0010,0010\) | Patient Name | Subject Label |
-| \(0010,0020\) | Patient ID | Session Label |
+XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description
 
 {% hint style="danger" %}
 The only action required at the scanner is to set the **Study Description = XNAT's Project ID.** Typically, this means **replacing a space with underscore**. See image indicating where the Study Description field is in the scanner console
@@ -134,6 +86,4 @@ We assume that the metadata for the Patient ID and the Patient Name is correctly
 {% endhint %}
 
 ![Study Description Field in the Console must match XNAT&apos;s project ID](../.gitbook/assets/img_3251.jpeg)
-
-
 
