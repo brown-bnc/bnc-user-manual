@@ -8,15 +8,17 @@ description: How to name your protocols so they are easily converted to BIDS for
 
 We provide custom code \([xnat-tools package](https://github.com/brown-bnc/xnat-tools)\) to export your XNAT imaging sessions to BIDS format. The process relies on naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide a short overview of BIDS in [this section](../bids/introduction-to-bids.md).
 
-When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type \(i.e, antomical, functional, etc\), task information, aquisition parameters, the run id, among others. The diagram bellow shows the parts of the BIDS name that you **need to pay attention when naming you series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference. 
+When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type \(i.e, antomical, functional, etc\), task information, aquisition parameters, the run id, among others. The examples and diagram bellow shows the parts of the BIDS name that you **need to pay attention when naming you series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference.
 
-![Parts of the BIDS name that are important when building protocols at the scanner](../.gitbook/assets/bids-naming.svg)
+![Color coded examples of BIDS compliant protocols](../.gitbook/assets/bids-naming-3-.svg)
+
+![Table how to build series at the scanner for BIDS compliance](../.gitbook/assets/bids-naming-2-.svg)
 
 {% hint style="info" %}
 To create the final name, the different parts shown abobe are concatenated using underscores \(\_\)
 {% endhint %}
 
-## Sample Protocols
+## Additional Sample Protocols
 
 ```text
 anat-scout_acq-aascout
