@@ -8,9 +8,9 @@ When a session is collected at the scanner, the data will be sent to XNAT and pl
 
 ## Creating a new project in XNAT
 
-Every protocol should have will need an XNAT project, Currently XNAT Projects can only be created by a BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined.
+Tipically every protocol tree created at the scanner needs will be associated with only one XNAT project. Currently XNAT Projects can only be created by an BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined. Hower, you should familiarize yourself with XNAT naming conventions below
 
-### Required fields
+### XNAT Project Title and ID
 
 When creating new projects, XNAT asks for the following fields
 
@@ -74,7 +74,7 @@ As you can see, the 13 character limits considerably the name that you can choos
 XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description
 
 {% hint style="danger" %}
-The only action required at the scanner is to set the **Study Description = XNAT's Project ID.** Typically, this means **replacing a space with underscore**. See image indicating where the Study Description field is in the scanner console
+Tipicallay there is no action required at the scanner since the protocol tree is concatanated to match the study descriotion. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
 {% endhint %}
 
 {% hint style="info" %}
@@ -86,4 +86,6 @@ We assume that the metadata for the Patient ID and the Patient Name is correctly
 {% endhint %}
 
 ![Study Description Field in the Console must match XNAT&apos;s project ID](../.gitbook/assets/img_3251.jpeg)
+
+
 

@@ -1,10 +1,6 @@
 # Accessing XNAT
 
-Our XNAT portal is available at [http://bnc.brown.edu/xnat](http://bnc.brown.edu/xnat)
-
-{% hint style="warning" %}
-XNAT is behind Brown's firewall. You must be connected to Brown Wifi or VPN
-{% endhint %}
+Our XNAT portal is available at [https://xnat.bnc.brown.edu](https://xnat.bnc.brown.edu)
 
 ## Returning Users
 

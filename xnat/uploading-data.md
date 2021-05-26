@@ -8,7 +8,7 @@ After data collection, data can be sent to XNAT directly from the scanner. If yo
 Details of the console settings coming soon
 {% endhint %}
 
-## Uploading historic data
+## Uploading historic data \(NOT Available at the moment 5/25/21\)
 
 ### Method 1: Using Globus and XNAT's inbox
 
