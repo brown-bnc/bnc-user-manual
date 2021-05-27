@@ -1,6 +1,7 @@
 # Table of contents
 
 * [About](README.md)
+* [Infrastructure Overview](infrastructure-overview.md)
 
 ## XNAT
 

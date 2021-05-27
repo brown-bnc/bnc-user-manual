@@ -74,7 +74,7 @@ As you can see, the 13 character limits considerably the name that you can choos
 XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description
 
 {% hint style="danger" %}
-Tipicallay there is no action required at the scanner since the protocol tree is concatanated to match the study descriotion. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
+Tipically there is no action required at the scanner since the protocol tree is concatenated to match the study description. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
 {% endhint %}
 
 {% hint style="info" %}
