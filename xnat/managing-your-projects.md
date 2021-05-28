@@ -8,7 +8,7 @@ When a session is collected at the scanner, the data will be sent to XNAT and pl
 
 ## Creating a new project in XNAT
 
-Tipically every protocol tree created at the scanner needs will be associated with only one XNAT project. Currently XNAT Projects can only be created by an BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined. Hower, you should familiarize yourself with XNAT naming conventions below
+Tipically every protocol tree created at the scanner needs will be associated with only one XNAT project. Currently XNAT Projects can only be created by an BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined. However, you should familiarize yourself with XNAT naming conventions below
 
 ### XNAT Project Title and ID
 
@@ -68,24 +68,6 @@ ASHENHAV_OA
 ```
 
 As you can see, the 13 character limits considerably the name that you can choose as an identifier.
-
-## Automated routing from scanner to XNAT
-
-XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description
-
-{% hint style="danger" %}
-Tipically there is no action required at the scanner since the protocol tree is concatenated to match the study description. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
-{% endhint %}
-
-{% hint style="info" %}
-If no Project was identified, the DICOM files will be placed in the “Unidentified” prearchive box. If Project was identified, but Subject and/or Session was not, the DICOM files will be placed in the appropriate project prearchive box. However, the automatic matching tool will not be functional, and additional data entry will be required.
-{% endhint %}
-
-{% hint style="info" %}
-We assume that the metadata for the Patient ID and the Patient Name is correctly inferred.
-{% endhint %}
-
-![Study Description Field in the Console must match XNAT&apos;s project ID](../.gitbook/assets/img_3251.jpeg)
 
 
 
