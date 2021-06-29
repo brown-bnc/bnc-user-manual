@@ -1,24 +1,22 @@
-# Using Oscar
+# Exporting to BIDS using Oscar
 
-## Installation
+## Interacting with Oscar
 
-**🎉 Skip -** We keep a Singularity image of the most recent tagged release of [`xnat-tools`](https://github.com/brown-bnc/xnat-tools)in Oscar.
+You can login to Oscar via different methods. You can [ssh using your terminal](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/ssh), you can [connect via a VNC \(Virtual Desktop\) Client](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc), or if your editor can connect to remote servers, [you can connect via your favorite IDE](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide). If this is your first time using Oscar and you are new to unix command line, we recommend connecting via the VNC client.
+
+{% hint style="info" %}
+If you connect to Oscar via SSH, you arrive at a login node, we wil need to wrap our commands in a batch file or use an interactive session. You can learn more about running jobs in the Oscar [docs](https://docs.ccv.brown.edu/oscar/submitting-jobs/shared-machine). Please **remember to not run processing on the login nodes**
+{% endhint %}
+
+## Installating XNAT2BIDS
+
+**🎉 Skip -** You will not need to install any software. We keep a Singularity image of the most recent tagged release of [`xnat-tools`](https://github.com/brown-bnc/xnat-tools)in Oscar. If this is the first time that you here the word `Singularity image` don't worry, we will expand more on that soon.
 
 ## Running XNAT2BIDS
 
-The xnat-tools package provides a convenience `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
+The xnat-tools package provides a convenience `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the the full list of inputs and defaults. We will demostrate how to call that script within Oscar using the BNC's demo dataset. 
 
-{% hint style="info" %}
-In Oscar we need to wrap our commands in a batch file or use an interactive or VNC session. Please **remember to not run processing on the login nodes**
-{% endhint %}
-
-### Batch Script
-
-We keep an up-to-date sample scripts and instructions in this repository [https://github.com/brown-bnc/xnat-tools-examples](https://github.com/brown-bnc/xnat-tools-examples). 
-
-⚠️ Do not store your password directly in scripts. You could use temporary files or environment variables. However, if you prefert typing it interactively, then using an Interactive session is the only way.
-
-### Interactive session
+### Start an Interactive session
 
 Here we start the software as an **interactive** job of one hour.
 
@@ -31,7 +29,7 @@ interact -n 2 -t 01:00:00 -m 8g
 #### Specify the version of `xnat-tools` to
 
 ```text
-version=v1.0.0
+version=v1.0.5
 ```
 
 ####  Set up paths

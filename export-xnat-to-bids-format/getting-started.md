@@ -1,6 +1,6 @@
 # Getting Started
 
-We provide custom code to export your XNAT imaging session to BIDS format. Our process relies on few basic principles:
+We provide custom code and sample data to export your XNAT imaging session to BIDS format. Our process relies on few basic principles:
 
 * Naming of sequences in a BIDS friendly manner at the scanner
 * DICOMS exported from XNAT using our software is converted to BIDS using [Heudiconv](https://github.com/nipy/heudiconv)
@@ -13,7 +13,8 @@ Before exporting, you'll need to have available, XNAT authentication and session
 
 ### 1. XNAT Login Information
 
-* XNAT Host
+If you have not registered to use our XNAT, please follow instructions [here](../xnat/accessing-xnat.md#first-time-users)
+
 * XNAT Username
 * XNAT Password
 

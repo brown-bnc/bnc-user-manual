@@ -1,6 +1,6 @@
 # XNAT2BIDS Software
 
-We maintains a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) to make it simple to export and convert your data to BIDS. The optimal way to install and run the code depends on your computation environment. The package [documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user. If you are looking to run the software within Oscar, then the follwoing section provides more details.   
+After gathering the requirements in the [Getting Sarted Section](getting-started.md#requirements), you are ready to export your data. We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates exporting and converting your data to BIDS. The optimal way to install and run the code depends on your computation environment. The package [documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user. Many of our researchers have access to Brown's super computer [Oscar](https://docs.ccv.brown.edu/oscar). Here, we will guide you through and example of how to export your data to BIDS within Oscar's computational environmen. 
 
 {% page-ref page="using-oscar.md" %}
 
