@@ -66,7 +66,7 @@ Add `key= 210387309` to the control parameters as shown in the figure below. Bec
 
 LCModel will ask you if you want to save the new parameters to a new file. You can do so. If you do, the next time you can select the saved file from **Advanced Settings -&gt; Change Control-Defaults file**
 
-### 6. Run LCModel
+### 7. Run LCModel
 
 After pressing **Run LCModel**, a two page PDF will appear, which looks as follows
 
