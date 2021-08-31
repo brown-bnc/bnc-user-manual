@@ -58,11 +58,16 @@ You may see the following error message: Infiniband hardware address can be inco
 
 ### **4. Install the License**
 
-In order to run LCModel with your data you need to install a License. To do so, simply copy the license file to the appropiate location
+LCModel is now free. However, you'll need to create an empty license file. You can do so from the terminal as follows. 
 
 ```text
-cp /gpfs/data/bnc/licenses/lcmodel-license ~/.lcmodel/license
+cd ~/.lcmodel
+touch license
 ```
+
+{% hint style="warning" %}
+If you have used LCModel before and have an outdated license file, please remove it
+{% endhint %}
 
 ### 5. Copy the Basis Set
 

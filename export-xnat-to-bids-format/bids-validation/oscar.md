@@ -17,16 +17,10 @@ interact -n 2 -t 01:00:00 -m 8g
 #### Specify the version of validator to
 
 ```text
-version=v1.5.7
+version=v1.7.2
 ```
 
 ####  Set up paths
-
-Set up the **working directory** in Oscar, usually `/gpfs/data/<your PI's group>`. We pass \(bind\) this path to singularity so that it can access/see it
-
-```text
-data_dir=/gpfs/data/bnc
-```
 
 Indicate the **bids directory.** This is where `dataset_description.json` file lives
 
@@ -49,7 +43,7 @@ The following command runs the `bids-validator` executable \(via singularity\)  
 {% tabs %}
 {% tab title="Oscar" %}
 ```text
-singularity exec -B ${data_dir}:ro ${simg} \
+singularity exec -B ${bids_directory} ${simg} \
 bids-validator ${bids_directory}
 ```
 {% endtab %}

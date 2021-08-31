@@ -38,11 +38,33 @@ To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.cc
 
 ### 5. Select Basis
 
-During installation, the basis-set was install under the LCModols' hidden directory in your home. i.e., `$HOME/.lcmodel/basis-set` which is equivalent to `/gpfs/home/$USER/.lcmodel/basis-set`
+During installation, the basis-set was install under the LCModels' hidden directory in your home. i.e., `$HOME/.lcmodel/basis-set` which is equivalent to `/gpfs/home/$USER/.lcmodel/basis-set`
 
 * Change the basis file to: `$HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis`
 
 ![Sample Control Parameters Window](../.gitbook/assets/image%20%2813%29.png)
+
+### 6. Add License Key to Control Parameters
+
+You will need to add a key to the Control Parameters. We do so as follows:
+
+#### a. Open Advanced Setting Dialog
+
+![](../.gitbook/assets/untitled.png)
+
+#### b. Select View/Edit Control Parameters. 
+
+A dialog will open
+
+#### c. Add key to Control Parameters
+
+Add `key= 210387309` to the control parameters as shown in the figure below. Becareful to match spaces. When done, press OK
+
+![](../.gitbook/assets/lc-model-params-with-key.png)
+
+#### d. Save parameters file \(optional\)
+
+LCModel will ask you if you want to save the new parameters to a new file. You can do so. If you do, the next time you can select the saved file from **Advanced Settings -&gt; Change Control-Defaults file**
 
 ### 6. Run LCModel
 
