@@ -18,14 +18,14 @@ After logging in, you will need to **launch the Terminal application**
 
 ### 1. Download LCModel tar under your HOME
 
-```text
+```
 # change directory to your HOME 
 cd ~
 ```
 
 ### 2. Download LCModel binaries and uncompress file
 
-```text
+```
 # download LCModel
 wget http://s-provencher.com/pub/LCModel/programs/lcm-64.tar -O lcm-64.tar
 # un-tar file
@@ -34,33 +34,33 @@ tar xf lcm-64.tar
 
 ### 3. Run the installer script
 
-```text
+```
 ./install-lcmodel
 ```
 
 At this point a GUI window will pop as follows:
 
-![LCModel Select PostScript Display or Print Command](../.gitbook/assets/image%20%287%29.png)
+![LCModel Select PostScript Display or Print Command](<../.gitbook/assets/image (7).png>)
 
-**Press Continue.** A test report should show up as follows:
+**Press Continue. **A test report should show up as follows:
 
-![LC Model Sample PostScript Result](../.gitbook/assets/image%20%286%29.png)
+![LC Model Sample PostScript Result](<../.gitbook/assets/image (6).png>)
 
-**Close the result window.** A new success window will follow
+**Close the result window. **A new success window will follow
 
-![Confirmation Screen for a Successful LCModel Test](../.gitbook/assets/image%20%288%29.png)
+![Confirmation Screen for a Successful LCModel Test](<../.gitbook/assets/image (8).png>)
 
 Finally, you can **Exit LCMgui**
 
 {% hint style="info" %}
-You may see the following error message: Infiniband hardware address can be incorrect! Please read BUGS section in ifconfig\(8\). This should have any effect. It is known message in Oscar that will go away in a future update
+You may see the following error message: Infiniband hardware address can be incorrect! Please read BUGS section in ifconfig(8). This should have any effect. It is known message in Oscar that will go away in a future update
 {% endhint %}
 
 ### **4. Install the License**
 
-LCModel is now free. However, you'll need to create an empty license file. You can do so from the terminal as follows. 
+LCModel is now free. However, you'll need to create an empty license file. You can do so from the terminal as follows.&#x20;
 
-```text
+```
 cd ~/.lcmodel
 touch license
 ```
@@ -71,11 +71,9 @@ If you have used LCModel before and have an outdated license file, please remove
 
 ### 5. Copy the Basis Set
 
-```text
+```
 cp -r /gpfs/data/bnc/shared/lcmodel/basis-sets ~/.lcmodel/basis-sets
 ```
-
-
 
 
 

@@ -24,23 +24,23 @@ If no Project was identified, the DICOM files will be placed in the “Unidentif
 We assume that the metadata for the Patient ID and the Patient Name is correctly inferred.
 {% endhint %}
 
-![Study Description Field in the Console must match XNAT&apos;s project ID](../.gitbook/assets/img_3251.jpeg)
+![Study Description Field in the Console must match XNAT's project ID](../.gitbook/assets/img\_3251.jpeg)
 
 
 
-## Uploading historic data \(NOT Available at the moment 5/25/21\)
+## Uploading historic data (NOT Available at the moment 5/25/21)
 
 ### Method 1: Using Globus and XNAT's inbox
 
-This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resilient transferring service that is enabled for Brown's research storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/). 
+This is the preferred method to transfer large amounts of data to the XNAT server. We leverage [Globus](https://www.globus.org) as a secure, fast and resilient transferring service that is enabled for Brown's research storages. If you are not familiar with Globus, you can learn more from Brown's [documentation](https://docs.ccv.brown.edu/globus/).&#x20;
 
 #### Pre-requisites
 
 Before uploading data to a project the following pre-requisites need to be completed
 
-1. The project **must** exist in XNAT
-2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media&token=e49aa5ef-7a68-418d-8955-6198a510a857)
-3. You to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access 
+1. The project **must **exist in XNAT
+2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth\_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media\&token=e49aa5ef-7a68-418d-8955-6198a510a857)
+3. You to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access&#x20;
 4. After receiving an email confirmation from XNAT maintainers, you will be able to transfer data using globus.
 
 
@@ -51,23 +51,23 @@ Before uploading data to a project the following pre-requisites need to be compl
 {% tab title="1. Have you enpoints ready" %}
 XNAT's administrator should have shared a new folder in Globus named with you XNAT's Project ID.
 
-You should have the endpoint where you data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your endpoints for files.brown.edu and Oscar's GPFS. 
+You should have the endpoint where you data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your endpoints for files.brown.edu and Oscar's GPFS.&#x20;
 {% endtab %}
 
 {% tab title="2. Organizing the Data" %}
 Once you have permissions to the projects folder please orgineze data as follows
 
-PROJECT\_ID\(ROOT\)/participant-id/SESSION. For instance to upload data for participant's 123 in the SANES SADLUM Data, the organization looks as follows
+PROJECT\_ID(ROOT)/participant-id/SESSION. For instance to upload data for participant's 123 in the SANES SADLUM Data, the organization looks as follows
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](<../.gitbook/assets/image (4).png>)
 {% endtab %}
 
 {% tab title="3. Upload" %}
 1. Start Globus Transfer
 2. Wait for Globus transfer to complete. You should receive a notification
-3. Make a REST call to XNAT as follows. For more details on using XNAT's inbox, see [`here`](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/using-dicom-inbox-to-import-an-image-session)\`\`
+3. Make a REST call to XNAT as follows. For more details on using XNAT's inbox, see [`here`](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/using-dicom-inbox-to-import-an-image-session)``
 
-```text
+```
 export XNAT_USER=test_user
 export PROJECT_ID=SANES_SADLUM
 export PARTICIPANT_ID=123
@@ -79,9 +79,7 @@ curl -u ${XNAT_USER} -X POST "https://bnc.brown.edu/xnat/data/services/import?im
 
 
 
-  
-
-
+\
 
 
 

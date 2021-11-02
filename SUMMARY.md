@@ -10,17 +10,26 @@
 * [BIDS Ready Protocols](xnat/bids-compliant-protocols.md)
 * [Uploading Data](xnat/uploading-data.md)
 
-## Export XNAT to BIDS Format
+## Demo Dataset
 
-* [Getting Started](export-xnat-to-bids-format/getting-started.md)
-* [XNAT2BIDS Software](export-xnat-to-bids-format/xnat2bids-software.md)
-* [Exporting to BIDS using Oscar](export-xnat-to-bids-format/using-oscar.md)
-* [Oscar SBATCH Scripts](export-xnat-to-bids-format/oscar-sbatch-scripts.md)
-* [BIDS Validation](export-xnat-to-bids-format/bids-validation/README.md)
-  * [Oscar](export-xnat-to-bids-format/bids-validation/oscar.md)
-  * [Docker](export-xnat-to-bids-format/bids-validation/docker.md)
+* [Introduction](demo-dataset/introduction.md)
+* [How to acces it](demo-dataset/how-to-acces-it.md)
+* [Protocol Information](demo-dataset/protocol-information.md)
 
-## BIDS and BIDS Containters <a id="bids"></a>
+## XNAT to BIDS (Intro)
+
+* [Getting Started](xnat-to-bids-intro/getting-started.md)
+* [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software.md)
+* [Exporting to BIDS using Oscar](xnat-to-bids-intro/using-oscar.md)
+* [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
+  * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
+  * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
+
+## XNAT TO BIDS (Dive-in)
+
+* [Oscar SBATCH Scripts](xnat-to-bids-dive-in/oscar-sbatch-scripts.md)
+
+## BIDS and BIDS Containters <a href="bids" id="bids"></a>
 
 * [Introduction to BIDS](bids/introduction-to-bids.md)
 * [fmriprep](bids/fmriprep.md)
@@ -32,10 +41,9 @@
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography:DSI Studio](analysis-pipelines/untitled.md)
 
-## LCModel <a id="software"></a>
+## LCModel <a href="software" id="software"></a>
 
 * [Overview](software/overview.md)
 * [Installation](software/lcmodel.md)
 * [Example Run](software/example-run.md)
 * [Running LCModel on your own data](software/running-lcmodel-on-your-own-data.md)
-

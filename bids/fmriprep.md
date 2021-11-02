@@ -8,7 +8,7 @@
 
 We keep up-to-date Singularity images for `fmriprep` for the community. In order to run `fmriprep` in Oscar, you'll need to write a batch script. We provide an example below
 
-{% code title="~/src/fmriprep\_shenhav\_example.sh -- Filename and not part of the script!" %}
+{% code title="~/src/fmriprep_shenhav_example.sh -- Filename and not part of the script!" %}
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -44,11 +44,11 @@ singularity run --cleanenv                                         \
 
 ### ✋Understanding the batch script
 
-* The first path ot the script configures the variables \(e.g., number of cores, memory, etc\) for your JOB
+* The first path ot the script configures the variables (e.g., number of cores, memory, etc) for your JOB
 * The second part invokes `fmirprep` singularity image. Keep in mind the following considerations:
   * Singularity containers run as your user, and therefore should have the same read/write permissions as your local user in the cluster
-  * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
-  * You must specify the location **inside the container** of the Free Surfer license.
+  * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link. **For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
+  * You must specify the location **inside the container **of the Free Surfer license.
 
 ✋ **Troubleshooting:**
 
@@ -59,7 +59,7 @@ singularity run --cleanenv                                         \
 
 ## 2. Run the batch script
 
-```text
+```
 cd ~/src
 sbatch fmriprep_shenhav_example.sh
 ```
@@ -88,6 +88,5 @@ singularity build /my_images/fmriprep-${version}.sif docker://poldracklab/fmripr
 Replace `version` in the command above with the desired docker tag. You can find, the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
 
 {% hint style="info" %}
- To support scientific reproducibility, it is recommended to use a specific tag e.g., `1.5.8` instead of `latest` 
+&#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `1.5.8` instead of `latest`&#x20;
 {% endhint %}
-
