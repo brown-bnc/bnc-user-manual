@@ -13,7 +13,7 @@
 ## Demo Dataset
 
 * [Introduction](demo-dataset/introduction.md)
-* [How to acces it](demo-dataset/how-to-acces-it.md)
+* [How to access it](demo-dataset/how-to-access-it.md)
 * [Protocol Information](demo-dataset/protocol-information.md)
 
 ## XNAT to BIDS (Intro)
