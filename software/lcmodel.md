@@ -42,11 +42,11 @@ At this point a GUI window will pop as follows:
 
 ![LCModel Select PostScript Display or Print Command](<../.gitbook/assets/image (7).png>)
 
-**Press Continue. **A test report should show up as follows:
+**Press Continue.** A test report should show up as follows:
 
 ![LC Model Sample PostScript Result](<../.gitbook/assets/image (6).png>)
 
-**Close the result window. **A new success window will follow
+**Close the result window.** A new success window will follow
 
 ![Confirmation Screen for a Successful LCModel Test](<../.gitbook/assets/image (8).png>)
 

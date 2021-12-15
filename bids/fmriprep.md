@@ -47,8 +47,8 @@ singularity run --cleanenv                                         \
 * The first path ot the script configures the variables (e.g., number of cores, memory, etc) for your JOB
 * The second part invokes `fmirprep` singularity image. Keep in mind the following considerations:
   * Singularity containers run as your user, and therefore should have the same read/write permissions as your local user in the cluster
-  * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link. **For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
-  * You must specify the location **inside the container **of the Free Surfer license.
+  * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
+  * You must specify the location **inside the container** of the Free Surfer license.
 
 ✋ **Troubleshooting:**
 

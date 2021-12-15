@@ -41,7 +41,7 @@ dwi_acq-b0_dir-pa
 
 ### Scouts and Localizers
 
-All **scout** and **localizer **sequences need to have a `scout` label. For example:
+All **scout** and **localizer** sequences need to have a `scout` label. For example:
 
 * `anat-scout_acq-localizer`
 * `anat-scout_acq-aascout`
@@ -54,7 +54,7 @@ Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID. The only
 
 ### Naming Runs
 
-To indicate **runs **in your protocol, without explicitly indicating the run number, simply label the run as `run+`
+To indicate **runs** in your protocol, without explicitly indicating the run number, simply label the run as `run+`
 
 ### Cancelled Runs
 

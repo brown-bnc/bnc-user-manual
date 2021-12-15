@@ -34,7 +34,7 @@ version=v1.8.0
 
 #### &#x20;Set up paths
 
-Indicate the** bids directory. **This is where `dataset_description.json` file lives
+Indicate the **bids directory.** This is where `dataset_description.json` file lives
 
 ```
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
@@ -50,7 +50,7 @@ simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
 
 #### Run the main executable via singularity
 
-The following command runs the `bids-validator` executable (via singularity)  to test if a directory is BIDS compliant. The command tells singularity to launch `validator-${version}.sif` image and execute the `bids-validator` command. The bids validator expects the a directory as an input, which in this case corresponds to `${bids_directory}`. The `--bind ${bids_directory}:${bids_directory}:ro  ` makes the `${HOME}/xnat-exports/bnc/study-demodat/bids` available read-only inside the container at the same path.&#x20;
+The following command runs the `bids-validator` executable (via singularity)  to test if a directory is BIDS compliant. The command tells singularity to launch `validator-${version}.sif` image and execute the `bids-validator` command. The bids validator expects the a directory as an input, which in this case corresponds to `${bids_directory}`. The `--bind ${bids_directory}:${bids_directory}:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat/bids` available read-only inside the container at the same path.&#x20;
 
 {% tabs %}
 {% tab title="Oscar" %}

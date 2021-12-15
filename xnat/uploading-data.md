@@ -38,7 +38,7 @@ This is the preferred method to transfer large amounts of data to the XNAT serve
 
 Before uploading data to a project the following pre-requisites need to be completed
 
-1. The project **must **exist in XNAT
+1. The project **must** exist in XNAT
 2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth\_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media\&token=e49aa5ef-7a68-418d-8955-6198a510a857)
 3. You to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access&#x20;
 4. After receiving an email confirmation from XNAT maintainers, you will be able to transfer data using globus.

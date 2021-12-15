@@ -26,7 +26,7 @@ Overall directories hierarchy is as foolows (\[] indicates optional fields):
 
 #### Single Session Example
 
-* ** sub-control01 **
+* &#x20;**sub-control01**&#x20;
   * **anat**
     * sub-control01\_T1w.nii.gz sub-control01\_T1w.json&#x20;
     * sub-control01\_T2w.nii.gz sub-control01\_T2w.json

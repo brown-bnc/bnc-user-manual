@@ -136,7 +136,7 @@ Because a container does not have the same directory structure as the host, we h
 
 **Sharing paths between a container and the host computer (OSCAR)**
 
-If we want a directory/file that exists in OSCAR to be availabe inside our container, we need to tell Singularity that. We do so, by** binding a volume. This achieved by passing the flag `--bind <oscar_path>:<container_path>`. **If we want the path inside the container to be exactly as the path in OSCAR, we can ommit the destination path, that is `--bind <oscar_path>`.
+If we want a directory/file that exists in OSCAR to be availabe inside our container, we need to tell Singularity that. We do so, by **binding a volume. This achieved by passing the flag `--bind <oscar_path>:<container_path>`.** If we want the path inside the container to be exactly as the path in OSCAR, we can ommit the destination path, that is `--bind <oscar_path>`.
 
 {% hint style="info" %}
 The `--bind` flag can also be passed as `-B`
@@ -157,7 +157,7 @@ While generally speaking, a container is mostly isolated from the host, there ar
  $PWD. 
 ```
 
-**(Pro-Tip): **Generally speaking, the default behavior of Signularity works great, sometimes however, some of the configurations included in your `$HOME` or environment variables set in you `$HOME/.bashrc` may create conflicts. Singularity offers several flags that can be passed to further isolate the container from the local host. These include
+**(Pro-Tip):** Generally speaking, the default behavior of Signularity works great, sometimes however, some of the configurations included in your `$HOME` or environment variables set in you `$HOME/.bashrc` may create conflicts. Singularity offers several flags that can be passed to further isolate the container from the local host. These include
 
 ```
 --no-home
@@ -184,7 +184,7 @@ Lets expand on the above command:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.5.sif `
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.5.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case `--help`
 
@@ -263,7 +263,7 @@ Once again lets expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.5.sif `
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.5.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the possitional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 1`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 

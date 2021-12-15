@@ -7,7 +7,7 @@ description: An example of running LCModel on a test data set
 ### 0. Make sure you have installed LCModel
 
 {% hint style="warning" %}
-**Every user must install LCModel **for their own user. If you haven't, please refer to the [Installation Guide](lcmodel.md#installing-lcmodel-in-oscar)&#x20;
+**Every user must install LCModel** for their own user. If you haven't, please refer to the [Installation Guide](lcmodel.md#installing-lcmodel-in-oscar)&#x20;
 {% endhint %}
 
 ### 1. Start a VNC session
