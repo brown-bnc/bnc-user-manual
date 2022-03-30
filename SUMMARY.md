@@ -7,6 +7,7 @@
 
 * [Accessing XNAT](xnat/accessing-xnat.md)
 * [Project and Protocol Naming](xnat/managing-your-projects.md)
+* [Project Creation in XNAT](xnat/project-creation-in-xnat.md)
 * [BIDS Ready Protocols](xnat/bids-compliant-protocols.md)
 * [Uploading Data](xnat/uploading-data.md)
 
@@ -29,7 +30,7 @@
 
 * [Oscar SBATCH Scripts](xnat-to-bids-dive-in/oscar-sbatch-scripts.md)
 
-## BIDS and BIDS Containters <a href="bids" id="bids"></a>
+## BIDS and BIDS Containters <a href="#bids" id="bids"></a>
 
 * [Introduction to BIDS](bids/introduction-to-bids.md)
 * [fmriprep](bids/fmriprep.md)
@@ -41,7 +42,7 @@
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography:DSI Studio](analysis-pipelines/untitled.md)
 
-## LCModel <a href="software" id="software"></a>
+## LCModel <a href="#software" id="software"></a>
 
 * [Overview](software/overview.md)
 * [Installation](software/lcmodel.md)

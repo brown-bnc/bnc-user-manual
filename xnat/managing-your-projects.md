@@ -6,9 +6,9 @@ description: Naming your XNAT Project and your Protocol Tree
 
 When a session is collected at the scanner, the data will be sent to XNAT and placed in an XNAT Project that is accessible only to the associated researchers.&#x20;
 
-## Creating a new project in XNAT
-
-Typically, every protocol tree created at the scanner needs will be associated with only one XNAT project. Currently XNAT Projects can only be created by an BNC XNAT administrator. This behavior may change in the future as our process becomes more streamlined. However, you should familiarize yourself with XNAT naming conventions below
+{% hint style="warning" %}
+For XNAT to route data coming to from the scanner to the appropiate project, the XNAT Project ID and the Scanner Protocol tree need to be named consistetly
+{% endhint %}
 
 ### XNAT Project Title and ID
 
@@ -68,19 +68,3 @@ ASHENHAV_OA
 ```
 
 As you can see, the 13 character limits considerably the name that you can choose as an identifier.
-
-### Project Primary Investigator and Other Investigators
-
-Project PI and Other Investigators are used to keep a tab on who the project belongs to. While on the relay side we do not have any users, PI and project investigators on the relay are used to grant access to appropriate users on the server-side.&#x20;
-
-**Primary Investigator:** The PI should be the faculty who owns the data.
-
-**Other Investigators:** Anyone else who needs access to this project on the server. i.e. graduate students, postdocs
-
-#### Creating additional investigators
-
-Select `Create Investigator`
-
-![](<../.gitbook/assets/image (22).png>)
-
-Fill out the form to create a new investigator. Please note that Investigor's First Name and Last Name should match the appropriate user on the xnat server (`xnat.bnc.brown.edu`). To check the user details on server, log in as administrator on `xnat.bnc.brown.edu` and then go to `Administer -> users`.
