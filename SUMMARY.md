@@ -11,6 +11,7 @@
 * [Project Creation in XNAT](xnat/project-creation-in-xnat.md)
 * [BIDS Ready Protocols](xnat/bids-compliant-protocols.md)
 * [Uploading Data](xnat/uploading-data.md)
+* [Downloading Data](xnat/downloading-data.md)
 
 ## Demo Dataset
 

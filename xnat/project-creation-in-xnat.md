@@ -8,11 +8,11 @@ At the moment all projects **must be created in XNAT RELAY.** The XNAT's relay i
 
 In the top bar navigation select New, then Project&#x20;
 
-![](<../.gitbook/assets/image (19).png>)
+![](<../.gitbook/assets/image (19) (1).png>)
 
 ## 1. Fill Project Details
 
-![Form for filing New Project Details](<../.gitbook/assets/image (22) (1).png>)
+![Form for filing New Project Details](<../.gitbook/assets/image (22) (1) (1).png>)
 
 Please refer to the [prior section](managing-your-projects.md#xnat-project-title-and-id) to understand **Project Title, Running Title and Project ID**
 
@@ -32,7 +32,7 @@ Project PI and Other Investigators are used to keep record of who the project be
 
 Select `Create Investigator`
 
-![](<../.gitbook/assets/image (22) (1) (1).png>)
+![](<../.gitbook/assets/image (22) (1) (1) (1).png>)
 
 Fill out the form to create a new investigator.&#x20;
 
@@ -44,7 +44,7 @@ If the investigor's First Name and Last Name matches the appropriate user on the
 
 Typicaly most projects should be accessioble **only by study members,** therefore confirm that the accesibility for the project is set to **Private**
 
-![Project Accessibility Settings](<../.gitbook/assets/image (22).png>)
+![Project Accessibility Settings](<../.gitbook/assets/image (22) (1).png>)
 
 ## 3. Granting access to project owners
 
