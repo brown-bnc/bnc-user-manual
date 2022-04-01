@@ -1,8 +1,8 @@
 # Project Creation in XNAT
 
-Typically, every protocol tree created at the scanner needs will be associated with only one XNAT project. **Currently XNAT Projects can only be created by an BNC XNAT administrator.** This behavior may change in the future as our process becomes more streamlined. However, you should familiarize yourself with XNAT naming conventions below
+Typically, every protocol tree created at the scanner will be associated with only one XNAT project. **Currently XNAT Projects can only be created by an BNC XNAT administrator.**
 
-At the moment all projects **must be created in XNAT relay.** The XNAT's relay is only accessible by administrators and it has automated scripts that will automatically create matching projects in the public instance when a new project is created
+At the moment all projects **must be created in XNAT RELAY.** The XNAT's relay is only accessible by administrators and it **has automated scripts that will automatically create matching projects in the public instance when a new project is created**
 
 ## 0. Select New-> Project
 
@@ -12,7 +12,7 @@ In the top bar navigation select New, then Project&#x20;
 
 ## 1. Fill Project Details
 
-![Form for filing New Project Details](<../.gitbook/assets/image (22).png>)
+![Form for filing New Project Details](<../.gitbook/assets/image (22) (1).png>)
 
 Please refer to the [prior section](managing-your-projects.md#xnat-project-title-and-id) to understand **Project Title, Running Title and Project ID**
 
@@ -32,7 +32,7 @@ Project PI and Other Investigators are used to keep record of who the project be
 
 Select `Create Investigator`
 
-![](<../.gitbook/assets/image (22) (1).png>)
+![](<../.gitbook/assets/image (22) (1) (1).png>)
 
 Fill out the form to create a new investigator.&#x20;
 
@@ -40,4 +40,15 @@ Fill out the form to create a new investigator.&#x20;
 If the investigor's First Name and Last Name matches the appropriate user on the xnat server (`xnat.bnc.brown.edu`), then that user will have access to the project. To check the user details on server, log in as administrator on `xnat.bnc.brown.edu` and then go to `Administer -> users`.
 {% endhint %}
 
-&#x20;
+## 2. Project Access
+
+Typicaly most projects should be accessioble **only by study members,** therefore confirm that the accesibility for the project is set to **Private**
+
+![Project Accessibility Settings](<../.gitbook/assets/image (22).png>)
+
+## 3. Granting access to project owners
+
+If the project owner is an XNAT user at the time of project creation, and the Investigators were added correctly, this step should not be necessary. However, if you need to manually add users to a project, simply visit the Access Tab under the Project page and search for the user you wish to add.
+
+![Access tab, where project members can be added](<../.gitbook/assets/xnat1 (1).png>)
+
