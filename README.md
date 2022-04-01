@@ -1,6 +1,5 @@
 ---
 description: About the Behavioral Neuroimaging Core
-layout: landing
 ---
 
 # About
