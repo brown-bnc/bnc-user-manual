@@ -5,6 +5,7 @@
 
 ## XNAT
 
+* [Getting Started](xnat/getting-started.md)
 * [Accessing XNAT](xnat/accessing-xnat.md)
 * [Project and Protocol Naming](xnat/managing-your-projects.md)
 * [Project Creation in XNAT](xnat/project-creation-in-xnat.md)
