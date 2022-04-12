@@ -6,7 +6,7 @@ description: Running the BIDS validator in Oscar
 
 ### 0. Summary of commands
 
-```
+```bash
 interact -n 2 -t 01:00:00 -m 8g
 version=v1.8.0
 bids_root_dir=${HOME}/xnat-exports/bnc/study-demodat/bids
@@ -20,7 +20,7 @@ If you are not already inside an interactive session please start one. Here we s
 
 #### Login into oscar and start an interactive section by typing
 
-```
+```bash
 interact -n 2 -t 01:00:00 -m 8g
 ```
 
@@ -28,7 +28,7 @@ interact -n 2 -t 01:00:00 -m 8g
 
 #### Specify the version of validator to
 
-```
+```bash
 version=v1.8.0
 ```
 
@@ -36,13 +36,13 @@ version=v1.8.0
 
 Indicate the **bids directory.** This is where `dataset_description.json` file lives
 
-```
+```bash
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
 ```
 
 Path to Singularity Image for the bids-validator (maintained by bnc)
 
-```
+```bash
 simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
 ```
 
@@ -52,16 +52,7 @@ simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
 
 The following command runs the `bids-validator` executable (via singularity)  to test if a directory is BIDS compliant. The command tells singularity to launch `validator-${version}.sif` image and execute the `bids-validator` command. The bids validator expects the a directory as an input, which in this case corresponds to `${bids_directory}`. The `--bind ${bids_directory}:${bids_directory}:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat/bids` available read-only inside the container at the same path.&#x20;
 
-{% tabs %}
-{% tab title="Oscar" %}
-```
-singularity exec -B ${data_dir}:ro ${simg} \
-bids-validator ${bids_directory}
-```
-{% endtab %}
-{% endtabs %}
-
-```
+```bash
 singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
 ```
 
