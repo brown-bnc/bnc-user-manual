@@ -327,6 +327,73 @@ The command above is almost identical to the one executed earlier, the only new 
 INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
 ```
 
-### 5. Validate the BIDS output
+### 5. Checking XNAT2BIDS results
+
+While running `xnat2bids` singularity container in an interactive session it is important to keep the session alive throughout the run of the container. However, sometimes due to connection drops this might not always be possible. So here we provide a heuristic way of checking it `xnat2bids` ran successfully by checking the directory structure.&#x20;
+
+#### 1. Checking logs
+
+Upon successful completion of the `xnat2bids` pipeline, you should have 2 log files in your `${HOME}/xnat-exports/bnc/study-demodat/logs` directory - `export-<date>-<time>.log`
+
+and `heudicov-<date>-<time>.log`
+
+[Isabel Restrepo](https://app.gitbook.com/u/cQb9yYyO6WcCAjlFQBc2s4cqxqx1 "mention") can you write something about logs here.
+
+#### 2. Checking the file structure
+
+If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the date from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
+
+```
+module load tree/2.0.2
+tree -d ${HOME}/xnat-exports
+```
+
+Which should result in a structure similar to the output shown below:
+
+```
+xnat-exports/
+└── bnc
+    └── study-demodat
+        ├── bids
+        │   ├── sourcedata
+        │   │   └── sub-001
+        │   │       └── ses-01
+        │   │           ├── anat
+        │   │           ├── dwi
+        │   │           ├── fmap
+        │   │           └── func
+        │   └── sub-001
+        │       └── ses-01
+        │           ├── anat
+        │           ├── dwi
+        │           ├── fmap
+        │           └── func
+        ├── logs
+        └── xnat-export
+            └── sub-001
+                └── ses-01
+                    ├── anat-scout_acq-aascout
+                    ├── anat-scout_acq-aascoutMPRcor
+                    ├── anat-scout_acq-aascoutMPRsag
+                    ├── anat-scout_acq-aascoutMPRtra
+                    ├── anat-scout_acq-localizer
+                    ├── anat-T1w_acq-memprageRMS
+                    ├── dwi_acq-b1500_dir-ap
+                    ├── dwi_acq-b1500_dir-ap_SBRef
+                    ├── dwi_acq-b1500_dir-pa
+                    ├── dwi_acq-b1500_dir-pa_SBRef
+                    ├── fmap_acq-boldGRE
+                    ├── fmap_acq-boldSE_dir-ap
+                    ├── fmap_acq-boldSE_dir-pa
+                    ├── fmap_acq-diffSE_dir-ap
+                    ├── fmap_acq-diffSE_dir-pa
+                    ├── func-bold_task-checks_run-01
+                    ├── func-bold_task-checks_run-02
+                    ├── func-bold_task-motionloc
+                    ├── func-bold_task-resting
+                    └── func-bold_task-ssrt
+```
+
+### 6. Validate the BIDS output
 
 After successfully running `xnat2bids` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](bids-validation/)
