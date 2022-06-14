@@ -315,7 +315,7 @@ Done with Heudiconv BIDS Convesion.
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we envoke it as follows
 
 ```
-singularity exec --contain --bind ${bids_root_dir} ${simg} \
+singularity exec --contain --bind ${bids_root_dir},/tmp ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -s 6
