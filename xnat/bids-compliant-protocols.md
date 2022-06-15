@@ -8,14 +8,14 @@ description: How to name your protocols so they are easily converted to BIDS for
 
 We provide custom code ([xnat-tools package](https://github.com/brown-bnc/xnat-tools)) to export your XNAT imaging sessions to BIDS format. The process relies on naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide a short overview of BIDS in [this section](../bids/introduction-to-bids.md).
 
-When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type (i.e, antomical, functional, etc), task information, aquisition parameters, the run id, among others. The examples and diagram bellow shows the parts of the BIDS name that you **need to pay attention when naming you series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference.
+When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type (i.e, anatomical, functional, etc), task information, acquisition parameters, the run id, among others. The examples and diagram below show the parts of the BIDS name that you **need to pay attention when naming your series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference.
 
 ![Color coded examples of BIDS compliant protocols](../.gitbook/assets/bids-naming-3-.svg)
 
 ![Table how to build series at the scanner for BIDS compliance](../.gitbook/assets/bids-naming-2-.svg)
 
 {% hint style="info" %}
-To create the final name, the different parts shown abobe are concatenated using underscores (\_)
+To create the final name, the different parts shown above are concatenated using underscores (\_)
 {% endhint %}
 
 ## Additional Sample Protocols
@@ -46,11 +46,11 @@ All **scout** and **localizer** sequences need to have a `scout` label. For exam
 * `anat-scout_acq-localizer`
 * `anat-scout_acq-aascout`
 
-Scout series will remain in the `sourcedata` directory of your bids output, but will not be present in you `anat` folder.&#x20;
+Scout series will remain in the `sourcedata` directory of your bids output, but will not be present in your `anat` folder.&#x20;
 
 ### Incompatible symbols
 
-Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID. The only execption is the use of `run+`
+Do not use "+", "\_", "-" or "." within SESID, TASKID, ACQLABEL, RUNID. The only exception is the use of `run+`
 
 ### Naming Runs
 
@@ -58,7 +58,7 @@ To indicate **runs** in your protocol, without explicitly indicating the run num
 
 ### Cancelled Runs
 
-If run was canceled you will need to skip that series when callaing the BIDS exporting code `xnat2bids.` We encourage adding a note to that series in XNAT to indicate that the run was cancelled. This will improve bookeeping and maintainability
+If run was canceled you will need to skip that series when calling the BIDS exporting code `xnat2bids.` We encourage adding a note to that series in XNAT to indicate that the run was cancelled. This will improve bookkeeping and maintainability.
 
 ### Functional
 
@@ -74,4 +74,4 @@ Currently the **fieldmaps** collected with our Siemens scanner use the "old way"
 
 ### Scanner derivatives
 
-Some sequences are derivatives of the scanner and are not yet handled by our `xnat2bids` software smoothly. We recommend, not exporting those sequences to BIDS at the moment.(This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details)
+Some sequences are derivatives of the scanner and are not yet handled by our `xnat2bids` software smoothly. We recommend not exporting those sequences to BIDS at the moment. (This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details)
