@@ -27,29 +27,29 @@ This section is still under development
 #### Scout
 
 * **Name at the scanner:** anat-scout\_acq-aascout
-* **Description:** This series makes a low resolution whole-head scan and compares the result to a brain atlas on the scanner. It generates new scout images where the orientation is determined with reference to skull landmarks and with reference to the built-in atlas. The resulting images can be used to increase consistancy of slice positionning between participants and across scan sessions. &#x20;
+* **Description:** This series makes a low resolution whole-head scan and compares the result to a brain atlas on the scanner. It generates new scout images where the orientation is determined with reference to skull landmarks and with reference to the built-in atlas. The resulting images can be used to increase consistency of slice positioning between participants and across scan sessions. &#x20;
 * **Scan time:** 1 minute
 
 #### **Multi-Echo MPRAGE**
 
 * **Name at the scanner:** anat-T1w\_acq-memprage
-* **Description:** This is a multi-echo T1 weighted (anatomical) structural series. For more information see; [A. J. W. van der Kouwe, T. Benner, D. H. Salat, B. Fischl, Brain morphometry with multi-echo MPRAGE, NeuroImage, 40, 559–569 (2008)](https://pubmed.ncbi.nlm.nih.gov/18242102/). We collect the individual echoes and the  RMS images calculated by combining the individual echos. Compared to a single-echo MPRAGE, the multi-echo MPRAGE provides enhanced tissue contrast and reduced geometric distortion.
+* **Description:** This is a multi-echo T1 weighted (anatomical) structural series. For more information see; [A. J. W. van der Kouwe, T. Benner, D. H. Salat, B. Fischl, Brain morphometry with multi-echo MPRAGE, NeuroImage, 40, 559–569 (2008)](https://pubmed.ncbi.nlm.nih.gov/18242102/). We collect the individual echoes and the RMS images are calculated by combining the individual echos. Compared to a single-echo MPRAGE, the multi-echo MPRAGE provides enhanced tissue contrast and reduced geometric distortion.
 * **Scan Time:** 6 minutes
 
 ### Field Maps
 
-Field maps are useful for correcting geometric distortions that result from inhomogeneities in the scanner environment. Different field maps can be used to correct different types of scans (i.e functional or diffusion). In this dataset, gradient-echo field maps were collected to correct for geometric distortion in the functional scans and spin-echo field maps were collected for use with the diffusion images.  In general, the geometry of the field maps (voxel dimensions and slice placement) should match those images that they will be used to correct.
+Field maps are useful for correcting geometric distortions that result from inhomogeneities in the scanner environment. Different field maps can be used to correct different types of scans (i.e functional or diffusion). In this dataset, gradient-echo field maps were collected to correct for geometric distortion in the functional scans and spin-echo field maps were collected for use with the diffusion images. In general, the geometry of the field maps (voxel dimensions and slice placement) should match those images that they will be used to correct.
 
 #### Gradient Echo Field Map
 
 * **Name at the scanner:** fmap\_acq-boldGRE
-* **Description:** This is the "standard" Siemens field map, with the same phase encoding direction as the EPI images. This method calculates a field map based on the difference in phase between two different echos in a double echo sequence. This scan produces 2 DICOM series. The first series contains two sets of magnitude images, one for each echo time.  The second series is a phase difference image, which is a subtraction of the two individual echos.&#x20;
+* **Description:** This is the "standard" Siemens field map, with the same phase encoding direction as the EPI images. This method calculates a field map based on the difference in phase between two different echos in a double echo sequence. This scan produces 2 DICOM series. The first series contains two sets of magnitude images, one for each echo time. The second series is a phase difference image, which is a subtraction of the two individual echos.&#x20;
 * **Scanner Note:** On the scanner, it is necessary that the "difference image" checkbox is enabled in the contrast tab to get the difference image**.**&#x20;
 * **Scan Time:** 2 minutes
 
 #### Spin Echo Field Map
 
-This method calculates a field map based on the differences between two acquisitions with opposite phase encoding directions. You collect two series, each of which contains a single magnitude volume with opposite phase encoding directions.  The actual field map is derived from the differences between these two volumes described below.
+This method calculates a field map based on the differences between two acquisitions with opposite phase encoding directions. You collect two series, each of which contains a single magnitude volume with opposite phase encoding directions. The actual field map is derived from the differences between these two volumes described below.
 
 #### Anterior-Posterior (AP)
 
