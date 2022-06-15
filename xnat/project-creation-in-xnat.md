@@ -37,12 +37,12 @@ Select `Create Investigator`
 Fill out the form to create a new investigator.&#x20;
 
 {% hint style="warning" %}
-If the investigor's First Name and Last Name matches the appropriate user on the xnat server (`xnat.bnc.brown.edu`), then that user will have access to the project. To check the user details on server, log in as administrator on `xnat.bnc.brown.edu` and then go to `Administer -> users`.
+If the investigator's First Name and Last Name matches the appropriate user on the xnat server (`xnat.bnc.brown.edu`), then that user will have access to the project. To check the user details on server, log in as administrator on `xnat.bnc.brown.edu` and then go to `Administer -> users`.
 {% endhint %}
 
 ## 2. Project Access
 
-Typicaly most projects should be accessioble **only by study members,** therefore confirm that the accesibility for the project is set to **Private**
+Typically most projects should be accessible **only by study members,** therefore confirm that the accessibility for the project is set to **Private**
 
 ![Project Accessibility Settings](<../.gitbook/assets/image (22) (1).png>)
 
