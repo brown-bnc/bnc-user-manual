@@ -8,7 +8,7 @@ If this is your first time using XNAT, here is a short outline of things you'll 
 
 
 
-### 1. Create an account using you Brown Credentials
+### 1. Create an account using your Brown Credentials
 
 {% content-ref url="accessing-xnat.md" %}
 [accessing-xnat.md](accessing-xnat.md)
@@ -44,6 +44,6 @@ At the scanner, send your collected data to XNATRELAY. This is an intermediate d
 [uploading-data.md](uploading-data.md)
 {% endcontent-ref %}
 
-### 4. Check that ALL your data has been receive and it is complete
+### 4. Check that ALL your data has been received and it is complete
 
-Try your best to check the integrity of your data within a day. While it may take a couple of hours, it should not take longer than half a day. If you have no received your data, [contact us](../#contact-us)!
+Try your best to check the integrity of your data within a day. While it may take a couple of hours, it should not take longer than half a day. If you have not received your data, [contact us](../#contact-us)!
