@@ -13,7 +13,7 @@ You can log in using your ✨ **Brown credentials ✨ and the LDAP Credential op
 {% tabs %}
 {% tab title="Step 1" %}
 1. Select Brown LDAP
-2. Use Brown (shorname) credentials
+2. Use Brown (shortname) credentials
 3. **Do not click the Register button.** Simply Login
 
 ![XNAT Login Page. Login using Brown LDAP and Credentials. Do not click Register button](<../.gitbook/assets/xnat-ldap-login (2).png>)
