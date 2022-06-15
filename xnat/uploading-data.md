@@ -10,10 +10,10 @@ Details of the console settings coming soon
 
 ### Automated routing from scanner to XNAT
 
-If your XNAT project has been created and named to match your protocol tree, XNAT will attempt to place the data coming from the scanner in the appropiate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description with the Project ID
+If your XNAT project has been created and named to match your protocol tree, XNAT will attempt to place the data coming from the scanner in the appropriate project using information from the DICOM metadata. At Brown we match the conditions described in [XNAT's Third Pass](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/how-xnat-scans-dicom-to-map-to-project-subject-session) which relies on matching the Study Description with the Project ID
 
 {% hint style="danger" %}
-Tipically there is no action required at the scanner since the protocol tree is concatenated to match the study description. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
+Typically there is no action required at the scanner since the protocol tree is concatenated to match the study description. That is **Study Description = XNAT's Project ID.** **Spaces are automatically replaced with underscore upon arrival in XNAT**. See image indicating where the Study Description field is in the scanner console
 {% endhint %}
 
 {% hint style="info" %}
@@ -39,8 +39,8 @@ This is the preferred method to transfer large amounts of data to the XNAT serve
 Before uploading data to a project the following pre-requisites need to be completed
 
 1. The project **must** exist in XNAT
-2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University unde the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth\_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media\&token=e49aa5ef-7a68-418d-8955-6198a510a857)
-3. You to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access&#x20;
+2. You must have signed in into Globus at least once using your Brown's Credentials. To do so, make sure to find Brown University under the list of organizations.![](https://gblobscdn.gitbook.com/assets%2F-LtBPWc3lCoK-ZiQIe15%2F-M54q3ji-pth\_NceEVA5%2F-M54vJLchHgpZLC2CMbL%2Fimage.png?alt=media\&token=e49aa5ef-7a68-418d-8955-6198a510a857)
+3. You need to fill in the following [form](https://forms.gle/XhA9c7UssSzBB1NE7) to request data-upload access&#x20;
 4. After receiving an email confirmation from XNAT maintainers, you will be able to transfer data using globus.
 
 
@@ -48,16 +48,16 @@ Before uploading data to a project the following pre-requisites need to be compl
 #### Transfer
 
 {% tabs %}
-{% tab title="1. Have you enpoints ready" %}
-XNAT's administrator should have shared a new folder in Globus named with you XNAT's Project ID.
+{% tab title="1. Have your endpoints ready" %}
+XNAT's administrator should have shared a new folder in Globus named with your XNAT's Project ID.
 
-You should have the endpoint where you data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your endpoints for files.brown.edu and Oscar's GPFS.&#x20;
+You should have the endpoint where your data is currently hosted already set up. Please see [Brown's Documentation](https://docs.brown.edu/globus) for setting up your endpoints for files.brown.edu and Oscar's GPFS.&#x20;
 {% endtab %}
 
 {% tab title="2. Organizing the Data" %}
-Once you have permissions to the projects folder please orgineze data as follows
+Once you have permissions to the projects folder please organize data as follows
 
-PROJECT\_ID(ROOT)/participant-id/SESSION. For instance to upload data for participant's 123 in the SANES SADLUM Data, the organization looks as follows
+PROJECT\_ID(ROOT)/participant-id/SESSION. For instance to upload data for participant 123 in the SANES SADLUM Data, the organization looks as follows
 
 ![](<../.gitbook/assets/image (4).png>)
 {% endtab %}
