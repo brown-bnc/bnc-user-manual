@@ -32,7 +32,7 @@
 
 * [Oscar SBATCH Scripts](xnat-to-bids-dive-in/oscar-sbatch-scripts.md)
 
-## BIDS and BIDS Containters <a href="#bids" id="bids"></a>
+## BIDS and BIDS Containers <a href="#bids" id="bids"></a>
 
 * [Introduction to BIDS](bids/introduction-to-bids.md)
 * [fmriprep](bids/fmriprep.md)
