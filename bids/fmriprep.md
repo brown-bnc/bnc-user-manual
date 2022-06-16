@@ -44,18 +44,18 @@ singularity run --cleanenv                                         \
 
 ### ✋Understanding the batch script
 
-* The first path ot the script configures the variables (e.g., number of cores, memory, etc) for your JOB
-* The second part invokes `fmirprep` singularity image. Keep in mind the following considerations:
+* The first part of the script configures the variables (e.g., number of cores, memory, etc) for your JOB
+* The second part invokes `fmriprep` singularity image. Keep in mind the following considerations:
   * Singularity containers run as your user, and therefore should have the same read/write permissions as your local user in the cluster
   * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to  `/gpfs/data/<group>` in that case we must **bind `/gpfs/data/<group>`**
-  * You must specify the location **inside the container** of the Free Surfer license.
+  * You must specify the location **inside the container** of the FreeSurfer license.
 
 ✋ **Troubleshooting:**
 
 `fmriprep` may fail for many reasons. Here are few tips:
 
-* Freesurfer is often difficult to get to completion, if it helps troubleshooting, you can turn FreeSurfer reconstruction foo by adding the flag `--fs-no-reconall`
-* Familiarize yourself with the inputs and don't hesitate to ask the developers for questions. Good places to look/ask for help are their GitHub issues and the [Neurostars forum](https://neurostars.org)
+* Freesurfer is often difficult to get to completion, if it helps troubleshooting, you can turn FreeSurfer reconstruction off by adding the flag `--fs-no-reconall`
+* Familiarize yourself with the inputs and don't hesitate to ask the developers questions. Good places to look/ask for help are their GitHub issues and the [Neurostars forum](https://neurostars.org)
 
 ## 2. Run the batch script
 
@@ -85,7 +85,7 @@ version=1.5.8
 singularity build /my_images/fmriprep-${version}.sif docker://poldracklab/fmriprep:${version}
 ```
 
-Replace `version` in the command above with the desired docker tag. You can find, the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
+Replace `version` in the command above with the desired docker tag. You can find the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
 
 {% hint style="info" %}
 &#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `1.5.8` instead of `latest`&#x20;
