@@ -13,7 +13,7 @@ Before exporting, you'll need to have available, XNAT authentication and session
 
 ### 1. Familiarize with BNC's Demo Dataset
 
-We will use the [BNC's Demo Dataset](getting-started.md#1.-xnat-login-information) in the follwing walk-through examples. It is helpfult to be familiar with the general description and protocol details of the data
+We will use the [BNC's Demo Dataset](getting-started.md#1.-xnat-login-information) in the following walk-through examples. It is helpful to be familiar with the general description and protocol details of the data
 
 ### 1. XNAT Login Information
 
