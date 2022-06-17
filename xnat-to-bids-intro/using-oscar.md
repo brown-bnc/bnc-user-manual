@@ -10,13 +10,13 @@ You can login to Oscar via different methods. You can [ssh using your terminal](
 If you connect to Oscar via SSH, you arrive at a login node, we will need to wrap our commands in a batch file or use an interactive session. You can learn more about running jobs in the Oscar [docs](https://docs.ccv.brown.edu/oscar/submitting-jobs/shared-machine). Please **remember to not run processing on the login nodes**
 {% endhint %}
 
-## Installating XNAT2BIDS
+## Installing XNAT2BIDS
 
-**🎉 Skip -** You will not need to install any software. We keep a Singularity image of the most recent tagged release of [`xnat-tools`](https://github.com/brown-bnc/xnat-tools)in Oscar. If this is the first time that you here the word `Singularity image` don't worry, we will expand more on that soon.
+**🎉 Skip -** You will not need to install any software. We keep a Singularity image of the most recent tagged release of [`xnat-tools`](https://github.com/brown-bnc/xnat-tools)in Oscar. If this is the first time that you hear the word `Singularity image` don't worry, we will expand more on that soon.
 
 ## Running XNAT2BIDS
 
-The xnat-tools package provides a convenience `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the the full list of inputs and defaults. We will demostrate how to call that script within Oscar using the BNC's demo dataset.&#x20;
+The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.&#x20;
 
 ### 0. Summary of commands
 
@@ -29,7 +29,7 @@ bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
-XNAT_SESSION="XNAT_E00008" 
+XNAT_SESSION="XNAT_E00080" 
 singularity exec --contain --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
@@ -44,7 +44,7 @@ Here we start the software as an **interactive** job of one hour.
 
 #### 1.1 VNC&#x20;
 
-Connecting via VNC is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you connected via the VNC client, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in,  you are already inside an interactive session.&#x20;
+Connecting via VNC is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you connect via the VNC client, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in, you are already inside an interactive session.&#x20;
 
 ![Selecting resources for VNC session](<../.gitbook/assets/image (15).png>)
 
@@ -68,10 +68,10 @@ interact -n 2 -t 01:00:00 -m 8g
 
 ### 2. Define variables
 
-We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneustly and without constant interaction.&#x20;
+We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
 
 {% hint style="info" %}
-When defining shell Variables, make sure to not have any spaces in the variable name, the assigend value or in  between the equal sign
+When defining shell Variables, make sure to not have any spaces in the variable name, the assigned value or in between the equal sign
 
 The variable will only be defined during the current shell session. If you close your terminal or interactive session, the variables will need to be redefined
 {% endhint %}
@@ -82,7 +82,7 @@ If you want to copy-paste from this docs to VNC, click on the Copy to Clipboard 
 
 #### 2.1 Define the version of `xnat-tools`
 
-We recommend using the latest available version. You can get a list of the relased versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely teh latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
+We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
 version=v1.0.6
@@ -92,10 +92,10 @@ version=v1.0.6
 
 **BIDS Root directory**
 
-This is the directory where data will be written to. If the directory does ot exist then it needs to be created.&#x20;
+This is the directory where data will be written. If the directory does not exist then it needs to be created.&#x20;
 
 {% hint style="info" %}
-For this sample walkthrough, you can use the path exactly as shown below. The `${USER}` variable is a systemwide variable and it is automatically interpreted as your OSCAR user. However, onece you are using your own data, you should export to directories in your PI's data folder, which typically follows the pattern `/gpfs/data/<PI oscar user>`
+For this sample walkthrough, you can use the path exactly as shown below. The `${USER}` variable is a systemwide variable and it is automatically interpreted as your OSCAR user. However, once you are using your own data, you should export to directories in your PI's data folder, which typically follows the pattern `/gpfs/data/<PI oscar user>`
 {% endhint %}
 
 ```
@@ -113,7 +113,7 @@ simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 #### XNAT USER and SESSION&#x20;
 
-Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](getting-started.md#requirements). In this example we use leverage the `$USER` variable to sert your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 001 of the demo dataset
+Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 001 of the demo dataset
 
 ```
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
@@ -122,9 +122,9 @@ XNAT_SESSION="XNAT24_E00002" #ACCESSION of 001 participant in sample data
 
 ### 3. Understanding Singularity Containers&#x20;
 
-In the following section we will demostrate how to run our software. Instead of directly installing the Python package `xnat-tools` we are going to run it from inside a **container**, which we have been refering to as "the singularity image/container". If you are new to containers, in a nutshell, a container allows for packaging all OS and package dependencies together so it can run in any computer. Docker containers have become very popular, you can learn a bit more about them [here](https://www.docker.com/resources/what-container). Singularity is a type of container that has specialized on running on shared HPC clusters. You can learn little more about Singularity [here](https://singularity.hpcng.org/user-docs/master/introduction.html#why-use-singularity). We referred to docker conatiners and singularity containers interchangably, as they can easily be converted from one fromat to another.
+In the following section we will demonstrate how to run our software. Instead of directly installing the Python package `xnat-tools` we are going to run it from inside a **container**, which we have been referring to as "the singularity image/container". If you are new to containers, in a nutshell, a container allows for packaging all OS and package dependencies together so it can run in any computer. Docker containers have become very popular, you can learn a bit more about them [here](https://www.docker.com/resources/what-container). Singularity is a type of container that has specialized on running on shared HPC clusters. You can learn little more about Singularity [here](https://singularity.hpcng.org/user-docs/master/introduction.html#why-use-singularity). We referred to docker containers and singularity containers interchangeably, as they can easily be converted from one format to another.
 
-In the specific case of `xnat-tools` , the wrapping container has `Python` , `dcm2niix` and `heudiconv` installed which are all neededby our software. The [Dockerfile](https://github.com/brown-bnc/xnat-tools/blob/master/Dockerfile) for `xnat-tools` provide some insight into how containers are built.
+In the specific case of `xnat-tools` , the wrapping container has `Python` , `dcm2niix` and `heudiconv` installed which are all needed by our software. The [Dockerfile](https://github.com/brown-bnc/xnat-tools/blob/master/Dockerfile) for `xnat-tools` provides some insight into how containers are built.
 
 **Understanding the file system of a container**
 
@@ -136,7 +136,7 @@ Because a container does not have the same directory structure as the host, we h
 
 **Sharing paths between a container and the host computer (OSCAR)**
 
-If we want a directory/file that exists in OSCAR to be availabe inside our container, we need to tell Singularity that. We do so, by **binding a volume. This achieved by passing the flag `--bind <oscar_path>:<container_path>`.** If we want the path inside the container to be exactly as the path in OSCAR, we can ommit the destination path, that is `--bind <oscar_path>`.
+If we want a directory/file that exists in OSCAR to be available inside our container, we need to tell Singularity that. We do so, by **binding a volume. This achieved by passing the flag `--bind <oscar_path>:<container_path>`.** If we want the path inside the container to be exactly as the path in OSCAR, we can omit the destination path, that is `--bind <oscar_path>`.
 
 {% hint style="info" %}
 The `--bind` flag can also be passed as `-B`
@@ -157,7 +157,7 @@ While generally speaking, a container is mostly isolated from the host, there ar
  $PWD. 
 ```
 
-**(Pro-Tip):** Generally speaking, the default behavior of Signularity works great, sometimes however, some of the configurations included in your `$HOME` or environment variables set in you `$HOME/.bashrc` may create conflicts. Singularity offers several flags that can be passed to further isolate the container from the local host. These include
+**(Pro-Tip):** Generally speaking, the default behavior of Singularity works great. Sometimes however, some of the configurations included in your `$HOME` or environment variables set in your `$HOME/.bashrc` may create conflicts. Singularity offers several flags that can be passed to further isolate the container from the local host. These include
 
 ```
 --no-home
@@ -166,7 +166,7 @@ While generally speaking, a container is mostly isolated from the host, there ar
 --no-mount
 ```
 
-If you see such flags in our examples and want to learn more about them visit [this docs](https://singularity.hpcng.org/user-docs/master/bind\_paths\_and\_mounts.html)
+If you see such flags in our examples and want to learn more about them visit [this doc](https://singularity.hpcng.org/user-docs/master/bind\_paths\_and\_mounts.html)
 
 ### 4. Running the executable
 
@@ -178,7 +178,7 @@ Let's start by making sure that we can successfully run our `xnat2bids` executab
 singularity exec ${simg} xnat2bids --help
 ```
 
-Lets expand on the above command:
+Let's expand on the above command:
 
 `singularity`: invokes singularity
 
@@ -257,7 +257,7 @@ singularity exec --contain --bind ${bids_root_dir} ${simg} \
     -i 1
 ```
 
-Once again lets expand on the command above:
+Once again, let's expand on the command above:
 
 `singularity`: invokes singularity
 
@@ -265,11 +265,11 @@ Once again lets expand on the command above:
 
 `${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.5.sif`&#x20;
 
-`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the possitional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 1`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
+`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 1`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
 After running the command, you'll be asked to interactively type your Brown/XNAT password.
 
-A successful run will print out the following output
+A successful run will print out the following output:
 
 ```
 ------------------------------------------------
@@ -312,7 +312,7 @@ Done with Heudiconv BIDS Convesion.
 
 #### Running XNAT2BIDS (full dataset)
 
-After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we envoke it as follows
+After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
 
 ```
 singularity exec --contain --bind ${bids_root_dir},/tmp ${simg} \
@@ -321,7 +321,7 @@ singularity exec --contain --bind ${bids_root_dir},/tmp ${simg} \
     -s 6
 ```
 
-The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, excepts series 6. Series 6 corresponds to a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, the last line of your log, should be
+The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, the last line of your log, should be
 
 ```
 INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
@@ -329,7 +329,7 @@ INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exp
 
 ### 5. Checking XNAT2BIDS results
 
-While running `xnat2bids` singularity container in an interactive session it is important to keep the session alive throughout the run of the container. However, sometimes due to connection drops this might not always be possible. So here we provide a heuristic way of checking it `xnat2bids` ran successfully by checking the directory structure.&#x20;
+While running `xnat2bids` singularity container in an interactive session it is important to keep the session alive throughout the run of the container. However, sometimes due to connection drops this might not always be possible. So here we provide a heuristic way of checking if `xnat2bids` ran successfully by checking the directory structure.&#x20;
 
 #### 1. Checking logs
 
@@ -341,7 +341,7 @@ and `heudicov-<date>-<time>.log`
 
 #### 2. Checking the file structure
 
-If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the date from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
+If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the data from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
 
 ```
 module load tree/2.0.2
