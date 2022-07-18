@@ -32,7 +32,7 @@ singularity run --cleanenv                                         \
   --bind /gpfs/scratch/${USER}:/scratch                            \
   --bind /gpfs/data/bnc/licenses:/licenses                         \
   /gpfs/data/bnc/simgs/fmriprep/fmriprep-${fmriprep_version}.sif   \
-  /data/bids /data/bids/derivatives/fmriprep-${fmriprep-version}   \
+  /data/bids /data/bids/derivatives/fmriprep-${fmriprep_version}   \
   participant --participant-label ${participant_label}             \
   --fs-license-file /licenses/freesurfer-license.txt               \
   -w /scratch/fmriprep                                             \
