@@ -30,7 +30,7 @@ mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
 XNAT_SESSION="XNAT_E00080" 
-singularity exec --contain --bind ${bids_root_dir} ${simg} \
+singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -i 1
@@ -251,7 +251,7 @@ Options:
 The following command will run the executable `xnat2bids` (via singularity) command to extract DICOMs from XNAT and export to BIDS.&#x20;
 
 ```
-singularity exec --contain --bind ${bids_root_dir} ${simg} \
+singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -i 1
@@ -315,7 +315,7 @@ Done with Heudiconv BIDS Convesion.
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
 
 ```
-singularity exec --contain --bind ${bids_root_dir},/tmp ${simg} \
+singularity exec --no-home --bind ${bids_root_dir},/tmp ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -s 6
