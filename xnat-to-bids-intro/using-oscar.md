@@ -24,7 +24,7 @@ Before getting started, we have grouped all the commands executed in this page f
 
 ```
 interact -n 2 -t 01:00:00 -m 8g
-version=v1.0.6
+version=v1.0.7
 bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
@@ -77,7 +77,7 @@ The variable will only be defined during the current shell session. If you close
 {% endhint %}
 
 {% hint style="info" %}
-If you want to copy-paste from this docs to VNC, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal in the VNC you will need to use the right click of your mouse
+If you want to copy-paste from these docs to VNC, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal in the VNC you will need to use the right click of your mouse
 {% endhint %}
 
 #### 2.1 Define the version of `xnat-tools`
@@ -85,7 +85,7 @@ If you want to copy-paste from this docs to VNC, click on the Copy to Clipboard 
 We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.0.6
+version=v1.0.7
 ```
 
 #### &#x20;2.2 Set up paths
