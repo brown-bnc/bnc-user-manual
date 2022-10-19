@@ -24,7 +24,7 @@ If no Project was identified, the DICOM files will be placed in the “Unidentif
 We assume that the metadata for the Patient ID and the Patient Name is correctly inferred.
 {% endhint %}
 
-![Study Description Field in the Console must match XNAT's project ID](../.gitbook/assets/img\_3251.jpeg)
+![Study Description Field in the Console must match XNAT's project ID](../.gitbook/assets/IMG\_3251.jpeg)
 
 
 
@@ -59,7 +59,7 @@ Once you have permissions to the projects folder please organize data as follows
 
 PROJECT\_ID(ROOT)/participant-id/SESSION. For instance to upload data for participant 123 in the SANES SADLUM Data, the organization looks as follows
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (29).png>)
 {% endtab %}
 
 {% tab title="3. Upload" %}

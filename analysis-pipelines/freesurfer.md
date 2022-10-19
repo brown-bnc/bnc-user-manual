@@ -6,7 +6,7 @@ description: >-
 
 # Freesurfer
 
-It is developed by the [Laboratory for Computational Neuroimaging](https://www.martinos.org/lab/lcn) at the [Martinos Center for Biomedical Imaging](https://www.nmr.mgh.harvard.edu).
+It is developed by the [Laboratory for Computational Neuroimaging](https://www.martinos.org/lab/lcn) at the [Martinos Center for Biomedical Imaging](https://www.nmr.mgh.harvard.edu/).
 
 FreeSurfer provides full processing streams for structural and functional MRI and includes tools for linear and nonlinear registration, cortical and subcortical segmentation, cortical surface reconstruction, statistical analysis of group morphometry, diffusion MRI, PET analysis, and _much more_. It is also the structural MRI analysis software of choice for the [Human Connectome Project](http://www.humanconnectomeproject.org/about).
 
@@ -23,7 +23,7 @@ This processing takes 6-8 hours to run.
 
 These are the output files you will see:
 
-![](../.gitbook/assets/screen-shot-2020-10-22-at-8.23.29-am.png)
+![](<../.gitbook/assets/Screen Shot 2020-10-22 at 8.23.29 AM.png>)
 
 There is wealth of information produced here. For connectivity analysis the output in the mri folder contains the structural segmentation.
 
@@ -46,7 +46,7 @@ freeview
 
 
 
-![](../.gitbook/assets/screen-shot-2020-10-22-at-8.35.03-am.png)
+![](<../.gitbook/assets/Screen Shot 2020-10-22 at 8.35.03 AM.png>)
 
 \>File
 
@@ -56,7 +56,7 @@ load "orig' >grayscale
 
 then load aparc.a2009s+aseg
 
-![](../.gitbook/assets/screen-shot-2020-10-22-at-9.16.35-am.png)
+![](<../.gitbook/assets/Screen Shot 2020-10-22 at 9.16.35 AM.png>)
 
 
 

@@ -28,7 +28,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 #### 2.1 Navigate to project of interest
 
-![](../.gitbook/assets/demodat-landing.png)
+![](<../.gitbook/assets/demodat-landing (1).png>)
 
 #### 2.2 Navigate to subject of interest
 
@@ -36,7 +36,7 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 #### 2.3 Navigate to MR Session&#x20;
 
-![MR Sessions associated with a participant](<../.gitbook/assets/mr-session (1).png>)
+![MR Sessions associated with a participant](../.gitbook/assets/mr-session.png)
 
 #### 2.4. Find Accession \#
 

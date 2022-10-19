@@ -16,7 +16,7 @@ BIDS principles can be summarized as:
 
 ### Directory Structure
 
-Overall directories hierarchy is as foolows (\[] indicates optional fields):
+Overall directories hierarchy is as follows (\[] indicates optional fields):
 
 * sub-\<participant\_label>\[/ses-\<session\_label>]/\<data\_type>/&#x20;
 * \[code/]&#x20;
@@ -51,7 +51,7 @@ Additional files and folders containing raw data may be added as needed for spec
 
 #### BIDS Entity Table
 
-The names of the file depends on modality, aquisition parameters and other considerations. The[ BIDS Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) table compiles the entities (key-value pairs) described throughout the specification, and establishes a common order within a filename. For example, if a file has an acquisition and reconstruction label, the acquisition entity must precede the reconstruction entity.&#x20;
+The name of the file depends on modality, acquisition parameters and other considerations. The[ BIDS Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) table compiles the entities (key-value pairs) described throughout the specification, and establishes a common order within a filename. For example, if a file has an acquisition and reconstruction label, the acquisition entity must precede the reconstruction entity.&#x20;
 
 #### Format considerations
 

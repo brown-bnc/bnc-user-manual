@@ -19,7 +19,7 @@ To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.cc
 * Inside your VNC session, open a **Terminal** window.
 * Navigate to LCModel's **hidden** directory `cd ~/.lcmodel`
 
-![Sample Terminal Window inside Oscar's VNC ](<../.gitbook/assets/image (10).png>)
+![Sample Terminal Window inside Oscar's VNC ](<../.gitbook/assets/image (27).png>)
 
 ### 3. Launch lcmgui
 
@@ -30,11 +30,11 @@ To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.cc
 
 * Select Siemens at the data type prompt
 
-![Sample Data Type Window](<../.gitbook/assets/image (14).png>)
+![Sample Data Type Window](<../.gitbook/assets/image (5).png>)
 
 * Search for the share data: `/gpfs/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
-![Sample Data Browser Window](<../.gitbook/assets/image (11).png>)
+![Sample Data Browser Window](../.gitbook/assets/image.png)
 
 ### 5. Select Basis
 
@@ -42,7 +42,7 @@ During installation, the basis-set was install under the LCModels' hidden direct
 
 * Change the basis file to: `$HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis`
 
-![Sample Control Parameters Window](<../.gitbook/assets/image (13).png>)
+![Sample Control Parameters Window](<../.gitbook/assets/image (25).png>)
 
 ### 6. Add License Key to Control Parameters
 
@@ -50,7 +50,7 @@ You will need to add a key to the Control Parameters. We do so as follows:
 
 #### a. Open Advanced Setting Dialog
 
-![](../.gitbook/assets/untitled.png)
+![](../.gitbook/assets/Untitled.png)
 
 #### b. Select View/Edit Control Parameters.&#x20;
 
@@ -70,6 +70,6 @@ LCModel will ask you if you want to save the new parameters to a new file. You c
 
 After pressing **Run LCModel**, a two page PDF will appear, which looks as follows
 
-![LCModel Result PDF - Page 1](<../.gitbook/assets/image (12).png>)
+![LCModel Result PDF - Page 1](<../.gitbook/assets/image (9).png>)
 
-![LCModel Result PDF - Page 2](<../.gitbook/assets/image (9).png>)
+![LCModel Result PDF - Page 2](<../.gitbook/assets/image (3).png>)

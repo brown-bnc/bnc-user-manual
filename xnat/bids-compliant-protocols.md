@@ -10,9 +10,9 @@ We provide custom code ([xnat-tools package](https://github.com/brown-bnc/xnat-t
 
 When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type (i.e, anatomical, functional, etc), task information, acquisition parameters, the run id, among others. The examples and diagram below show the parts of the BIDS name that you **need to pay attention when naming your series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference.
 
-![Color coded examples of BIDS compliant protocols](../.gitbook/assets/bids-naming-3-.svg)
+![Color coded examples of BIDS compliant protocols](<../.gitbook/assets/BIDS Naming (3).svg>)
 
-![Table how to build series at the scanner for BIDS compliance](../.gitbook/assets/bids-naming-2-.svg)
+![Table how to build series at the scanner for BIDS compliance](<../.gitbook/assets/BIDS Naming (2).svg>)
 
 {% hint style="info" %}
 To create the final name, the different parts shown above are concatenated using underscores (\_)

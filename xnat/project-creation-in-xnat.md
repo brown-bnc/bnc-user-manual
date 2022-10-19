@@ -8,11 +8,11 @@ At the moment all projects **must be created in XNAT RELAY.** The XNAT's relay i
 
 In the top bar navigation select New, then Project&#x20;
 
-![](<../.gitbook/assets/image (19) (1).png>)
+![](<../.gitbook/assets/image (1).png>)
 
 ## 1. Fill Project Details
 
-![Form for filing New Project Details](<../.gitbook/assets/image (22) (1) (1).png>)
+![Form for filing New Project Details](<../.gitbook/assets/image (4).png>)
 
 Please refer to the [prior section](managing-your-projects.md#xnat-project-title-and-id) to understand **Project Title, Running Title and Project ID**
 
@@ -32,7 +32,7 @@ Project PI and Other Investigators are used to keep record of who the project be
 
 Select `Create Investigator`
 
-![](<../.gitbook/assets/image (22) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (6).png>)
 
 Fill out the form to create a new investigator.&#x20;
 
@@ -44,11 +44,11 @@ If the investigator's First Name and Last Name matches the appropriate user on t
 
 Typically most projects should be accessible **only by study members,** therefore confirm that the accessibility for the project is set to **Private**
 
-![Project Accessibility Settings](<../.gitbook/assets/image (22) (1).png>)
+![Project Accessibility Settings](<../.gitbook/assets/image (21).png>)
 
 ## 3. Granting access to project owners
 
 If the project owner is an XNAT user at the time of project creation, and the Investigators were added correctly, this step should not be necessary. However, if you need to manually add users to a project, simply visit the Access Tab under the Project page and search for the user you wish to add.
 
-![Access tab, where project members can be added](<../.gitbook/assets/xnat1 (1).png>)
+![Access tab, where project members can be added](../.gitbook/assets/xnat1.png)
 

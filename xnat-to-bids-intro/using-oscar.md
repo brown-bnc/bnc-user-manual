@@ -46,11 +46,11 @@ Here we start the software as an **interactive** job of one hour.
 
 Connecting via VNC is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you connect via the VNC client, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in, you are already inside an interactive session.&#x20;
 
-![Selecting resources for VNC session](<../.gitbook/assets/image (15).png>)
+![Selecting resources for VNC session](<../.gitbook/assets/image (13).png>)
 
 At this point, simply open the terminal
 
-![VNC Desktop. Green arrow point to Terminal icon to be launched](<../.gitbook/assets/image (17).png>)
+![VNC Desktop. Green arrow point to Terminal icon to be launched](<../.gitbook/assets/image (26).png>)
 
 #### 1.2 SSH&#x20;
 
