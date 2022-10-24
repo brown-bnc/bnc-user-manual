@@ -50,3 +50,7 @@
 * [Installation](software/lcmodel.md)
 * [Example Run](software/example-run.md)
 * [Running LCModel on your own data](software/running-lcmodel-on-your-own-data.md)
+
+***
+
+* [MRF/BNC user community meetings](mrf-bnc-user-community-meetings.md)
