@@ -23,7 +23,7 @@ root_dir=/gpfs/data/bnc/mrestrep/bids-export
 participant_label=tcb2002
 investigator=shenhav
 study_label=201226
-fmriprep_version=20.0.1
+fmriprep_version=22.0.0
 #---------END OF VARIABLES------------------------
 
 
@@ -31,7 +31,7 @@ singularity run --cleanenv                                         \
   --bind ${root_dir}/${investigator}/study-${study_label}:/data    \
   --bind /gpfs/scratch/${USER}:/scratch                            \
   --bind /gpfs/data/bnc/licenses:/licenses                         \
-  /gpfs/data/bnc/simgs/fmriprep/fmriprep-${fmriprep_version}.sif   \
+  /gpfs/data/bnc/simgs/nipreps/fmriprep-${fmriprep_version}.sif   \
   /data/bids /data/bids/derivatives/fmriprep-${fmriprep_version}   \
   participant --participant-label ${participant_label}             \
   --fs-license-file /licenses/freesurfer-license.txt               \
@@ -76,17 +76,17 @@ Let us know if you are interested in this documentation!
 
 ## Getting a different version than what is installed in Oscar.
 
-If you wish to use version not available under `/gpfs/data/bnc/simg` you'll need to build the image. Singularity images can be large, therefore consider using a place with sufficient quota and changing the default location singularity uses to cache these files. Please see Oscar documentation.
+If you wish to use a version not available under `/gpfs/data/bnc/simg/nipreps`, you'll need to build the image. Singularity images can be large, therefore consider using a place with sufficient quota and changing the default location singularity uses to cache these files. Please see [Oscar documentation](https://docs.ccv.brown.edu/oscar/singularity-containers/building-images).
 
 To build the image, you can run:
 
 ```
-version=1.5.8
-singularity build /my_images/fmriprep-${version}.sif docker://poldracklab/fmriprep:${version}
+version=22.0.0
+singularity build fmriprep-${version}.sif docker://nipreps/fmriprep:${version}
 ```
 
 Replace `version` in the command above with the desired docker tag. You can find the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
 
 {% hint style="info" %}
-&#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `1.5.8` instead of `latest`&#x20;
+&#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `22.0.0` instead of `latest`&#x20;
 {% endhint %}
