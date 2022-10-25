@@ -42,25 +42,25 @@ singularity exec --no-home --bind ${bids_root_dir} ${simg} \
 
 Here we start the software as an **interactive** job of one hour.
 
-#### 1.1 VNC&#x20;
+#### 1.1 Desktop app on Open OnDemand&#x20;
 
-Connecting via VNC is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you connect via the VNC client, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in, you are already inside an interactive session.&#x20;
+Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in, you are already inside an interactive session.&#x20;
 
-![Selecting resources for VNC session](<../.gitbook/assets/image (13).png>)
+<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt=""><figcaption></figcaption></figure>
+
+Once your requested session is running, you can launch it by clicking the Launch Desktop button.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 4.00.30 PM.png" alt=""><figcaption></figcaption></figure>
 
 At this point, simply open the terminal
 
-![VNC Desktop. Green arrow point to Terminal icon to be launched](<../.gitbook/assets/image (26).png>)
+![OOD Desktop app. Teal arrow points to Terminal icon to be launched](<../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png>)
 
 #### 1.2 SSH&#x20;
 
-To connect via SSH, you type. If this is your first time connecting vis ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be requered to use DUO.
+To connect via SSH, you type `ssh username@ssh.ccv.brown.edu`. If this is your first time connecting via ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be required to use DUO.
 
-```
-ssh username@ssh.ccv.brown.edu
-```
-
-At this point you arrive at a login node. We will need to start an interactive section/job by typing
+At this point you arrive at a login node. **We will need to start an interactive session/job** by typing
 
 ```
 interact -n 2 -t 01:00:00 -m 8g
@@ -77,7 +77,7 @@ The variable will only be defined during the current shell session. If you close
 {% endhint %}
 
 {% hint style="info" %}
-If you want to copy-paste from these docs to VNC, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal in the VNC you will need to use the right click of your mouse
+If you want to copy-paste from these docs to the terminal in the OOD Desktop, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal you will need to use the right click of your mouse
 {% endhint %}
 
 #### 2.1 Define the version of `xnat-tools`
@@ -85,7 +85,7 @@ If you want to copy-paste from these docs to VNC, click on the Copy to Clipboard
 We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.0.7
+version=v1.0.8
 ```
 
 #### &#x20;2.2 Set up paths
