@@ -50,7 +50,7 @@ Connecting via the Desktop app on Open OnDemand is a friendly way to request an 
 
 Once your requested session is running, you can launch it by clicking the Launch Desktop button.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 4.00.30 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt=""><figcaption></figcaption></figure>
 
 At this point, simply open the terminal
 
