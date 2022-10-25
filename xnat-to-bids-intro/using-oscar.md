@@ -85,7 +85,7 @@ If you want to copy-paste from these docs to the terminal in the OOD Desktop, cl
 We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.0.8
+version=v1.0.7
 ```
 
 #### &#x20;2.2 Set up paths
