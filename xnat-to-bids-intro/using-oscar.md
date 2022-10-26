@@ -5,7 +5,7 @@
 You can connect to Oscar via different methods. You can [ssh using your terminal](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/ssh), you can [connect via the Desktop GUI or OSCAR shell access apps on Open OnDemand(OOD](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/open-ondemand/interactive-apps-on-ood)), or if your editor can connect to remote servers, [you can connect via your favorite IDE](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide) (VSCode is great!). If this is your first time using Oscar and you are new to unix command line, we recommend connecting via the Desktop GUI on Open OnDemand.
 
 {% hint style="info" %}
-If you connect to Oscar via SSH or the OOD shell access app, you arrive at a login node, we will need to wrap our commands in a batch file or use an interactive session. You can learn more about running jobs in the Oscar [docs](https://docs.ccv.brown.edu/oscar/submitting-jobs/shared-machine). Please **remember to not run processing on the login nodes**
+If you connect to Oscar via SSH or the OOD shell access app, you arrive at a login node, we will need to wrap our commands in a batch file or use an interactive session. You can learn more about running jobs in the Oscar [docs](https://docs.ccv.brown.edu/oscar/submitting-jobs/shared-machine). Please **remember not to run processing on the login nodes**
 {% endhint %}
 
 ## Installing XNAT2BIDS
@@ -38,11 +38,9 @@ singularity exec --no-home --bind ${bids_root_dir} ${simg} \
 
 ### 1. Start an interactive session
 
-Here we start the software as an **interactive** job of one hour.
-
 #### 1.1 Desktop app on Open OnDemand&#x20;
 
-Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job. Once logged in, you are already inside an interactive session.&#x20;
+Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.&#x20;
 
 <figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -64,6 +62,8 @@ At this point you arrive at a login node. **We will need to start an interactive
 interact -n 2 -t 01:00:00 -m 8g
 ```
 
+This starts an interactive job for one hour.
+
 ### 2. Define variables
 
 We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
@@ -75,7 +75,7 @@ The variable will only be defined during the current shell session. If you close
 {% endhint %}
 
 {% hint style="info" %}
-If you want to copy-paste from these docs to the terminal in the OOD Desktop, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal you will need to use the right click of your mouse
+If you want to copy-paste from these docs to the terminal in the OOD Desktop, click on the Copy to Clipboard Icon on the right of the code snippets. To paste into the terminal you will need to use the right click of your mouse and choose "Paste", or press `Ctrl+Shift+V`.
 {% endhint %}
 
 #### 2.1 Define the version of `xnat-tools`
