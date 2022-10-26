@@ -26,7 +26,13 @@ We assume that the metadata for the Patient ID and the Patient Name is correctly
 
 ![Study Description Field in the Console must match XNAT's project ID](../.gitbook/assets/IMG\_3251.jpeg)
 
+### Naming for multi-session studies
 
+If your study involves multiple scan sessions per participant, following a specific consistent naming scheme will allow XNAT to nicely organize your data so that each scan session is nested under the the correct participant like this:
+
+<figure><img src="../.gitbook/assets/Screen Shot 2022-10-26 at 11.34.40 AM (1).png" alt=""><figcaption><p>Individual scan sessions ("SESSION1" and "SESSION2") for participant 005</p></figcaption></figure>
+
+To achieve this, you need to use the Last Name and Patient ID fields in a specific way when you register your participant at the beginning of a scan. In the **Last Name field**, enter the subject ID you have assigned to your participant (in this demodat example, we would enter 005). In the **Patient ID field**, enter the same **subject ID** \*underscore\* **whatever you would like to use to label your different sessions**. You could do "005\_sess1", "005\_sess2", etc., or something that describes the different phases of your study, like "005\_pretraining", "005\_training", "005\_posttraining".
 
 ## Uploading historic data (NOT Available at the moment 5/25/21)
 
