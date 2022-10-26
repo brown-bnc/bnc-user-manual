@@ -1,7 +1,5 @@
 # Exporting to BIDS using Oscar
 
-🚧 This section is undergoing changes. Apologies for the inconvenience
-
 ## Interacting with Oscar
 
 You can connect to Oscar via different methods. You can [ssh using your terminal](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/ssh), you can [connect via the Desktop GUI or OSCAR shell access apps on Open OnDemand(OOD](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/open-ondemand/interactive-apps-on-ood)), or if your editor can connect to remote servers, [you can connect via your favorite IDE](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide) (VSCode is great!). If this is your first time using Oscar and you are new to unix command line, we recommend connecting via the Desktop GUI on Open OnDemand.
