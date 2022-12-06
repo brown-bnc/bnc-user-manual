@@ -1,0 +1,8 @@
+﻿Block_Loop.thisRepN,Block_Loop.thisTrialN,Block_Loop.thisN,Block_Loop.thisIndex,Left_Loop.thisRepN,Left_Loop.thisTrialN,Left_Loop.thisN,Left_Loop.thisIndex,Right_Loop.thisRepN,Right_Loop.thisTrialN,Right_Loop.thisN,Right_Loop.thisIndex,trigger_signal.started,trigger_fixation.started,trigger_signal.keys,trigger_signal.rt,leftBlockStartTime,rightBlockStartTime,participant,date,expName,psychopyVersion,frameRate
+,,,,,,,,,,,,8.872483958,8.872483958,t,5.966328209,,,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+0,0,0,0,,,,,,,,,,,,,0.016235917,12.02648967,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+1,0,1,0,,,,,,,,,,,,,24.02616046,36.02479142,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+2,0,2,0,,,,,,,,,,,,,48.02474362,60.02749421,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+3,0,3,0,,,,,,,,,,,,,72.02556525,84.02596779,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+4,0,4,0,,,,,,,,,,,,,96.02549383,108.0253407,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822
+5,0,5,0,,,,,,,,,,,,,120.0240439,132.0251578,5,2022_Jun_21_1310,LRChx,2022.2.4,59.96268822

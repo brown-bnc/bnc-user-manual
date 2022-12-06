@@ -18,6 +18,7 @@
 * [Introduction](demo-dataset/introduction.md)
 * [How to access it](demo-dataset/how-to-access-it.md)
 * [Protocol Information](demo-dataset/protocol-information.md)
+* [Basic analysis example: checks task](demo-dataset/basic-analysis-example-checks-task.md)
 
 ## XNAT to BIDS (Intro)
 

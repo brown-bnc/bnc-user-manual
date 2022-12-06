@@ -70,10 +70,10 @@ The dataset includes functional MRI scans for two simple tasks and a resting sta
 #### Flashing Checkerboard
 
 * **Name at the scanner:** func-bold\_task-checks\_run+
-* **Description:** This is a simple visual activation protocol in which a half-field flashing checkerboard pattern is presented alternately to the left and the right visual hemifields in 12-second blocks while the participant fixates on a small central cross. It is common in many studies to repeat the same functional scan multiple times. For this protocol, this sequence was run twice.  Notice that the sequence name ends with run+.  The bids exporter will automatically convert identically named sequential scans ending with run+ to Run01, Run02, Run03, etc. A link to the PsychoPy files used to run this task can be found below (LRChx.zip).&#x20;
+* **Description:** This is a simple visual activation protocol in which a half-field flashing checkerboard pattern is presented alternately to the left and the right visual hemifields in 12-second blocks while the participant fixates on a small central cross. It is common in many studies to repeat the same functional scan multiple times. For this protocol, this sequence was run twice.  Notice that the sequence name ends with run+.  The bids exporter will automatically convert identically named sequential scans ending with run+ to Run01, Run02, Run03, etc. A link to the PsychoPy files used to run this task can be found below (hemifield\_localizer.zip).&#x20;
 * **Scan Time:** 3 minutes (each)
 
-{% file src="../.gitbook/assets/LRChx.zip" %}
+{% file src="../.gitbook/assets/hemifield_localizer.zip" %}
 Compressed directory containing PsychoPy experiment for flashing checkerboard task
 {% endfile %}
 
