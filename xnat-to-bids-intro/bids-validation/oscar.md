@@ -8,7 +8,7 @@ description: Running the BIDS validator in Oscar
 
 ```bash
 interact -n 2 -t 01:00:00 -m 8g
-version=v1.9.8
+version=v1.9.9
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
 simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
 singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}1. Start interactive session
@@ -27,7 +27,7 @@ interact -n 2 -t 01:00:00 -m 8g
 #### Specify the version of validator to
 
 ```bash
-version=v1.9.8
+version=v1.9.9
 ```
 
 #### Set up paths
