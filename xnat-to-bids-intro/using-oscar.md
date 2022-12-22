@@ -22,7 +22,7 @@ Before getting started, we have grouped all the commands executed in this page f
 
 ```
 interact -n 2 -t 01:00:00 -m 8g
-version=v1.0.7
+version=v1.0.10
 bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
@@ -83,7 +83,7 @@ If you want to copy-paste from these docs to the terminal in the OOD Desktop, cl
 We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.0.7
+version=v1.0.10
 ```
 
 #### &#x20;2.2 Set up paths
@@ -182,7 +182,7 @@ Let's expand on the above command:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.6.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.10.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case `--help`
 
@@ -261,7 +261,7 @@ Once again, let's expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.6.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.10.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 1`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
@@ -273,38 +273,32 @@ A successful run will print out the following output:
 ------------------------------------------------
 Get project and subject information
 Project: BNC_DEMODAT
-Subject ID: XNAT_S00009
+Subject ID: XNAT24_S00002
+Session Suffix:  01
 Subject label: 001
 ------------------------------------------------
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Making output xnat-export session directory /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-001/ses-01
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO ------------------------------------------------
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO Get scans.
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO ------------------------------------------------
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO bids_session_dir: /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-bncmethods/ses-01
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO BIDSNAME: ant-scout_acq-localizer
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Making scan DICOM directory /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-bncmethods/ses-01/ant-scout_acq-localizer.
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Downloading files
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Done.
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO ---------------------------------
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO Making output xnat-export session directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-001/ses-01
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.xnat_utils[235768] INFO ------------------------------------------------
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.xnat_utils[235768] INFO Get scans.
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.xnat_utils[235768] INFO ------------------------------------------------
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO bids_session_dir: /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-001/ses-01
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO BIDSNAME: anat-scout_acq-localizer
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO Making scan DICOM directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-001/ses-01/anat-scout_acq-localizer.
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO Downloading files
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO Done.
+2022-12-22 11:03:32 node1146.oscar.ccv.brown.edu xnat_tools.bids_utils[235768] INFO ---------------------------------
 ************************
-Making output BIDS Session directory /users/mrestrep/xnat-exports/bnc/study-demodat/bids
-Executing Heudiconv command: heudiconv -f reproin --bids     -o /users/mrestrep/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects bncmethods --ses 01
-INFO: Running heudiconv version 0.5.4
+Executing Heudiconv command: heudiconv -f reproin --bids     -o /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 001 --ses 01
+INFO: Running heudiconv version 0.11.6 latest 0.11.6
 INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {'subject': 'bncmethods', 'outdir': '/users/mrestrep/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
+INFO: PROCESSING STARTS: {'subject': '001', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
 INFO: Processing 3 dicoms
-INFO: Analyzing 3 dicoms
-INFO: Filtering out 0 dicoms based on their filename
-/usr/local/lib/python3.7/site-packages/heudiconv/dicoms.py:58: UserWarning: The DICOM readers are highly experimental, unstable, and only work for Siemens time-series at the moment
-Please use with caution.  We would be grateful for your help in improving them
-  import nibabel.nicom.dicomwrappers as dw
-INFO: Generated sequence info with 1 entries
-INFO: Processing 1 seqinfo entries
-WARNING: Could not determine the series name by looking at protocol_name, series_description fields
-WARNING: Could not figure out where to stick 1 sequences: ['1-ant-scout_acq-localizer']
 INFO: Doing conversion using dcm2niix
-INFO: Populating template files under /users/mrestrep/xnat-exports/bnc/study-demodat/bids/
-INFO: PROCESSING DONE: {'subject': 'bncmethods', 'outdir': '/users/mrestrep/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
+INFO: Converting /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-001/ses-01/anat/sub-001_ses-01_acq-localizer_scout (3 DICOMs) -> /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-001/ses-01/anat . Converter: dcm2niix . Output types: ('dicom',)
+INFO: Adding "IntendedFor" to the fieldmaps in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-001/ses-01.
+WARNING: We cannot add the IntendedFor field: no fmap/ in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-001/ses-01
+INFO: Populating template files under /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/
+INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
 Done with Heudiconv BIDS Convesion.
 ```
 
@@ -319,7 +313,7 @@ singularity exec --no-home --bind ${bids_root_dir},/tmp ${simg} \
     -s 6
 ```
 
-The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, the last line of your log, should be
+The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to the individual echoes of a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, the last line of your log, should be
 
 ```
 INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
@@ -333,9 +327,9 @@ While running `xnat2bids` singularity container in an interactive session it is 
 
 Upon successful completion of the `xnat2bids` pipeline, you should have 2 log files in your `${HOME}/xnat-exports/bnc/study-demodat/logs` directory - `export-<date>-<time>.log`
 
-and `heudicov-<date>-<time>.log`
+and `heudiconv-<date>-<time>.log`
 
-[Isabel Restrepo](https://app.gitbook.com/u/cQb9yYyO6WcCAjlFQBc2s4cqxqx1 "mention") can you write something about logs here.
+You can check these logs for any errors or warning messages.
 
 #### 2. Checking the file structure
 
