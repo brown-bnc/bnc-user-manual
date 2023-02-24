@@ -2,7 +2,7 @@
 
 ## Uploading data from the scanner
 
-After data collection, data can be sent to XNAT directly from the scanner. If you are the operator at the console, please select `XNATRELAY` destination:
+After data collection, data can be sent to XNAT directly from the scanner. Partial data transfers can sometimes get stuck, so **transfer an entire scan session at once**, rather than run-by-run. If you are the operator at the console, please select `XNATRELAY` destination:
 
 {% hint style="warning" %}
 Details of the console settings coming soon
