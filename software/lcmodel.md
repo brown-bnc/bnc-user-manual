@@ -13,7 +13,8 @@ Installing LCModel in Oscar for personal use is a simple process. Because LCMode
 #### Connecting via Desktop App in Open on Demand
 
 * Visit [https://ood.ccv.brown.edu](https://ood.ccv.brown.edu/)
-* Click on the Desktop Icon and start a Desktop job. If you receive an error, you are already running a Desktop session. Click on "My interactive sessions" on the top panel on the page. You will see your existing session. Click Launch to start this session.
+* Click on the Desktop Icon and start a Desktop job. \
+  If you receive an error the error `you are already running a Desktop session,` you will need to click on "My interactive sessions" at the top panel on the page. You will see your existing session. Click _Launch to start this session._
 * Launch a terminal inside the Desktop interface.
 
 ### 1. Download LCModel tar under your HOME
