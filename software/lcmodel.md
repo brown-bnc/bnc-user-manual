@@ -6,15 +6,15 @@ description: Installation of LCModel GUI
 
 ## Installing LCModel in Oscar
 
-Installing LCModel in Oscar for personal use is a simple process. Because LCModel has a graphical interface, you will need to connect to Oscar using [Oscar's VNC Client](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc), this will make sure we are using a node that can find its `$DISPLAY`.
+Installing LCModel in Oscar for personal use is a simple process. Because LCModel has a graphical interface, you will need to connect to Oscar using the Desktop Application via OpenOndeman, this will make sure we are using a node that can find its `$DISPLAY`.
 
 ### 0. Connecting to Oscar
 
-#### Connecting via VNC
+#### Connecting via Desktop App in Open on Demand
 
-Please follow the instructions in the [Oscar Manual](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc).
-
-After logging in, you will need to **launch the Terminal application**
+* Visit [https://ood.ccv.brown.edu](https://ood.ccv.brown.edu/)
+* Click on the Desktop Icon and start a Desktop job. If you receive an error, you are already running a Desktop session. Click on "My interactive sessions" on the top panel on the page. You will see your existing session. Click Launch to start this session.
+* Launch a terminal inside the Desktop interface.
 
 ### 1. Download LCModel tar under your HOME
 
