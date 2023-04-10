@@ -22,16 +22,17 @@ Before getting started, we have grouped all the commands executed in this page f
 
 ```
 interact -n 2 -t 01:00:00 -m 8g
-version=v1.0.7
+version=v1.1.1
 bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
-XNAT_SESSION="XNAT_E00080" 
-singularity exec --no-home --bind ${bids_root_dir} ${simg} \
+XNAT_SESSION="XNAT_E00114"
+singularity exec --no-home --bind ${bids_root_dir} \
+    ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
-    -i 1
+    -i 7
 ```
 
 
@@ -83,7 +84,7 @@ If you want to copy-paste from these docs to the terminal in the OOD Desktop, cl
 We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.0.7
+version=v1.1.1
 ```
 
 #### &#x20;2.2 Set up paths
@@ -111,11 +112,11 @@ simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 #### XNAT USER and SESSION&#x20;
 
-Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 001 of the demo dataset
+Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 005 of the demo dataset
 
 ```
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
-XNAT_SESSION="XNAT24_E00002" #ACCESSION of 001 participant in sample data
+XNAT_SESSION="XNAT_E00114" #ACCESSION of 005 participant in sample data
 ```
 
 ### 3. Understanding Singularity Containers&#x20;
@@ -182,7 +183,7 @@ Let's expand on the above command:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.6.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case `--help`
 
@@ -196,7 +197,6 @@ Usage: xnat2bids [OPTIONS] SESSION BIDS_ROOT_DIR
 Arguments:
   SESSION        XNAT Session ID, that is the Accession # for an experiment.
                  [required]
-
   BIDS_ROOT_DIR  Root output directory for exporting the files  [required]
 
 Options:
@@ -204,43 +204,33 @@ Options:
   -p, --pass TEXT                 XNAT Password
   -h, --host TEXT                 XNAT'sURL  [default:
                                   https://xnat.bnc.brown.edu]
-
-  -S, --session-suffix TEXT       Suffix of the session for BIDS defaults to
-                                  01.              This will produce a session
-                                  label of sess-01.              You likely
-                                  only need to change the default for multi-
-                                  session studies  [default: 01]
-
+  -S, --session-suffix TEXT       The session_suffix is initially set to -1.
+                                  This will signify an unspecified
+                                  session_suffix and default to sess-01.
+                                  For multi-session studies, the session label
+                                  will be pulled from XNAT  [default: -1]
   -f, --bidsmap-file TEXT         Bidsmap JSON file to correct sequence names
-                                  [default: ]
-
   -i, --includeseq INTEGER        Include this sequence only, this flag can
-                                  specify multiple times  [default: ]
-
+                                  specify multiple times
   -s, --skipseq INTEGER           Exclude this sequence, can be specified
-                                  multiple times  [default: ]
-
+                                  multiple times
   --log-id TEXT                   ID or suffix to append to logfile. If empty,
                                   current date is used  [default:
-                                  07-14-2021-08-51-00]
-
+                                  04-07-2023-10-22-56]
   -v, --verbose                   Verbose level. This flag can be specified
                                   multiple times to increase verbosity
                                   [default: 0]
-
   --overwrite                     Remove directories where prior results for
-                                  this session/participant  [default: False]
-
+                                  this session/participant
   --cleanup / --no-cleanup        Remove xnat-export folder and move logs to
-                                  derivatives/xnat/logs  [default: False]
-
+                                  derivatives/xnat/logs  [default: no-cleanup]
   --install-completion [bash|zsh|fish|powershell|pwsh]
                                   Install completion for the specified shell.
   --show-completion [bash|zsh|fish|powershell|pwsh]
                                   Show completion for the specified shell, to
                                   copy it or customize the installation.
-
   --help                          Show this message and exit.
+
 
 ```
 
@@ -252,7 +242,7 @@ The following command will run the executable `xnat2bids` (via singularity) comm
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
-    -i 1
+    -i 7
 ```
 
 Once again, let's expand on the command above:
@@ -261,9 +251,9 @@ Once again, let's expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.6.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.10.sif`&#x20;
 
-`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 1`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
+`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 7`. The `-i` is asking to only process the 7th sequence, which in this dataset is the T1-weighted anatomical scan. For a full list of inputs, please see the [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/).
 
 After running the command, you'll be asked to interactively type your Brown/XNAT password.
 
@@ -273,39 +263,85 @@ A successful run will print out the following output:
 ------------------------------------------------
 Get project and subject information
 Project: BNC_DEMODAT
-Subject ID: XNAT_S00009
-Subject label: 001
+Subject ID: XNAT_S00111
+Session Suffix:  SESSION1
+Subject label: 005
 ------------------------------------------------
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Making output xnat-export session directory /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-001/ses-01
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO ------------------------------------------------
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO Get scans.
-2021-07-16 15:29:17 node1321.oscar.ccv.brown.edu xnat_tools.xnat_utils[164589] INFO ------------------------------------------------
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO bids_session_dir: /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-bncmethods/ses-01
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO BIDSNAME: ant-scout_acq-localizer
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Making scan DICOM directory /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-bncmethods/ses-01/ant-scout_acq-localizer.
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Downloading files
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO Done.
-2021-07-16 15:29:18 node1321.oscar.ccv.brown.edu xnat_tools.bids_utils[164589] INFO ---------------------------------
+2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making output xnat-export session directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
+2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
+2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO Get scans.
+2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
+2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO bids_session_dir: /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
+2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO BIDSNAME: anat-T1w_acq-memprageRMS
+2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making scan DICOM directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1/anat-T1w_acq-memprageRMS.
+2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Downloading files
+2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu py.warnings[151813] WARNING /usr/local/lib/python3.10/site-packages/xnat_tools/bids_utils.py:324: UserWarning: Changed DICOM HEADER[ProtocolName and SeriesDescription]:             anat-t1w_acq-memprage -> anat-T1w_acq-memprageRMS             anat-t1w_acq-memprage RMS -> anat-T1w_acq-memprageRMS                                                                                                                                                                        
+  warnings.warn(                                                                                                                                                           
+
+2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Done.
+2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO ---------------------------------
 ************************
-Making output BIDS Session directory /users/mrestrep/xnat-exports/bnc/study-demodat/bids
-Executing Heudiconv command: heudiconv -f reproin --bids     -o /users/mrestrep/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /users/mrestrep/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects bncmethods --ses 01
-INFO: Running heudiconv version 0.5.4
+Making output BIDS Session directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids
+Executing Heudiconv command: heudiconv -f reproin --bids     -o /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
+INFO: Running heudiconv version 0.11.6 latest 0.12.2
 INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {'subject': 'bncmethods', 'outdir': '/users/mrestrep/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
-INFO: Processing 3 dicoms
-INFO: Analyzing 3 dicoms
+INFO: PROCESSING STARTS: {'subject': '005', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
+INFO: Processing 176 dicoms
+INFO: Analyzing 176 dicoms
 INFO: Filtering out 0 dicoms based on their filename
-/usr/local/lib/python3.7/site-packages/heudiconv/dicoms.py:58: UserWarning: The DICOM readers are highly experimental, unstable, and only work for Siemens time-series at the moment
-Please use with caution.  We would be grateful for your help in improving them
-  import nibabel.nicom.dicomwrappers as dw
-INFO: Generated sequence info with 1 entries
+INFO: Generated sequence info for 1 studies with 176 entries total
 INFO: Processing 1 seqinfo entries
-WARNING: Could not determine the series name by looking at protocol_name, series_description fields
-WARNING: Could not figure out where to stick 1 sequences: ['1-ant-scout_acq-localizer']
 INFO: Doing conversion using dcm2niix
-INFO: Populating template files under /users/mrestrep/xnat-exports/bnc/study-demodat/bids/
-INFO: PROCESSING DONE: {'subject': 'bncmethods', 'outdir': '/users/mrestrep/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
+INFO: Converting /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
+230410-13:47:25,907 nipype.workflow INFO:
+         [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
+INFO: [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
+230410-13:47:25,950 nipype.workflow INFO:
+         [Node] Executing "convert" <nipype.interfaces.dcm2nii.Dcm2niix>
+INFO: [Node] Executing "convert" <nipype.interfaces.dcm2nii.Dcm2niix>
+230410-13:47:26,127 nipype.interface INFO:
+         stdout 2023-04-10T13:47:26.127796:Compression will be faster with 'pigz' installed
+INFO: stdout 2023-04-10T13:47:26.127796:Compression will be faster with 'pigz' installed
+230410-13:47:26,127 nipype.interface INFO:
+         stdout 2023-04-10T13:47:26.127796:Chris Rorden's dcm2niiX version v1.0.20190902  (JP2:OpenJPEG) (JP-LS:CharLS) GCC5.5.0 (64-bit Linux)
+INFO: stdout 2023-04-10T13:47:26.127796:Chris Rorden's dcm2niiX version v1.0.20190902  (JP2:OpenJPEG) (JP-LS:CharLS) GCC5.5.0 (64-bit Linux)
+230410-13:47:26,127 nipype.interface INFO:
+         stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
+INFO: stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
+230410-13:47:26,128 nipype.interface INFO:
+         stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
+INFO: stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
+230410-13:47:27,158 nipype.interface INFO:
+         stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
+INFO: stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
+230410-13:47:27,174 nipype.workflow INFO:
+         [Node] Finished "convert", elapsed time 1.166935s.
+INFO: [Node] Finished "convert", elapsed time 1.166935s.
+WARNING: Failed to find task field in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json.
+230410-13:47:37,646 nipype.workflow INFO:
+         [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
+INFO: [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
+230410-13:47:37,659 nipype.workflow INFO:
+         [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
+INFO: [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
+230410-13:47:40,993 nipype.workflow INFO:
+         [Node] Finished "embedder", elapsed time 3.333115s.
+INFO: [Node] Finished "embedder", elapsed time 3.333115s.
+INFO: Post-treating /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json file
+INFO: Adding "IntendedFor" to the fieldmaps in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1.
+WARNING: We cannot add the IntendedFor field: no fmap/ in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1
+INFO: Populating template files under /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/
+INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
 Done with Heudiconv BIDS Convesion.
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Subjects ['005']: 
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Sessions ['session1']: 
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Processing participant 005 at path /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO List of sessions sub-directories ['session1']
+
 ```
 
 #### Running XNAT2BIDS (full dataset)
@@ -313,13 +349,13 @@ Done with Heudiconv BIDS Convesion.
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
 
 ```
-singularity exec --no-home --bind ${bids_root_dir},/tmp ${simg} \
+singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -s 6
 ```
 
-The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, the last line of your log, should be
+The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to the individual echoes of a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, near the bottom of your log should be the line:
 
 ```
 INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
@@ -333,9 +369,9 @@ While running `xnat2bids` singularity container in an interactive session it is 
 
 Upon successful completion of the `xnat2bids` pipeline, you should have 2 log files in your `${HOME}/xnat-exports/bnc/study-demodat/logs` directory - `export-<date>-<time>.log`
 
-and `heudicov-<date>-<time>.log`
+and `heudiconv-<date>-<time>.log`
 
-[Isabel Restrepo](https://app.gitbook.com/u/cQb9yYyO6WcCAjlFQBc2s4cqxqx1 "mention") can you write something about logs here.
+You can check these logs for any errors or warning messages.
 
 #### 2. Checking the file structure
 
