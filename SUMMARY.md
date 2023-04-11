@@ -24,7 +24,9 @@
 
 * [Getting Started](xnat-to-bids-intro/getting-started.md)
 * [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software.md)
-* [Exporting to BIDS using Oscar](xnat-to-bids-intro/using-oscar.md)
+* [Exporting to BIDS using Oscar](xnat-to-bids-intro/using-oscar/README.md)
+  * [Oscar Utility Script](xnat-to-bids-intro/using-oscar/oscar-utility-script.md)
+  * [Singularity Executable](xnat-to-bids-intro/using-oscar/using-oscar.md)
 * [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)

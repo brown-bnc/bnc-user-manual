@@ -34,7 +34,7 @@ To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.cc
 
 * Search for the share data: `/gpfs/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
-![Sample Data Browser Window](../.gitbook/assets/image.png)
+![Sample Data Browser Window](<../.gitbook/assets/image (2).png>)
 
 ### 5. Select Basis
 
@@ -72,4 +72,4 @@ After pressing **Run LCModel**, a two page PDF will appear, which looks as follo
 
 ![LCModel Result PDF - Page 1](<../.gitbook/assets/image (9).png>)
 
-![LCModel Result PDF - Page 2](<../.gitbook/assets/image (3).png>)
+![LCModel Result PDF - Page 2](<../.gitbook/assets/image (3) (1).png>)

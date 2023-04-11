@@ -80,7 +80,7 @@ Compressed directory containing PsychoPy experiment for flashing checkerboard ta
 #### Motion Localizer
 
 * **Name at the scanner:** func-bold\_task-motionloc
-* **Description:** This task contrasts static and moving dot fields to localize motion sensitive areas of the visual cortex (e.g., area MT+). Three different types of stimuli are presented randomly in blocks **** of 15 seconds each.  The three types of blocks consist of a field of static dots, a field of dots coherently moving in a single direction that changes each second, and a field of "scintillating" dots with no coherent motion.  A 15 second period of fixation only is presented at the start and end of the scan. A link to the PsychoPy files used to run this task can be found below (motionloc.zip).&#x20;
+* **Description:** This task contrasts static and moving dot fields to localize motion sensitive areas of the visual cortex (e.g., area MT+). Three different types of stimuli are presented randomly in blocks of 15 seconds each.  The three types of blocks consist of a field of static dots, a field of dots coherently moving in a single direction that changes each second, and a field of "scintillating" dots with no coherent motion.  A 15 second period of fixation only is presented at the start and end of the scan. A link to the PsychoPy files used to run this task can be found below (motionloc.zip).&#x20;
 * **Scan Time:** 5 minutes
 
 {% file src="../.gitbook/assets/motionloc.zip" %}

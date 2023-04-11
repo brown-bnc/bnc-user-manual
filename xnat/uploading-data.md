@@ -73,7 +73,7 @@ PROJECT\_ID(ROOT)/participant-id/SESSION. For instance to upload data for partic
 {% tab title="3. Upload" %}
 1. Start Globus Transfer
 2. Wait for Globus transfer to complete. You should receive a notification
-3. Make a REST call to XNAT as follows. For more details on using XNAT's inbox, see [`here`](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/using-dicom-inbox-to-import-an-image-session)``
+3. Make a REST call to XNAT as follows. For more details on using XNAT's inbox, see [`here`](https://wiki.xnat.org/documentation/how-to-use-xnat/image-session-upload-methods-in-xnat/using-dicom-inbox-to-import-an-image-session)
 
 ```
 export XNAT_USER=test_user

@@ -1,16 +1,4 @@
-# Exporting to BIDS using Oscar
-
-## Interacting with Oscar
-
-You can connect to Oscar via different methods. You can [ssh using your terminal](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/ssh), you can [connect via the Desktop GUI or OSCAR shell access apps on Open OnDemand(OOD](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/open-ondemand/interactive-apps-on-ood)), or if your editor can connect to remote servers, [you can connect via your favorite IDE](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/remote-ide) (VSCode is great!). If this is your first time using Oscar and you are new to unix command line, we recommend connecting via the Desktop GUI on Open OnDemand.
-
-{% hint style="info" %}
-If you connect to Oscar via SSH or the OOD shell access app, you arrive at a login node, we will need to wrap our commands in a batch file or use an interactive session. You can learn more about running jobs in the Oscar [docs](https://docs.ccv.brown.edu/oscar/submitting-jobs/shared-machine). Please **remember not to run processing on the login nodes**
-{% endhint %}
-
-## Installing XNAT2BIDS
-
-**🎉 Skip -** You will not need to install any software. We keep a Singularity image of the most recent tagged release of [`xnat-tools`](https://github.com/brown-bnc/xnat-tools)in Oscar. If this is the first time that you hear the word `Singularity image` don't worry, we will expand more on that soon.
+# Singularity Executable
 
 ## Running XNAT2BIDS
 
@@ -43,15 +31,15 @@ singularity exec --no-home --bind ${bids_root_dir} \
 
 Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.&#x20;
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt=""><figcaption></figcaption></figure>
 
 Once your requested session is running, you can launch it by clicking the Launch Desktop button.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt=""><figcaption></figcaption></figure>
 
 At this point, simply open the terminal
 
-![OOD Desktop app. Teal arrow points to Terminal icon to be launched](<../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png>)
+![OOD Desktop app. Teal arrow points to Terminal icon to be launched](<../../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png>)
 
 #### 1.2 SSH&#x20;
 
@@ -67,7 +55,7 @@ This starts an interactive job for one hour.
 
 ### 2. Define variables
 
-We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
+We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
 
 {% hint style="info" %}
 When defining shell Variables, make sure to not have any spaces in the variable name, the assigned value or in between the equal sign
@@ -112,7 +100,7 @@ simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 #### XNAT USER and SESSION&#x20;
 
-Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 005 of the demo dataset
+Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](../getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 005 of the demo dataset
 
 ```
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
@@ -251,9 +239,9 @@ Once again, let's expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.10.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
 
-`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 7`. The `-i` is asking to only process the 7th sequence, which in this dataset is the T1-weighted anatomical scan. For a full list of inputs, please see the [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/).
+`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 7`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
 After running the command, you'll be asked to interactively type your Brown/XNAT password.
 
@@ -341,10 +329,7 @@ Done with Heudiconv BIDS Convesion.
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Processing participant 005 at path /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO List of sessions sub-directories ['session1']
-
 ```
-
-#### Running XNAT2BIDS (full dataset)
 
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
 
@@ -355,7 +340,7 @@ singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     -s 6
 ```
 
-The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to the individual echoes of a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, near the bottom of your log should be the line:
+The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to the individual echoes of a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, near the bottom of your log should be the line:
 
 ```
 INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
@@ -430,4 +415,4 @@ xnat-exports/
 
 ### 6. Validate the BIDS output
 
-After successfully running `xnat2bids` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](bids-validation/)
+After successfully running `xnat2bids` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](../bids-validation/)
