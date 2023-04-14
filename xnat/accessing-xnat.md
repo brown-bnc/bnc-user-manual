@@ -1,6 +1,6 @@
 # Accessing XNAT
 
-Our XNAT portal is available at [https://xnat.bnc.brown.edu](https://xnat.bnc.brown.edu)
+Our XNAT portal is available at [https://xnat.bnc.brown.edu](https://xnat.bnc.brown.edu). You will need to either be on the Brown campus network or [connect via VPN](https://it.brown.edu/services/virtual-private-network-vpn) to access the XNAT portal.
 
 ## Returning Users
 
