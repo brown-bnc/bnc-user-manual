@@ -261,17 +261,17 @@ In your terminal, you should immediately see the following print statements:
 
 ```
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user ford_mcdonald@brown.edu', '--mail-type ALL', '--out
-put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--pass Atciwiahbioab2022!', '--overwrite', '--verbose', '--
+put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--overwrite', '--verbose', '--
 verbose', '--skipseq 6']}
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00152', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user ford_mcdonald@brown.edu', '--mail-type ALL', '--out
-put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt'], 'x2b_param_list': ['XNAT_E00152', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--pass Atciwiahbioab2022!', '--overwrite', '--verbose', '--
+put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt'], 'x2b_param_list': ['XNAT_E00152', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--overwrite', '--verbose', '--
 skipseq 6', '--includeseq 7 --includeseq 8 --includeseq 9 --includeseq 10 --includeseq 11']}
 DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'ford_mcdonald@brown.
 edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt', '--wrap', '$(cat << EOF #!/bin/sh\n             apptainer exec --no-home -B /users/fmcdona4/bids-export/ /gpfs/data/bnc/simgs/brownbnc/xnat-tools-
-v1.1.1.sif             xnat2bids XNAT_E00114 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --pass Atciwiahbioab2022! --overwrite --verbose --verbose --skipseq 6\nEOF\n)']}
+v1.1.1.sif             xnat2bids XNAT_E00114 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --overwrite --verbose --verbose --skipseq 6\nEOF\n)']}
 DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00152', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'ford_mcdonald@brown.
 edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt', '--wrap', '$(cat << EOF #!/bin/sh\n             apptainer exec --no-home -B /users/fmcdona4/bids-export/ /gpfs/data/bnc/simgs/brownbnc/xnat-tools-
-v1.1.1.sif             xnat2bids XNAT_E00152 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --pass Atciwiahbioab2022! --overwrite --verbose --skipseq 6 --includeseq 7 --includeseq 8 --includeseq 9 --includes
+v1.1.1.sif             xnat2bids XNAT_E00152 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --overwrite --verbose --skipseq 6 --includeseq 7 --includeseq 8 --includeseq 9 --includes
 eq 10 --includeseq 11\nEOF\n)']}
 INFO: Launched 3 jobs
 INFO: Processed Scans Located At: /users/fmcdona4/bids-export/
