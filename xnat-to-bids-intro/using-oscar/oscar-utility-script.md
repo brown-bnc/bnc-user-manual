@@ -85,9 +85,26 @@ mail-user = "example-user@brown.edu"
 mail-type = "ALL"
 ```
 
+{% hint style="info" %}
+To open VSCode in an interactive desktop, open a terminal with a right click followed by selecting 'Open Terminal Here".  Next, run the command: **`module load vscode`**
+
+To launch VSCode, run **`code`** on the command line.
+{% endhint %}
+
 Update the value of `mail-user` to be your e-mail. This will allow you to receive notifications on the status of your jobs!
 
-For further details on all available parameter options, see Slurm's documentation here: [https://slurm.schedmd.com/srun.html](https://slurm.schedmd.com/srun.html).
+For further details on all available parameter options, see Slurm's documentation here: [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)
+
+{% hint style="info" %}
+**NOTE:** By default, SBATCH output logs will be located at: `~/scratch/logs/`
+
+If you would like your logs to live somewhere else, update your configuration as follows:
+
+```toml
+[slurm-args]
+output="/path/to/logs/dir/%x-%J.txt"
+```
+{% endhint %}
 
 #### 4.2 Update Config with XNAT2BIDS Arguments
 
@@ -98,15 +115,43 @@ Paste the following text into your config file:
 ```toml
 [xnat2bids-args]
 sessions = ["XNAT_E00114"]
-includeseq=[7]
+includeseq=[7, 10]
 ```
 
-Here, we are setting the session to be processed as `XNAT_E00114`, which translates to session 1 of subject 5 in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `includeseq`, we are choosing to only process sequence "7", an anatomical T1-weighted image sequence using magnetization-prepared rapid acquisition gradient-echo, or "memprage", for short.
+Here, we are setting the session to be processed as `XNAT_E00114`, which translates to session 1 of subject 5 in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `includeseq`, we are choosing to  process sequence "7", an anatomical T1-weighted image sequence using magnetization-prepared rapid acquisition gradient-echo, or "memprage", and sequence "10", and functional scan using the blood level oxygen dependent signal.
 
-For a comprehensive list on all available options, see our [XNAT Tools documentation](https://brown-bnc.github.io/xnat-tools/1.1.1/xnat2bids/).
+For a comprehensive list on all available options, see below:
+
+{% code overflow="wrap" %}
+```
+sessions LIST[TEXT]: List of one or more Accession #s found on XNAT
+
+bids_root TEXT: Root output directory for exporting the files [default: ~/bids-export/]
+
+version TEXT: Version of xnat-tools [default: latest]
+
+host TEXT: XNAT'sURL [default: https://xnat.bnc.brown.edu]
+
+bidsmap-file TEXT: Bidsmap JSON file to correct sequence names
+
+includeseq LIST[INTEGER]: Include this sequence(s) only
+
+skipseq LIST[INTEGER]: Exclude this sequence(s) from processing
+
+log-id TEXT: ID or suffix to append to logfile. If empty, current date is used [default: current date - MM-DD-YYYY-HH-MM-SS]
+
+verbose INTEGER: Verbose level. This flag can be specified multiple times to increase verbosity [default: 0]
+
+overwrite BOOLEAN: Remove directories where prior results for this session/participant [default: false]
+```
+{% endcode %}
 
 {% hint style="info" %}
-By default, the root output directory for DICOM exports and converted BIDS files will be `/users/<your-user-name>/bids-export/`.  If you prefer a different path to your data, you can define BIDS\_ROOT in your `[xnat2bids-args]`list as following: **`bids_root="/path/to/bids-export"`**
+**NOTE:** By default, the root output directory for DICOM exports and converted BIDS files will be `/users/<your-user-name>/bids-export/`.  If you prefer a different path to your data, you can define BIDS\_ROOT in your `[xnat2bids-args]`list as following: **`bids_root="/path/to/bids-export"`**
+{% endhint %}
+
+{% hint style="info" %}
+**NOTE:**  By default, the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
 {% endhint %}
 
 #### 4.3  Running XNAT2BIDS Single Session
@@ -124,7 +169,7 @@ INFO: Launched 1 job
 INFO: Processed Scans Located At: /users/<your-username>/bids-export/
 ```
 
-Check `/gpfs/scratch/<your-username>/logs/` for a new file `xnat2bids-XNAT_E00114-<JOB-ID>.txt.` The contents of that log file should look like this:
+Check `~/scratch/logs/` for a new file `xnat2bids-XNAT_E00114-<JOB-ID>.txt.` The contents of that log file should look like this:
 
 ```
 ## SLURM PROLOG ###############################################################
@@ -223,9 +268,10 @@ To process multiple sessions simultaneously, you only need to add those desired 
 sessions = [
     "XNAT_E00080", 
     "XNAT_E00114",  
-    "XNAT_E00152",
+    "XNAT_E00152"
     ]
 overwrite=true
+includeseq=[7,8,9,10,11]
 skipseq=[6]
 verbose=1
 ```
@@ -240,11 +286,11 @@ Add the following to the bottom of your config file:
 
 ```toml
 [XNAT_E00152]
-includeseq=[7,8,9,10,11]
 verbose=1
+skipseq=[8]
 
 [XNAT_E00114]
-verbose=2
+skipseq=[9]
 ```
 
 **NOTE:** The section name must match an entry in your `sessions` list.  Each session will inherit all default parameters and those specified under `[xnat2bids-args]`, overriding when necessary.
@@ -387,7 +433,7 @@ After successfully running `run_xnat2bids.py` you'll need to make sure that BIDS
 
 Run the following command:
 
-`singularity exec /gpfs/data/bnc/simgs/bids/validator-latest.sif bids-validator ./users/<your-username>/bids-export/bnc/study-demodat/bids`
+`singularity exec --no-home -B ~/bids-export/bnc/study-demodat/bids /gpfs/data/bnc/simgs/bids/validator-latest.sif bids-validator ~/bids-export/bnc/study-demodat/bids`
 
 #### 7.2 Verify Output
 
