@@ -98,10 +98,10 @@ Paste the following text into your config file:
 ```toml
 [xnat2bids-args]
 sessions = ["XNAT_E00114"]
-includeseq=[6]
+includeseq=[7]
 ```
 
-Here, we are setting the session to be processed as `XNAT_E00114`, which translates to session 1 of subject 5 in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `includeseq`, we are choosing to only process sequence "6", an anatomical T1-weighted image sequence using magnetization-prepared rapid acquisition gradient-echo, or "memprage", for short.
+Here, we are setting the session to be processed as `XNAT_E00114`, which translates to session 1 of subject 5 in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `includeseq`, we are choosing to only process sequence "7", an anatomical T1-weighted image sequence using magnetization-prepared rapid acquisition gradient-echo, or "memprage", for short.
 
 For a comprehensive list on all available options, see our [XNAT Tools documentation](https://brown-bnc.github.io/xnat-tools/1.1.1/xnat2bids/).
 
@@ -109,7 +109,7 @@ For a comprehensive list on all available options, see our [XNAT Tools documenta
 By default, the root output directory for DICOM exports and converted BIDS files will be `/users/<your-user-name>/bids-export/`.  If you prefer a different path to your data, you can define BIDS\_ROOT in your `[xnat2bids-args]`list as following: **`bids_root="/path/to/bids-export"`**
 {% endhint %}
 
-#### 4.3  Running XNAT2BIDS SIngle Session
+#### 4.3  Running XNAT2BIDS Single Session
 
 Now that you have a complete configuration file, you are ready to run the pipeline!
 
