@@ -36,7 +36,7 @@ This starts an interactive job for one hour.
 
 ### 2.  BNC Utility Scripts
 
-The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/gpfs/data/bnc/shared/scripts/` &#x20;
+The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/gpfs/data/bnc/shared/scripts/oscar-scripts` &#x20;
 
 * **`xnat-token`** : Generate a temporary authentication token for accessing XNAT
 * **`singularity-sync`** :  Syncs latest release of deployed singularity images (admin only)
