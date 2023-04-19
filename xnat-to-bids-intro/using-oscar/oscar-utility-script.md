@@ -43,7 +43,7 @@ The BNC maintains a collection of helpful scripts on Oscar which can be found at
 * **`dicomsort`** : Renames and sorts DICOM files alphabetically
 * **`run_xnat2bids`** : Launches xnat2bids DICOM to BIDS conversion pipeline&#x20;
 
-This documentation introduces **`run_xnat2bids`** and details user instructions.
+This documentation introduces **`run_xnat2bids`** and outlines user instructions.
 
 ### 3.  Configuring Slurm and XNAT2BIDS
 
@@ -230,7 +230,7 @@ skipseq=[6]
 verbose=1
 ```
 
-**NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file.  Enabling the `verbose=1` flag will 1) turn on DEBUG logging for your script and 2) signal `xnat2bids` to output more detailed printing to your logs.
+**NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file.  Enabling the `verbose=1` flag will turn on DEBUG logging for your script and signal `xnat2bids` to output more detailed printing to your logs.
 
 #### 5.2 Define Custom Parameters for Each Session
 
