@@ -552,11 +552,8 @@ Run the following command:
 Validate no `ERR:` statements have been printed to your console. You should see the following summary:
 
 ```
-Summary:                 Available Tasks:                          Available Modalities: 
-103 Files, 1.97GB        checks                                    MRI                   
-2 - Subjects             resting                                                         
-3 - Sessions             motionloc                                                       
-                         TODO: full task name for checks                                 
-                         TODO: full task name for motionloc                              
-                         TODO: full task name for resting     
+Summary:                  Available Tasks:                       Available Modalities: 
+38 Files, 343.22MB        checks                                 MRI                   
+2 - Subjects              TODO: full task name for checks                              
+3 - Sessions                                                                           
 ```
