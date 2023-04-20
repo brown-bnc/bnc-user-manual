@@ -151,7 +151,7 @@ overwrite BOOLEAN: Remove directories where prior results for this session/parti
 {% endhint %}
 
 {% hint style="info" %}
-**NOTE:**  By default, the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
+**NOTE:**  By default, `run_xnat2bids` uses the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
 {% endhint %}
 
 #### 4.3  Running XNAT2BIDS Single Session
@@ -264,16 +264,19 @@ INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/users/fmcdona4/bids-export
 To process multiple sessions simultaneously, you only need to add those desired sessions to your config file's `sessions` list.&#x20;
 
 ```toml
+[slurm-args]
+mail-user = "example-user@brown.edu"
+mail-type = "ALL"
+
 [xnat2bids-args]
 sessions = [
     "XNAT_E00080", 
     "XNAT_E00114",  
     "XNAT_E00152"
     ]
-overwrite=true
-includeseq=[7,8,9,10,11]
 skipseq=[6]
-verbose=1
+overwrite=true
+verbose=0
 ```
 
 **NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file.  Enabling the `verbose=1` flag will turn on DEBUG logging for your script and signal `xnat2bids` to output more detailed printing to your logs.
@@ -285,12 +288,16 @@ There may be the case in which you would like to add new arguments or override d
 Add the following to the bottom of your config file:
 
 ```toml
-[XNAT_E00152]
-verbose=1
-skipseq=[8]
+[XNAT_E00080]
+includeseq=[19, 21]
 
 [XNAT_E00114]
-skipseq=[9]
+includeseq=[7,8,11,14]
+verbose=2
+
+[XNAT_E00152]
+includeseq=[7,8,9,10,11]
+verbose=1
 ```
 
 **NOTE:** The section name must match an entry in your `sessions` list.  Each session will inherit all default parameters and those specified under `[xnat2bids-args]`, overriding when necessary.
@@ -305,23 +312,16 @@ See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md
 
 In your terminal, you should immediately see the following print statements:
 
+{% code overflow="wrap" lineNumbers="true" %}
 ```
-DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user ford_mcdonald@brown.edu', '--mail-type ALL', '--out
-put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--overwrite', '--verbose', '--
-verbose', '--skipseq 6']}
-DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00152', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user ford_mcdonald@brown.edu', '--mail-type ALL', '--out
-put /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt'], 'x2b_param_list': ['XNAT_E00152', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--overwrite', '--verbose', '--
-skipseq 6', '--includeseq 7 --includeseq 8 --includeseq 9 --includeseq 10 --includeseq 11']}
-DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'ford_mcdonald@brown.
-edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt', '--wrap', '$(cat << EOF #!/bin/sh\n             apptainer exec --no-home -B /users/fmcdona4/bids-export/ /gpfs/data/bnc/simgs/brownbnc/xnat-tools-
-v1.1.1.sif             xnat2bids XNAT_E00114 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --overwrite --verbose --verbose --skipseq 6\nEOF\n)']}
-DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00152', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'ford_mcdonald@brown.
-edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt', '--wrap', '$(cat << EOF #!/bin/sh\n             apptainer exec --no-home -B /users/fmcdona4/bids-export/ /gpfs/data/bnc/simgs/brownbnc/xnat-tools-
-v1.1.1.sif             xnat2bids XNAT_E00152 /users/fmcdona4/bids-export/ --host https://xnat.bnc.brown.edu --user fmcdona4 --overwrite --verbose --skipseq 6 --includeseq 7 --includeseq 8 --includeseq 9 --includes
-eq 10 --includeseq 11\nEOF\n)']}
+DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--skipseq 6', '--overwrite', '--verbose', '--verbose', '--includeseq 7 --includeseq 8 --includeseq 11 --includeseq 14']}
+DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00152', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt'], 'x2b_param_list': ['XNAT_E00152', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--skipseq 6', '--overwrite', '--verbose', '--includeseq 7 --includeseq 8 --includeseq 9 --includeseq 10 --includeseq 11']}
+DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif', 'xnat2bids', '[XNAT_E00114,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '11,', '--includeseq,', '14]']}
+DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00152', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif', 'xnat2bids', '[XNAT_E00152,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '9,', '--includeseq,', '10,', '--includeseq,', '11]']}
 INFO: Launched 3 jobs
 INFO: Processed Scans Located At: /users/fmcdona4/bids-export/
 ```
+{% endcode %}
 
 Check `/gpfs/scratch/<your-username>/logs/` for a three new log files
 
@@ -387,6 +387,118 @@ INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/users/fmcdona4/bids-export
 Done with Heudiconv BIDS Convesion.
 ```
 
+#### 5.5 Check BIDS Processed Data
+
+Go to your \~/bids-export directory to check your exported DICOM data and processed BIDS directory structure!  It should look like this:
+
+```
+ |-bnc
+ | |-study-demodat
+ | | |-bids
+ | | | |-README
+ | | | |-sub-005
+ | | | | |-ses-session1
+ | | | | | |-fmap
+ | | | | | | |-sub-005_ses-session1_acq-boldGRE_magnitude2.nii.gz
+ | | | | | | |-sub-005_ses-session1_acq-boldGRE_magnitude1.json
+ | | | | | | |-sub-005_ses-session1_acq-boldGRE_magnitude1.nii.gz
+ | | | | | | |-sub-005_ses-session1_acq-boldGRE_magnitude2.json
+ | | | | | |-anat
+ | | | | | | |-sub-005_ses-session1_acq-memprageRMS_T1w.json
+ | | | | | | |-sub-005_ses-session1_acq-memprageRMS_T1w.nii.gz
+ | | | | | |-func
+ | | | | | | |-sub-005_ses-session1_task-checks_run-01_bold.json
+ | | | | | | |-sub-005_ses-session1_task-checks_run-01_events.tsv
+ | | | | | | |-sub-005_ses-session1_task-checks_run-01_bold.nii.gz
+ | | | | | |-dwi
+ | | | | | | |-sub-005_ses-session1_acq-b1500_dir-ap_sbref.nii.gz
+ | | | | | | |-sub-005_ses-session1_acq-b1500_dir-ap_sbref.json
+ | | | | | |-sub-005_ses-session1_scans.tsv
+ | | | | |-ses-session2
+ | | | | | |-fmap
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_phasediff.nii.gz
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_magnitude1.json
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_magnitude2.json
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_phasediff.json
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_magnitude2.nii.gz
+ | | | | | | |-sub-005_ses-session2_acq-boldGRE_magnitude1.nii.gz
+ | | | | | |-anat
+ | | | | | | |-sub-005_ses-session2_acq-memprageRMS_T1w.json
+ | | | | | | |-sub-005_ses-session2_acq-memprageRMS_T1w.nii.gz
+ | | | | | |-func
+ | | | | | | |-sub-005_ses-session2_task-checks_run-01_events.tsv
+ | | | | | | |-sub-005_ses-session2_task-checks_run-01_bold.json
+ | | | | | | |-sub-005_ses-session2_task-checks_run-01_bold.nii.gz
+ | | | | | |-sub-005_ses-session2_scans.tsv
+ | | | |-scans.json
+ | | | |-participants.tsv
+ | | | |-sourcedata
+ | | | | |-README
+ | | | | |-sub-005
+ | | | | | |-ses-session1
+ | | | | | | |-fmap
+ | | | | | | | |-sub-005_ses-session1_acq-boldGRE_magnitude.dicom.tgz
+ | | | | | | |-anat
+ | | | | | | | |-sub-005_ses-session1_acq-memprageRMS_T1w.dicom.tgz
+ | | | | | | |-func
+ | | | | | | | |-sub-005_ses-session1_task-checks_run-01_bold.dicom.tgz
+ | | | | | | |-dwi
+ | | | | | | | |-sub-005_ses-session1_acq-b1500_dir-ap_sbref.dicom.tgz
+ | | | | | |-ses-session2
+ | | | | | | |-fmap
+ | | | | | | | |-sub-005_ses-session2_acq-boldGRE_phasediff.dicom.tgz
+ | | | | | | | |-sub-005_ses-session2_acq-boldGRE_magnitude.dicom.tgz
+ | | | | | | |-anat
+ | | | | | | | |-sub-005_ses-session2_acq-memprageRMS_T1w.dicom.tgz
+ | | | | | | |-func
+ | | | | | | | |-sub-005_ses-session2_task-checks_run-01_bold.dicom.tgz
+ | | | | |-sub-004
+ | | | | | |-ses-01
+ | | | | | | |-fmap
+ | | | | | | | |-sub-004_ses-01_acq-diffSE_dir-pa_epi.dicom.tgz
+ | | | | | | |-dwi
+ | | | | | | | |-sub-004_ses-01_acq-b1500_dir-pa_dwi.dicom.tgz
+ | | | |-dataset_description.json
+ | | | |-task-checks_bold.json
+ | | | |-participants.json
+ | | | |-.heudiconv
+ | | | | |-004
+ | | | | | |-ses-01
+ | | | | | | |-info
+ | | | | | | | |-004_ses-01.edit.txt
+ | | | | | | | |-heuristic.py
+ | | | | | | | |-004_ses-01.auto.txt
+ | | | | | | | |-filegroup_ses-01.json
+ | | | | | | | |-dicominfo_ses-01.tsv
+ | | | | |-005
+ | | | | | |-ses-session1
+ | | | | | | |-info
+ | | | | | | | |-heuristic.py
+ | | | | | | | |-filegroup_ses-session1.json
+ | | | | | | | |-dicominfo_ses-session1.tsv
+ | | | | | | | |-005_ses-session1.auto.txt
+ | | | | | | | |-005_ses-session1.edit.txt
+ | | | | | |-ses-session2
+ | | | | | | |-info
+ | | | | | | | |-dicominfo_ses-session2.tsv
+ | | | | | | | |-heuristic.py
+ | | | | | | | |-filegroup_ses-session2.json
+ | | | | | | | |-005_ses-session2.edit.txt
+ | | | | | | | |-005_ses-session2.auto.txt
+ | | | |-sub-004
+ | | | | |-ses-01
+ | | | | | |-fmap
+ | | | | | | |-sub-004_ses-01_acq-diffSE_dir-pa_epi.json
+ | | | | | | |-sub-004_ses-01_acq-diffSE_dir-pa_epi.nii.gz
+ | | | | | |-sub-004_ses-01_scans.tsv
+ | | | | | |-dwi
+ | | | | | | |-sub-004_ses-01_acq-b1500_dir-pa_dwi.bvec
+ | | | | | | |-sub-004_ses-01_acq-b1500_dir-pa_dwi.bval
+ | | | | | | |-sub-004_ses-01_acq-b1500_dir-pa_dwi.json
+ | | | | | | |-sub-004_ses-01_acq-b1500_dir-pa_dwi.nii.gz
+ | | | |-CHANGES
+```
+
 ### 6.0  Running the XNAT2BIDS Script
 
 #### 6.1 Load Anaconda Module Into Environment
@@ -394,7 +506,7 @@ Done with Heudiconv BIDS Convesion.
 From the command line, run the following:
 
 ```
-module load anaconda/2022.05
+module load anaconda/latest
 ```
 
 #### 6.2 Running with Defaults Only
@@ -405,7 +517,7 @@ If the default values for resource allocation are suitable and you do not need t
 python run_xnat2bids.py
 ```
 
-Since, by default, no sessions are flagged for processing, you will immediately be prompted to enter a Session ID to proceed.  If you would like to processing multiple sessions, you can enter them as a comma-separated string.  Here's an example:
+Since, by default, no sessions are flagged for processing, you will immediately be prompted to enter a Session ID to proceed.  If you would like to process multiple sessions simultaneously, you can enter them as a comma-separated string.  Here's an example:
 
 ```
 Enter Session(s) (comma separated): XNAT_E00080, XNAT_E00114,  XNAT_E00152
