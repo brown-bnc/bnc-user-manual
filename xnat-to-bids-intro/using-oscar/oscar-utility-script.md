@@ -140,7 +140,7 @@ skipseq LIST[INTEGER]: Exclude this sequence(s) from processing
 
 log-id TEXT: ID or suffix to append to logfile. If empty, current date is used [default: current date - MM-DD-YYYY-HH-MM-SS]
 
-verbose INTEGER: Verbose level. This flag can be specified multiple times to increase verbosity [default: 0]
+verbose INTEGER: Verbose level, from 0 (quiet) to 2 (most verbose) [default: 0]
 
 overwrite BOOLEAN: Remove directories where prior results for this session/participant [default: false]
 ```
