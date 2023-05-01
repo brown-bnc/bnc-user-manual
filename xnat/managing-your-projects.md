@@ -58,7 +58,7 @@ and follow these rules
 
 * Use ALL CAPS
 * Separate only with underscores
-* Maximum of 13 characters
+* Maximum of 27 characters
 
 For instance,
 
@@ -66,5 +66,3 @@ For instance,
 ASHENHAV_TCB
 ASHENHAV_OA
 ```
-
-As you can see, the 13 character limits considerably the name that you can choose as an identifier.
