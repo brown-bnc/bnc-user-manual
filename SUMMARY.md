@@ -42,7 +42,6 @@
 
 ## Analysis Pipelines
 
-* [ReproNim - Tools](analysis-pipelines/repronim.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography:DSI Studio](analysis-pipelines/untitled.md)
