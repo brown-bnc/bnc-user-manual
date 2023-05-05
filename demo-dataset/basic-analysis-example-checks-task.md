@@ -11,7 +11,7 @@ This is a very simple visual task, with alternating 12s blocks of flashing check
 In this example, we will use the data from demodat participant 005, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. Be sure to change the `bids_root_dir` variable to your desired output location. This will create a source data folder for subject 005 within `$bids_root_dir/bnc/study-demodat/xnat-export` and a BIDS-compatible data directory for subject 005 within `$bids_root_dir/bnc/study-demodat/bids/`.
 
 ```shell
-version=v1.0.10
+version=v1.1.1
 #CHANGE THIS TO YOUR DESIRED OUTPUT DIRECTORY
 bids_root_dir=/gpfs/data/mworden/${USER}/xnat-exports 
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
