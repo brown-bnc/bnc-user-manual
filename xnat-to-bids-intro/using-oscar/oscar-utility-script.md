@@ -507,30 +507,11 @@ Go to your \~/bids-export directory to check your exported DICOM data and proces
  | | | |-CHANGES
 ```
 
-### 6.0 (Optional) Already Exported? DICOM to BIDS Conversion&#x20;
 
-In the case you would like to convert to BIDS with data you have already exported, consider using the following method.  The configuration setup is similar to launching the entire xnat2bids pipeline, with some minor differences and limitations.
 
-#### 6.1 Add a New Section to Your User Configuration File
+### 6.0  Running the XNAT2BIDS Script
 
-Currently, this method of DICOM to BIDS conversion only services **one** session at time.  The following fields are required: `project`, `subject`, and `session-suffix`.
-
-```toml
-[dcm2bids-args]
-project="bnc_demodat"
-subject="005"
-session-suffix="session1"
-```
-
-#### 6.2 Running DCM2BIDS Single Session
-
-Now that you have a complete configuration file, you are ready to run the pipeline!
-
-See the steps below [#7.0-running-the-xnat2bids-script](oscar-utility-script.md#7.0-running-the-xnat2bids-script "mention") to launch with your custom config.&#x20;
-
-### 7.0  Running the XNAT2BIDS Script
-
-#### 7.1 Load Anaconda Module Into Environment
+#### 6.1 Load Anaconda Module Into Environment
 
 From the command line, run the following:
 
@@ -538,7 +519,7 @@ From the command line, run the following:
 module load anaconda/latest
 ```
 
-#### 7.2 Running with Defaults Only
+#### 6.2 Running with Defaults Only
 
 If the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
@@ -556,7 +537,7 @@ After your jobs have completed, you can find all DICOM export and BIDS output da
 
 Likewise, logs can be found at `/gpfs/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
 
-#### 7.3 Running with Custom Configuration
+#### 6.3 Running with Custom Configuration
 
 To load a custom parameters, use `--config` to specify your custom configuration file.
 
@@ -566,17 +547,17 @@ python run_xnat2bids.py --config <example_user_config.toml>
 
 **NOTE:** For helpful debugging statements containing the executed command and argument lists to be printed to your terminal, make sure `verbose >= 1` in your configuration's `[xnat2bids-args]` list.
 
-### 8.0 Validate the BIDS output
+### 7.0 Validate the BIDS output
 
 After successfully running `run_xnat2bids.py` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](../bids-validation/)
 
-#### 8.1 Running BIDS-Validator
+#### 7.1 Running BIDS-Validator
 
 Run the following command:
 
 `singularity exec --no-home -B ~/bids-export/bnc/study-demodat/bids /gpfs/data/bnc/simgs/bids/validator-latest.sif bids-validator ~/bids-export/bnc/study-demodat/bids`
 
-#### 8.2 Verify Output
+#### 7.2 Verify Output
 
 Validate no `ERR:` statements have been printed to your console. You should see the following summary:
 
