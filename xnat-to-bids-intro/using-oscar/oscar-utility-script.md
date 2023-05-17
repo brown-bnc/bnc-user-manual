@@ -118,6 +118,12 @@ sessions = ["XNAT_E00114"]
 includeseq=[7, 10]
 ```
 
+{% hint style="info" %}
+**NOTE:** When working with multi-value parameters like `includeseq` and `skipseq`, you have the option to specify a range of values instead of individually listing them. To achieve this, utilize a string format rather than a list format, as demonstrated in the example below:
+
+`includeseq="1-4,6,10"`
+{% endhint %}
+
 Here, we are setting the session to be processed as `XNAT_E00114`, which translates to session 1 of subject 5 in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `includeseq`, we are choosing to  process sequence "7", an anatomical T1-weighted image sequence using magnetization-prepared rapid acquisition gradient-echo, or "memprage", and sequence "10", and functional scan using the blood level oxygen dependent signal.
 
 For a comprehensive list on all available options, see below:
@@ -145,6 +151,8 @@ verbose INTEGER: Verbose level, from 0 (quiet) to 2 (most verbose) [default: 0]
 overwrite BOOLEAN: Remove directories where prior results for this session/participant [default: false]
 
 export-only BOOLEAN: Export DICOM data from XNAT without BIDS conversion [default: false]
+
+skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: false]
 ```
 {% endcode %}
 
@@ -156,11 +164,19 @@ export-only BOOLEAN: Export DICOM data from XNAT without BIDS conversion [defaul
 **NOTE:**  By default, `run_xnat2bids` uses the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
 {% endhint %}
 
-{% hint style="info" %}
-**NOTE:** If you are only interested in exporting your DICOM data from XNAT, without requiring the conversion into BIDS format, add the following entry into your user configuration file:\
-\
-`export-only=true`
-{% endhint %}
+#### 4.3 (Optional) Executing Pipeline Components: Export Only or Skip Export Flags
+
+If you're only interested in exporting your data from XNAT without converting your DICOM data into BIDS, you can add the following entry to your user config:
+
+```
+export-only=true
+```
+
+Similarly, if you would like to convert data already exported into BIDS, you can add the following entry to your user config:
+
+```
+skip-export=true
+```
 
 #### 4.3  Running XNAT2BIDS Single Session
 
