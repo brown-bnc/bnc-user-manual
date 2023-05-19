@@ -184,13 +184,16 @@ Now that you have a complete configuration file, you are ready to run the pipeli
 
 See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") ) to launch with a custom config.
 
-#### 4.4 Verify Output&#x20;
+#### 4.4 Verify XNAT2BIDS Output&#x20;
 
 In your terminal, you should immediately see the following print statements:
 
 ```
-INFO: Launched 1 job
-INFO: Processed Scans Located At: /users/<your-username>/bids-export/
+INFO: Launched 1 xnat2bids job
+INFO: Job ID: 9972398
+INFO: Launched bids-validator to check BIDS compliance
+INFO: Job ID: 9972399
+INFO: Processed Scans Located At: /users/fmcdona4/bids-export/
 ```
 
 Check `~/scratch/logs/` for a new file `xnat2bids-XNAT_E00114-<JOB-ID>.txt.` The contents of that log file should look like this:
@@ -281,6 +284,41 @@ INFO: Populating template files under /users/fmcdona4/bids-export/bnc/study-demo
 INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/users/fmcdona4/bids-export/bnc/study-demodat/bids/', 'session': 'session1'}
 ```
 
+#### 4.5 Verify BIDS Validator Output
+
+Check `~/scratch/logs/` for a new file `bids-validator-<JOB-ID>.txt.` Verify that your BIDS data are in compliance and no errors (\[ERR]) are flagged during validation. The contents of that log file should look like this:
+
+```
+## SLURM PROLOG ###############################################################
+##    Job ID : 9972404
+##  Job Name : bids-validator
+##  Nodelist : node1317
+##      CPUs : 
+##  Mem/Node : 16000 MB
+## Directory : /gpfs/data/bnc/shared/scripts/oscar-scripts
+##   Job Started : Fri May 19 17:18:54 EDT 2023
+###############################################################################
+bids-validator@1.11.0
+(node:178202) Warning: Closing directory handle on garbage collection
+(Use `node --trace-warnings ...` to show where the warning was created)
+        1: [WARN] Tabular file contains custom columns not described in a data dictionary (code: 82 - CUSTOM_COLUMN_WITHOUT_DESCRIPTION)
+                ./sub-005/ses-session1/func/sub-005_ses-session1_task-checks_run-01_events.tsv
+                        Evidence: Columns: TODO -- fill in rows and add more tab-separated columns if desired not defined, please define in: /events.json, /task-checks_events.json,/run-01_events.json,/task-checks_run-01_events.json,/sub-005/sub-005_events.json,/sub-005/sub-005_task-checks_events.json,/sub-005/sub-005_run-01_events.json,/sub-005/sub-005_task-checks_run-01_events.json,/sub-005/ses-session1/sub-005_ses-session1_events.json,/sub-005/ses-session1/sub-005_ses-session1_task-checks_events.json,/sub-005/ses-session1/sub-005_ses-session1_run-01_events.json,/sub-005/ses-session1/sub-005_ses-session1_task-checks_run-01_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_task-checks_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_run-01_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_task-checks_run-01_events.json
+
+        Please visit https://neurostars.org/search?q=CUSTOM_COLUMN_WITHOUT_DESCRIPTION for existing conversations about this issue.
+
+        2: [WARN] The recommended file /README is very small. Please consider expanding it with additional information about the dataset. (code: 213 - README_FILE_SMALL)
+                ./README
+
+        Please visit https://neurostars.org/search?q=README_FILE_SMALL for existing conversations about this issue.
+
+        Summary:                 Available Tasks:                       Available Modalities: 
+        13 Files, 56.24MB        checks                                 MRI                   
+        1 - Subject              TODO: full task name for checks                              
+        1 - Session                                                                           
+
+```
+
 ### 5.0 Running XNAT2BIDS (Multi-Session)
 
 #### 5.1 Adding Sessions to Your Config&#x20;
@@ -336,24 +374,26 @@ See the steps below [#7.0-running-the-xnat2bids-script](oscar-utility-script.md#
 
 In your terminal, you should immediately see the following print statements:
 
-{% code overflow="wrap" lineNumbers="true" %}
 ```
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--skipseq 6', '--overwrite', '--verbose', '--verbose', '--includeseq 7 --includeseq 8 --includeseq 11 --includeseq 14']}
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00152', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt'], 'x2b_param_list': ['XNAT_E00152', '/users/fmcdona4/bids-export/', '--host https://xnat.bnc.brown.edu', '--user fmcdona4', '--skipseq 6', '--overwrite', '--verbose', '--includeseq 7 --includeseq 8 --includeseq 9 --includeseq 10 --includeseq 11']}
-DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif', 'xnat2bids', '[XNAT_E00114,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '11,', '--includeseq,', '14]']}
-DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00152', 'command': ['sbatch', '-Q', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif', 'xnat2bids', '[XNAT_E00152,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '9,', '--includeseq,', '10,', '--includeseq,', '11]']}
-INFO: Launched 3 jobs
+DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00114-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.2.1.sif', 'xnat2bids', '[XNAT_E00114,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '11,', '--includeseq,', '14]']}
+DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00152', 'command': ['sbatch', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/fmcdona4/logs/%x-XNAT_E00152-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/fmcdona4/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.2.1.sif', 'xnat2bids', '[XNAT_E00152,', '/users/fmcdona4/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'fmcdona4,', '--skipseq,', '6,', '--overwrite,', '--verbose,', '--includeseq,', '7,', '--includeseq,', '8,', '--includeseq,', '9,', '--includeseq,', '10,', '--includeseq,', '11]']}
+INFO: Launched 3 xnat2bids jobs
+INFO: Job IDs: 9972412 9972413 9972414
+INFO: Launched bids-validator to check BIDS compliance
+INFO: Job ID: 9972415
 INFO: Processed Scans Located At: /users/fmcdona4/bids-export/
 ```
-{% endcode %}
 
-Check `/gpfs/scratch/<your-username>/logs/` for a three new log files
+Check `/gpfs/scratch/<your-username>/logs/` for a four new log files
 
 * `xnat2bids-XNAT_E00114-<JOB-ID>.txt`&#x20;
 * `xnat2bids-XNAT_E00080-<JOB-ID>.txt`
 * `xnat2bids-XNAT_E00152-<JOB-ID>.txt`&#x20;
+* `bids-validator-<JOB-ID>.txt`
 
-The contents of each log should look similar to this:
+The contents of each `xnat2bids` log should look similar to this:
 
 ```
 ## SLURM PROLOG ###############################################################
@@ -409,6 +449,51 @@ INFO: Adding "IntendedFor" to the fieldmaps in /users/fmcdona4/bids-export/bnc/s
 INFO: Populating template files under /users/fmcdona4/bids-export/bnc/study-demodat/bids/
 INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/users/fmcdona4/bids-export/bnc/study-demodat/bids/', 'session': 'session2'}
 Done with Heudiconv BIDS Convesion.
+```
+
+The contents of your bids-validator log should look like this:
+
+```
+## SLURM PROLOG ###############################################################
+##    Job ID : 9972415
+##  Job Name : bids-validator
+##  Nodelist : node1317
+##      CPUs : 
+##  Mem/Node : 16000 MB
+## Directory : /gpfs/data/bnc/shared/scripts/oscar-scripts
+##   Job Started : Fri May 19 17:23:17 EDT 2023
+###############################################################################
+bids-validator@1.11.0
+(node:179051) Warning: Closing directory handle on garbage collection
+(Use `node --trace-warnings ...` to show where the warning was created)
+        1: [WARN] Tabular file contains custom columns not described in a data dictionary (code: 82 - CUSTOM_COLUMN_WITHOUT_DESCRIPTION)
+                ./sub-005/ses-session1/func/sub-005_ses-session1_task-checks_run-01_events.tsv
+                        Evidence: Columns: TODO -- fill in rows and add more tab-separated columns if desired not defined, please define in: /events.json, /task-checks_events.json,/run-01_events.json,/task-checks_run-01_events.json,/sub-005/sub-005_events.json,/sub-005/sub-005_task-checks_events.json,/sub-005/sub-005_run-01_events.json,/sub-005/sub-005_task-checks_run-01_events.json,/sub-005/ses-session1/sub-005_ses-session1_events.json,/sub-005/ses-session1/sub-005_ses-session1_task-checks_events.json,/sub-005/ses-session1/sub-005_ses-session1_run-01_events.json,/sub-005/ses-session1/sub-005_ses-session1_task-checks_run-01_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_task-checks_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_run-01_events.json,/sub-005/ses-session1/func/sub-005_ses-session1_task-checks_run-01_events.json
+                ./sub-005/ses-session2/func/sub-005_ses-session2_task-checks_run-01_events.tsv
+                        Evidence: Columns: TODO -- fill in rows and add more tab-separated columns if desired not defined, please define in: /events.json, /task-checks_events.json,/run-01_events.json,/task-checks_run-01_events.json,/sub-005/sub-005_events.json,/sub-005/sub-005_task-checks_events.json,/sub-005/sub-005_run-01_events.json,/sub-005/sub-005_task-checks_run-01_events.json,/sub-005/ses-session2/sub-005_ses-session2_events.json,/sub-005/ses-session2/sub-005_ses-session2_task-checks_events.json,/sub-005/ses-session2/sub-005_ses-session2_run-01_events.json,/sub-005/ses-session2/sub-005_ses-session2_task-checks_run-01_events.json,/sub-005/ses-session2/func/sub-005_ses-session2_events.json,/sub-005/ses-session2/func/sub-005_ses-session2_task-checks_events.json,/sub-005/ses-session2/func/sub-005_ses-session2_run-01_events.json,/sub-005/ses-session2/func/sub-005_ses-session2_task-checks_run-01_events.json
+
+        Please visit https://neurostars.org/search?q=CUSTOM_COLUMN_WITHOUT_DESCRIPTION for existing conversations about this issue.
+
+        2: [WARN] Not all subjects contain the same sessions. (code: 97 - MISSING_SESSION)
+                ./sub-004/ses-session1
+                        Evidence: Subject: sub-004; Missing session: ses-session1
+                ./sub-004/ses-session2
+                        Evidence: Subject: sub-004; Missing session: ses-session2
+                ./sub-005/ses-01
+                        Evidence: Subject: sub-005; Missing session: ses-01
+
+        Please visit https://neurostars.org/search?q=MISSING_SESSION for existing conversations about this issue.
+
+        3: [WARN] The recommended file /README is very small. Please consider expanding it with additional information about the dataset. (code: 213 - README_FILE_SMALL)
+                ./README
+
+        Please visit https://neurostars.org/search?q=README_FILE_SMALL for existing conversations about this issue.
+
+        Summary:                  Available Tasks:                       Available Modalities: 
+        38 Files, 343.22MB        checks                                 MRI                   
+        2 - Subjects              TODO: full task name for checks                              
+        3 - Sessions                                                                           
+
 ```
 
 #### 5.5 Check BIDS Processed Data
@@ -561,25 +646,4 @@ To load a custom parameters, use `--config` to specify your custom configuration
 python run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
-**NOTE:** For helpful debugging statements containing the executed command and argument lists to be printed to your terminal, make sure `verbose >= 1` in your configuration's `[xnat2bids-args]` list.
-
-### 7.0 Validate the BIDS output
-
-After successfully running `run_xnat2bids.py` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](../bids-validation/)
-
-#### 7.1 Running BIDS-Validator
-
-Run the following command:
-
-`singularity exec --no-home -B ~/bids-export/bnc/study-demodat/bids /gpfs/data/bnc/simgs/bids/validator-latest.sif bids-validator ~/bids-export/bnc/study-demodat/bids`
-
-#### 7.2 Verify Output
-
-Validate no `ERR:` statements have been printed to your console. You should see the following summary:
-
-```
-Summary:                  Available Tasks:                       Available Modalities: 
-38 Files, 343.22MB        checks                                 MRI                   
-2 - Subjects              TODO: full task name for checks                              
-3 - Sessions                                                                           
-```
+**NOTE:** For helpful debugging statements containing the executed command and argument lists to be printed to your terminal, make sure `verbose >= 1` in your configuration's `[xnat2bids-args]` list.                                                                  &#x20;
