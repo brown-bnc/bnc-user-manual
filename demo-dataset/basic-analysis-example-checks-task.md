@@ -61,7 +61,7 @@ To make our data BIDS compatible and facilitate future data sharing, we need to 
 Demodat subject 005 session 1 behavioral data. For now, we'll only be using the two datafiles for the hemifield localizer task, with "LRChx" in their filenames.
 {% endfile %}
 
-Next, download our example python script make\_events.py, and run it from the command line with `python make_events.py --bids_dir {whatever your BIDS directory is} --subj sub-005 --sess ses-session1`. For this script to run, you'll need both [numpy](https://numpy.org/install/) and [pandas](https://pandas.pydata.org/) installed in your python environment. This script will create BIDS-formatted events.tsv files corresponding to each functional run in `$bids_root/sub-005/ses-session1/func/`.&#x20;
+Next, download our example python script make\_events.py, and run it from the command line with `python make_events.py --bids_dir {whatever your BIDS directory is} --subj sub-005 --sess ses-session1`. For this script to run, you'll need both [numpy](https://numpy.org/install/) and [pandas](https://pandas.pydata.org/) installed in your python environment (if you're doing this on Oscar and you run `module load anaconda/latest`, you should be all set). This script will create BIDS-formatted events.tsv files corresponding to each functional run in `$bids_root/sub-005/ses-session1/func/`.&#x20;
 
 {% file src="../.gitbook/assets/make_events.py" %}
 example python script to read in csv files created by PsychoPy and create the events.tsv files corresponding to each fMRI run
