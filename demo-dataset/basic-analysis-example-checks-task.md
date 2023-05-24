@@ -85,6 +85,8 @@ If you are unable to run this script for any reason, you can download the .1D fi
 
 #### Step 4: Use afni\_proc.py to create a simple preprocessing stream and run the general linear model for the checks task
 
+✳️ To access AFNI on Oscar, type `module load afni/21.2.04`.
+
 This basic example of a univariate analysis with AFNI is based on the [example 6b](https://afni.nimh.nih.gov/pub/dist/doc/program\_help/afni\_proc.py.html) for afni\_proc.py. The -blocks flag lists the processing blocks that will be executed, in order:&#x20;
 
 1. tshift (slice time correction)
