@@ -182,7 +182,7 @@ skip-export=true
 
 Now that you have a complete configuration file, you are ready to run the pipeline!
 
-See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") ) to launch with a custom config.
+See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") ) to launch with this custom config.
 
 #### 4.4 Verify XNAT2BIDS Output&#x20;
 
@@ -368,7 +368,7 @@ verbose=1
 
 Now that you have a complete configuration file, you are ready to run the pipeline!
 
-See the steps below [#7.0-running-the-xnat2bids-script](oscar-utility-script.md#7.0-running-the-xnat2bids-script "mention") to launch with a custom config.
+See the steps below ([**#6.0 Running the XNAT2BIDS Script**](oscar-utility-script.md#6.0-running-the-xnat2bids-script)) to launch with this custom config.
 
 #### 5.4 Verify Output
 
