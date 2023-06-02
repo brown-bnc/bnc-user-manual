@@ -105,7 +105,7 @@ Copy the text in the box below (changing value of the `bidsdir` variable to your
 ```bash
 #!/bin/bash
 
-bidsdir=/gpfs/users/elorenc1/bids-export/bnc/study-demodat/bids
+bidsdir=/gpfs/home/elorenc1/bids-export/bnc/study-demodat/bids
 subID='sub-005'
 sess='ses-session1'
 task='checks'
