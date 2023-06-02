@@ -99,7 +99,7 @@ This basic example of a univariate analysis with AFNI is based on the [example 6
 
 For the regression, we use `-regress_stim_times` to provide the checks\_left\_stimtimes.1D and checks\_right\_stimtimes.1D files for this participant, `-regress_stim_labels` to assign those conditions the labels of "left" and "right" respectively, `-regress_basis` to model each stimulus as a block lasting 12 seconds, and `-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right" contrast to find voxels whose activity is greater for left hemifield stimulation than for right, and a "right\_vs\_left" contrast that does the opposite (and should yield the same statistical map, but with opposite-signed t-values).&#x20;
 
-This `demodat_afniproc.sh` script will then create a much longer `proc.sub-005` tcsh script, which will be automatically executed because we included the -execute flag at the bottom of the script. Looking at the proc.sub-005 script is the best way to gain a deeper understanding of each of AFNI's processing steps.&#x20;
+Copy the text in the box below (changing value of the `bidsdir` variable to your own location), save it as a file called `demodat_afniproc.sh`, and then execute it on the command line with `bash demodat_afniproc.sh`. This `demodat_afniproc.sh` script will then create a much longer `proc.sub-005` tcsh script, which will be automatically executed because we included the -execute flag at the bottom of the script. Looking at the proc.sub-005 script is the best way to gain a deeper understanding of each of AFNI's processing steps.&#x20;
 
 {% code title="demodat_afniproc.sh" %}
 ```bash
