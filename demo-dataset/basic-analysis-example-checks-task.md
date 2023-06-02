@@ -113,7 +113,7 @@ task='checks'
 afni_proc.py                                                         \
     -subj_id                  $subID                                 \
     -out_dir                  $bidsdir/derivatives/afni/$subID/$sess/$subID.$task.results  \
-    -copy_anat                $bidsdir/$subID/$sess/anat/$subID\_$sess\_acq-memprageRMS_T1w.nii.gz        \
+    -copy_anat                $bidsdir/$subID/$sess/anat/${subID}_${sess}_acq-memprageRMS_T1w.nii.gz        \
     -anat_has_skull           yes                                     \
     -dsets                    $bidsdir/$subID/$sess/func/*$task*nii*                 \
     -blocks                   tshift align volreg blur mask scale regress                          \
@@ -125,7 +125,7 @@ afni_proc.py                                                         \
     -volreg_align_e2a                                                \
     -mask_epi_anat            yes                                    \
     -blur_size                4.0                                    \
-    -regress_stim_times       $bidsdir/derivatives/afni/$subID/$sess/stimtimes/$subID\_$task\_left_stimtimes.1D $bidsdir/derivatives/afni/$subID/$sess/stimtimes/$subID\_$task\_right_stimtimes.1D          \
+    -regress_stim_times       $bidsdir/derivatives/afni/$subID/$sess/stimtimes/${subID}_${task}_left_stimtimes.1D $bidsdir/derivatives/afni/$subID/$sess/stimtimes/${subID}_${task}_right_stimtimes.1D          \
     -regress_stim_labels      left right                                \
     -regress_basis            'BLOCK(12,1)'                          \
     -regress_opts_3dD         -jobs 2                                \
