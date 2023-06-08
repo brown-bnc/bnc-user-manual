@@ -85,7 +85,7 @@ version=22.0.0
 singularity build fmriprep-${version}.sif docker://nipreps/fmriprep:${version}
 ```
 
-Replace `version` in the command above with the desired docker tag. You can find the latest tags of fmriprep [here](https://hub.docker.com/r/poldracklab/fmriprep/tags)
+Replace `version` in the command above with the desired docker tag. You can find the latest tags of fmriprep [here](https://hub.docker.com/r/nipreps/fmriprep/tags)
 
 {% hint style="info" %}
 &#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `22.0.0` instead of `latest`&#x20;
