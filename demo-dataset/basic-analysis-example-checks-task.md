@@ -10,7 +10,7 @@ This is a very simple visual task, with alternating 12s blocks of flashing check
 
 In this example, we will use the data from demodat participant 005, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the new xnat-tools Oscar utility script explained [here](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md).&#x20;
 
-First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/gpfs/users/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
+First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/gpfs/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
 ```
 # Configuring arguments here will override default parameters.
@@ -53,33 +53,35 @@ If you entered your email address, you should receive an email when your xnat2bi
 
 This will create a source data folder for subject 005 within `$bids_root/bnc/study-demodat/xnat-export` and a BIDS-compatible data directory for subject 005 within `$bids_root/bnc/study-demodat/bids/`.
 
+✳️ We will call this output BIDS-compatible folder (`/gpfs/home/<yourusername>/xnat-export/bnc/study-demodat/bids/`, unless you specified a different `$bids_root` location) `$bidsdir` for the remainder of the tutorial.
+
 #### Step 2: Extract stimulus timing information from stimulus presentation output files.
 
-To make our data BIDS compatible and facilitate future data sharing, we need to create events.tsv files that correspond to each of our functional runs and contain information about each stimulus event of interest (onset time, condition, etc.). First, download the participant's data files (in our case, created by PsychoPy) and place them in the sourcedata subfolder of your BIDS directory in a subfolder named 'beh'. So, for this participant and session, the full path should be: `$bids_root/sourcedata/sub-005/ses-session1/beh`.&#x20;
+To make our data BIDS compatible and facilitate future data sharing, we need to create events.tsv files that correspond to each of our functional runs and contain information about each stimulus event of interest (onset time, condition, etc.). First, download the participant's data files (in our case, created by PsychoPy) and place them in the sourcedata subfolder of your BIDS directory in a subfolder named 'beh'. So, for this participant and session, the full path should be: `$bidsdir/sourcedata/sub-005/ses-session1/beh`.&#x20;
 
 {% file src="../.gitbook/assets/sub-005_ses-1_beh.zip" %}
 Demodat subject 005 session 1 behavioral data. For now, we'll only be using the two datafiles for the hemifield localizer task, with "LRChx" in their filenames.
 {% endfile %}
 
-Next, download our example python script make\_events.py, and run it from the command line with `python make_events.py --bids_dir {whatever your BIDS directory is} --subj sub-005 --sess ses-session1`. For this script to run, you'll need both [numpy](https://numpy.org/install/) and [pandas](https://pandas.pydata.org/) installed in your python environment (if you're doing this on Oscar and you run `module load anaconda/latest`, you should be all set). This script will create BIDS-formatted events.tsv files corresponding to each functional run in `$bids_root/sub-005/ses-session1/func/`.&#x20;
+Next, download our example python script make\_events.py, and run it from the command line with `python make_events.py --bids_dir $bidsdir --subj sub-005 --sess ses-session1`. For this script to run, you'll need both [numpy](https://numpy.org/install/) and [pandas](https://pandas.pydata.org/) installed in your python environment (if you're doing this on Oscar and you run `module load anaconda/latest`, you should be all set). This script will create BIDS-formatted events.tsv files corresponding to each functional run in `$bidsdir/sub-005/ses-session1/func/`.&#x20;
 
 {% file src="../.gitbook/assets/make_events.py" %}
 example python script to read in csv files created by PsychoPy and create the events.tsv files corresponding to each fMRI run
 {% endfile %}
 
-If you are unable to run this script for any reason, you can download the events.tsv output files here, and manually place them in  `$bids_root/sub-005/ses-session1/func/` .
+If you are unable to run this script for any reason, you can download the events.tsv output files here, and manually place them in  `$bidsdir/sub-005/ses-session1/func/` .
 
 {% file src="../.gitbook/assets/sub-005_ses-01_eventsfiles.zip" %}
 
 #### Step 3: Convert events.tsv files into AFNI stimulus timing files
 
-We needed to make those events.tsv files for BIDS compatibility, but in order to run our statistical analysis in AFNI, we need to transform them into .1D text files required by AFNI for specifying stimulus timing information. Instead of one file per run, as we had with the events.tsv files, here we need one file per condition (e.g. left hemifield checks), with one line per run of the task, specifying all the onset times for that condition. We have created an example python script make\_afni\_stimtimes.py, which you can run from the command line just as you did make\_events.py: `python make_afni_stimtimes.py --bids_dir {whatever your BIDS directory is} --subj sub-005 --sess ses-session1` . This will create stimulus timing files in `$bids_root/derivatives/afni/sub-005/ses-session1/stimtimes/` .
+We needed to make those events.tsv files for BIDS compatibility, but in order to run our statistical analysis in AFNI, we need to transform them into .1D text files required by AFNI for specifying stimulus timing information. Instead of one file per run, as we had with the events.tsv files, here we need one file per condition (e.g. left hemifield checks), with one line per run of the task, specifying all the onset times for that condition. We have created an example python script make\_afni\_stimtimes.py, which you can run from the command line just as you did make\_events.py: `python make_afni_stimtimes.py --bids_dir $bidsdir --subj sub-005 --sess ses-session1` . This will create stimulus timing files in `$bidsdir/derivatives/afni/sub-005/ses-session1/stimtimes/` .
 
 {% file src="../.gitbook/assets/make_afni_stimtimes.py" %}
 example python script to read in events.tsv files from each functional run and output the .1D stimulus timing files AFNI needs
 {% endfile %}
 
-If you are unable to run this script for any reason, you can download the .1D files here and manually place them in `$bids_root/derivatives/afni/sub-005/ses-session1/stimtimes/`.
+If you are unable to run this script for any reason, you can download the .1D files here and manually place them in `$bidsdir/derivatives/afni/sub-005/ses-session1/stimtimes/`.
 
 {% file src="../.gitbook/assets/sub-005_stimtimes.zip" %}
 
@@ -147,6 +149,6 @@ afni_proc.py                                                         \
 ```
 {% endcode %}
 
-After the `demodat_afniproc.sh` script executes successfully, a results directory will be created: `$bidsdir/derivatives/afni/sub-005/ses-session1/sub-005.checks.results`. Start AFNI from within this directory (just type `afni` on the command line), set the underlay to anat\_final.sub-005 and the overlay to stats.sub-005\_REML. In the Define Overlay menu, set the OLay to "#7 left\_vs\_right#0\_Coef" and the Thr to "#8 left\_vs\_right#0\_Tstat", and change the threshold to your desired alpha (here we've used p = 0.001). This left vs. right contrast shows regions of the brain that show a stronger BOLD response to left vs. right visual hemifield stimulation, so  we can easily localize the right visual cortex and the right LGN, as expected.&#x20;
+After the `demodat_afniproc.sh` script executes successfully, a results directory will be created: `$bidsdir/derivatives/afni/sub-005/ses-session1/sub-005.checks.results`. Start AFNI from within this directory (just type `afni` on the command line), set the underlay to anat\_final.sub-005 and the overlay to stats.sub-005\_REML. In the Define Overlay menu, set the OLay to "#7 left\_vs\_right#0\_Coef" and the Thr to "#8 left\_vs\_right#0\_Tstat", and change the threshold to your desired alpha (here we've used p = 0.001). This left vs. right contrast shows regions of the brain that show a stronger BOLD response to left vs. right visual hemifield stimulation, so we can easily localize the right visual cortex and the right LGN, as expected.&#x20;
 
 <figure><img src="../.gitbook/assets/Screen Shot 2022-12-06 at 2.50.06 PM.png" alt=""><figcaption><p>Results of a general linear test contrasting left vs. right visual hemifield stimulation, in demodat subject 005 session 1</p></figcaption></figure>
