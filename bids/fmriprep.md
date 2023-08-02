@@ -1,10 +1,6 @@
----
-description: https://fmriprep.org/en/stable/
----
-
 # fmriprep
 
-## Running fmriprep
+## Running [fmriprep](https://fmriprep.org/en/stable/)
 
 {% tabs %}
 {% tab title="Oscar" %}
