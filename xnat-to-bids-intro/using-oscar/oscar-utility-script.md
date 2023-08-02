@@ -172,7 +172,7 @@ If you're only interested in exporting your data from XNAT without converting yo
 export-only=true
 ```
 
-Similarly, if you would like to convert data already exported into BIDS, you can add the following entry to your user config:
+Similarly, if you would like to BIDS-convert data already exported to Oscar, you can add the following entry to your user config:
 
 ```
 skip-export=true
