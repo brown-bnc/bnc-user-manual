@@ -54,7 +54,7 @@ singularity run --cleanenv                                         \
 
 ```
 cd /path/to/sbatch/script
-sbatch fmriprep_shenhav_example.sh
+sbatch demodat_fmriprep_example.sh
 ```
 
 For more information about managing your job, see the [Oscar documentation](https://docs.ccv.brown.edu/oscar/submitting-jobs/managing-jobs)
