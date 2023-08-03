@@ -21,7 +21,7 @@ We keep up-to-date Singularity images for mriqc for the community. (Look in `/os
 #SBATCH --mem-per-cpu=4G
 #SBATCH -J mriqc 
 #SBATCH --output mriqc-%J.txt
-#SBATCH --mail-user elizabeth_lorenc@brown.edu
+#SBATCH --mail-user example-user@brown.edu
 #SBATCH --mail-type ALL
 
 #---------CONFIGURE THESE VARIABLES--------------
