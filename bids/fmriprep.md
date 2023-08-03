@@ -1,3 +1,9 @@
+---
+description: >-
+  a BIDS app that runs a standardized and reproducible preprocessing pipeline on
+  structural and functional MRI data
+---
+
 # fmriprep
 
 ## Running [fmriprep](https://fmriprep.org/en/stable/)
