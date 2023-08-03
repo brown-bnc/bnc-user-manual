@@ -1,3 +1,9 @@
+---
+description: >-
+  a BIDS app that automates comprehensive quality assessment of structural and
+  functional MRI data
+---
+
 # mriqc
 
 It is good practice to inspect the quality of your data _before_ running any further processing (like [fmriprep](fmriprep.md)). [mriqc](https://mriqc.readthedocs.io/en/latest/index.html) is a BIDS app that makes it easy to get both visual and quantitative assessments of your data quality. Here are simple instructions for running mriqc on Oscar - all you need to start is a valid BIDS dataset.
