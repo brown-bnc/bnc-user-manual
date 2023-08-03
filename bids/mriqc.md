@@ -4,7 +4,7 @@ It is good practice to inspect the quality of your data _before_ running any fur
 
 ### 1. write a batch script
 
-We keep up-to-date Singularity images for mriqc for the community. (Look in `/oscar/data/bnc/simgs/nipreps/` to see which versions we currently have available.) In order to run mriqc on Oscar, you'll need to write a batch script. Here is an example that runs mriqc on the anatomical and functional data from the entire demodat dataset (which I have already exported from xnat and converted to BIDS format using the [Oscar utility script](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md)).
+We keep up-to-date Singularity images for mriqc for the community. (Look in `/oscar/data/bnc/simgs/nipreps/` to see which versions we currently have available.) In order to run mriqc on Oscar, you'll need to write a batch script. Here is an example that runs mriqc on the anatomical and functional data from the entire demodat dataset (which I have already exported from xnat and converted to BIDS format using the [Oscar utility script](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md) for this example).
 
 {% code title="demodat_mriqc_example.sh -- Filename and not part of the script!" %}
 ```bash
