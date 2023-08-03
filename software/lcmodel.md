@@ -6,7 +6,7 @@ description: Installation of LCModel GUI
 
 ## Installing LCModel in Oscar
 
-Installing LCModel in Oscar for personal use is a simple process. Because LCModel has a graphical interface, you will need to connect to Oscar using the Desktop Application via OpenOndeman, this will make sure we are using a node that can find its `$DISPLAY`.
+Installing LCModel in Oscar for personal use is a simple process. Because LCModel has a graphical interface, you will need to connect to Oscar using the Desktop Application via OpenOnDemand, this will make sure we are using a node that can find its `$DISPLAY`.
 
 ### 0. Connecting to Oscar
 
@@ -54,7 +54,7 @@ At this point a GUI window will pop as follows:
 Finally, you can **Exit LCMgui**
 
 {% hint style="info" %}
-You may see the following error message: Infiniband hardware address can be incorrect! Please read BUGS section in ifconfig(8). This should have any effect. It is known message in Oscar that will go away in a future update
+You may see the following error message: Infiniband hardware address can be incorrect! Please read BUGS section in ifconfig(8). This should not have any effect. It is a known message in Oscar that will go away in a future update
 {% endhint %}
 
 ### **4. Install the License**
@@ -73,7 +73,7 @@ If you have used LCModel before and have an outdated license file, please remove
 ### 5. Copy the Basis Set
 
 ```
-cp -r /gpfs/data/bnc/shared/lcmodel/basis-sets ~/.lcmodel/basis-sets
+cp -r /oscar/data/bnc/shared/lcmodel/basis-sets ~/.lcmodel/basis-sets
 ```
 
 

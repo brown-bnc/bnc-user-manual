@@ -12,7 +12,7 @@ description: An example of running LCModel on a test data set
 
 ### 1. Start a VNC session
 
-To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc). LCModel is not very resource intensive so you can request a basic session
+To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.ccv.brown.edu/oscar/connecting-to-oscar/vnc). LCModel is not very resource intensive so you can request a basic session
 
 ### 2. Launch Terminal&#x20;
 
@@ -32,13 +32,13 @@ To run LCModel's gui you will nedd to start [Oscar's VNC Client](https://docs.cc
 
 ![Sample Data Type Window](<../.gitbook/assets/image (5).png>)
 
-* Search for the share data: `/gpfs/data/bnc/shared/lcmodel/TestData.rda`&#x20;
+* Search for the share data: `/oscar/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
 ![Sample Data Browser Window](<../.gitbook/assets/image (2).png>)
 
 ### 5. Select Basis
 
-During installation, the basis-set was install under the LCModels' hidden directory in your home. i.e., `$HOME/.lcmodel/basis-set` which is equivalent to `/gpfs/home/$USER/.lcmodel/basis-set`
+During installation, the basis-set was installed under the LCModels' hidden directory in your home. i.e., `$HOME/.lcmodel/basis-set` which is equivalent to `/oscar/home/$USER/.lcmodel/basis-set`
 
 * Change the basis file to: `$HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis`
 
@@ -58,7 +58,7 @@ A dialog will open
 
 #### c. Add key to Control Parameters
 
-Add `key= 210387309` to the control parameters as shown in the figure below. Becareful to match spaces. When done, press OK
+Add `key= 210387309` to the control parameters as shown in the figure below. Be careful to match spaces. When done, press OK
 
 ![](../.gitbook/assets/lc-model-params-with-key.png)
 
