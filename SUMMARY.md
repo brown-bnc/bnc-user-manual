@@ -38,6 +38,7 @@
 ## BIDS and BIDS Containers <a href="#bids" id="bids"></a>
 
 * [Introduction to BIDS](bids/introduction-to-bids.md)
+* [mriqc](bids/mriqc.md)
 * [fmriprep](bids/fmriprep.md)
 
 ## Analysis Pipelines
