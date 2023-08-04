@@ -1,4 +1,4 @@
-# Singularity Executable
+# Step-wise via Interact Session
 
 ## Running XNAT2BIDS
 
@@ -13,7 +13,7 @@ interact -n 2 -t 01:00:00 -m 8g
 version=v1.1.1
 bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
-simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
+simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
 XNAT_SESSION="XNAT_E00114"
 singularity exec --no-home --bind ${bids_root_dir} \
@@ -95,7 +95,7 @@ mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 This is maintained by bnc and we will be pointing to the version defined above
 
 ```
-simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
+simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 ```
 
 #### XNAT USER and SESSION&#x20;
@@ -118,7 +118,7 @@ In the specific case of `xnat-tools` , the wrapping container has `Python` , `dc
 Containers have their own file system, which is completely independent and isolated from the host where the container is run
 
 {% hint style="info" %}
-Because a container does not have the same directory structure as the host, we have to remember that paths like `/gpfs/data/<PI>` only exist in Oscar, but not inside the container
+Because a container does not have the same directory structure as the host, we have to remember that paths like `/oscar/data/<PI>` only exist in Oscar, but not inside the container
 {% endhint %}
 
 **Sharing paths between a container and the host computer (OSCAR)**
@@ -171,7 +171,7 @@ Let's expand on the above command:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case `--help`
 
@@ -239,7 +239,7 @@ Once again, let's expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 7`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
@@ -255,13 +255,13 @@ Subject ID: XNAT_S00111
 Session Suffix:  SESSION1
 Subject label: 005
 ------------------------------------------------
-2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making output xnat-export session directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
+2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making output xnat-export session directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
 2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
 2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO Get scans.
 2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
-2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO bids_session_dir: /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
+2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO bids_session_dir: /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
 2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO BIDSNAME: anat-T1w_acq-memprageRMS
-2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making scan DICOM directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1/anat-T1w_acq-memprageRMS.
+2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making scan DICOM directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1/anat-T1w_acq-memprageRMS.
 2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Downloading files
 2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu py.warnings[151813] WARNING /usr/local/lib/python3.10/site-packages/xnat_tools/bids_utils.py:324: UserWarning: Changed DICOM HEADER[ProtocolName and SeriesDescription]:             anat-t1w_acq-memprage -> anat-T1w_acq-memprageRMS             anat-t1w_acq-memprage RMS -> anat-T1w_acq-memprageRMS                                                                                                                                                                        
   warnings.warn(                                                                                                                                                           
@@ -269,18 +269,18 @@ Subject label: 005
 2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Done.
 2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO ---------------------------------
 ************************
-Making output BIDS Session directory /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids
-Executing Heudiconv command: heudiconv -f reproin --bids     -o /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
+Making output BIDS Session directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids
+Executing Heudiconv command: heudiconv -f reproin --bids     -o /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
 INFO: Running heudiconv version 0.11.6 latest 0.12.2
 INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {'subject': '005', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
+INFO: PROCESSING STARTS: {'subject': '005', 'outdir': '/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
 INFO: Processing 176 dicoms
 INFO: Analyzing 176 dicoms
 INFO: Filtering out 0 dicoms based on their filename
 INFO: Generated sequence info for 1 studies with 176 entries total
 INFO: Processing 1 seqinfo entries
 INFO: Doing conversion using dcm2niix
-INFO: Converting /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
+INFO: Converting /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
 230410-13:47:25,907 nipype.workflow INFO:
          [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
 INFO: [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
@@ -297,15 +297,15 @@ INFO: stdout 2023-04-10T13:47:26.127796:Chris Rorden's dcm2niiX version v1.0.201
          stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
 INFO: stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
 230410-13:47:26,128 nipype.interface INFO:
-         stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
-INFO: stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
+         stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
+INFO: stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
 230410-13:47:27,158 nipype.interface INFO:
          stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
 INFO: stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
 230410-13:47:27,174 nipype.workflow INFO:
          [Node] Finished "convert", elapsed time 1.166935s.
 INFO: [Node] Finished "convert", elapsed time 1.166935s.
-WARNING: Failed to find task field in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json.
+WARNING: Failed to find task field in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json.
 230410-13:47:37,646 nipype.workflow INFO:
          [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
 INFO: [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
@@ -315,11 +315,11 @@ INFO: [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
 230410-13:47:40,993 nipype.workflow INFO:
          [Node] Finished "embedder", elapsed time 3.333115s.
 INFO: [Node] Finished "embedder", elapsed time 3.333115s.
-INFO: Post-treating /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json file
-INFO: Adding "IntendedFor" to the fieldmaps in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1.
-WARNING: We cannot add the IntendedFor field: no fmap/ in /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1
-INFO: Populating template files under /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/
-INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
+INFO: Post-treating /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json file
+INFO: Adding "IntendedFor" to the fieldmaps in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1.
+WARNING: We cannot add the IntendedFor field: no fmap/ in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1
+INFO: Populating template files under /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/
+INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
 Done with Heudiconv BIDS Convesion.
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Subjects ['005']: 
@@ -327,7 +327,7 @@ Done with Heudiconv BIDS Convesion.
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Sessions ['session1']: 
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Processing participant 005 at path /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005
+2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Processing participant 005 at path /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005
 2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO List of sessions sub-directories ['session1']
 ```
 
