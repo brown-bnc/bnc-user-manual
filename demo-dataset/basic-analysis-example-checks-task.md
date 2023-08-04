@@ -10,7 +10,7 @@ This is a very simple visual task, with alternating 12s blocks of flashing check
 
 In this example, we will use the data from demodat participant 005, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the new xnat-tools Oscar utility script explained [here](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md).&#x20;
 
-First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/gpfs/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
+First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
 ```
 # Configuring arguments here will override default parameters.
@@ -27,7 +27,7 @@ overwrite=true
 verbose=1
 ```
 
-To run the xnat-tools export and BIDS conversion, change directory to `/gpfs/data/bnc/shared/scripts/oscar-scripts/`. On the command line, type:
+To run the xnat-tools export and BIDS conversion, change directory to `/oscar/data/bnc/shared/scripts/oscar-scripts/`. On the command line, type:
 
 `module load anaconda/latest`
 
@@ -40,8 +40,8 @@ You should receive output that looks like this:
 ```
 Enter XNAT Username: elorenc1
 Enter Password: 
-DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /gpfs/scratch/elorenc1/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/elorenc1/bids-export/', '--host https://xnat.bnc.brown.edu', '--user elorenc1', '--skipseq 6', '--overwrite', '--verbose']}
-DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/gpfs/scratch/elorenc1/logs/%x-XNAT_E00114-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/elorenc1/bids-export/', '/gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.2.1.sif', 'xnat2bids', '[XNAT_E00114,', '/users/elorenc1/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'elorenc1,', '--skipseq,', '6,', '--overwrite,', '--verbose]']}
+DEBUG: {'message': 'Argument List', 'session': 'XNAT_E00114', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user example-user@brown.edu', '--mail-type ALL', '--output /oscar/scratch/elorenc1/logs/%x-XNAT_E00114-%J.txt'], 'x2b_param_list': ['XNAT_E00114', '/users/elorenc1/bids-export/', '--host https://xnat.bnc.brown.edu', '--user elorenc1', '--skipseq 6', '--overwrite', '--verbose']}
+DEBUG: {'message': 'Executing xnat2bids', 'session': 'XNAT_E00114', 'command': ['sbatch', '--time', '04:00:00', '--mem', '16000', '--nodes', '1', '--cpus-per-task', '2', '--job-name', 'xnat2bids', '--mail-user', 'example-user@brown.edu', '--mail-type', 'ALL', '--output', '/oscar/scratch/elorenc1/logs/%x-XNAT_E00114-%J.txt', '--wrap', 'apptainer', 'exec', '--no-home', '-B', '/users/elorenc1/bids-export/', '/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.2.1.sif', 'xnat2bids', '[XNAT_E00114,', '/users/elorenc1/bids-export/,', '--host,', 'https://xnat.bnc.brown.edu,', '--user,', 'elorenc1,', '--skipseq,', '6,', '--overwrite,', '--verbose]']}
 INFO: Launched 1 xnat2bids job
 INFO: Job ID: 9992280
 INFO: Launched bids-validator to check BIDS compliance
@@ -53,7 +53,7 @@ If you entered your email address, you should receive an email when your xnat2bi
 
 This will create a source data folder for subject 005 within `$bids_root/bnc/study-demodat/xnat-export` and a BIDS-compatible data directory for subject 005 within `$bids_root/bnc/study-demodat/bids/`.
 
-✳️ We will call this output BIDS-compatible folder (`/gpfs/home/<yourusername>/xnat-export/bnc/study-demodat/bids/`, unless you specified a different `$bids_root` location) `$bidsdir` for the remainder of the tutorial.
+✳️ We will call this output BIDS-compatible folder (`/oscar/home/<yourusername>/xnat-export/bnc/study-demodat/bids/`, unless you specified a different `$bids_root` location) `$bidsdir` for the remainder of the tutorial.
 
 #### Step 2: Extract stimulus timing information from stimulus presentation output files.
 
@@ -101,13 +101,13 @@ This basic example of a univariate analysis with AFNI is based on the [example 6
 
 For the regression, we use `-regress_stim_times` to provide the checks\_left\_stimtimes.1D and checks\_right\_stimtimes.1D files for this participant, `-regress_stim_labels` to assign those conditions the labels of "left" and "right" respectively, `-regress_basis` to model each stimulus as a block lasting 12 seconds, and `-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right" contrast to find voxels whose activity is greater for left hemifield stimulation than for right, and a "right\_vs\_left" contrast that does the opposite (and should yield the same statistical map, but with opposite-signed t-values).&#x20;
 
-Copy the text in the box below (changing value of the `bidsdir` variable to your own location), save it as a file called `demodat_afniproc.sh`, and then execute it on the command line with `bash demodat_afniproc.sh`. This `demodat_afniproc.sh` script will then create a much longer `proc.sub-005` tcsh script, which will be automatically executed because we included the -execute flag at the bottom of the script. Looking at the proc.sub-005 script is the best way to gain a deeper understanding of each of AFNI's processing steps.&#x20;
+Copy the text in the box below (changing value of the `bidsdir` variable to your own location - path should end in `/bids`), save it as a file called `demodat_afniproc.sh`, and then execute it on the command line with `bash demodat_afniproc.sh`. This `demodat_afniproc.sh` script will then create a much longer `proc.sub-005` tcsh script, which will be automatically executed because we included the -execute flag at the bottom of the script. Looking at the proc.sub-005 script is the best way to gain a deeper understanding of each of AFNI's processing steps.&#x20;
 
 {% code title="demodat_afniproc.sh" %}
 ```bash
 #!/bin/bash
 
-bidsdir=/gpfs/home/elorenc1/bids-export/bnc/study-demodat/bids
+bidsdir=/oscar/path/to/bids
 subID='sub-005'
 sess='ses-session1'
 task='checks'
