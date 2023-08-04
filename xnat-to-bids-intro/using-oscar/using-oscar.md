@@ -270,7 +270,7 @@ Subject label: 005
 2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO ---------------------------------
 ************************
 Making output BIDS Session directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids
-Executing Heudiconv command: heudiconv -f reproin --bids     -o /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
+Executing Heudiconv command: heudiconv -f reproin --bids     -o /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
 INFO: Running heudiconv version 0.11.6 latest 0.12.2
 INFO: Need to process 1 study sessions
 INFO: PROCESSING STARTS: {'subject': '005', 'outdir': '/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
@@ -280,7 +280,7 @@ INFO: Filtering out 0 dicoms based on their filename
 INFO: Generated sequence info for 1 studies with 176 entries total
 INFO: Processing 1 seqinfo entries
 INFO: Doing conversion using dcm2niix
-INFO: Converting /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /gpfs/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
+INFO: Converting /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
 230410-13:47:25,907 nipype.workflow INFO:
          [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
 INFO: [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
