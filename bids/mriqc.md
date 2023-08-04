@@ -26,7 +26,7 @@ We keep up-to-date Singularity images for mriqc for the community. (Look in `/os
 
 #---------CONFIGURE THESE VARIABLES--------------
 mriqc_version=23.1.0
-bids_dir=/oscar/data/mworden/elorenc1/xnat-exports/bnc/study-demodat/bids
+bids_dir=/oscar/path/to/bids
 #---------END OF VARIABLES------------------------
 
 simg=/oscar/data/bnc/simgs/nipreps/mriqc-${mriqc_version}.sif
