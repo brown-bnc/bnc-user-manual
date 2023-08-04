@@ -27,14 +27,13 @@ We keep up-to-date Singularity images for `fmriprep` for the community. (Look in
 #SBATCH --mail-type ALL
 
 #---------CONFIGURE THESE VARIABLES--------------
-root_dir=/oscar/data/mworden/elorenc1/xnat-exports/bnc/
+export_dir=/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat
 participant_label=005
-study_label=demodat
 fmriprep_version=23.1.3
 #---------END OF VARIABLES------------------------
 
 singularity run --cleanenv                                         \
-  --bind ${root_dir}/study-${study_label}:/data                    \
+  --bind ${export_dir}:/data                    \
   --bind /oscar/scratch/${USER}:/scratch                            \
   --bind /oscar/data/bnc/licenses:/licenses                         \
   /oscar/data/bnc/simgs/nipreps/fmriprep-${fmriprep_version}.sif    \
