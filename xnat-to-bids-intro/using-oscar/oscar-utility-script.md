@@ -625,7 +625,7 @@ module load anaconda/latest
 If the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
 ```
-python run_xnat2bids.py
+python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py
 ```
 
 Since, by default, no sessions are flagged for processing, you will immediately be prompted to enter a Session ID to proceed.  If you would like to process multiple sessions simultaneously, you can enter them as a comma-separated string.  Here's an example:
@@ -643,7 +643,7 @@ Likewise, logs can be found at `/gpfs/scratch/<your_username>/logs/` under the f
 To load a custom parameters, use `--config` to specify your custom configuration file.
 
 ```
-python run_xnat2bids.py --config <example_user_config.toml> 
+python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
 **NOTE:** For helpful debugging statements containing the executed command and argument lists to be printed to your terminal, make sure `verbose >= 1` in your configuration's `[xnat2bids-args]` list.                                                                  &#x20;
