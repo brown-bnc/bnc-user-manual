@@ -36,7 +36,7 @@ This starts an interactive job for one hour.
 
 ### 2.  BNC Utility Scripts
 
-The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/gpfs/data/bnc/shared/scripts/oscar-scripts` &#x20;
+The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/shared/scripts/oscar-scripts` &#x20;
 
 * **`xnat-token`** : Generate a temporary authentication token for accessing XNAT
 * **`singularity-sync`** :  Syncs latest release of deployed singularity images (admin only)
@@ -386,7 +386,7 @@ INFO: Job ID: 9972415
 INFO: Processed Scans Located At: /users/fmcdona4/bids-export/
 ```
 
-Check `/gpfs/scratch/<your-username>/logs/` for a four new log files
+Check `/oscar/scratch/<your-username>/logs/` for four new log files
 
 * `xnat2bids-XNAT_E00114-<JOB-ID>.txt`&#x20;
 * `xnat2bids-XNAT_E00080-<JOB-ID>.txt`
@@ -634,9 +634,9 @@ Since, by default, no sessions are flagged for processing, you will immediately 
 Enter Session(s) (comma separated): XNAT_E00080, XNAT_E00114,  XNAT_E00152
 ```
 
-After your jobs have completed, you can find all DICOM export and BIDS output data at the following location: `/gpfs/scratch/<your_username>/bids-export/`
+After your jobs have completed, you can find all DICOM export and BIDS output data at the following location: `/oscar/scratch/<your_username>/bids-export/`
 
-Likewise, logs can be found at `/gpfs/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
+Likewise, logs can be found at `/oscar/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
 
 #### 6.3 Running with Custom Configuration
 
