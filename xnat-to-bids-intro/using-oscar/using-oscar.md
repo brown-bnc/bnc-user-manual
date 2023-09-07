@@ -1,5 +1,7 @@
 # Step-wise via Interact Session
 
+## 🛑 We highly recommend using the [Oscar utility script](oscar-utility-script.md) instead of this older approach.
+
 ## Running XNAT2BIDS
 
 The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.&#x20;

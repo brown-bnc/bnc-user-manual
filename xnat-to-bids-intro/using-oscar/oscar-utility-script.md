@@ -24,7 +24,7 @@ At this point, simply open the terminal.
 
 #### 1.2 SSH
 
-To connect via SSH, you type `ssh username@ssh.ccv.brown.edu`. If this is your first time connecting via ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be required to use DUO.
+To instead connect via SSH, you type `ssh username@ssh.ccv.brown.edu` from a terminal on your local machine. If this is your first time connecting via ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be required to use DUO.
 
 At this point you arrive at a login node. **We will need to start an interactive session/job** by typing
 
@@ -34,23 +34,18 @@ interact -n 2 -t 01:00:00 -m 8g
 
 This starts an interactive job for one hour.
 
-### 2.  BNC Utility Scripts
+### 2.  BNC Utility Scripts: run\_xnat2bids.py
 
 The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/shared/scripts/oscar-scripts` &#x20;
 
-* **`xnat-token`** : Generate a temporary authentication token for accessing XNAT
-* **`singularity-sync`** :  Syncs latest release of deployed singularity images (admin only)
-* **`dicomsort`** : Renames and sorts DICOM files alphabetically
-* **`run_xnat2bids`** : Launches xnat2bids DICOM to BIDS conversion pipeline&#x20;
-
-This documentation introduces **`run_xnat2bids`** and outlines user instructions.
+This documentation outlines user instructions to run the **`run_xnat2bids.py`** script, which makes it simple to launch the xnat2bids DICOM to BIDS conversion pipeline.&#x20;
 
 ### 3.  Configuring Slurm and XNAT2BIDS
 
-Before we are ready to kick off the script, it will be necessary to understand how each job is configured.  Each job consists of two essential pieces: the program and the resources it needs to successfully execute.  Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate.  In this case, our program of interest will be `xnat2bids,` so we will need to configure its parameter options, as well.
+Before we are ready to kick off the script, it will be necessary to understand how each job is configured. Each job consists of two essential pieces: the program and the resources it needs to successfully execute. Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate. In this case, our program of interest will be `xnat2bids,` so we will need to configure its parameter options, as well.
 
 {% hint style="info" %}
-Previously, to run **`xnat2bids`** as a batch job, users had to provide an SBATCH script to the **`sbatch`** command. For more information on how to run batch jobs on Oscar, please refer to this link: [https://docs.ccv.brown.edu/oscar/submitting-jobs/batch](https://docs.ccv.brown.edu/oscar/submitting-jobs/batch)
+Previously, to run**`xnat2bids`**as a batch job, users had to provide an SBATCH script to the**`sbatch`**command. For more information on how to run batch jobs on Oscar, please refer to this link: [https://docs.ccv.brown.edu/oscar/submitting-jobs/batch](https://docs.ccv.brown.edu/oscar/submitting-jobs/batch)
 {% endhint %}
 
 To avoid the hassle of managing complex SBATCH scripts, we are leveraging the simplicity of TOML (Tom's Obvious Minimal Language) for specifying our configuration parameters.
