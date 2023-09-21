@@ -1,6 +1,6 @@
 # Oscar Utility Script 🆕
 
-## Oscar Scripts: Running XNAT2BIDS
+Oscar Scripts: Running XNAT2BIDS
 
 This script is a Python-based command-line tool that is designed to help neuroimaging researchers streamline the process of converting data from XNAT into BIDS format. It takes a user-specified configuration file that specifies the parameters for configuring Oscar resources as well as running the conversion pipeline, which can be customized for each individual session. The script then compiles a list of command-line arguments based on the configuration file and runs the XNAT2BIDS conversion pipeline in a Singularity container. **This script is the easiest way to run xnat2bids on multiple participants and/or scan sessions at once!**
 
@@ -605,9 +605,40 @@ Go to your \~/bids-export directory to check your exported DICOM data and proces
 
 
 
-### 6.0  Running the XNAT2BIDS Script
+### 6.0 COMING SOON! - Running XNAT2BIDS (Sync Data Directory)&#x20;
 
-#### 6.1 Load Anaconda Module Into Environment
+#### 6.1 Overview
+
+Unlike the previous methods, which rely on uploading data by Accession ID, this feature automates the process by analyzing the existing projects in your data directory along with their associated subjects and sessions, and then performs a diff operation to identify and fetch missing sessions that exist remotely on XNAT.
+
+#### 6.2 Updating Session Files Resources
+
+The script will check the insertion date and time for every session on XNAT.  If the filesystem export date of your project data on Oscar precedes the insertion time of the session into XNAT, we can assume that the session needs to be synced with XNAT. &#x20;
+
+**NOTE:** If you manually add resources or scan data to your project after your data has been sent to XNAT, XNAT will not automatically update the insertion time according to the latest update.  If you would like to use the script to sync such data, you will need to update the date field in XNAT for the given session that you want to sync.&#x20;
+
+To do this, complete the following steps:
+
+1. Open XNAT and route to the session page which you would like to sync
+2. Select edit from the Actions panel as shown below.
+3. Update the "Date" field to the current date, or date of manual change.&#x20;
+4. Select "Submit" at the bottom of the page.&#x20;
+
+&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-09-21 at 2.57.07 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-09-21 at 2.57.23 PM.png" alt=""><figcaption></figcaption></figure>
+
+#### 6.3 Running XNAT2BIDS Data Sync
+
+See [#7.4-running-to-sync-data-directory](oscar-utility-script.md#7.4-running-to-sync-data-directory "mention") for details on how to run. &#x20;
+
+See [#7.5-running-to-diff-data-directory](oscar-utility-script.md#7.5-running-to-diff-data-directory "mention")if you would like to see what projects would be updated and what new sessions would be processed without executing. This will give you a report of what session data exists on XNAT that is not present in your data directory.
+
+### 7.0  Running the XNAT2BIDS Script
+
+#### 7.1 Load Anaconda Module Into Environment
 
 From the command line, run the following:
 
@@ -615,7 +646,7 @@ From the command line, run the following:
 module load anaconda/latest
 ```
 
-#### 6.2 Running with Defaults Only
+#### 7.2 Running with Defaults Only
 
 If the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
@@ -633,12 +664,28 @@ After your jobs have completed, you can find all DICOM export and BIDS output da
 
 Likewise, logs can be found at `/oscar/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
 
-#### 6.3 Running with Custom Configuration
+#### 7.3 Running with Custom Configuration
 
 To load a custom parameters, use `--config` to specify your custom configuration file.
 
 ```
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --config <example_user_config.toml> 
+```
+
+#### 7.4 Running to Sync Data Directory (COMING SOON)
+
+To sync your data directory, use `--update` alongside the path to the root of your BIDS directory.
+
+```
+python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --update <BIDS_ROOT> 
+```
+
+#### 7.5 Running to Diff Data Directory  (COMING SOON)
+
+To get a report of any project data on XNAT that is not present in your data directory, use the `--diff` flag alongside the path to the root of your BIDS directory.&#x20;
+
+```
+python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --diff <BIDS_ROOT> 
 ```
 
 **NOTE:** For helpful debugging statements containing the executed command and argument lists to be printed to your terminal, make sure `verbose >= 1` in your configuration's `[xnat2bids-args]` list.                                                                  &#x20;
