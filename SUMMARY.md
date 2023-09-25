@@ -23,7 +23,8 @@
 ## XNAT to BIDS (Intro)
 
 * [Getting Started](xnat-to-bids-intro/getting-started.md)
-* [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software.md)
+* [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software/README.md)
+  * [Exporting Session Level Resources 🆕](xnat-to-bids-intro/xnat2bids-software/exporting-session-level-resources.md)
 * [Exporting to BIDS using Oscar](xnat-to-bids-intro/using-oscar/README.md)
   * [Oscar Utility Script 🆕](xnat-to-bids-intro/using-oscar/oscar-utility-script.md)
   * [Step-wise via Interact Session](xnat-to-bids-intro/using-oscar/using-oscar.md)
