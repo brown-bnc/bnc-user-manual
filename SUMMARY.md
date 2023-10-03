@@ -20,7 +20,7 @@
 * [Protocol Information](demo-dataset/protocol-information.md)
 * [Basic analysis example: checks task](demo-dataset/basic-analysis-example-checks-task.md)
 
-## XNAT to BIDS (Intro)
+## XNAT to BIDS <a href="#xnat-to-bids-intro" id="xnat-to-bids-intro"></a>
 
 * [Getting Started](xnat-to-bids-intro/getting-started.md)
 * [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software/README.md)
@@ -31,10 +31,13 @@
 * [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
+* [Converting non-MR data](xnat-to-bids-intro/converting-non-mr-data/README.md)
+  * [Physiological data](xnat-to-bids-intro/converting-non-mr-data/physiological-data.md)
+  * [EEG data](xnat-to-bids-intro/converting-non-mr-data/eeg-data.md)
 
-## XNAT TO BIDS (Dive-in)
+## XNAT TO BIDS (Legacy)
 
-* [Oscar SBATCH Scripts](xnat-to-bids-dive-in/oscar-sbatch-scripts.md)
+* [Oscar SBATCH Scripts](xnat-to-bids-legacy/oscar-sbatch-scripts.md)
 
 ## BIDS and BIDS Containers <a href="#bids" id="bids"></a>
 
