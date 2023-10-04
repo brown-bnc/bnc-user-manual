@@ -57,7 +57,7 @@ This starts an interactive job for one hour.
 
 ### 2. Define variables
 
-We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../../xnat-to-bids-legacy/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
+We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
 
 {% hint style="info" %}
 When defining shell Variables, make sure to not have any spaces in the variable name, the assigned value or in between the equal sign

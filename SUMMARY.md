@@ -37,7 +37,7 @@
 
 ## XNAT TO BIDS (Legacy)
 
-* [Oscar SBATCH Scripts](xnat-to-bids-legacy/oscar-sbatch-scripts.md)
+* [Oscar SBATCH Scripts](xnat-to-bids-dive-in/oscar-sbatch-scripts.md)
 
 ## BIDS and BIDS Containers <a href="#bids" id="bids"></a>
 
