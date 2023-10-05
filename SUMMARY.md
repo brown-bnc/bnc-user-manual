@@ -23,15 +23,14 @@
 ## XNAT to BIDS <a href="#xnat-to-bids-intro" id="xnat-to-bids-intro"></a>
 
 * [Getting Started](xnat-to-bids-intro/getting-started.md)
-* [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software/README.md)
-  * [Exporting Session Level Resources 🆕](xnat-to-bids-intro/xnat2bids-software/exporting-session-level-resources.md)
+* [XNAT2BIDS Software](xnat-to-bids-intro/xnat2bids-software.md)
 * [Exporting to BIDS using Oscar](xnat-to-bids-intro/using-oscar/README.md)
   * [Oscar Utility Script 🆕](xnat-to-bids-intro/using-oscar/oscar-utility-script.md)
   * [Step-wise via Interact Session](xnat-to-bids-intro/using-oscar/using-oscar.md)
 * [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
-* [Converting non-MR data](xnat-to-bids-intro/converting-non-mr-data/README.md)
+* [🆕 Converting non-MR data ](xnat-to-bids-intro/converting-non-mr-data/README.md)
   * [Physiological data](xnat-to-bids-intro/converting-non-mr-data/physiological-data.md)
   * [EEG data](xnat-to-bids-intro/converting-non-mr-data/eeg-data.md)
 
