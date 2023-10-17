@@ -1,6 +1,8 @@
 # EEG data - coming soon!
 
-The `xnat2bids` pipeline supports exporting EEG data from XNAT as well as converting that data into the BIDS standard format. To upload your EEG data onto XNAT, see the instruction steps below, which differ slightly depending on whether you are uploading concurrent EEG-fMRI data or stand-alone EEG data. Once your data have been successfully uploaded, you can run `xnat2bids` by the methods specified in our [documentation](https://brown-bnc.github.io/xnat-tools/), or [here](../using-oscar/oscar-utility-script.md) if you're exporting your data onto Oscar.
+The `xnat2bids` pipeline supports exporting EEG data from XNAT and converting it into the BIDS standard format, using tools from the[ MNE-BIDS python package](https://mne.tools/mne-bids/stable/index.html).&#x20;
+
+To upload your EEG data onto XNAT, see the instruction steps below, which differ slightly depending on whether you are uploading concurrent EEG-fMRI data or stand-alone EEG data. Once your data have been successfully uploaded, you can run `xnat2bids` by the methods specified in our [documentation](https://brown-bnc.github.io/xnat-tools/), or [here](../using-oscar/oscar-utility-script.md) if you're exporting your data onto Oscar.
 
 On this page, learn:
 
@@ -14,9 +16,9 @@ On this page, learn:
 
 ### Naming Convention: How to Name Your EEG Data Files
 
-[The BIDS format](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/03-electroencephalography.html) requires (/allows) allows specific information to be saved in data filenames: "BIDS entities" that are saved as key-value pairs (i.e. "sub-005") separated by underscores. For example, in the name "sub-005\_ses-001\_task-checks\_run-01", we have keys and their associated values for subject, session, task, and run. For our automatic XNAT to BIDS conversion to appropriately include these pieces of information in the BIDS-format filenames, the EEG data you upload to XNAT should include all relevant key-value pairs, separated by underscores. "Subject" and "session" information will be gathered from XNAT, and you can use any of the following keys to provide additional information:
+[The BIDS format](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/03-electroencephalography.html) requires (/allows) allows specific information to be saved in data filenames: "BIDS entities" that are saved as key-value pairs (i.e. "sub-005") separated by underscores. For example, the filename "sub-005\_ses-001\_task-checks\_run-01" contains keys and associated values for subject, session, task, and run. For our automatic XNAT to BIDS conversion to appropriately include these pieces of information in the BIDS-format filenames, the EEG data you upload to XNAT should include all relevant key-value pairs in the filename, separated by underscores. "Subject" and "session" information will be gathered from XNAT, and you can use any of the following keys to provide additional information:
 
-**task** - the experimental task (any string you want, excluding spaces or punctuation)
+**task** - the experimental task **\[required]** (any string you want, excluding spaces or punctuation)
 
 **acq** - the acquisition parameters (any string you want, excluding spaces or punctuation)
 
