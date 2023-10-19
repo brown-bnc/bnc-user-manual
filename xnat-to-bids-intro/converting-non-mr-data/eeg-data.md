@@ -1,4 +1,4 @@
-# EEG data - coming soon!
+# EEG data
 
 The `xnat2bids` pipeline supports exporting EEG data from XNAT and converting it into the BIDS standard format, using tools from the[ MNE-BIDS python package](https://mne.tools/mne-bids/stable/index.html).&#x20;
 
@@ -6,11 +6,11 @@ To upload your EEG data onto XNAT, see the instruction steps below, which differ
 
 On this page, learn:
 
-[How to name your EEG data files for automatic BIDS conversion](eeg-data-coming-soon.md#naming-convention-how-to-name-your-eeg-data-files)
+[How to name your EEG data files for automatic BIDS conversion](eeg-data.md#naming-convention-how-to-name-your-eeg-data-files)
 
-[How to upload and convert concurrent EEG-fMRI data](eeg-data-coming-soon.md#uploading-eeg-data-to-an-mr-session)
+[How to upload and convert concurrent EEG-fMRI data](eeg-data.md#uploading-eeg-data-to-an-mr-session)
 
-[How to upload and convert stand-alone EEG data](eeg-data-coming-soon.md#uploading-stand-alone-eeg-data)
+[How to upload and convert stand-alone EEG data](eeg-data.md#uploading-stand-alone-eeg-data)
 
 ***
 
