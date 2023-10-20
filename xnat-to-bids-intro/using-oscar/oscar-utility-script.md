@@ -1,4 +1,4 @@
-# Oscar Utility Script 🆕
+# 🆕 Oscar Utility Script
 
 Oscar Scripts: Running XNAT2BIDS
 
@@ -605,7 +605,7 @@ Go to your \~/bids-export directory to check your exported DICOM data and proces
 
 
 
-### 6.0 COMING SOON! - Running XNAT2BIDS (Sync Data Directory)&#x20;
+### 6.0 Running XNAT2BIDS (Sync Data Directory)&#x20;
 
 #### 6.1 Overview
 
@@ -672,17 +672,21 @@ To load a custom parameters, use `--config` to specify your custom configuration
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
-#### 7.4 Running to Sync Data Directory (COMING SOON)
+#### 7.4 Running to Sync Data Directory&#x20;
 
 To sync your data directory, use `--update` alongside the path to the root of your BIDS directory.
+
+If you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--update.` &#x20;
 
 ```
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --update <BIDS_ROOT> 
 ```
 
-#### 7.5 Running to Diff Data Directory  (COMING SOON)
+#### 7.5 Running to Diff Data Directory&#x20;
 
 To get a report of any project data on XNAT that is not present in your data directory, use the `--diff` flag alongside the path to the root of your BIDS directory.&#x20;
+
+&#x20;you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--update.` &#x20;
 
 ```
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --diff <BIDS_ROOT> 
