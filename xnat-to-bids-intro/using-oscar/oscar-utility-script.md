@@ -686,7 +686,7 @@ python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --update <B
 
 To get a report of any project data on XNAT that is not present in your data directory, use the `--diff` flag alongside the path to the root of your BIDS directory.&#x20;
 
-&#x20;you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--update.` &#x20;
+&#x20;you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--diff.` &#x20;
 
 ```
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --diff <BIDS_ROOT> 
