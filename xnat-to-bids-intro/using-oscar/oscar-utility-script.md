@@ -316,7 +316,26 @@ bids-validator@1.11.0
 
 ### 5.0 Running XNAT2BIDS (Multi-Session)
 
-#### 5.1 Adding Sessions to Your Config&#x20;
+#### 5.1 Exporting Sessions by Project / Subject IDs
+
+To process all sessions from a given project, you only need to add the Project ID to your config files's `project` field.  If you only would like to process sessions from a subset of a project's subjects, add the `subjects` field with a list of one or more Subject IDs.
+
+```toml
+[slurm-args]
+mail-user = "example-user@brown.edu"
+mail-type = "ALL"
+
+[xnat2bids-args]
+project="BNC_DEMODAT"
+subjects=["001", "002"]
+skipseq=[6]
+overwrite=true
+verbose=0
+```
+
+**NOTE:**  If exporting sessions by Subject IDs, the subjetcs field must be accompanied by a valid Project ID in the project field.&#x20;
+
+#### 5.2 Adding Sessions to Your Config&#x20;
 
 To process multiple sessions simultaneously, you only need to add those desired sessions to your config file's `sessions` list.&#x20;
 
@@ -338,7 +357,7 @@ verbose=0
 
 **NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file.  Enabling the `verbose=1` flag will turn on DEBUG logging for your script and signal `xnat2bids` to output more detailed printing to your logs.
 
-#### 5.2 Define Custom Parameters for Each Session
+#### 5.3 Define Custom Parameters for Each Session
 
 There may be the case in which you would like to add new arguments or override default parameters for processing a given session—for instance, defining logging verbosity levels or including certain sequences.&#x20;
 
@@ -359,13 +378,13 @@ verbose=1
 
 **NOTE:** The section name must match an entry in your `sessions` list.  Each session will inherit all default parameters and those specified under `[xnat2bids-args]`, overriding when necessary.
 
-#### 5.3 Running XNAT2BIDS Multi-Session
+#### 5.4 Running XNAT2BIDS Multi-Session
 
 Now that you have a complete configuration file, you are ready to run the pipeline!
 
 See the steps below ([**#6.0 Running the XNAT2BIDS Script**](oscar-utility-script.md#6.0-running-the-xnat2bids-script)) to launch with this custom config.
 
-#### 5.4 Verify Output
+#### 5.5 Verify Output
 
 In your terminal, you should immediately see the following print statements:
 
