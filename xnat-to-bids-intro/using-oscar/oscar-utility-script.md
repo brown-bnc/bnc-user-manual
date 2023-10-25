@@ -249,7 +249,7 @@ includeseq=[7,8,11,14]
 verbose=1
 ```
 
-See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") ) to launch `run_xnat2bids.py` with this custom config.
+See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") -> [#6.3-running-with-custom-configuration](oscar-utility-script.md#6.3-running-with-custom-configuration "mention")) to launch `run_xnat2bids.py` with this custom config.
 
 #### 4.4 Verify Output
 
