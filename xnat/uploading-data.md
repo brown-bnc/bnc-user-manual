@@ -1,6 +1,6 @@
 # Uploading Data
 
-Uploading data from the scanner
+### Uploading data from the scanner
 
 After data collection, data can be sent to XNAT directly from the scanner. Partial data transfers can sometimes get stuck, so **transfer an entire scan session at once**, rather than run-by-run. If you are the operator at the console, select your dataset in the patient browser, then click Transfer -> Send to -> `XNATRELAY`.
 
@@ -87,8 +87,13 @@ curl -u ${XNAT_USER} -X POST "https://bnc.brown.edu/xnat/data/services/import?im
 
 
 
-\
+### Uploading Session Level Data
 
+To upload your EEG or Physio data onto XNAT, see the instruction steps at page below.
+
+{% content-ref url="../xnat-to-bids-intro/converting-non-mr-data/" %}
+[converting-non-mr-data](../xnat-to-bids-intro/converting-non-mr-data/)
+{% endcontent-ref %}
 
 
 
