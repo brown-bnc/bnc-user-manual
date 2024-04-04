@@ -1,0 +1,94 @@
+# BIDS to NIMH Data Archive (NDA)
+
+To help users comply with data sharing requirements from the NIMH, we are extending [a tool from the BIDS folks](https://github.com/bids-standard/bids2nda) that automatically converts BIDS-formatted MR data into the format required by the NIMH.  This tool is a work in progress, so please get in touch with any issues or suggested features!
+
+***
+
+## Preparing your data
+
+### Step 1: Get MR data into valid [BIDS format](https://bids-specification.readthedocs.io/en/stable/)
+
+If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow [these steps](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
+
+### Step 2: Convert behavioral data into BIDS format
+
+If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an example using our demodat dataset [here](../demo-dataset/basic-analysis-example-checks-task.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
+
+### Step 3: Add stimulus information and stimulus files
+
+If you have stimulus files that you would also like to include in your upload to the NDA, make sure to include stimulus information in the stim\_file column of your \_events.tsv files like this:
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.33.53 PM.png" alt=""><figcaption></figcaption></figure>
+
+The BIDS spec assumes that these files live in a "stimuli" folder at the top level of your BIDS directory like this:&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.38.36 PM.png" alt=""><figcaption><p>Including stimuli in your BIDS structure</p></figcaption></figure>
+
+If you want to organize the stimuli further, you can have subfolders within your "stimuli" folder, and then include the subfolder in the stim\_file field. For example, if you want to put all the stimuli sub-001 saw in a folder called "001" within the "stimuli" folder, your events.tsv file would have 001/001\_stim1.png, etc. in the stim\_file column.
+
+### Step 4: Create GUIDs and BIDS ID-to-GUID mapping file
+
+NIMH requires that each participant be assigned a ["Global Unique Identifier" or GUID, created with their tool](https://nda.nih.gov/nda/nda-tools). Once you have done this for each participant, you need to create a text file that contains each of your BIDS subject IDs and the associated GUIDs. If my BIDS directory has folders for sub-001 and sub-002, my GUID mapping file would look like this:
+
+> 001 - LJFOIJWEL\
+> 002 - LKJSFIJLW
+
+Save this file (i.e. guids.txt) in the same folder as your BIDS directory, but not inside the BIDS directory.
+
+### Step 5: (optional) Create NDA Experiment IDs and BIDS task name - to NDA Experiment ID mapping file
+
+The NDA requires that every experiment be [defined](https://nda.nih.gov/nda/tutorials/data-submission?chapter=experiment-id), and when approved, it will be assigned an ID number. Each task that your participants complete will need its own approved experiment ID (including resting state). Once you have received your experiment ID(s), you will need to create another mapping text file - this one providing the mapping between the task names in your fMRI BIDS filenames (i.e. sub-001\_ses-01\_task-**checks**\_run-01\_bold.nii.gz) and your approved experiment ID numbers. For example, if my participants completed a "checks" task that was assigned an ID of 9990, and a "rest" resting state scan that was assigned an ID of 9991, my experiment ID mapping file would look like this:
+
+> checks - 9990\
+> rest - 9991
+
+Save this file (i.e. expIDs.txt) in the same folder as your BIDS directory, but not inside the BIDS directory. If you don't provide this file in the BIDS2NDA conversion, the experiment\_id column in the output image03.csv file will be left blank and you will need to fill it in manually for any fMRI rows.
+
+***
+
+## Installing BIDS2NDA and the NDA validator
+
+To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu/oscar/software/python-installs#using-python-enviroments-venv):
+
+1. Change to your home directory\
+   `cd ~`&#x20;
+2. Create a new python environment called "bids2nda"\
+   `python -m venv bids2nda`&#x20;
+3. Activate the new environment\
+   `source ~/bids2nda/bin/activate`&#x20;
+4. Install our version of the BIDS to NDA conversion tool\
+   `pip install https://github.com/brown-bnc/bids2nda/archive/master.zip`&#x20;
+5. Install the [NDA validator](https://github.com/NDAR/nda-tools/tree/main) that will let us test whether the data is NDA-compliant\
+   `pip install nda-tools`
+
+***
+
+## Running the BIDS to NDA conversion
+
+1. First, make sure that you are in your bids2nda environment. It should say `(bids2nda)` in front of your terminal command prompt. If it does not, activate the environment with  \
+   `source ~/bids2nda/bin/activate`
+2. Change to your directory that contains your BIDS directory, GUID mapping file, and experiment ID mapping file.
+3.  Make a new directory for your NDA-formatted data
+
+    `mkdir nda_output`
+4.  Launch the [BIDS to NDA converter](https://github.com/brown-bnc/bids2nda?tab=readme-ov-file#bids2nda)
+
+    `bids2nda bids guids.txt nda_output -e expIDs.txt`
+5. If successful, you should see the message "Metadata extraction complete.", and the nda\_output folder should contain one image03.csv file and a series of .metadata.zip files. These zip files are referenced in the data\_file2 column of the image03.csv and will ultimately be uploaded with your data. \
+   \
+   They contain:&#x20;
+   1. The BIDS json sidecars that go along with each of your NIFTIs
+   2. the \_events.tsv behavioral files
+   3. any stimulus files you supplied
+
+***
+
+## Validating the NDA-formatted data
+
+To run the validator tool supplied by the NDA:
+
+1. Change directory to your new NDA output folder\
+   `cd nda_output`
+2. Run the validator, passing in the new image03.csv file\
+   `vtcmd image03.csv`
+3. The tool will print information about whether or not your data passed validation. If it failed, open the validation report and address any identified issues.&#x20;

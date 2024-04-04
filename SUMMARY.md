@@ -43,6 +43,7 @@
 * [Introduction to BIDS](bids/introduction-to-bids.md)
 * [mriqc](bids/mriqc.md)
 * [fmriprep](bids/fmriprep.md)
+* [BIDS to NIMH Data Archive (NDA)](bids/bids-to-nimh-data-archive-nda.md)
 
 ## Analysis Pipelines
 
