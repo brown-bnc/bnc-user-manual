@@ -1,8 +1,8 @@
 # Physiological data
 
-Physiological data collected at the scanner is automatically exported as single DICOM files alongside each fMRI run. When you [transfer your data to XNAT](../../xnat/uploading-data.md), this data will come along, named the same as its associated functional run but with a \_PMU suffix.
+Physiological data collected at the scanner is automatically exported as single DICOM files alongside each fMRI run. When you [transfer your data to XNAT](../../xnat/uploading-data.md), this data will come along, named the same as its associated functional run but with a \_WIP\_PMU suffix (or just \_PMU, before the XA30 scanner software upgrade).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-10-02 at 3.21.48 PM copy2.jpg" alt=""><figcaption><p>Paired fMRI and physiological data on XNAT</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-05 at 12.17.41 PM.png" alt=""><figcaption><p>Paired fMRI and physiological data on XNAT</p></figcaption></figure>
 
 When you use xnat-tools to export your data and convert it to BIDS format, the physiological data should come along and be converted automatically. If you are exporting your data to Oscar, we recommend using our new [Oscar utility script](../using-oscar/oscar-utility-script.md).&#x20;
 
