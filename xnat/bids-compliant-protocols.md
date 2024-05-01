@@ -66,7 +66,7 @@ Functional runs **must** have \_task- field defined
 
 ### MEMPRAGE
 
-Typically the scanner is configured to send the mutiple echoes and the RMS series. At the moment, BIDS does not support multi-echoes in the `anat` category. When calling our `xnat2bids` software, please skip the multi-echo series. (This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details)
+You can choose (on the scanner) whether to send each individual echo along with the RMS image. Regardless, this data should now be converted appropriately to BIDS format.
 
 ### Fieldmaps
 
