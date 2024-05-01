@@ -24,8 +24,8 @@ If you will be using our XNAT to BIDS conversion tools, your sequences on the sc
 
 ### 3. Contact us to request a new XNAT project&#x20;
 
-{% content-ref url="new-xnat-projects.md" %}
-[new-xnat-projects.md](new-xnat-projects.md)
+{% content-ref url="project-creation-in-xnat.md" %}
+[project-creation-in-xnat.md](project-creation-in-xnat.md)
 {% endcontent-ref %}
 
 ### 3. Collect your data and send to XNATRELAY
@@ -35,6 +35,10 @@ At the scanner, send your collected data to XNATRELAY. This is an intermediate d
 {% content-ref url="uploading-data.md" %}
 [uploading-data.md](uploading-data.md)
 {% endcontent-ref %}
+
+{% hint style="warning" %}
+If you are collecting multi-session data, follow [these instructions](uploading-data.md#naming-for-multi-session-studies) to add a session label to your subject ID. This will allow XNAT to organize your data properly and avoid conflicts. &#x20;
+{% endhint %}
 
 ### 4. Check that ALL your data has been received and it is complete
 
