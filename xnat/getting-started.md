@@ -6,34 +6,26 @@ description: Getting Started with XNAT
 
 If this is your first time using XNAT, here is a short outline of things you'll need to do!
 
-
-
 ### 1. Create an account using your Brown Credentials
 
 {% content-ref url="accessing-xnat.md" %}
 [accessing-xnat.md](accessing-xnat.md)
 {% endcontent-ref %}
 
-{% hint style="warning" %}
-If a project is created before you have created your account, access to your data may be delayed
+### 2. Work with the MRF on your scan protocol and choosing a project name
+
+{% hint style="success" %}
+We will match the naming of your scan protocol and your XNAT project so that your data automatically ends up in the right place after your scan
 {% endhint %}
-
-### 2. Work with the MRF on your protocol and a project name that is compatible with our set up
-
-{% hint style="warning" %}
-All project names must follow our set up for automated data routing
-{% endhint %}
-
-{% content-ref url="managing-your-projects.md" %}
-[managing-your-projects.md](managing-your-projects.md)
-{% endcontent-ref %}
 
 {% hint style="info" %}
-If you will be working with BIDS, then the naming of your sequences must follow our recommendations
+If you will be using our XNAT to BIDS conversion tools, your sequences on the scanner should be named in a ["BIDS Ready" format](bids-compliant-protocols.md). The BNC is happy to work with you to figure out the appropriate naming for your sequences.
 {% endhint %}
 
-{% content-ref url="bids-compliant-protocols.md" %}
-[bids-compliant-protocols.md](bids-compliant-protocols.md)
+### 3. Contact us to request a new XNAT project&#x20;
+
+{% content-ref url="new-xnat-projects.md" %}
+[new-xnat-projects.md](new-xnat-projects.md)
 {% endcontent-ref %}
 
 ### 3. Collect your data and send to XNATRELAY

@@ -36,6 +36,8 @@ To achieve this, you need to use the Last Name and Patient ID fields in a specif
 
 <figure><img src="../.gitbook/assets/multisess.JPG" alt=""><figcaption><p>Using the Patient ID field to enable XNAT to nest multiple sessions under a single participant</p></figcaption></figure>
 
+If you scan the same participant multiple times and use the same **Patient ID**, your data&#x20;
+
 ## Uploading historic data (NOT Available at the moment 5/25/21)
 
 ### Method 1: Using Globus and XNAT's inbox
@@ -87,7 +89,7 @@ curl -u ${XNAT_USER} -X POST "https://bnc.brown.edu/xnat/data/services/import?im
 
 
 
-### Uploading Session Level Data
+### Uploading Non-MR Data
 
 To upload your EEG or Physio data onto XNAT, see the instruction steps at page below.
 

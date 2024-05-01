@@ -7,8 +7,7 @@
 
 * [Getting Started](xnat/getting-started.md)
 * [Accessing XNAT](xnat/accessing-xnat.md)
-* [Project and Protocol Naming](xnat/managing-your-projects.md)
-* [Project Creation in XNAT](xnat/project-creation-in-xnat.md)
+* [New XNAT projects](xnat/new-xnat-projects.md)
 * [BIDS Ready Protocols](xnat/bids-compliant-protocols.md)
 * [Uploading Data](xnat/uploading-data.md)
 * [Downloading Data](xnat/downloading-data.md)
