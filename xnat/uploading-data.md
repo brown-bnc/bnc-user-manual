@@ -2,11 +2,13 @@
 
 ### Uploading data from the scanner
 
-After data collection, data can be sent to XNAT directly from the scanner. Partial data transfers will get stuck, so **transfer an entire scan session at once**, rather than run-by-run. If you are the operator at the console, select your dataset in the patient browser, then click Transfer -> Send to -> `XNATRELAY`.
+After data collection, data can be sent to XNAT directly from the scanner. Partial data transfers will get stuck, so **transfer an entire scan session at once**, rather than run-by-run. If you are the operator at the console, select your dataset in the patient browser, then click Export.
 
-<figure><img src="../.gitbook/assets/Send to capture (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/export.png" alt="" width="486"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Transfer selector (1).jpg" alt=""><figcaption></figcaption></figure>
+Make sure all the series you want to send are checked, then select XNAT and click Export.
+
+<figure><img src="../.gitbook/assets/xnat.png" alt=""><figcaption></figcaption></figure>
 
 ### Automated routing from scanner to XNAT
 
