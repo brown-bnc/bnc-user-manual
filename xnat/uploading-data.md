@@ -8,7 +8,7 @@ After data collection, data can be sent to XNAT directly from the scanner. Parti
 
 Make sure all the series you want to send are checked, then select XNAT and click Export.
 
-<figure><img src="../.gitbook/assets/xnat.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/xnat (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Automated routing from scanner to XNAT
 
