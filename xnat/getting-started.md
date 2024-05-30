@@ -28,9 +28,9 @@ If you will be using our XNAT to BIDS conversion tools, your sequences on the sc
 [project-creation-in-xnat.md](project-creation-in-xnat.md)
 {% endcontent-ref %}
 
-### 3. Collect your data and send to XNATRELAY
+### 3. Collect your data and send to XNAT
 
-At the scanner, send your collected data to XNATRELAY. This is an intermediate destination to guarantee data encryption during transfer. Your data will automatically be sent within a couple of hours.&#x20;
+At the scanner, once your scan is complete, export your data to XNAT. &#x20;
 
 {% content-ref url="uploading-data.md" %}
 [uploading-data.md](uploading-data.md)
@@ -42,4 +42,4 @@ If you are collecting multi-session data, follow [these instructions](uploading-
 
 ### 4. Check that ALL your data has been received and it is complete
 
-Try your best to check the integrity of your data within a day. While it may take a couple of hours, it should not take longer than half a day. If you have not received your data, [contact us](../#contact-us)!
+Try your best to check the integrity of your data within a day. While it may take an hour or so for your data to appear on XNAT, it should not take longer than half a day. If you have not received your data, or anything looks strange, [contact us](../#contact-us)!
