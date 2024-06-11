@@ -46,6 +46,7 @@
 
 ## Analysis Pipelines
 
+* [dicomsort: a tool to organize DICOM files](analysis-pipelines/dicomsort-a-tool-to-organize-dicom-files.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Tractography: DSI Studio](analysis-pipelines/untitled.md)
