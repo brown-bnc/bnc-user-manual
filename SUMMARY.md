@@ -49,6 +49,7 @@
 * [dicomsort: a tool to organize DICOM files](analysis-pipelines/dicomsort-a-tool-to-organize-dicom-files.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
+* [FSL topup and eddy](analysis-pipelines/fsl-topup-and-eddy.md)
 * [Tractography: DSI Studio](analysis-pipelines/untitled.md)
 
 ## LCModel <a href="#software" id="software"></a>
