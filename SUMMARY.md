@@ -59,6 +59,10 @@
 * [Example Run](software/example-run.md)
 * [Running LCModel on your own data](software/running-lcmodel-on-your-own-data.md)
 
+## MRF GUIDES
+
+* [Motion Trainer: Balloon Task](mrf-guides/motion-trainer-balloon-task.md)
+
 ## Community
 
 * [MRF/BNC user community meetings](community/mrf-bnc-user-community-meetings.md)
