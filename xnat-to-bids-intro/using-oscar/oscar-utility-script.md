@@ -1,8 +1,12 @@
 ---
-description: 'Oscar Scripts: Running XNAT2BIDS'
+description: Running XNAT2BIDS with run_xnat2bids.py
 ---
 
-# 🆕 Oscar Utility Script
+# Oscar Utility Script
+
+The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/shared/scripts/oscar-scripts` &#x20;
+
+This documentation outlines user instructions to run the **`run_xnat2bids.py`** script, which makes it simple to launch the xnat2bids DICOM to BIDS conversion pipeline.&#x20;
 
 This script is a Python-based command-line tool that is designed to help neuroimaging researchers streamline the process of converting data from XNAT into BIDS format. It takes a user-specified configuration file that specifies the parameters for configuring Oscar resources as well as running the conversion pipeline, which can be customized for each individual session. The script then compiles a list of command-line arguments based on the configuration file and runs the XNAT2BIDS conversion pipeline in a Singularity container. **This script is the easiest way to run xnat2bids on multiple participants and/or scan sessions at once!**
 
@@ -10,24 +14,16 @@ This script is a Python-based command-line tool that is designed to help neuroim
 
 ### 1. Start an interactive session
 
-#### 1.1 Desktop app on Open OnDemand&#x20;
-
+{% tabs %}
+{% tab title="Desktop app on Open OnDemand" %}
 [https://ood.ccv.brown.edu/pun/sys/dashboard](https://ood.ccv.brown.edu/pun/sys/dashboard)
 
-Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.&#x20;
+Connecting via the Desktop app on Open OnDemand is a friendly way to request a graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once your requested session is running, you can launch it by clicking the Launch Desktop button. Finally, just open the terminal; you are already inside an interactive session.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/openterminal.png" alt=""><figcaption><p>Click to open a terminal</p></figcaption></figure>
+{% endtab %}
 
-Once your requested session is running, you can launch it by clicking the Launch Desktop button.
-
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
-At this point, simply open the terminal.
-
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-#### 1.2 SSH
-
+{% tab title="SSH" %}
 To instead connect via SSH, you type `ssh username@ssh.ccv.brown.edu` from a terminal on your local machine. If this is your first time connecting via ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be required to use DUO.
 
 At this point you arrive at a login node. **We will need to start an interactive session/job** by typing
@@ -37,20 +33,14 @@ interact -n 2 -t 01:00:00 -m 8g
 ```
 
 This starts an interactive job for one hour.
+{% endtab %}
+{% endtabs %}
 
 ***
 
-### 2.  BNC Utility Scripts: run\_xnat2bids.py
+### 2.  Configuring Slurm and XNAT2BIDS
 
-The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/shared/scripts/oscar-scripts` &#x20;
-
-This documentation outlines user instructions to run the **`run_xnat2bids.py`** script, which makes it simple to launch the xnat2bids DICOM to BIDS conversion pipeline.&#x20;
-
-***
-
-### 3.  Configuring Slurm and XNAT2BIDS
-
-Before we are ready to kick off the script, it will be necessary to understand how each job is configured. Each job consists of two essential pieces: the program and the resources it needs to successfully execute. Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate. In this case, our program of interest will be `xnat2bids,` so we will need to configure its parameter options, as well.
+Before we are ready to kick off the script, it will be necessary to understand how each job is configured. Each job consists of two essential pieces: the program and the resources it needs to successfully execute. Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate. In this case, our program of interest will be `xnat2bids`, so we will need to configure its parameter options, as well.
 
 {% hint style="info" %}
 Previously, to run**`xnat2bids`**as a batch job, users had to provide an SBATCH script to the**`sbatch`**command. For more information on how to run batch jobs on Oscar, please refer to this link: [https://docs.ccv.brown.edu/oscar/submitting-jobs/batch](https://docs.ccv.brown.edu/oscar/submitting-jobs/batch)
@@ -76,9 +66,9 @@ host="https://xnat.bnc.brown.edu"
 
 ***
 
-### 4.0 Running XNAT2BIDS&#x20;
+### 3.0 Running XNAT2BIDS&#x20;
 
-#### 4.1 Create Your Own Custom Config
+#### 3.1 Create Your Own Custom Config
 
 Open a new file in your favorite text editor, save it as something ending in .toml like x2b\_my\_first\_config.toml, and paste in the following:
 
@@ -109,7 +99,7 @@ output="/path/to/logs/dir/%x-%J.txt"
 ```
 {% endhint %}
 
-#### 4.2 Update Config with XNAT2BIDS Arguments
+#### 3.2 Update Config with XNAT2BIDS Arguments
 
 Next, you'll need to configure what arguments to pass to `xnat2bids`, such as the session (or comma-separated list of sessions) you would like to process, as well as any other arguments.
 
@@ -123,9 +113,9 @@ skipseq=["anat-t1w_acq-memprage"]
 
 Here, we are setting the sessions to be processed as [`XNAT_E00080`](#user-content-fn-1)[^1], `XNAT_E00114`, and `XNAT_E00152` , which are the XNAT Accession numbers for subject 004 and subject 005 (sessions 1 and 2) in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `skipseq`, we are choosing to  process everything except the scan with a "series description" on XNAT of "anat-t1w\_acq-memprage". You can skip or include particular scans either by their series description like this, or by their scan number on XNAT (i.e. `includeseq = [7,10]`).
 
-#### 4.2.1 (Optional) Specify sessions to process with Project ID and Subject IDs rather than Accession numbers
+#### 3.2.1 (Optional) Specify sessions to process with Project ID and Subject IDs rather than Accession numbers
 
-To process all sessions from a given project, you only need to add the Project ID to your config files's `project` field.  If you only would like to process sessions from a subset of a project's subjects, add the `subjects` field with a list of one or more Subject IDs. _If you specify a project and subject(s) this way, you do not need to include a "sessions" list of Accession numbers._
+To process all sessions from a given project, you only need to add the Project ID to your config file's `project` field.  If you only would like to process sessions from a subset of a project's subjects, add the `subjects` field with a list of one or more Subject IDs. _If you specify a project and subject(s) this way, you do not need to include a "sessions" list of Accession numbers._
 
 ```toml
 [slurm-args]
@@ -144,7 +134,7 @@ verbose=0
 
 **NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file.  Enabling the `verbose=1` flag will turn on DEBUG logging for your script and signal `xnat2bids` to output more detailed printing to your logs.
 
-#### 4.2.2 (Optional) Define Custom Parameters for Each Session
+#### 3.2.2 (Optional) Define Custom Parameters for Each Session
 
 There may be the case in which you would like to add new arguments or override default parameters for processing a given session—for instance, defining logging verbosity levels or including or excluding certain sequences.&#x20;
 
@@ -177,7 +167,9 @@ Similarly, if you would like to BIDS-convert data already exported to Oscar, you
 skip-export=true
 ```
 
-**Here is a comprehensive list of all available options:**
+<details>
+
+<summary>Click here for a comprehensive list of all available options</summary>
 
 {% code overflow="wrap" %}
 ```
@@ -211,6 +203,10 @@ skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: fa
 ```
 {% endcode %}
 
+
+
+</details>
+
 {% hint style="info" %}
 **NOTE:** When working with multi-value parameters like `includeseq` and `skipseq`, you also have the option to specify a range of values instead of individually listing them. To achieve this, utilize a string format rather than a list format, as demonstrated in the example below:
 
@@ -225,7 +221,7 @@ skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: fa
 **NOTE:**  By default, `run_xnat2bids` uses the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
 {% endhint %}
 
-#### 4.3  Running XNAT2BIDS
+#### 3.3  Running XNAT2BIDS
 
 Now that you have a complete configuration file like this, you are ready to run the pipeline!
 
@@ -249,9 +245,9 @@ includeseq=[7,8,11,14]
 verbose=1
 ```
 
-See the steps below ([#6.0-running-the-xnat2bids-script](oscar-utility-script.md#6.0-running-the-xnat2bids-script "mention") -> [#6.3-running-with-custom-configuration](oscar-utility-script.md#6.3-running-with-custom-configuration "mention")) to launch `run_xnat2bids.py` with this custom config.
+See the steps below ([#5.0-running-the-xnat2bids-script](oscar-utility-script.md#id-5.0-running-the-xnat2bids-script) -> [#5.3-running-with-custom-configuration](oscar-utility-script.md#id-5.3-running-with-custom-configuration)) to launch `run_xnat2bids.py` with this custom config.
 
-#### 4.4 Verify Output
+#### 3.4 Verify Output
 
 In your terminal, you should immediately see the following print statements:
 
@@ -272,7 +268,9 @@ Check `/oscar/scratch/<your-username>/logs/` for four new log files
 * `xnat2bids-XNAT_E00152-<JOB-ID>.txt`&#x20;
 * `bids-validator-<JOB-ID>.txt`
 
-The contents of each `xnat2bids` log should look similar to this:
+<details>
+
+<summary>Click here for an example <code>xnat2bids</code> output log</summary>
 
 ```
 ## SLURM PROLOG ###############################################################
@@ -329,7 +327,13 @@ INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/users/elorenc1/bids-export
 Done with Heudiconv BIDS Convesion.
 ```
 
-The contents of your bids-validator log should look like this:
+
+
+</details>
+
+<details>
+
+<summary>Click here for an example <code>bids-validator</code> output log</summary>
 
 ```
 ## SLURM PROLOG ###############################################################
@@ -386,9 +390,17 @@ bids-validator@1.13.1
 
 ```
 
-#### 4.5 Check BIDS Processed Data
 
-Go to your \~/bids-export directory to check your exported DICOM data and processed BIDS directory structure!  It should look like this:
+
+</details>
+
+#### 3.5 Check BIDS Processed Data
+
+Go to your \~/bids-export directory to check your exported DICOM data and processed BIDS directory structure! &#x20;
+
+<details>
+
+<summary>Click here to see how it should look</summary>
 
 ```
 bnc/study-demodat/bids/
@@ -516,15 +528,19 @@ bnc/study-demodat/bids/
 
 ```
 
+
+
+</details>
+
 ***
 
-### 5.0 Running XNAT2BIDS (Sync Data Directory)&#x20;
+### 4.0 Running XNAT2BIDS (Sync Data Directory)&#x20;
 
-#### 5.1 Overview
+#### 4.1 Overview
 
 Unlike the previous methods, which rely on uploading data by Accession ID, this feature automates the process by analyzing the existing projects in your data directory along with their associated subjects and sessions, and then performs a diff operation to identify and fetch missing sessions that exist remotely on XNAT.
 
-#### 5.2 Updating Session Files Resources
+#### 4.2 Updating Session Files Resources
 
 The script will check the insertion date and time for every session on XNAT.  If the filesystem export date of your project data on Oscar precedes the insertion time of the session into XNAT, we can assume that the session needs to be synced with XNAT. &#x20;
 
@@ -541,17 +557,17 @@ To do this, complete the following steps:
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-09-21 at 2.57.23 PM.png" alt=""><figcaption></figcaption></figure>
 
-#### 5.3 Running XNAT2BIDS Data Sync
+#### 4.3 Running XNAT2BIDS Data Sync
 
-See [**#6.4 Running to Sync Data Directory**](oscar-utility-script.md#6.4-running-to-sync-data-directory) for details on how to run. &#x20;
+See [**#5.4 Running to Sync Data Directory**](oscar-utility-script.md#6.4-running-to-sync-data-directory) for details on how to run. &#x20;
 
-See [**#6.5 Running to Diff Data Directory**](oscar-utility-script.md#6.5-running-to-diff-data-directory) if you would like to see what projects would be updated and what new sessions would be processed without executing. This will give you a report of what session data exists on XNAT that is not present in your data directory.
+See [**#5.5 Running to Diff Data Directory**](oscar-utility-script.md#6.5-running-to-diff-data-directory) if you would like to see what projects would be updated and what new sessions would be processed without executing. This will give you a report of what session data exists on XNAT that is not present in your data directory.
 
 ***
 
-### 6.0  Running the XNAT2BIDS Script
+### 5.0  Running the XNAT2BIDS Script
 
-#### 6.1 Load Anaconda Module Into Environment
+#### 5.1 Load Anaconda Module Into Environment
 
 From the command line, run the following:
 
@@ -559,7 +575,7 @@ From the command line, run the following:
 module load anaconda/latest
 ```
 
-#### 6.2 Running with Defaults Only
+#### 5.2 Running with Defaults Only
 
 If the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
@@ -577,7 +593,7 @@ After your jobs have completed, you can find all DICOM export and BIDS output da
 
 Likewise, logs can be found at `/oscar/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
 
-#### 6.3 Running with Custom Configuration
+#### 5.3 Running with Custom Configuration
 
 To load a custom parameters, use `--config` to specify your custom configuration file.
 
@@ -585,7 +601,7 @@ To load a custom parameters, use `--config` to specify your custom configuration
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
-#### 6.4 Running to Sync Data Directory&#x20;
+#### 5.4 Running to Sync Data Directory&#x20;
 
 To sync your data directory, use `--update` alongside the path to the root of your BIDS directory.
 
@@ -595,7 +611,7 @@ If you are passing in a configuration file where bids\_root is defined, or if yo
 python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --update <BIDS_ROOT> 
 ```
 
-#### 6.5 Running to Diff Data Directory&#x20;
+#### 5.5 Running to Diff Data Directory&#x20;
 
 To get a report of any project data on XNAT that is not present in your data directory, use the `--diff` flag alongside the path to the root of your BIDS directory.&#x20;
 
