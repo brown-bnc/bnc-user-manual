@@ -51,6 +51,7 @@
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [FSL topup and eddy](analysis-pipelines/fsl-topup-and-eddy.md)
 * [Tractography: DSI Studio](analysis-pipelines/untitled.md)
+* [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol.md)
 
 ## LCModel <a href="#software" id="software"></a>
 
