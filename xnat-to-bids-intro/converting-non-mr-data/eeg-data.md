@@ -2,7 +2,7 @@
 
 The `xnat2bids` pipeline supports exporting EEG data from XNAT and converting it into the BIDS standard format, using tools from the[ MNE-BIDS python package](https://mne.tools/mne-bids/stable/index.html).&#x20;
 
-To upload your EEG data onto XNAT, see the instruction steps below, which differ slightly depending on whether you are uploading concurrent EEG-fMRI data or stand-alone EEG data. Once your data have been successfully uploaded, you can run `xnat2bids` by the methods specified in our [documentation](https://brown-bnc.github.io/xnat-tools/), or [here](../using-oscar/oscar-utility-script.md) if you're exporting your data onto Oscar.
+To upload your EEG data onto XNAT, see the instruction steps below, which differ slightly depending on whether you are uploading concurrent EEG-fMRI data or stand-alone EEG data. Once your data have been successfully uploaded, you can run `xnat2bids` by the methods specified in our [documentation](https://brown-bnc.github.io/xnat-tools/), or [here](../using-oscar/oscar-utility-script/) if you're exporting your data onto Oscar.
 
 On this page, learn:
 

@@ -8,7 +8,7 @@ This is a very simple visual task, with alternating 12s blocks of flashing check
 
 #### Step 1: Download data from XNAT and automatically convert to BIDS format with xnat-tools
 
-In this example, we will use the data from demodat participant 005, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the new xnat-tools Oscar utility script explained [here](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md).&#x20;
+In this example, we will use the data from demodat participant 005, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the new xnat-tools Oscar utility script explained [here](../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
 
 First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 

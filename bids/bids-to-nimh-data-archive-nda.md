@@ -8,7 +8,7 @@ To help users comply with data sharing requirements from the NIMH, we are extend
 
 ### Step 1: Get MR data into valid [BIDS format](https://bids-specification.readthedocs.io/en/stable/)
 
-If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow [these steps](../xnat-to-bids-intro/using-oscar/oscar-utility-script.md) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
+If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow [these steps](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
 
 ### Step 2: Convert behavioral data into BIDS format
 

@@ -1,6 +1,6 @@
 # Step-wise via Interact Session
 
-## 🛑 We highly recommend using the [Oscar utility script](oscar-utility-script.md) instead of this older approach.
+## 🛑 We highly recommend using the [Oscar utility script](oscar-utility-script/) instead of this older approach.
 
 ## Running XNAT2BIDS
 
