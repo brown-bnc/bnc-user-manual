@@ -68,6 +68,8 @@
 
 * [Motion Trainer: Balloon Task](mrf-guides/motion-trainer-balloon-task.md)
 * [Stimulus display & response collection](mrf-guides/stimulus-display-and-response-collection.md)
+* [Simulating scanner triggers](mrf-guides/simulating-scanner-triggers.md)
+* [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 
 ## Community
 
