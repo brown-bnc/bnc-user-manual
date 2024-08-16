@@ -67,6 +67,7 @@
 ## MRF GUIDES
 
 * [Motion Trainer: Balloon Task](mrf-guides/motion-trainer-balloon-task.md)
+* [Stimulus display & response collection](mrf-guides/stimulus-display-and-response-collection.md)
 
 ## Community
 
