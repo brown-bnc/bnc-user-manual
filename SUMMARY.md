@@ -33,7 +33,7 @@
 * [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
-* [🆕 Converting non-MR data ](xnat-to-bids-intro/converting-non-mr-data/README.md)
+* [Converting non-MR data ](xnat-to-bids-intro/converting-non-mr-data/README.md)
   * [Physiological data](xnat-to-bids-intro/converting-non-mr-data/physiological-data.md)
   * [EEG data](xnat-to-bids-intro/converting-non-mr-data/eeg-data.md)
 
