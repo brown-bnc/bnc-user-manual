@@ -1,6 +1,6 @@
 # convert enhanced multi-frame DICOMs to legacy single-frame
 
-Most neuroimaging software is slowly implementing support for this format, which has been around for years now and is becoming ubiquitous. However, when there is no option but to use the legacy single-frame format (such as with Nexstim TMS devices, as of August 2024), you can use a conversion tool from dcm4che.
+Most neuroimaging software is slowly implementing support for the enhanced multi-frame format, which has been around for years now and is becoming ubiquitous. However, when there is no option but to use the legacy single-frame format (such as with Nexstim TMS devices, as of August 2024), you can use a conversion tool from dcm4che.
 
 We host this singularity image on Oscar: /oscar/data/bnc/simgs/dcm4che/dcm4che-tools-5.32.0.sif
 
