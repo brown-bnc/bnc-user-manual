@@ -9,7 +9,7 @@ To get a report of any project data on XNAT that is not present in your data dir
 If you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--diff.` &#x20;
 
 ```
-python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --diff <BIDS_ROOT> 
+python /oscar/data/bnc/scripts/run_xnat2bids.py --diff <BIDS_ROOT> 
 ```
 
 ### Sync: export new XNAT data to a project on Oscar
@@ -19,7 +19,7 @@ To sync your data directory, use `--update` alongside the path to the root of yo
 If you are passing in a configuration file where bids\_root is defined, or if your data directory is `~/bids-export`, there is no need to pass `<BIDS_ROOT>` as an argument alongside `--update.` &#x20;
 
 ```
-python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --update <BIDS_ROOT> 
+python /oscar/data/bnc/scripts/run_xnat2bids.py --update <BIDS_ROOT> 
 ```
 
 ***

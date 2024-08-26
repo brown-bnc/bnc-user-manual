@@ -4,7 +4,7 @@ description: Running XNAT2BIDS with run_xnat2bids.py
 
 # Oscar Utility Script
 
-The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/shared/scripts/oscar-scripts` &#x20;
+The BNC maintains a collection of helpful scripts on Oscar which can be found at: `/oscar/data/bnc/scripts` &#x20;
 
 This documentation outlines user instructions to run the **`run_xnat2bids.py`** script, which makes it simple to launch the xnat2bids DICOM to BIDS conversion pipeline.&#x20;
 

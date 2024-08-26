@@ -9,7 +9,7 @@ module load anaconda
 Then, if the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
 ```
-python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py
+python /oscar/data/bnc/scripts/run_xnat2bids.py
 ```
 
 Since, by default, no sessions are flagged for processing, you will immediately be prompted to enter a Session ID to proceed.  If you would like to process multiple sessions simultaneously, you can enter them as a comma-separated list.  Here's an example:

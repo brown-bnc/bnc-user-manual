@@ -185,7 +185,7 @@ module load anaconda
 Then we can launch the script, using `--config` to specify your custom configuration file.
 
 ```
-python /oscar/data/bnc/shared/scripts/oscar-scripts/run_xnat2bids.py --config <example_user_config.toml> 
+python /oscar/data/bnc/scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
 ***
