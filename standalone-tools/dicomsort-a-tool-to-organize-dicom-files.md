@@ -1,29 +1,69 @@
 ---
 description: >-
   Reading DICOM files exported from the scanner or XNAT is not always intuitive.
-  This script offered by the BNC aims to ease confusion by organizing the files
-  in a way that is clear and consistent.
+  This script aims to ease confusion by organizing the files in a way that is
+  clear and consistent.
 ---
 
 # dicomsort: a tool to organize DICOM files
 
 Dicomsort reads information from the DICOM (Digital Imaging and Communications in Medicine) headers of each file and then renames and sorts the files alphabetically by series and slice number. It can also be used to create subdirectories for each series.&#x20;
 
-## Accessing the Script
+We maintain two versions of this utility:
 
-This script can be accessed on Oscar in the public directory: `/oscar/data/bnc/shared/scripts/oscar-scripts/`.  From there, it can be used standalone or can be integrated into larger pipelines on Oscar. Additionally, it is available for local download on the BNC's github [found here](https://github.com/brown-bnc/oscar-scripts/blob/main/dicomsort). &#x20;
+1. dicomsort**.py**: this python implementation relies on the python **pydicom** package. If you need to sort MR spectroscopy DICOM data, this is the version for you!
+2. dicomsort.sh: this bash script requires AFNI rather than python/pydicom. It functions nearly identically, but cannot sort spectroscopy data.
+
+## Accessing the script
+
+`dicomsort.py` and `dicomsort.sh` can be accessed on Oscar in the public BNC scripts directory: `/oscar/data/bnc/scripts/`.  From there, they can be used standalone or can be integrated into larger pipelines on Oscar. Additionally, they are available for local download on the BNC's github [found here](https://github.com/brown-bnc/oscar-scripts/blob/main/dicomsort). &#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-11 at 4.37.13 PM.png" alt=""><figcaption><p>DICOM files before and after organization via dicomsort.</p></figcaption></figure>
+
+## 1. dicomsort.py python script
+
+First, we need to be in a python environment that contains the package pydicom. You can set up your own environment and `pip install pydicom`, or on Oscar you can simply open a terminal and activate an environment we have already created:
+
+`source /oscar/data/bnc/src/python_venvs/pydicom/bin/activate`
+
+You will be able to tell that this environment is activated because it will say `(pydicom)` at the beginning of your terminal command prompt.&#x20;
+
+Now, you'll be able to run the script with&#x20;
+
+`python /oscar/data/bnc/scripts/dicomsort.py`&#x20;
+
+
+
+**usage:**\
+python dicomsort.py \[-r] \[-d destdir] \[-s sourcedir] \[-i] \[-q] \[-n]\
+\
+**options:** \
+\-r: Rename files. Default is to copy. \
+\-d: Destination directory. Default is ./renamed. \
+\-s: Source directory. Default is current directory. \
+\-i: Create subdirectories by subject ID. \
+\-q: Create subdirectories by series description. \
+\-n: Don't recurse into subdirectories.
+
+
+
+When you are done, you can deactivate the python environment with `deactivate`.
+
+
+
+## 2. dicomsort.sh bash script:&#x20;
 
 {% hint style="warning" %}
 This script relies on multiple AFNI commands. Before running it, ensure that AFNI is installed. On Oscar, this can be done with the command `module load afni`
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-06-11 at 4.37.13 PM.png" alt=""><figcaption><p>DICOM files before and after organization via dicomsort.</p></figcaption></figure>
+To display the help message and see how to use the script, you can run `/oscar/data/bnc/scripts/dicomsort.sh -?` in a terminal on Oscar.
 
-## The script:&#x20;
+<details>
 
-To display the help message and see how to use the script, you can run `/oscar/data/bnc/shared/scripts/oscar-scripts/dicomsort -?` in a terminal on Oscar.
+<summary>see the full dicomsort bash script</summary>
 
-```
+```bash
 #!/bin/bash
 #############
 #This script use the afni programs dicom_hdr and dicom_hinfo to read header information, 
@@ -167,3 +207,5 @@ done
 rm "$tempfile"
 echo dicomsort Complete
 ```
+
+</details>

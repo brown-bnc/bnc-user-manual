@@ -19,7 +19,7 @@ To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.cc
 * Inside your VNC session, open a **Terminal** window.
 * Navigate to LCModel's **hidden** directory `cd ~/.lcmodel`
 
-![Sample Terminal Window inside Oscar's VNC ](<../.gitbook/assets/image (27).png>)
+![Sample Terminal Window inside Oscar's VNC ](<../../.gitbook/assets/image (27).png>)
 
 ### 3. Launch lcmgui
 
@@ -30,11 +30,11 @@ To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.cc
 
 * Select Siemens at the data type prompt
 
-![Sample Data Type Window](<../.gitbook/assets/image (5).png>)
+![Sample Data Type Window](<../../.gitbook/assets/image (5).png>)
 
 * Search for the share data: `/oscar/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
-![Sample Data Browser Window](<../.gitbook/assets/image (2).png>)
+![Sample Data Browser Window](<../../.gitbook/assets/image (2).png>)
 
 ### 5. Select Basis
 
@@ -42,7 +42,7 @@ During installation, the basis-set was installed under the LCModels' hidden dire
 
 * Change the basis file to: `$HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis`
 
-![Sample Control Parameters Window](<../.gitbook/assets/image (25).png>)
+![Sample Control Parameters Window](<../../.gitbook/assets/image (25).png>)
 
 ### 6. Add License Key to Control Parameters
 
@@ -50,7 +50,7 @@ You will need to add a key to the Control Parameters. We do so as follows:
 
 #### a. Open Advanced Setting Dialog
 
-![](../.gitbook/assets/Untitled.png)
+![](../../.gitbook/assets/Untitled.png)
 
 #### b. Select View/Edit Control Parameters.&#x20;
 
@@ -60,7 +60,7 @@ A dialog will open
 
 Add `key= 210387309` to the control parameters as shown in the figure below. Be careful to match spaces. When done, press OK
 
-![](../.gitbook/assets/lc-model-params-with-key.png)
+![](../../.gitbook/assets/lc-model-params-with-key.png)
 
 #### d. Save parameters file (optional)
 
@@ -70,6 +70,6 @@ LCModel will ask you if you want to save the new parameters to a new file. You c
 
 After pressing **Run LCModel**, a two page PDF will appear, which looks as follows
 
-![LCModel Result PDF - Page 1](<../.gitbook/assets/image (9).png>)
+![LCModel Result PDF - Page 1](<../../.gitbook/assets/image (9).png>)
 
-![LCModel Result PDF - Page 2](<../.gitbook/assets/image (3) (1).png>)
+![LCModel Result PDF - Page 2](<../../.gitbook/assets/image (3) (1).png>)

@@ -41,15 +41,15 @@ tar xf lcm-64.tar
 
 At this point a GUI window will pop as follows:
 
-![LCModel Select PostScript Display or Print Command](<../.gitbook/assets/image (8).png>)
+![LCModel Select PostScript Display or Print Command](<../../.gitbook/assets/image (8).png>)
 
 **Press Continue.** A test report should show up as follows:
 
-![LC Model Sample PostScript Result](<../.gitbook/assets/image (11).png>)
+![LC Model Sample PostScript Result](<../../.gitbook/assets/image (11).png>)
 
 **Close the result window.** A new success window will follow
 
-![Confirmation Screen for a Successful LCModel Test](<../.gitbook/assets/image (19).png>)
+![Confirmation Screen for a Successful LCModel Test](<../../.gitbook/assets/image (19).png>)
 
 Finally, you can **Exit LCMgui**
 

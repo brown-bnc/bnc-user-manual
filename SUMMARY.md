@@ -50,19 +50,22 @@
 
 ## Analysis Pipelines
 
-* [dicomsort: a tool to organize DICOM files](analysis-pipelines/dicomsort-a-tool-to-organize-dicom-files.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [FSL topup and eddy](analysis-pipelines/fsl-topup-and-eddy.md)
 * [Tractography: DSI Studio](analysis-pipelines/untitled.md)
 * [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol.md)
+* [LC Model](analysis-pipelines/lc-model/README.md)
+  * [Installation](analysis-pipelines/lc-model/lcmodel.md)
+  * [Example Run](analysis-pipelines/lc-model/example-run.md)
+  * [Running LCModel on your own data](analysis-pipelines/lc-model/running-lcmodel-on-your-own-data.md)
 
-## LCModel <a href="#software" id="software"></a>
+## Standalone Tools
 
-* [Overview](software/overview.md)
-* [Installation](software/lcmodel.md)
-* [Example Run](software/example-run.md)
-* [Running LCModel on your own data](software/running-lcmodel-on-your-own-data.md)
+* [dicomsort: a tool to organize DICOM files](standalone-tools/dicomsort-a-tool-to-organize-dicom-files.md)
+* [ironmap](standalone-tools/ironmap.md)
+* [convert enhanced multi-frame DICOMs to legacy single-frame](standalone-tools/convert-enhanced-multi-frame-dicoms-to-legacy-single-frame.md)
+* [DICOM anonymization](standalone-tools/dicom-anonymization.md)
 
 ## MRF GUIDES
 
