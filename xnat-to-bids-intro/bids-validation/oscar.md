@@ -1,5 +1,5 @@
 ---
-description: Running the BIDS validator in Oscar
+description: Running the BIDS validator on Oscar
 ---
 
 # Oscar
@@ -7,16 +7,15 @@ description: Running the BIDS validator in Oscar
 ### 0. Summary of commands
 
 ```bash
-interact -n 2 -t 01:00:00 -m 8g
-version=v1.11.0
+version=v1.14.6
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
 simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
-singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}1. Start interactive session
+singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
 ```
 
-If you are not already inside an interactive session please start one. Here we start an **interactive** job of one hour. If you are using VNC, then you are already inside an interactive session and you just need to open the terminal
+### 1. Log into oscar and start an interactive section
 
-### 1. Log into oscar and start an interactive section by typing
+If you are using the [Desktop app on Open OnDemand](../using-oscar/oscar-utility-script/#id-1.-start-an-interactive-session), then you are already inside an interactive session and you just need to open the terminal. Otherwise, you can start an interactive job of 1 hour with&#x20;
 
 ```bash
 interact -n 2 -t 01:00:00 -m 8g
@@ -24,15 +23,17 @@ interact -n 2 -t 01:00:00 -m 8g
 
 ### 2. Define variables
 
-#### Specify the version of validator to
+#### Specify the version of the validator you want to use.&#x20;
 
 ```bash
-version=v1.11.0
+version=v1.14.6
 ```
+
+You can run `ls /oscar/data/bnc/simgs/bids/validator*` to print all available versions&#x20;
 
 #### Set up paths
 
-Indicate the **bids directory.** This is where `dataset_description.json` file lives
+Specify your **bids directory.** This is where `dataset_description.json` file lives
 
 ```bash
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
@@ -41,7 +42,7 @@ bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
 Path to Singularity Image for the bids-validator (maintained by bnc)
 
 ```bash
-simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
+simg=/oscar/data/bnc/simgs/bids/validator-${version}.sif
 ```
 
 ### 3. Run the main executable via singularity
