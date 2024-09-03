@@ -9,7 +9,7 @@ description: Running the BIDS validator on Oscar
 ```bash
 version=v1.14.6
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
-simg=/gpfs/data/bnc/simgs/bids/validator-${version}.sif
+simg=/oscar/data/bnc/simgs/bids/validator-${version}.sif
 singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
 ```
 
