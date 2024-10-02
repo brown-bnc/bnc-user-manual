@@ -29,7 +29,7 @@ We keep up-to-date Singularity images for `fmriprep` for the community. (Look in
 #---------CONFIGURE THESE VARIABLES--------------
 export_dir=/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat
 participant_label=005
-fmriprep_version=23.1.3
+fmriprep_version=24.1.0
 #---------END OF VARIABLES------------------------
 
 singularity run --cleanenv                                         \
