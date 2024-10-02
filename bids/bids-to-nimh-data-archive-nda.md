@@ -44,6 +44,12 @@ The NDA requires that every experiment be [defined](https://nda.nih.gov/nda/tuto
 
 Save this file (i.e. expIDs.txt) in the same folder as your BIDS directory, but not inside the BIDS directory. If you don't provide this file in the BIDS2NDA conversion, the experiment\_id column in the output image03.csv file will be left blank and you will need to fill it in manually for any fMRI rows.
 
+### Step 6: (optional) Create or copy a csv with additional data
+
+Sometimes there is information that is missing or incorrect from the automatic BIDS conversion, that you may have available from another source. For example, the BIDS conversion approximates the interview\_age in months from the age in years in the BIDS data. This age needs to exactly match any other data uploaded for the same participant (i.e. ndar\_subject01.csv), so our bids2nda conversion tool allows you to specify a csv with additional data you would like to use to modify the image03.csv file.
+
+Save this csv in the same folder as your BIDS directory, but not inside the BIDS directory.
+
 ***
 
 ## Installing BIDS2NDA and the NDA validator
@@ -73,7 +79,9 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
     `mkdir nda_output`
 4.  Launch the [BIDS to NDA converter](https://github.com/brown-bnc/bids2nda?tab=readme-ov-file#bids2nda)
 
-    `bids2nda bids guids.txt nda_output -e expIDs.txt`
+    `bids2nda bids guids.txt nda_output -e expIDs.txt --lookup_csv ndar_subject01.csv --lookup_fields interview_age`\
+    \
+    The -e, --lookup\_csv, and --lookup\_fields are optional. In this example, we are grabbing the interview age in months from the ndar\_subject01.csv file and using it to fill in the interview\_age column in the image03.csv file.
 5. If successful, you should see the message "Metadata extraction complete.", and the nda\_output folder should contain one image03.csv file and a series of .metadata.zip files. These zip files are referenced in the data\_file2 column of the image03.csv and will ultimately be uploaded with your data. \
    \
    They contain:&#x20;
