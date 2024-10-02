@@ -4,7 +4,7 @@ description: About the Behavior and Neuroimaging Core
 
 # About
 
-Welcome to the User Guide to different services, software, and analyses pipelines supported by the Behavior and Neuroimaging Core at Brown University.
+Welcome to the User Guide to different services, software, and analysis pipelines supported by the Behavior and Neuroimaging Core at Brown University.
 
 ### Contact us
 
