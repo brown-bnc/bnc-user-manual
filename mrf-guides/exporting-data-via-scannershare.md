@@ -1,5 +1,5 @@
 ---
-description: An alternative to plugging external drives into the scanner console
+description: External drives should no longer be plugged into the scanner console
 ---
 
 # Exporting data via scannershare
