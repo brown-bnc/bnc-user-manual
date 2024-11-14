@@ -18,6 +18,8 @@ Since, by default, no sessions are flagged for processing, you will immediately 
 Enter Session(s) (comma separated): XNAT_E00080, XNAT_E00114, XNAT_E00152
 ```
 
-After your jobs have completed, you can find all DICOM export and BIDS output data at the following location: `/oscar/scratch/<your_username>/bids-export/`
+After your jobs have completed, you can find all DICOM export and BIDS output data at the following location: `/oscar/home/<your_username>/bids-export/`
 
 Likewise, logs can be found at `/oscar/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
+
+To change these output locations or take advantage of additional xnat2bids features, you'll need to [create a custom configuration file](running-xnat2bids-with-a-custom-configuration.md).
