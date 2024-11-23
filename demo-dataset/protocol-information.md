@@ -44,7 +44,7 @@ Field maps are useful for correcting geometric distortions that result from inho
 
 * **Name at the scanner:** fmap\_acq-boldGRE
 * **Description:** This is the "standard" Siemens field map, with the same phase encoding direction as the EPI images. This method calculates a field map based on the difference in phase between two different echos in a double echo sequence. This scan produces 2 DICOM series. The first series contains two sets of magnitude images, one for each echo time. The second series is a phase difference image, which is a subtraction of the two individual echos.&#x20;
-* **Scanner Note:** On the scanner, it is necessary that the "difference image" checkbox is enabled in the contrast tab to get the difference image**.**&#x20;
+* **Scanner Note:** On the scanner, it is necessary that the "difference image" checkbox is enabled in the contrast tab to get the difference imag&#x65;**.**&#x20;
 * **Scan Time:** 2 minutes
 
 #### Spin Echo Field Map

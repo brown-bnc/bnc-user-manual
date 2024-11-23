@@ -74,6 +74,7 @@
 * [Simulating scanner triggers](mrf-guides/simulating-scanner-triggers.md)
 * [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 * [Exporting data via scannershare](mrf-guides/exporting-data-via-scannershare.md)
+* [Multi-session spectroscopy with voxalign](mrf-guides/multi-session-spectroscopy-with-voxalign.md)
 
 ## Community
 

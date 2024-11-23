@@ -98,7 +98,7 @@ Then, if this subject already exists (usually because they've completed a previo
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-10-05 at 3.11.42 PM.png" alt="" width="269"><figcaption><p>Creating an EEG Session</p></figcaption></figure>
 
-If this is a single-session experiment (just this one EEG session), you can put the same subject ID in the "Session" field. **IMPORTANT: If this is a multi-session study (multiple EEG sessions, or a mix of EEG and MR), you should name the session **_**subject ID**_** \*underscore\* **_**session label**_**.** This session label is what will be used to label your sessions in the BIDS file structure. You could do "EEGDEMO\_01", "EEGDEMO\_02", etc., or something that describes the different phases of your study, like "EEGDEMO\_pretrainingEEG", "EEGDEMO\_trainingMR", "EEGDEMO\_posttrainingEEG".
+If this is a single-session experiment (just this one EEG session), you can put the same subject ID in the "Session" field. **IMPORTANT: If this is a multi-session study (multiple EEG sessions, or a mix of EEG and MR), you should name the session&#x20;**_**subject ID**_**&#x20;\*underscore\*&#x20;**_**session label**_**.** This session label is what will be used to label your sessions in the BIDS file structure. You could do "EEGDEMO\_01", "EEGDEMO\_02", etc., or something that describes the different phases of your study, like "EEGDEMO\_pretrainingEEG", "EEGDEMO\_trainingMR", "EEGDEMO\_posttrainingEEG".
 
 Fill in the date, click the trashcan icons to delete the auto-populated list of scan fields, and click "Submit".
 

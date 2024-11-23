@@ -11,7 +11,7 @@ Dicomsort reads information from the DICOM (Digital Imaging and Communications i
 
 We maintain two versions of this utility:
 
-1. dicomsort**.py**: this python implementation relies on the python **pydicom** package. If you need to sort MR spectroscopy DICOM data, this is the version for you!
+1. dicomsor&#x74;**.py**: this python implementation relies on the python **pydicom** package. If you need to sort MR spectroscopy DICOM data, this is the version for you!
 2. dicomsort.sh: this bash script requires AFNI rather than python/pydicom. It functions nearly identically, but cannot sort spectroscopy data.
 
 ## Accessing the script
@@ -38,12 +38,12 @@ Now, you'll be able to run the script with&#x20;
 python dicomsort.py \[-r] \[-d destdir] \[-s sourcedir] \[-i] \[-q] \[-n]\
 \
 **options:** \
-\-r: Rename files. Default is to copy. \
-\-d: Destination directory. Default is ./renamed. \
-\-s: Source directory. Default is current directory. \
-\-i: Create subdirectories by subject ID. \
-\-q: Create subdirectories by series description. \
-\-n: Don't recurse into subdirectories.
+-r: Rename files. Default is to copy. \
+-d: Destination directory. Default is ./renamed. \
+-s: Source directory. Default is current directory. \
+-i: Create subdirectories by subject ID. \
+-q: Create subdirectories by series description. \
+-n: Don't recurse into subdirectories.
 
 
 

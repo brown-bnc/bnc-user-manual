@@ -43,7 +43,7 @@ This starts an interactive job for one hour.
 Before we are ready to kick off the script, it will be necessary to understand how each job is configured. Each job consists of two essential pieces: the program and the resources it needs to successfully execute. Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate. In this case, our program of interest will be `xnat2bids`, so we will need to configure its parameter options, as well.
 
 {% hint style="info" %}
-Previously, to run**`xnat2bids`**as a batch job, users had to provide an SBATCH script to the**`sbatch`**command. For more information on how to run batch jobs on Oscar, please refer to this link: [https://docs.ccv.brown.edu/oscar/submitting-jobs/batch](https://docs.ccv.brown.edu/oscar/submitting-jobs/batch)
+Previously, to ru&#x6E;**`xnat2bids`**&#x61;s a batch job, users had to provide an SBATCH script to th&#x65;**`sbatch`**&#x63;ommand. For more information on how to run batch jobs on Oscar, please refer to this link: [https://docs.ccv.brown.edu/oscar/submitting-jobs/batch](https://docs.ccv.brown.edu/oscar/submitting-jobs/batch)
 {% endhint %}
 
 To avoid the hassle of managing complex SBATCH scripts, we are leveraging the simplicity of TOML (Tom's Obvious Minimal Language) for specifying our configuration parameters.
