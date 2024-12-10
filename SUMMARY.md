@@ -59,6 +59,7 @@
   * [Installation](analysis-pipelines/lc-model/lcmodel.md)
   * [Example Run](analysis-pipelines/lc-model/example-run.md)
   * [Running LCModel on your own data](analysis-pipelines/lc-model/running-lcmodel-on-your-own-data.md)
+* [Quantitative Susceptibility Mapping (QSM)](analysis-pipelines/quantitative-susceptibility-mapping-qsm.md)
 
 ## Standalone Tools
 
