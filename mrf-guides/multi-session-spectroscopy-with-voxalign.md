@@ -43,3 +43,9 @@ You can organize your data however you like, but it is helpful to collect the se
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 9.28.07 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
+***
+
+#### TIPS
+
+* Your two T1 scans need to have the same resolution for voxalign to work properly (at the moment).
+* When you are typing your prescription in on the scanner, if the field says 'R' enter a negative number to switch it to L, and vice versa. This applies to all three directions.
