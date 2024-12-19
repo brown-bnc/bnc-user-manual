@@ -62,8 +62,6 @@ The room is equipped with a mock scanner and audiovisual equipment that will hel
    2. There is a joystick that can be used via the 932 FORP interface, following [these instructions](https://docs.google.com/document/d/1k_se1tlcFbOwi1-IrNWGCcrQUMv5nvJstg7BiLmI-mo/edit#heading=h.7va2gu3m4t4v). _The joystick will only work properly if attached via the fiber optic extension bundle, not plugged directly into the 932._\
       \
 
-8.  Training participants to stay still
-
-    \
-    The motion trainer game can be run from the Sim PC following [these instructions](motion-trainer-balloon-task.md)
+8. Training participants to stay still\
+   The motion trainer game can be run from the Sim PC following [these instructions](motion-trainer-balloon-task.md)
 
