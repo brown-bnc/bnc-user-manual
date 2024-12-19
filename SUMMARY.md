@@ -70,9 +70,10 @@
 
 ## MRF GUIDES
 
-* [Motion Trainer: Balloon Task](mrf-guides/motion-trainer-balloon-task.md)
+* [MRI simulator room](mrf-guides/mri-simulator-room/README.md)
+  * [Motion Trainer: Balloon Task](mrf-guides/mri-simulator-room/motion-trainer-balloon-task.md)
+  * [Simulating scanner triggers](mrf-guides/mri-simulator-room/simulating-scanner-triggers.md)
 * [Stimulus display & response collection](mrf-guides/stimulus-display-and-response-collection.md)
-* [Simulating scanner triggers](mrf-guides/simulating-scanner-triggers.md)
 * [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 * [Exporting data via scannershare](mrf-guides/exporting-data-via-scannershare.md)
 * [Multi-session spectroscopy with voxalign](mrf-guides/multi-session-spectroscopy-with-voxalign.md)
