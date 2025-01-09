@@ -7,7 +7,7 @@ description: Running the BIDS validator on Oscar
 ### 0. Summary of commands
 
 ```bash
-version=v1.14.6
+version=v1.14.14
 bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
 simg=/oscar/data/bnc/simgs/bids/validator-${version}.sif
 singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
@@ -26,7 +26,7 @@ interact -n 2 -t 01:00:00 -m 8g
 #### Specify the version of the validator you want to use.&#x20;
 
 ```bash
-version=v1.14.6
+version=v1.14.14
 ```
 
 You can run `ls /oscar/data/bnc/simgs/bids/validator*` to print all available versions&#x20;
