@@ -104,3 +104,11 @@ To run the validator tool supplied by the NDA:
 2. Run the validator, passing in the new image03.csv file\
    `vtcmd image03.csv`
 3. The tool will print information about whether or not your data passed validation. If it failed, open the validation report and address any identified issues.&#x20;
+
+***
+
+## Tips
+
+1. Make sure your dataset is BIDS-valid. The conversion tool will attempt to add any files in your BIDS directory that follow `sub-*.nii.gz`  pattern, so any extra files in your BIDS directory (from analyses, etc.) may cause errors.
+2. If you are uploading data to the NDA in batches, you'll need to temporarily copy just the data for the current upload into a separate BIDS directory, so that the tool doesn't attempt to parse any previously uploaded data. When you do that, make sure to also copy over the participants.tsv file and edit it to only contain the participants for the current upload.
+3. If you manually modify the participants.tsv file (in MATLAB especially), be careful that it retains its tab-delimited format. Otherwise, it will not be read in properly.
