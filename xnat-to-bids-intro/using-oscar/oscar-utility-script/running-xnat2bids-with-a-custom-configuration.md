@@ -73,7 +73,7 @@ export-only BOOLEAN: Export DICOM data from XNAT without BIDS conversion [defaul
 
 skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: false]
 
-validate_frames BOOLEAN: Use if you manually terminate your fMRI runs. If the final volume does not contain the expected number of slices, the associated DICOM file(s) will be deleted.
+validate_frames BOOLEAN: Use if you manually terminate your fMRI runs. If the final volume does not contain the expected number of slices, the associated DICOM file(s) will be deleted. [default: false]
 ```
 {% endcode %}
 
