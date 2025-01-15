@@ -72,6 +72,8 @@ overwrite BOOLEAN: Remove directories where prior results for this session/parti
 export-only BOOLEAN: Export DICOM data from XNAT without BIDS conversion [default: false]
 
 skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: false]
+
+validate_frames BOOLEAN: Use if you manually terminate your fMRI runs. If the final volume does not contain the expected number of slices, the associated DICOM file(s) will be deleted.
 ```
 {% endcode %}
 
@@ -87,7 +89,7 @@ sessions = ["XNAT_E00080", "XNAT_E00114", "XNAT_E00152"]
 skipseq=["anat-t1w_acq-memprage"]
 ```
 
-Here, we are setting the sessions to be processed as [`XNAT_E00080`](#user-content-fn-1)[^1], `XNAT_E00114`, and `XNAT_E00152` , which are the XNAT Accession numbers for subject 004 and subject 005 (sessions 1 and 2) in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search\_element/xnat%3AprojectData/search\_field/xnat%3AprojectData.ID/search\_value/BNC\_DEMODAT). Notice that by defining `skipseq`, we are choosing to  process everything except the scan with a "series description" on XNAT of "anat-t1w\_acq-memprage". You can skip or include particular scans either by their series description like this, or by their scan number on XNAT (i.e. `includeseq = [7,10]`).
+Here, we are setting the sessions to be processed as [`XNAT_E00080`](#user-content-fn-1)[^1], `XNAT_E00114`, and `XNAT_E00152` , which are the XNAT Accession numbers for subject 004 and subject 005 (sessions 1 and 2) in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search_element/xnat%3AprojectData/search_field/xnat%3AprojectData.ID/search_value/BNC_DEMODAT). Notice that by defining `skipseq`, we are choosing to  process everything except the scan with a "series description" on XNAT of "anat-t1w\_acq-memprage". You can skip or include particular scans either by their series description like this, or by their scan number on XNAT (i.e. `includeseq = [7,10]`).
 
 #### 2.1 (Optional) Specify sessions to process with Project ID and Subject IDs rather than Accession numbers
 
