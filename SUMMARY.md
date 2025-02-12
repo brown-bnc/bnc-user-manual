@@ -63,6 +63,7 @@
 
 ## Standalone Tools
 
+* [Multi-session spectroscopy with voxalign](standalone-tools/multi-session-spectroscopy-with-voxalign.md)
 * [dicomsort: a tool to organize DICOM files](standalone-tools/dicomsort-a-tool-to-organize-dicom-files.md)
 * [ironmap](standalone-tools/ironmap.md)
 * [convert enhanced multi-frame DICOMs to legacy single-frame](standalone-tools/convert-enhanced-multi-frame-dicoms-to-legacy-single-frame.md)
@@ -76,7 +77,6 @@
 * [Stimulus display & response collection](mrf-guides/stimulus-display-and-response-collection.md)
 * [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 * [Exporting data via scannershare](mrf-guides/exporting-data-via-scannershare.md)
-* [Multi-session spectroscopy with voxalign](mrf-guides/multi-session-spectroscopy-with-voxalign.md)
 
 ## Community
 

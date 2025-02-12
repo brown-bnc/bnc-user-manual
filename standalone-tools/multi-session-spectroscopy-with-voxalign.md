@@ -36,7 +36,7 @@ You can organize your data however you like, but it is helpful to collect the se
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-11-22 at 9.22.03 PM.png" alt="" width="563"><figcaption></figcaption></figure>
 
-5. Once the session 2 T1 has been collected, [export it to scannershare](exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.
+5. Once the session 2 T1 has been collected, [export it to scannershare](../mrf-guides/exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.
 6. Click **Run VoxAlign**
 
 **Your new spectroscopy voxel prescriptions will be printed to the terminal like this, and also automatically opened in a fsleyes window.**&#x20;
