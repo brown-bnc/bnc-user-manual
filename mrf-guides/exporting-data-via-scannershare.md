@@ -28,7 +28,7 @@ Any other data can be copy & pasted into the Z drive from the File Explorer.&#x2
 
 ### Accessing your data
 
-The scannershare drive is mounted as a network drive on Tess and on the computer in the waiting room. After you copy your data there, you can access it via one of these computers and grab it however you'd like: copy to an external hard drive, upload to Oscar via OOD, scp to Oscar via Terminal, upload to XNAT, burn to DVD, etc.
+The scannershare drive is mounted as a network drive on Tess and on the computer in the waiting room. After you copy your data there, you can access it via one of these computers and grab it however you'd like: copy to an external hard drive, upload to Oscar via OOD, scp to Oscar via Terminal, upload to XNAT, burn to DVD, etc. If for the scannershare drive doesn't open when you click on it, try restarting the computer. The computer will automatically remount the drive when it restarts.
 
 <figure><img src="../.gitbook/assets/scannershare_access_comp (2).jpg" alt=""><figcaption><p>The computer behind the screen in the waiting room has scannershare persistently mounted</p></figcaption></figure>
 
