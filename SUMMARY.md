@@ -77,6 +77,7 @@
 * [Stimulus display & response collection](mrf-guides/stimulus-display-and-response-collection.md)
 * [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 * [Exporting data via scannershare](mrf-guides/exporting-data-via-scannershare.md)
+* [EEG in the scanner](mrf-guides/eeg-in-the-scanner.md)
 
 ## Community
 
