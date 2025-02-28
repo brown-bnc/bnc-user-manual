@@ -78,6 +78,7 @@
 * [Eyetracking at the scanner](mrf-guides/eyetracking-at-the-scanner.md)
 * [Exporting data via scannershare](mrf-guides/exporting-data-via-scannershare.md)
 * [EEG in the scanner](mrf-guides/eeg-in-the-scanner.md)
+* [Exporting spectroscopy RDA files](mrf-guides/exporting-spectroscopy-rda-files.md)
 
 ## Community
 
