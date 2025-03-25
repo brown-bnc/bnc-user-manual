@@ -19,7 +19,7 @@ Recon-all (recon = reconstruction) is a command that takes an anatomical dataset
 To run recon-all on Oscar:&#x20;
 
 ```
-module load freesurfer
+module load freesurfer/7.3.2
 recon-all -i t1w.nii.gz -s <subject_name> -sd <path_to_your_folder> -all 
 ```
 
