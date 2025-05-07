@@ -22,7 +22,7 @@ If your study involves multiple scan sessions per participant, following a speci
 
 To achieve this, you need to use the Last Name and Patient ID fields in a specific way when you register your participant at the beginning of a scan. In the **Last Name field**, enter the subject ID you have assigned to your participant (in this demodat example, we would enter 005). In the **Patient ID field**, enter the same **subject ID** \*underscore\* **whatever you would like to use to label your different sessions**. You could do "005\_sess1", "005\_sess2", etc., or something that describes the different phases of your study, like "005\_pretraining", "005\_training", "005\_posttraining".
 
-<figure><img src="../.gitbook/assets/multisess.JPG" alt=""><figcaption><p>Using the Patient ID field to enable XNAT to nest multiple sessions under a single participant</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot (105) (1).png" alt=""><figcaption><p>Using the Patient ID field to enable XNAT to nest multiple sessions under a single participant</p></figcaption></figure>
 
 {% hint style="warning" %}
 If you scan the same participant multiple times and re-use the same **Patient ID**, your data will not get properly routed to your project without an XNAT administrator's help.&#x20;
