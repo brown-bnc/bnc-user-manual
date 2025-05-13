@@ -14,12 +14,12 @@ For expansive documentation on using and understanding FreeSurfer tools, please 
 
 ### Running the recon-all command
 
-Recon-all (recon = reconstruction) is a command that takes an anatomical dataset (T1-weighted image) and performs many common preprocessing steps on it, with the goal of converting the 3D brain image (.nii or .dcm) into a 2D surface. It is helpful to imagine the reconstruction as taking a crumpled balloon (T1w) and blowing it up (inflated surface).  This inflated surface is particularly helpful when analyzing regions of the cortex where some voxels may contain signal from two separate gyri. It is also helpful when analyzing signal found in the sulci.  &#x20;
+Recon-all (recon = reconstruction) is a command that takes an anatomical dataset (T1-weighted image) and performs many common preprocessing steps on it, with the goal of converting the 3D brain image (.nii or .dcm) into a 2D surface. It is helpful to imagine the reconstruction as taking a crumpled balloon (T1w) and blowing it up (inflated surface).  This inflated surface is particularly helpful when analyzing regions of the cortex where some voxels may contain signal from two separate gyri. However, it is also helpful when analyzing signal found in the sulci.  &#x20;
 
 To run recon-all on Oscar:&#x20;
 
 ```
-module load freesurfer/7.3.2
+module load freesurfer/8.0.0
 recon-all -i t1w.nii.gz -s <subject_name> -sd <path_to_your_folder> -all 
 ```
 
@@ -33,9 +33,7 @@ The `-i` flag points to the T1-weighted anatomical file. If you are running reco
 `-all`tells recon-all to perform all preprocessing steps. For the full list of steps, please refer to Freesurfer's documentation found here: [https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all).&#x20;
 {% endhint %}
 
-This processing takes 6-8 hours to run.
-
-### Recon-all Output&#x20;
+The most recent version of Freesurfer on Oscar, `freesurfer/8.0.0`, requires python3 and takes approximately 2.5 hours to complete. The previous version,  `freesurfer/7.3.2`, is still available and takes 6-8 hours.&#x20;
 
 These are the output directories you will see, located in the specified `-sd` path:
 
@@ -62,6 +60,10 @@ Output from recon-all can be viewed with Freesurfer's image viewer (freeview). T
 ```
 freeview -f lh.pial rh.pial 
 ```
+
+{% hint style="info" %}
+If you are using `freesurfer/8.0.0`  and are having issues opening the freeview GUI, try checking whether or not you have the `anaconda` module loaded. If you do, unload it and try again.&#x20;
+{% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 12.52.18 PM.png" alt=""><figcaption><p>The left and right pial surfaces viewed using freeview. </p></figcaption></figure>
 
