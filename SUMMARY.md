@@ -63,7 +63,11 @@
 
 ## Standalone Tools
 
-* [Multi-session spectroscopy with voxalign](standalone-tools/multi-session-spectroscopy-with-voxalign.md)
+* [Automated MR spectroscopy voxel placement with voxalign](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/README.md)
+  * [Installation](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/installation.md)
+  * [Multi-session alignment](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/multi-session-alignment.md)
+  * [Center on MNI coordinate](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/center-on-mni-coordinate.md)
+  * [Quantify voxel overlap](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/quantify-voxel-overlap.md)
 * [dicomsort: a tool to organize DICOM files](standalone-tools/dicomsort-a-tool-to-organize-dicom-files.md)
 * [ironmap](standalone-tools/ironmap.md)
 * [convert enhanced multi-frame DICOMs to legacy single-frame](standalone-tools/convert-enhanced-multi-frame-dicoms-to-legacy-single-frame.md)
