@@ -19,4 +19,4 @@
 
 TIPS:
 
-* If you make a mistake entering MNI coordinates (enter them wrong, forget to include one), and the MNI lookup calculation has already finished, just run it again, click “Use existing MNI registration” and choose your output folder from the first time you ran it. You’ll need to specify a new output folder and input the T1 DICOM again, but when you click “calculate voxel position” this time it will be much shorter because it will use the pre-run nonlinear registration to MNI space.
+* If you make a mistake entering MNI coordinates (enter them wrong, forget to include one), and the MNI lookup calculation has already finished, just run it again, click “Use existing MNI registration” and choose your output folder from the first time you ran it. You’ll need to specify a new output folder and input the T1 DICOM again, but when you click “calculate voxel position” this time it will be much faster because it will use the pre-run nonlinear registration to MNI space.
