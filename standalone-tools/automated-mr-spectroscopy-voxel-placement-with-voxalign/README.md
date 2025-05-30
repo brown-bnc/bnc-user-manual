@@ -1,6 +1,6 @@
 # Automated MR spectroscopy voxel placement with voxalign
 
-We have developed a python package "[voxalign](installation.md)" that takes most of the guesswork out of MR spectroscopy voxel placement.
+We have developed a python package "[voxalign](installation.md)" that takes much of the guesswork out of MR spectroscopy voxel placement.
 
 
 
