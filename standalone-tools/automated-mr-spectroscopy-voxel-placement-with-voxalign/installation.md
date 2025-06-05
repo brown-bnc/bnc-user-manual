@@ -5,7 +5,7 @@ description: Voxalign runs on a separate computer, not the scanner console
 # Installation
 
 {% hint style="info" %}
-Voxalign is available on github at [https://github.com/brown-bnc/voxalign](https://github.com/brown-bnc/voxalign) (currently set to private - contact Elizabeth at cobre-bnc@brown.edu for access)
+Voxalign is available on github at [https://github.com/brown-bnc/voxalign](https://github.com/brown-bnc/voxalign)&#x20;
 {% endhint %}
 
 ### Use voxalign on Tess (mac mini behind scanner operator)  \<RECOMMENDED>&#x20;
