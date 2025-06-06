@@ -19,6 +19,10 @@ A voxalign environment is already created, so all you have to do is open a termi
 
 ### Set up on your own computer:
 
+{% hint style="info" %}
+voxalign has so far only been tested on macOS
+{% endhint %}
+
 I recommend installing in a python virtual environment:
 
 1. create an environment named voxalign: `python3 -m venv voxalign`
