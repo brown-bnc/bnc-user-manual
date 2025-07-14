@@ -87,3 +87,11 @@
 ## Community
 
 * [MRF/BNC user community meetings](community/mrf-bnc-user-community-meetings.md)
+
+## Motion Trainer
+
+* [Motion Trainer User Guide](motion-trainer/motion-trainer-user-guide/README.md)
+  * [Getting Started](motion-trainer/motion-trainer-user-guide/getting-started.md)
+  * [Customizing Your Settings](motion-trainer/motion-trainer-user-guide/customizing-your-settings.md)
+  * [Advanced Settings](motion-trainer/motion-trainer-user-guide/advanced-settings.md)
+  * [Adding Your Own Videos and Images](motion-trainer/motion-trainer-user-guide/adding-your-own-videos-and-images.md)

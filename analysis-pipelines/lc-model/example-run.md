@@ -30,11 +30,11 @@ To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.cc
 
 * Select Siemens at the data type prompt
 
-![Sample Data Type Window](<../../.gitbook/assets/image (5).png>)
+![Sample Data Type Window](<../../.gitbook/assets/image (5) (1).png>)
 
 * Search for the share data: `/oscar/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
-![Sample Data Browser Window](<../../.gitbook/assets/image (2).png>)
+![Sample Data Browser Window](<../../.gitbook/assets/image (2) (1).png>)
 
 ### 5. Select Basis
 
@@ -72,4 +72,4 @@ After pressing **Run LCModel**, a two page PDF will appear, which looks as follo
 
 ![LCModel Result PDF - Page 1](<../../.gitbook/assets/image (9).png>)
 
-![LCModel Result PDF - Page 2](<../../.gitbook/assets/image (3) (1).png>)
+![LCModel Result PDF - Page 2](<../../.gitbook/assets/image (3) (1) (1).png>)
