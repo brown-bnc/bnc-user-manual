@@ -13,18 +13,18 @@ Download [DSI Studio](http://dsi-studio.labsolver.org/dsi-studio-download) to yo
 
 ## Using DSI Studio on Oscar:&#x20;
 
-Copy this text into a terminal on Oscar Open Demand to load DSI Studio:
+Copy this text into a terminal on Oscar OpenOnDemand to load DSI Studio:
 
 `module load dsi-studio`
 
-Then enter this text to open the DSI GUI as a singularity container, bound to `/oscar/data`:&#x20;
+Then enter this text to open the DSI Studio GUI from within a singularity container, while giving it access to `/oscar/data/<your-data-dir>` , which will be accessible at /data within the container.
 
-`singularity exec -B /oscar/data /oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif dsi_studio`
+`singularity exec -B /oscar/data/<your-data-dir>:/data /oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif dsi_studio`
 
 
 
 {% hint style="info" %}
-<mark style="color:blue;">`singularity exec`</mark> executes dsi-studio as a singularity.<mark style="color:blue;">`-B /oscar/data`</mark> binds the singularity to oscar. <mark style="color:blue;">`/oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif dsi_studio`</mark> is where the DSI singularity is located on oscar.&#x20;
+<mark style="color:blue;">`singularity exec ... dsi_studio`</mark> launches dsi-studio installed in a singularity image.<mark style="color:blue;">`-B /oscar/data/<your-data-dir>:/data`</mark> binds your data directory, so that programs run inside the container can access files stored there. <mark style="color:blue;">`/oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif`</mark> is where the DSI Studio singularity image is located on oscar.&#x20;
 {% endhint %}
 
 ## Perform Whole Brain Tractography:&#x20;
@@ -57,8 +57,6 @@ The following screen will appear. This is the "Tracking Window". By selecting th
 
 ![DSI Studio's Tracking Window, opened after selecting Step T3 and entering the FIB file. ](<../.gitbook/assets/Screen Shot 2024-02-21 at 2.48.30 PM.png>)
 
-After fiber tracking is complete, the tracking window will show the whole brain tractography map. For more information on quality assessment and troubleshooting, refer to [DSI Studio's documentation](https://dsi-studio.labsolver.org/doc/gui\_t3\_whole\_brain.html).&#x20;
+After fiber tracking is complete, the tracking window will show the whole brain tractography map. For more information on quality assessment and troubleshooting, refer to [DSI Studio's documentation](https://dsi-studio.labsolver.org/doc/gui_t3_whole_brain.html).&#x20;
 
 <figure><img src="../.gitbook/assets/Screen Shot 2024-02-21 at 3.40.25 PM.png" alt=""><figcaption><p>The whole brain tractography can be viewed in the center of the Tracking Window after selecting the "Fiber Tracking" button. </p></figcaption></figure>
-
-##

@@ -17,7 +17,7 @@
 * [Introduction](demo-dataset/introduction.md)
 * [How to access it](demo-dataset/how-to-access-it.md)
 * [Protocol Information](demo-dataset/protocol-information.md)
-* [Basic analysis example: checks task](demo-dataset/basic-analysis-example-checks-task.md)
+* [Basic analysis example: visual/motor activation task](demo-dataset/basic-analysis-example-visual-motor-activation-task.md)
 
 ## XNAT to BIDS <a href="#xnat-to-bids-intro" id="xnat-to-bids-intro"></a>
 
@@ -54,7 +54,10 @@
 * [🚧 CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [FSL topup and eddy](analysis-pipelines/fsl-topup-and-eddy.md)
 * [Tractography: DSI Studio](analysis-pipelines/untitled.md)
-* [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol.md)
+* [MRtrix3 for Diffusion Imaging Analysis](analysis-pipelines/mrtrix3-for-diffusion-imaging-analysis.md)
+* [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/README.md)
+  * [PRESS Data Collection on Siemens XA30 System](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/press-data-collection-on-siemens-xa30-system.md)
+  * [Organizing Your Data and Preprocessing Using Osprey](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/organizing-your-data-and-preprocessing-using-osprey.md)
 * [LC Model](analysis-pipelines/lc-model/README.md)
   * [Installation](analysis-pipelines/lc-model/lcmodel.md)
   * [Example Run](analysis-pipelines/lc-model/example-run.md)
