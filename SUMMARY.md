@@ -52,9 +52,10 @@
 
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [🚧 CONN Toolbox](analysis-pipelines/conn-toolbox.md)
-* [FSL topup and eddy](analysis-pipelines/fsl-topup-and-eddy.md)
-* [Tractography: DSI Studio](analysis-pipelines/untitled.md)
-* [MRtrix3 for Diffusion Imaging Analysis](analysis-pipelines/mrtrix3-for-diffusion-imaging-analysis.md)
+* [Diffusion Weighted Imaging (DWI) Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/README.md)
+  * [FSL topup and eddy](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/fsl-topup-and-eddy.md)
+  * [Tractography: DSI Studio](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/untitled.md)
+  * [MRtrix3 for Diffusion Imaging Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis.md)
 * [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/README.md)
   * [PRESS Data Collection on Siemens XA30 System](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/press-data-collection-on-siemens-xa30-system.md)
   * [Organizing Your Data and Preprocessing Using Osprey](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/organizing-your-data-and-preprocessing-using-osprey.md)
