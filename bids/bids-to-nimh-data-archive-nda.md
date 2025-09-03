@@ -88,6 +88,7 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
    1. The BIDS json sidecars that go along with each of your NIFTIs
    2. the \_events.tsv behavioral files
    3. any stimulus files you supplied
+   4. physio tsv and json files, if present in the BIDS directory
 
 {% hint style="warning" %}
 We are working on a fix, but for now the photomet\_interpret field of the image03.csv file will need to be filled in manually if you are converting any "enhanced" DICOM files (i.e. data collected post- scanner upgrade to XA30). The correct value is likely MONOCHROME2, but double-check your DICOM header for the **(0028,0004) | Photometric Interpretation** field to make sure this is true for your data.
