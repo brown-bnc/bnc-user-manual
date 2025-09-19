@@ -17,7 +17,6 @@
 * [Introduction](demo-dataset/introduction.md)
 * [How to access it](demo-dataset/how-to-access-it.md)
 * [Protocol Information](demo-dataset/protocol-information.md)
-* [Basic analysis example: visual/motor activation task](demo-dataset/basic-analysis-example-visual-motor-activation-task.md)
 
 ## XNAT to BIDS <a href="#xnat-to-bids-intro" id="xnat-to-bids-intro"></a>
 
@@ -50,12 +49,22 @@
 
 ## Analysis Pipelines
 
+* [Task-Based fMRI Analysis Using AFNI](analysis-pipelines/task-based-fmri-analysis-using-afni/README.md)
+  * [Single Subject Analysis: Visual/Motor Activation](analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md)
+  * [Group Analysis: Visual/Motor Activation](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/README.md)
+    * [First-Level Analysis Using afniproc.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/first-level-analysis-using-afniproc.py.md)
+    * [WIP Second-Level Analysis using gen\_group\_command.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/wip-second-level-analysis-using-gen_group_command.py.md)
+    * [Second-Level Analysis using gen\_group\_command.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/second-level-analysis-using-gen_group_command.py.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [🚧 CONN Toolbox](analysis-pipelines/conn-toolbox.md)
 * [Diffusion Weighted Imaging (DWI) Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/README.md)
   * [FSL topup and eddy](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/fsl-topup-and-eddy.md)
   * [Tractography: DSI Studio](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/untitled.md)
-  * [MRtrix3 for Diffusion Imaging Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis.md)
+  * [MRtrix3 for Diffusion Imaging Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis/README.md)
+    * [Step 1: Preprocessing](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis/step-1-preprocessing.md)
+    * [Step 2: Tractography](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis/step-2-tractography.md)
+    * [Step 3: Fixel-Based Analysis](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis/step-3-fixel-based-analysis.md)
+    * [Step 5: Building a Connectome](analysis-pipelines/diffusion-weighted-imaging-dwi-analysis/mrtrix3-for-diffusion-imaging-analysis/step-5-building-a-connectome.md)
 * [Brown University MRS Data Collection and Preprocessing Protocol](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/README.md)
   * [PRESS Data Collection on Siemens XA30 System](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/press-data-collection-on-siemens-xa30-system.md)
   * [Organizing Your Data and Preprocessing Using Osprey](analysis-pipelines/brown-university-mrs-data-collection-and-preprocessing-protocol/organizing-your-data-and-preprocessing-using-osprey.md)
@@ -67,11 +76,11 @@
 
 ## Standalone Tools
 
-* [Automated MR spectroscopy voxel placement with voxalign](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/README.md)
-  * [Installation](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/installation.md)
-  * [Multi-session alignment](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/multi-session-alignment.md)
-  * [Center on MNI coordinate](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/center-on-mni-coordinate.md)
-  * [Quantify voxel overlap](standalone-tools/automated-mr-spectroscopy-voxel-placement-with-voxalign/quantify-voxel-overlap.md)
+* [voxalign: automated MR spectroscopy voxel placement](standalone-tools/voxalign-automated-mr-spectroscopy-voxel-placement/README.md)
+  * [Installation](standalone-tools/voxalign-automated-mr-spectroscopy-voxel-placement/installation.md)
+  * [Multi-session alignment](standalone-tools/voxalign-automated-mr-spectroscopy-voxel-placement/multi-session-alignment.md)
+  * [Center on MNI coordinate](standalone-tools/voxalign-automated-mr-spectroscopy-voxel-placement/center-on-mni-coordinate.md)
+  * [Quantify voxel overlap](standalone-tools/voxalign-automated-mr-spectroscopy-voxel-placement/quantify-voxel-overlap.md)
 * [dicomsort: a tool to organize DICOM files](standalone-tools/dicomsort-a-tool-to-organize-dicom-files.md)
 * [ironmap](standalone-tools/ironmap.md)
 * [convert enhanced multi-frame DICOMs to legacy single-frame](standalone-tools/convert-enhanced-multi-frame-dicoms-to-legacy-single-frame.md)

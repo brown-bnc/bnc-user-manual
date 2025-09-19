@@ -44,7 +44,7 @@ After saving your settings and clicking **Done**, you'll arrive at the **Game Se
 
 To change game parameters, click **Settings** to return to the previous configuration screen.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 🎈 Blow Up the Balloon
 
@@ -64,7 +64,7 @@ In this game, the participant inflates a balloon by pressing a button on a handh
 * It gradually scales down to the **“Movement Tolerance End”** as the balloon inflates
 * Movement is monitored continuously, so the participant must press carefully and remain still
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
 
 ## ✳️ Stay Still
 

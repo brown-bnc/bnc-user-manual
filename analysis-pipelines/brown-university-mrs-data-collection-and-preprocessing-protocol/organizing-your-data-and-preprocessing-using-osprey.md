@@ -33,15 +33,15 @@ The script will default to placing the BIDS-converted data in a folder called "b
 * The python script for xnat2bids is located in `/oscar/data/bnc/scripts` . To run xnat2bids from the directory where you saved your .toml configuration file, type the command `python /oscar/data/bnc/scripts/run_xnat2bids.py --config <your_config_filename>` . If you run this command from a different directory than where you saved your config file, make sure to give the full path to it.&#x20;
 * You will receive an email when both xnat2bids and the bids-validator launch and are completed.
 * Once the job is complete, you will see three output directories created at your bids root. &#x20;
-  * `xnat-export` contains the dicoms placed in folders named after the sequences at the scanner. This is where you will find your spectroscopy dicoms.&#x20;
-  * `bids` contains all subdirectories required in the BIDS specification. Here you will find your converted anatomical NIFTIs. This is also where the output of your preprocessing will go (in derivatives).&#x20;
+  * `xnat-export` contains the dicoms placed in folders named after the sequences at the scanner.&#x20;
+  * `bids` contains all subdirectories required in the BIDS specification. Here you will find your converted NIFTIs. There will be subfolders for the subject and session, containing the different sequence types (notably, `anat` and `mrs)`. This bids directory is also where the output of your preprocessing will go (in derivatives).&#x20;
   * `logs` contains the log files from the xnat2bids job.&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 1.39.07 PM.png" alt=""><figcaption><p>The structure of output directories after running xnat2bids for sub-101 ses-01 of demodat2. In this case, the bids root is "Demodat2_documentation".  </p></figcaption></figure>
 
-### Organizing the Spectroscopy Data According to the BIDS Specification&#x20;
+### Organizing the Spectroscopy Data According to the BIDS Specification (RDA Files)
 
-Unlike other types of MRI sequences (functional, diffusion, anatomical, etc), xnat2bids does not currently convert MRS dicoms into NIFTIs or move them into the `sourcedata` or `bids` directories. It also cannot upload the RDA or twix files to Oscar. These steps will need to be completed manually before beginning preprocessing. Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html).&#x20;
+If you export your data with xnat2bids, the spectroscopy DICOMs collected at the scanner will be converted to NIFTIs and placed in a BIDS directory (along with your T1 anatomical files and all other sequences/runs). However, there are additional file types acquired, which cannot be sent to XNAT by the scanner. These file types (RDA and twix files) must be saved to a drive and manually uploaded to Oscar.&#x20;
 
 #### Place all necessary files into sourcedata&#x20;
 
@@ -49,27 +49,40 @@ Unlike other types of MRI sequences (functional, diffusion, anatomical, etc), xn
 The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started.html#how-to-organize-your-raw-data) notes that when performing MRS preprocessing on data acquired on a Siemens MRI, it is absolutely necessary to separate the dicoms/RDAs into separate folders based on scan.&#x20;
 {% endhint %}
 
-* In the `sourcedata` directory, create a new folder called `mrs`. Within `mrs`, subfolders must be created for each spectroscopy run (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.&#x20;
-* In this example there was only one VOI, the left anterior cingulate cortex (Lacc). The subfolders for the water reference and metabolite scans were manually created and named Lacc\_mrsref and Lacc\_svs, respectively.&#x20;
+* You will find that after running xnat2bids, there are spectroscopy subfolders called `mrs` in the `sourcedata` directory. In that subfolder you will find one subject/session's mrs dicoms. There are no further subfolders automatically created for each spectroscopy run , so we will need to manually make them (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.&#x20;
+* In this example there was only one VOI, the left anterior cingulate cortex (Lacc). Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 2.08.57 PM.png" alt=""><figcaption></figcaption></figure>
 
-* Place the scan's dicoms inside the individual `mrs` subdirectories
-  * You can find all of the session's dicoms at `<$bidsroot>/bnc/study-demodat2/xnat-export/sub-101/ses-01.` Once in that directory, find the spectroscopy water reference scan by typing `cd mrs-mrsref_acq-PRESS_voi-Lacc` .  The metabolite (svs) scan is located in `$bidsroot>/bnc/study-demodat2/xnat-export/sub-101/ses-01/mrs-svs_acq-PRESS_voi-Lacc` . Copy each dicom into its relevant directory that you just created in `$bidsroot/bnc/study-demodat2/bids/sourcedata/sub-101/ses-01/mrs/` .&#x20;
+* Move the dicoms into their respective subfolders (Lacc\_mrsref and Lacc\_svs).
 * Then copy the corresponding RDA and twix files (saved to your drive via scannershare).&#x20;
 * You can download the RDA files for sub-101 ses-01 of demodat2 here:&#x20;
 
-{% file src="../../.gitbook/assets/sub-101_ses-01_RDAs (1).zip" %}
-RDA files for sub-101 ses-01 of demodat2. The file "mrsref/101.MR.BNC DEMODAT2.24.1.162615.rda" corresponds to the water reference scan, and "svs/101.MR.BNC DEMODAT2.25.1.162616.rda" corresponds to the metabolite/svs scan.&#x20;
-{% endfile %}
+{% file src="../../.gitbook/assets/101.MR.BNCDEMODAT2.mrsref.rda.zip" %}
+
+{% file src="../../.gitbook/assets/101.MR.BNCDEMODAT2.svs.rda.zip" %}
 
 * For the sake of this tutorial you do not need the twix files, but typically you should see three files in each sourcedata mrs subdirectory:  1) the dicom, 2) the RDA, and 3) the twix (.dat).&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 3.40.51 PM.png" alt=""><figcaption><p>Navigate into one of the <code>mrs</code> subdirectories (in <code>sourcedata</code>) and list the contents. </p></figcaption></figure>
 
-#### Convert the Spectroscopy dicoms into NIFTIs
+<details>
 
-* spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
+<summary>Manually Organizing Spectroscopy Data in BIDS (without using xnat2bids) </summary>
+
+Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.&#x20;
+
+#### Place all necessary files into sourcedata&#x20;
+
+* As explained in the section above, mrs data must be organized into separate subfolders within sourcedata in order to be used by Osprey
+* Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
+
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 2.08.57 PM.png" alt=""><figcaption></figcaption></figure>
+
+* Place the scan's dicoms inside the individual `mrs` subdirectories
+* #### Convert the Spectroscopy dicoms into NIFTIs
+
+- spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
   * From within the `mrs-mrsref_acq-PRESS_voi-Lacc`  directory, type:
 
 ```
@@ -103,11 +116,13 @@ gunzip sub-101_ses-01_acq-memprageRMS_T1w.nii.gz
 
 * You should now see an unzipped NIFTI in this directory (`sub-101_ses-01_acq-memprageRMS_T1w.nii)` .&#x20;
 
+</details>
+
 #### Prepare Your Output Directories
 
 In your BIDS `derivatives` folder, make a new folder called `osprey` . Within that, make subdirectories for your subject (`sub-101`) and session (`ses-01`). You will save your Osprey outputs here.&#x20;
 
-### Setting Up Osprey on Oscar
+### Installing Osprey on Oscar
 
 * In the OOD Virtual Desktop, download SPM12 (not 25) to your home directory from the [SPM github](https://github.com/spm/spm12) and unzip the file. Instructions on downloading SPM can be found [here](https://www.fil.ion.ucl.ac.uk/spm/software/download/).&#x20;
 

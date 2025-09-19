@@ -12,7 +12,7 @@ If you are using XNAT and have worked with us to set up your protocol to be [BID
 
 ### Step 2: Convert behavioral data into BIDS format
 
-If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an example using our demodat dataset [here](../demo-dataset/basic-analysis-example-visual-motor-activation-task.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
+If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an example using our demodat dataset [here](../analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
 
 ### Step 3: Add stimulus information and stimulus files
 

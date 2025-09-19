@@ -1,34 +1,18 @@
 ---
-description: Preprocessing and applying a general linear model using AFNI
+description: >-
+  Preprocessing a single subject/session and applying a general linear model
+  using AFNI
 ---
 
-# Basic analysis example: visual/motor activation task
-
-To enable both block and event related analyses, we designed a single functional sequence that includes two different concurrent tasks. These are 1) the visual hemifield localizer task (also called the checkerboard, or checks, task) and 2) a button pressing task for motor cortex activation. Here, we provide a bare-bones processing pipeline using the [AFNI](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/index.html) software package.&#x20;
-
-## Block Design: The Visual Hemifield Localizer Task
-
-This is a very simple visual task, with alternating 12s blocks of flashing checkerboard stimuli in the left and right visual hemifields. Because of the contralateral organization of visual cortex, we can identify the right visual cortex by selecting voxels that prefer stimulation on the left side of visual space, and vice versa.&#x20;
-
-## Event-Related Design: Button Pressing Task
-
-To activate areas of the motor cortex, we included a button press task which occurs throughout the alternating flashing checkerboards. At random and variable inter-trial intervals (4, 6, or 8), the white fixation cross in the center of the screen flashes to either red or blue for 300ms (0.3 seconds). Once the participant sees the color change, they press the corresponding button (right index finger for red, left index finger for blue).&#x20;
-
-Below is a figure depicting these two concurrent tasks.&#x20;
-
-<figure><img src="../.gitbook/assets/Demodat2 Documentation (1).jpg" alt=""><figcaption></figcaption></figure>
-
-The psychopy script and all necessary files can be downloaded here:&#x20;
-
-{% file src="../.gitbook/assets/Demodat2_Psychopy_Files.zip" %}
+# Single Subject Analysis: Visual/Motor Activation
 
 ### Step 1: Download data from XNAT and automatically convert to BIDS format with xnat-tools
 
-In this example, we will use the data from demodat2 participant 101, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the xnat-tools Oscar utility script explained [here](../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
+In this example, we will use the data from demodat2 participant 101, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the xnat-tools Oscar utility script explained [here](../../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
 
-First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
+First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat2\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
-```
+```toml
 # Configuring arguments here will override default parameters.
 [slurm-args]
 mail-user = "example-user@brown.edu"
@@ -41,15 +25,14 @@ sessions = [
 # Skip scanner-derived multi-planar reconstructions & non-distortion-corrected images 
 # These are used for MRS voxel placement on the scanner and will cause xnat2bids to fail. 
 skipseq=["anat-t1w_acq-memprage_MPR_Cor","anat-t1w_acq-memprage_MPR_Tra","anat-t1w_acq-memprage_MPR_Tra_ND","anat-t1w_acq-memprage RMS_ND","anat-t1w_acq-memprage_MPR_Cor_ND"]
-overwrite=true
 verbose=1
 ```
 
-To run the xnat-tools export and BIDS conversion, change directory to `/oscar/data/bnc/shared/scripts/oscar-scripts/`. On the command line, type:
+To run the xnat-tools export and BIDS conversion, change directory to `/oscar/data/bnc/shared/scripts/`. On the command line, type:
 
 `module load anaconda`
 
-`python run_xnat2bids.py --config ~/x2b_demodat_config.toml`
+`python run_xnat2bids.py --config ~/x2b_demodat2_config.toml`
 
 If you named your .toml file differently or placed it somewhere other than your home directory, make sure to include the full path to your file and the correct filename. Enter your XNAT username and password when prompted.&#x20;
 
@@ -81,31 +64,31 @@ We will call this output BIDS-compatible folder (`/oscar/home/<yourusername>/xna
 
 To make our data BIDS compatible and facilitate future data sharing, we need to create events.tsv files that correspond to each of our functional runs and contain information about each stimulus event of interest (onset time, condition, etc.). First, download the participant's data files (in our case, created by PsychoPy) and place them in the sourcedata subfolder of your BIDS directory in a subfolder named 'beh'. So, for this participant and session, the full path should be: `$bidsdir/sourcedata/sub-101/ses-01/beh`.&#x20;
 
-{% file src="../.gitbook/assets/sub-101_ses-01_beh.zip" %}
+{% file src="../../.gitbook/assets/sub-101_ses-01_beh.zip" %}
 Demodat subject 101 session 01 behavioral data.&#x20;
 {% endfile %}
 
 Next, download our example python script make\_events.py, and run it from the command line with `python make_events_LRChx.py --bids_dir $bidsdir --subj sub-101 --sess ses-01`. For this script to run, you'll need both [numpy](https://numpy.org/install/) and [pandas](https://pandas.pydata.org/) installed in your python environment (if you're doing this on Oscar and you run `module load anaconda/latest`, you should be all set). This script will create BIDS-formatted events.tsv files corresponding to each functional run in `$bidsdir/sub-101/ses-01/func/`.&#x20;
 
-{% file src="../.gitbook/assets/make_events_LRChx (1).py" %}
+{% file src="../../.gitbook/assets/make_events_LRChx (1).py" %}
 Example python script to read in csv files created by PsychoPy and create the events.tsv files corresponding to each fMRI run
 {% endfile %}
 
 If you are unable to run this script for any reason, you can download the events.tsv output files here, and manually place them in  `$bidsdir/sub-101/ses-01/func/` .
 
-{% file src="../.gitbook/assets/sub-101_ses-01_eventsfiles.zip" %}
+{% file src="../../.gitbook/assets/sub-101_ses-01_eventsfiles.zip" %}
 
 ### Step 3: Convert events.tsv files into AFNI stimulus timing files
 
 We needed to make those events.tsv files for BIDS compatibility, but in order to run our statistical analysis in AFNI, we need to transform them into .1D text files required by AFNI for specifying stimulus timing information. Instead of one file per run, as we had with the events.tsv files, here we need one file per condition (e.g. left hemifield checks or right button presses). These files are formatted to have one line per run of the task, specifying all the onset times for that condition. Since we collected two runs of the functional tasks, there should be two lines in this file. We have created an example python script make\_afni\_stimtimes\_LRChx.py, which you can run from the command line just as you did make\_events.py: `python make_afni_stimtimes_LRChx.py --bids_dir $bidsdir --subj sub-101 --sess ses-01` . This will create stimulus timing files in `$bidsdir/derivatives/afni/sub-101/ses-01/stimtimes/` .
 
-{% file src="../.gitbook/assets/make_afni_stimtimes_LRChx (1).py" %}
+{% file src="../../.gitbook/assets/make_afni_stimtimes_LRChx (1).py" %}
 example python script to read in events.tsv files from each functional run and output the .1D stimulus timing files AFNI needs
 {% endfile %}
 
 If you are unable to run this script for any reason, you can download the .1D files here and manually place them in `$bidsdir/derivatives/afni/sub-101/ses-01/stimtimes/`.
 
-{% file src="../.gitbook/assets/sub-101_ses-01_stimtimes.zip" %}
+{% file src="../../.gitbook/assets/sub-101_ses-01_stimtimes.zip" %}
 
 ### Step 4: Use afni\_proc.py to create a simple preprocessing stream and run the general linear model for the checks task
 
@@ -218,10 +201,10 @@ afni_proc.py                                                         \
 
 After the `demodat2_afniproc.sh` script executes successfully, a results directory will be created: `$bidsdir/derivatives/afni/sub-101/ses-01/sub-101_results`. Start AFNI from within this directory (just type `afni` on the command line), set the underlay to `anat_final.sub-101_ses-01` and the overlay to `stats.sub-101_ses-01_REML`. In the Define Overlay menu, set the OLay to `#13 left_vs_right_chx#0_Coef` , the Thr to `#13left_vs_right_chx#0_Tstat`, and change the threshold to your desired alpha (here we've used p = 0.001). This left vs. right contrast shows regions of the brain that show a stronger BOLD response to left vs. right visual hemifield stimulation, so we can easily localize the right visual cortex and the right LGN, as expected.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-06-26 at 4.48.38 PM.png" alt=""><figcaption><p>Results of a general linear test contrasting left vs. right visual hemifield stimulation, in demodat subject 101 session 01</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.48.38 PM.png" alt=""><figcaption><p>Results of a general linear test contrasting left vs. right visual hemifield stimulation, in demodat subject 101 session 01</p></figcaption></figure>
 
 #### Motor Activation (Button Press) Task&#x20;
 
 To view the GLT results for left versus right button presses, change the overlay to `#16left_vs_right_press#0_Coef` and the Thr to `#17left_vs_right_press#0_Tstat`.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-06-26 at 4.52.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.52.00 PM.png" alt=""><figcaption></figcaption></figure>
