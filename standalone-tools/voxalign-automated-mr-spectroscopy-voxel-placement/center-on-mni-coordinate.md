@@ -9,7 +9,7 @@
 5. If you have previously run mni-lookup _on this same participant_ (for example, using a T1 that was collected at a previous session), you can click "Use existing MNI registration" and choose the output folder from the previous mni-lookup run. This will check that all necessary files are present and then allow you to skip the time-consuming nonlinear warping to MNI space.
 6. When your T1 has been collected and sent over via scannershare, you can click "Select T1 DICOM" and choose that file.&#x20;
 7. Click "Calculate voxel position"
-8. Progress will be printed to the terminal; you'll find that the nonlinear warping to MNI space takes the longest - 4-6 mins or so on Tess, faster on a newer mac.
+8. Progress will be printed to the terminal; you'll find that the nonlinear warping to MNI space takes the longest - 2 mins or so on Tess.
 
 
 
