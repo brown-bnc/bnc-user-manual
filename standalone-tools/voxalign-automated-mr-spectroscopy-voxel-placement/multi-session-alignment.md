@@ -16,12 +16,12 @@ You can organize your data however you like, but it is helpful to collect the se
 
 1. Activate the virtual environment with `source /path/to/env/voxalign/bin/activate` (on Tess, this will be `source ~/Desktop/voxalign/bin/activate`. You can tell that the environment is activated when it says `(voxalign)` before the command prompt.&#x20;
 2. Start voxalign by typing `run-voxalign`.
-
-<figure><img src="../../.gitbook/assets/voxalign_gui.png" alt=""><figcaption></figcaption></figure>
-
 3. Use the voxalign file selector to select your T1 and spectroscopy DICOMs. You can get everything but the session 2 T1 loaded in advance.
 4. Specify an output directory. I usually just create a folder called "output" in the participant's directory.&#x20;
 5. Once the session 2 T1 has been collected, [export it to scannershare](../../mrf-guides/exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.
+
+<figure><img src="../../.gitbook/assets/voxalign_gui.png" alt=""><figcaption></figcaption></figure>
+
 6. Verify that everything looks correct, then click **Run VoxAlign**
 
 
