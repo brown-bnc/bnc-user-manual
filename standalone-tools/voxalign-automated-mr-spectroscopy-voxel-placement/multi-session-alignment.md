@@ -20,7 +20,7 @@ You can organize your data however you like, but it is helpful to collect the se
 4. Specify an output directory. I usually just create a folder called "output" in the participant's directory.&#x20;
 5. Once the session 2 T1 has been collected, [export it to scannershare](../../mrf-guides/exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.
 
-<figure><img src="../../.gitbook/assets/voxalign_gui.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/voxalign_gui (1).png" alt=""><figcaption></figcaption></figure>
 
 6. Verify that everything looks correct, then click **Run VoxAlign**
 
