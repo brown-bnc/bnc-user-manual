@@ -108,3 +108,4 @@
   * [Customizing Your Settings](motion-trainer/motion-trainer-user-guide/customizing-your-settings.md)
   * [Advanced Settings](motion-trainer/motion-trainer-user-guide/advanced-settings.md)
   * [Adding Your Own Videos and Images](motion-trainer/motion-trainer-user-guide/adding-your-own-videos-and-images.md)
+  * [Motion Trainer Hardware Setup](motion-trainer/motion-trainer-user-guide/motion-trainer-hardware-setup.md)

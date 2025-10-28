@@ -24,7 +24,7 @@ The Balloon Trainer consists of two tasks: The Balloon Task and a Fixation/Rest 
 
 ## The Balloon Task
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-07-19 at 1.22.36 PM.png" alt=""><figcaption><p>As the keys of the button box are pressed, the balloon will gradually inflate. This will also be displayed on the BOLD Screen. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-07-19 at 1.22.36 PM.png" alt=""><figcaption><p>As the keys of the button box are pressed, the balloon will gradually inflate. This will also be displayed on the BOLDscreen. </p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-07-19 at 1.27.24 PM.png" alt=""><figcaption><p>If the participant does not move while inflating the balloon, it will reach the tack on the top of the screen and pop, revealing a smiley face. If they move at any point, a frowny face will appear and the task will restart. </p></figcaption></figure>
 

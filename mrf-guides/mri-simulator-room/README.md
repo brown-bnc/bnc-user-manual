@@ -8,11 +8,11 @@ description: >-
 
 The room is equipped with a mock scanner and audiovisual equipment that will help you closely mimic the scanner experience.&#x20;
 
-1. BOLDScreen for stimulus display
+1. BOLDscreen for stimulus display
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeEEVyC8hd8tUukCK5F7ABlVRUY1RzvKzRYGZzjelfIKeF2TVFgS8kzYFk2KkVG_J3JIBcUEbYKs7rQwcGtCfWHbwN-3yG1ua_DtedNVqEqXW5VK75EqkVAz8AZXq88IPV3NExFHQQxeBzvfXRY4OL4agho?key=4obomWZsY6WguZTCVulLWA" alt="" width="563"><figcaption><p>a BOLDScreen behind the simulator bore matches the setup at the scanner</p></figcaption></figure>
+<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeEEVyC8hd8tUukCK5F7ABlVRUY1RzvKzRYGZzjelfIKeF2TVFgS8kzYFk2KkVG_J3JIBcUEbYKs7rQwcGtCfWHbwN-3yG1ua_DtedNVqEqXW5VK75EqkVAz8AZXq88IPV3NExFHQQxeBzvfXRY4OL4agho?key=4obomWZsY6WguZTCVulLWA" alt="" width="563"><figcaption><p>a BOLDscreen behind the simulator bore matches the setup at the scanner</p></figcaption></figure>
 
-2.  BOLDScreen AVI switchbox
+2.  BOLDscreen AVI switchbox
 
 
 
@@ -40,7 +40,7 @@ The room is equipped with a mock scanner and audiovisual equipment that will hel
 
 5.  Auditory stimuli in the mock scanner\
     \
-    Any of the computers can be used to play sounds through the headphones; you just need to select that computer on the BOLDScreen AVI switchbox and the audio will be routed through along with the video. This is how it works in the scanner control room as well. Headphone covers are available on the countertop at the foot of the mock scanner bed.\
+    Any of the computers can be used to play sounds through the headphones; you just need to select that computer on the BOLDscreen AVI switchbox and the audio will be routed through along with the video. This is how it works in the scanner control room as well. Headphone covers are available on the countertop at the foot of the mock scanner bed.\
 
 
     <figure><img src="../../.gitbook/assets/headphones.jpg" alt="" width="563"><figcaption></figcaption></figure>
