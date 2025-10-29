@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Motion Trainer: Balloon Task
 
 The Balloon Trainer is an E-Prime script written by Michael Worden, which is used to train participants to lay in the MRI with minimal movement. This is done in the simulator room by placing a motion tracking sensor on the participants head, moving them into the simulator bore with a button box in hand, and launching the script. It can be used for any population, but since it is formatted like a simple game, it is particularly suitable for those working with children.&#x20;
