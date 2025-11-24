@@ -50,9 +50,9 @@ The aim of this step is to make our behavioral data BIDS compatible and facilita
 {% hint style="info" %}
 How will these timing files differ from those in a single subject pipeline?&#x20;
 
-* The tsv files are the same- they are still created per subject, session, and run. They are separated by task (checks, keypress), but not by condition (left, right)
-* For the first level analysis, we only input data from session 1 into the AFNI regression. Since there are two runs per session, the 1D files had 2 rows. These files are separated by both task and condition (e.g. left\_keypress.1D, right\_checks.1D)
-* For the second level analysis, the AFNI 1D files will contain 4 rows. These rows correspond to the two runs from session 1 and the two runs from session 2. By including all runs from both sessions in one file, we can include all data per subject in the regression.&#x20;
+* The tsv files are the same- they are still created per subject, session, and run. They are separated by task (checks, keypress), but not by condition (left, right).
+* For the first level analysis, we only input data from session 1 into the AFNI regression. Since there are two runs per session, the 1D files had 2 rows. These files are separated by both task and condition (e.g. left\_keypress.1D, right\_checks.1D).
+* For the second level analysis, the AFNI 1D files will contain 4 rows. These rows correspond to the two runs from session 1 and the two runs from session 2. By including all runs from both sessions in one file, we can include all data per subject in the regression.
 {% endhint %}
 
 #### Download the psychopy behavioral timing files (csv)
@@ -265,7 +265,7 @@ The -blocks flag lists the processing blocks that will be executed, in order:&#x
 
 1. `anatQQ.$subID.nii` (skull-stripped dataset nonlinearly warped to the base template space)
 2. `anatQQ.$subID.aff12.1D` (affine matrix to transform original dataset to base template space)
-3. `anatQQ.$subID_WARP.nii` (incremental warp from affine transformation to nonlinearly aligned dataset).&#x20;
+3. `anatQQ.$subID_WARP.nii` (incremental warp from affine transformation to nonlinearly aligned dataset)
 
 **For the visual hemifield localizer regression, we use:**
 
@@ -275,7 +275,7 @@ The -blocks flag lists the processing blocks that will be executed, in order:&#x
 
 `-regress_basis` to model each stimulus as a block lasting 12 seconds
 
-`-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right\_chx" contrast to find voxels whose activity is greater for the left hemifield stimulation than for the right.&#x20;
+`-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right\_chx" contrast to find voxels whose activity is greater for the left hemifield stimulation than for the right
 
 **For the motor task (keypress) regression, we use:**
 
@@ -285,7 +285,7 @@ The -blocks flag lists the processing blocks that will be executed, in order:&#x
 
 `-regress_basis` to model each stimulus as an instantaneous event (indicated by using AFNI's 'GAM' function)
 
-`-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right\_press" contrast to find voxels whose activity is greater for the left index finger motor activation than for the right.&#x20;
+`-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right\_press" contrast to find voxels whose activity is greater for the left index finger motor activation than for the right&#x20;
 
 </details>
 

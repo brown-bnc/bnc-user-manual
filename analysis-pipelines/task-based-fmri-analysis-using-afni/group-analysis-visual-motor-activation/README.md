@@ -20,5 +20,5 @@ The basic flow of this pipeline is as follows:&#x20;
 1. Use gen\_group\_command.py to build and run your statistical tests
 2. Compute a group intersection mask
 3. Calculate the average smoothness across participants
-4. Use 3dClustSim to simulate noise and determines what cluster sizes are needed to control false positives.&#x20;
-5. Use 3dClusterize to apply the thresholds to your group-level statistical maps from 3dMEMA. It outputs final significant clusters and effect estimate maps.
+4. Use 3dClustSim to simulate noise and determines what cluster sizes are needed to control false positives
+5. Use 3dClusterize to apply the thresholds to your group-level statistical maps from 3dMEMA. It outputs final significant clusters and effect estimate maps

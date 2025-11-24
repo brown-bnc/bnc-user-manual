@@ -309,7 +309,7 @@ echo "++ Finished MEMA"
 * **`-set_labels`** are the labels which correspond to the two tasks we ran (chx and keypress)
 * **`-subs_betas`** lists the sub-bricks of the REML statistical files which correspond to the beta coefficients for each task. Beta files for each task should be listed in the same order as they were in -set\_labels (chx then keypress)
 * **`-subs_tstats`** lists the t-statistic sub-bricks for each respective task
-* **`-options -missing_data 0`** The `-missing_data` flag controls what 3dMEMA should do when a subject is missing data in a voxel. By passing it `0`, we are ensuring that each voxel with missing data (NaN, 0) in it will NOT be included in group level statistical analysis. A voxel will still be included on the group level as long as at least 2 subjects have valid data. This is important because it prevents distortion of the group-level variance estimates and and produces more reliable mixed-effects group statistics.
+* **`-options -missing_data 0`** The `-missing_data` flag controls what 3dMEMA should do when a subject is missing data in a voxel. By passing it `0`, we are ensuring that each voxel with missing data (NaN, 0) in it will NOT be included in group level statistical analysis. A voxel will still be included on the group level as long as at least 2 subjects have valid data. This is important because it prevents distortion of the group-level variance estimates and and produces more reliable mixed-effects group statistics
 
 gen\_group\_command.py generates the group analysis script in tcsh, but does not execute it. Following file creation, it is launched via the line `tcsh -ef "${outdir}/${script_mema}"`
 
@@ -365,7 +365,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
 `blur_est_lines=$(grep "err_reml ACF" ${path_proc}/sub*/sub*results/blur_est* | awk -F':' '{print $2}' | awk '{print $1, $2, $3}')`
 
 1. `grep "err_reml ACF"`
-   * Finds the REML ACF line inside each subject’s `blur_est` file
+   * Finds the REML ACF line inside each subject’s `blur_est` file.
    *   Each subject’s `blur_est` file contains several lines; we want the one that includes REML ACF measurements:
 
        ```
@@ -382,7 +382,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
        0.727118 2.91228 10.7089 7.6267
        ```
 3. `awk '{print $1, $2, $3}'`
-   * Takes only the first 3 numbers, which are all that's needed by 3dClustSim
+   * Takes only the first 3 numbers, which are all that's needed by 3dClustSim.
    * The resulting variable `blur_est_lines` is:
 
 ```
@@ -395,7 +395,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
 
 `read a b c <<< "$(echo "$blur_est_lines" | awk '{a+=$1; b+=$2; c+=$3; n+=1} END {print a/n, b/n, c/n}')"`
 
-1. From the `blur_est_lines` array, assign the columns to the variables `a`, `b`, and `c`
+1. From the `blur_est_lines` array, assign the columns to the variables `a`, `b`, and `c`.&#x20;
 2. Creates a group average for `a`, `b`, and `c` by adding the values of each column together and dividing that by the total number of subjects.&#x20;
 
 `blur_est=("$a" "$b" "$c"")`&#x20;
@@ -441,7 +441,7 @@ Later steps extract cluster-size thresholds from the desired output table.&#x20;
 This section takes the 3dClustSim table you generated earlier and uses it to compute two things:
 
 1. The minimum cluster size needed to survive FWE correction.
-2. The voxelwise statistical threshold (e.g., Z, t, or F threshold) that corresponds to your chosen voxelwise p-value
+2. The voxelwise statistical threshold (e.g., Z, t, or F threshold) that corresponds to your chosen voxelwise p-value.
 
 This information will then be passed to 3dClusterize.&#x20;
 
@@ -534,7 +534,7 @@ You may need to copy the MNI brain template from one of the single subject outpu
 
 Expand the window by clicking the `Define Overlay -->` button , and set the Olay to the beta coefficient map for the checks task (`chx:b)`. Se the threshold to `chx:t`. Finally, select a p-value (In our example, we chose 0.01). You can now scroll through the viewer and observe areas of visual activation.&#x20;
 
-The same thing can be done for the keypress task by selecting the Olay as keypress:b and the threshold as keypress:t.&#x20;
+The same thing can be done for the keypress task by selecting the Olay as `keypress:b` and the threshold as `keypress:t`.&#x20;
 
 Remember: At the stage in the pipeline, no group mask has been applied. That is why you see tiny voxels outside the brain.&#x20;
 
