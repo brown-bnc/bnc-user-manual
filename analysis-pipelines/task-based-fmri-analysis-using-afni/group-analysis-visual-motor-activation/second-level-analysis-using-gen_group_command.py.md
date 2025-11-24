@@ -5,7 +5,7 @@ Second-level analysis takes the results from the first-level analysis (individua
 In some studies, researchers might compare different groups (e.g., males vs. females, patients vs. controls). However, in our case all subjects in _Demodat2_ performed the same task, and we did not divide them into subgroups. Therefore, we will use a **one-sample test** to examine whether the group, as a whole, shows consistent brain activation.
 
 {% hint style="info" %}
-Since we are working with a very low n in this tutorial, it is not unusual to observe few clusters that survive thresholding at the group level. This script is meant to serve as an example and should be adapted for a larger dataset.&#x20;
+Since we are working with a low n in this tutorial, it is not unusual to observe very few clusters that survive thresholding at the group level. This script is meant to serve as an example and should be adapted for a larger dataset.&#x20;
 {% endhint %}
 
 ### The Full Script&#x20;
@@ -211,7 +211,7 @@ AFNI provides an example script ([s.nimh\_group\_level\_02\_mema\_bisided.tcsh](
 
 1. Set up paths and parameters
 2. Voxelwise modeling via gen\_group\_command.py
-3. Make group mask using AFNI's 3dmask\_tool&#x20;
+3. Make a group mask using AFNI's 3dmask\_tool&#x20;
 4. Calculate the average smoothness
 5. Clusterize
 
@@ -227,7 +227,7 @@ Here we provide a version of this script that is written in bash and intended to
 #SBATCH --time=4:00:00
 #SBATCH -J demodat2_group_analysis
 #SBATCH --output=logs/demodat2_groupanalysis-%A_%a.out
-#SBATCH --mail-user=example_user@brown.edu
+#SBATCH --mail-user=example_user@brown.edu              <- UPDATE THIS 
 #SBATCH --mail-type=ALL
 
 # This script is adapted from s.nimh_group_level_02_mema_bisided.tcsh 
@@ -244,7 +244,7 @@ module load afni
 ###############################################################################
 
 here=$PWD                        # starting directory
-bids_dir="path/to/bids"
+bids_dir="path/to/bids"          # <- UPDATE THIS
 path_proc="${bids_dir}/derivatives/afni"
 
 odir="GROUP_LEVEL"              # output folder name
@@ -315,7 +315,7 @@ gen\_group\_command.py generates the group analysis script in tcsh, but does not
 
 #### Step 2: Make a group mask using AFNI's 3dmask\_tool
 
-Next, AFNI's 3dmask\_tool is used to collect all subject-level masks created during single-subject processing, and combine them into one group level intersection mask. This mask will later be used in clusterizing.&#x20;
+Next, AFNI's 3dmask\_tool is used to collect all subject-level masks created during single-subject processing, and combine them into one group level intersection mask. This mask will be used in subsequent steps.
 
 ```bash
 ###############################################################################
@@ -335,7 +335,7 @@ echo "++ Created group mask"
 
 Along with the mask, group‐level cluster correction in AFNI (via 3dClustSim) requires estimates of spatial smoothness. These estimates come from each subject’s residuals and must be averaged across subjects.
 
-AFNI's recommended smoothness metric is the REML-based ACF (Autocorrelation Function), which models spatial noise with 3 parameters.&#x20;
+AFNI's recommended smoothness metric is the REML-based ACF (Autocorrelation Function), which models spatial noise with 3 parameters. The -acf method is preferred because it will give more accurate false positive rate (FPR) control.
 
 ```bash
 ###############################################################################
@@ -383,7 +383,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
        ```
 3. `awk '{print $1, $2, $3}'`
    * Takes only the first 3 numbers, which are all that's needed by 3dClustSim
-   * The resulting variable blur\_est\_lines is:
+   * The resulting variable `blur_est_lines` is:
 
 ```
 0.727118 2.91228 10.7089
@@ -391,20 +391,20 @@ echo "++ Group average ACF params: ${blur_est[@]}"
 0.754144 2.9418 10.3588
 ```
 
-4. A check is included at the end ("`if [[ -z "$blur_est_lines" ]]; then` ...") to ensure that the values were properly parsed from the blur\_est\* file.&#x20;
+4. A check is included at the end ("`if [[ -z "$blur_est_lines" ]]; then` ...") to ensure that the values were properly parsed from the `blur_est*` file.&#x20;
 
 `read a b c <<< "$(echo "$blur_est_lines" | awk '{a+=$1; b+=$2; c+=$3; n+=1} END {print a/n, b/n, c/n}')"`
 
-1. From the array called `blur_est_lines`, assign the columns to the variables `a`, `b`, and `c`
+1. From the `blur_est_lines` array, assign the columns to the variables `a`, `b`, and `c`
 2. Creates a group average for `a`, `b`, and `c` by adding the values of each column together and dividing that by the total number of subjects.&#x20;
 
 `blur_est=("$a" "$b" "$c"")`&#x20;
 
-1. A new variable is created called blur\_est, which contains the mean of each ACF parameter across subjects. This will be used in 3dClustSim.
+1. A new variable is created called `blur_est`, which contains the mean of each ACF parameter across subjects. This will be used in 3dClustSim.
 
-#### Step 4: Clusterizing using 3dClustSim
+#### Step 4: Cluster Simulations using 3dClustSim
 
-3dClustSim is AFNI’s tool for estimating family-wise error (FWE)–corrected cluster-size thresholds based on the spatial smoothness of your data. This is done using Monte Carlo simulations, to determine how large a cluster must be to be unlikely to appear by chance, given:
+[3dClustSim](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dClustSim.html) is AFNI’s tool for estimating family-wise error (FWE)–corrected cluster-size thresholds based on the spatial smoothness of your data. This is done using Monte Carlo simulations, to determine how large a cluster must be to be unlikely to appear by chance, given:
 
 1. your choice of sidedness&#x20;
 2. a group level mask
@@ -434,7 +434,7 @@ echo "++ Finished cluster simulations"
 1. Nearest-neighbor face-only clustering (NN=1)
 2. Nearest-neighbor face+edge+corner (NN=2)
 
-Later steps extract those cluster-size thresholds from the desired output table.&#x20;
+Later steps extract cluster-size thresholds from the desired output table.&#x20;
 
 #### Step 5: Compute voxelwise statistical thresholds for both tasks
 
@@ -475,7 +475,9 @@ echo "++ Stat threshold Keypress: $voxstat_thr_kp"
 
 #### Step 6: Make thresholded cluster maps
 
-This final section produces thresholded activation maps, using many of the variables and outputs defined in previous code. Notably, it uses 1) the voxelwise threshold, 2) the cluster-size threshold, 3) test sidedness (e.g., bisided), and 4) the neighborhood definition (NN1, NN2, NN3)
+This final section produces thresholded activation maps, using many of the variables and outputs defined in previous code. Notably, it uses 1) the voxelwise threshold, 2) the cluster-size threshold, 3) test sidedness (e.g., bisided), and 4) the neighborhood definition (NN1, NN2, NN3).&#x20;
+
+For more information, please refer to AFNI's documentation on [3dClusterize](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dClusterize.html).&#x20;
 
 ```bash
 ###############################################################################
@@ -522,22 +524,26 @@ echo -e "\n++ DONE with group-level stats and clustering! ++\n"
 exit 0
 ```
 
-
-
 #### View the Output
 
-First, let's view the output of 3dMEMA. In a terminal, navigate to the output directory (`$bids_dir/derivatives/afni/GROUP_ANALYSIS`) and open afni by typing `afni` on the command line. Using the afni GUI, select `MNI152_2009_template.nii.gz` as the Underlay, and `mema_results.nii.gz` as the Overlay. Expand the window by clicking the `Define Overlay -->` button , and set the overlay to the beta coefficient map for the checks task (`chx:b)`. Se the threshold to `chx:t`. Finally, select a p-value (In our example, we chose 0.01). You can now scroll through the viewer and observe areas of visual activation.&#x20;
+First, let's view the output of 3dMEMA. In a terminal, navigate to the output directory (`$bids_dir/derivatives/afni/GROUP_ANALYSIS`) and open afni by typing `afni` on the command line. Using the afni GUI, select `MNI152_2009_template.nii.gz` as the Underlay, and `mema_results.nii.gz` as the Overlay.&#x20;
 
-The same thing can be done for the keypress task by selecting the overlay as keypress:b and the threshold as keypress:t.&#x20;
+{% hint style="info" %}
+You may need to copy the MNI brain template from one of the single subject output folders into the GROUP\_ANALYSIS folder (for example it can be found here: `/$bids_dir/derivatives/afni/sub-101/sub-101.results/MNI152_2009_template_SSW.nii.gz`).&#x20;
+{% endhint %}
+
+Expand the window by clicking the `Define Overlay -->` button , and set the Olay to the beta coefficient map for the checks task (`chx:b)`. Se the threshold to `chx:t`. Finally, select a p-value (In our example, we chose 0.01). You can now scroll through the viewer and observe areas of visual activation.&#x20;
+
+The same thing can be done for the keypress task by selecting the Olay as keypress:b and the threshold as keypress:t.&#x20;
 
 Remember: At the stage in the pipeline, no group mask has been applied. That is why you see tiny voxels outside the brain.&#x20;
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-11-24 at 1.19.52 AM.png" alt=""><figcaption><p>The output of 3dMEMA overlaid onto the MNI template. The transverse images (left) show the checkerboard task and the coronal images (right) show the button pressing task (p=0.01). </p></figcaption></figure>
 
-The final output of this pipeline is the thresholded effect estimate map (`clust_bisided_EE_chx.nii.gz`  .  This is the beta coefficient % signal change map, masked by significant clusters, thresholded at the chosen p-value, and corrected for whole-brain cluster-level FWE. In our case, they are in MNI space as well. Importantly, these maps only contain significant clusters. The values within voxels are the effect size values (percent signal change) and all other voxels are set to 0. There were no significant clusters found for the keypress task- likely due to our low N. This is why you will see a report for the keypress task in the final output folder, but no EE map or cluster map. However, active clusters were output for the checks task!
+The final output of this pipeline is the thresholded effect estimate (EE) map (`clust_bisided_EE_chx.nii.gz`).  An effect estimate is the scaled beta coefficient (β) for a regressor, in units of percent signal chang&#x65;**.** The EE map is masked by significant clusters, thresholded at the chosen p-value, and corrected for whole-brain cluster-level FWE. In our case, it is in MNI space as well. Importantly, these maps only contain _significant_ clusters, and all other voxels are set to 0. There were no significant clusters found for the keypress task- likely due to our low N. This is why you will see a report for the keypress task in the final output folder, but no EE map or cluster map. However, active clusters were output for the checks task!
 
-You can view the effect estimate map for the checks task by changing to overlay in the afni GUI to clust\_bisided\_EE\_chx.nii.gz.&#x20;
+You can view the effect estimate map for the checks task by changing the overlay in the AFNI GUI to `clust_bisided_EE_chx.nii.gz`.&#x20;
 
 <figure><img src="../../../.gitbook/assets/EE_montage.jpg" alt=""><figcaption><p>The Effect Estimate Map for the checks task overlayed onto the MNI template. The value of each blue and yellow voxel corresponds to the value of the % signal change </p></figcaption></figure>
 
-To summarize, the voxel values in these effect-estimate maps are group-level % signal-change values derived from the subject-level beta coefficients. Unlike the output frrom 3dMEMA that we just looked at above, these maps are masked to only include significant clusters. Values can be extracted from these final output files (`clust_bisided_EE_chx.nii.gz`, `clust_bisided_map_chx.nii.gz`, and `clust_bisided_report_chx.txt`) to be reported in your final analysis.    &#x20;
+To summarize, the voxel values in these effect-estimate maps are group-level % signal-change values derived from the subject-level beta coefficients. Unlike the output from 3dMEMA that we just looked at above, these maps are masked to only include significant clusters. Values can be extracted from these final output files (`clust_bisided_EE_chx.nii.gz`, `clust_bisided_map_chx.nii.gz`, and `clust_bisided_report_chx.txt`) to be reported in your final analysis.
