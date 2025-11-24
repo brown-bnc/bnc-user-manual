@@ -72,7 +72,7 @@ def convert_tsv_to_afni(subj, bids_dir):
         os.path.join(bids_dir, subj, 'ses-02', 'func')
     ]
 
-    outdir = os.path.join(bids_dir, 'derivatives', 'afni', subj, 'stimtimes')
+    outdir = os.path.join(bids_dir, 'derivatives', 'afni', subj, 'dualsession', 'stimtimes')
     os.makedirs(outdir, exist_ok=True)
 
     datafiles = []
@@ -104,7 +104,7 @@ def convert_tsv_to_afni(subj, bids_dir):
 
         for condition in sorted(alldata_df['trial_type'].dropna().unique()):
             cond_df = alldata_df[alldata_df.trial_type == condition]
-            outfilename = os.path.join(outdir, f'{subj}_{task}_{condition}_stimtimes.1D')
+            outfilename = os.path.join(outdir, f'{subj}_{task}_{condition}_dualsession_stimtimes.1D')
 
             with open(outfilename, 'w') as f:
                 for runnum in range(4):  # assumes 4 runs across 2 sessions

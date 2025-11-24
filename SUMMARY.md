@@ -53,7 +53,7 @@
   * [Single Subject Analysis: Visual/Motor Activation](analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md)
   * [Group Analysis: Visual/Motor Activation](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/README.md)
     * [First-Level Analysis Using afniproc.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/first-level-analysis-using-afniproc.py.md)
-    * [WIP Second-Level Analysis using gen\_group\_command.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/wip-second-level-analysis-using-gen_group_command.py.md)
+    * [V1: Second-Level Analysis using gen\_group\_command.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/v1-second-level-analysis-using-gen_group_command.py.md)
     * [Second-Level Analysis using gen\_group\_command.py](analysis-pipelines/task-based-fmri-analysis-using-afni/group-analysis-visual-motor-activation/second-level-analysis-using-gen_group_command.py.md)
 * [Freesurfer](analysis-pipelines/freesurfer.md)
 * [🚧 CONN Toolbox](analysis-pipelines/conn-toolbox.md)
@@ -73,6 +73,7 @@
   * [Example Run](analysis-pipelines/lc-model/example-run.md)
   * [Running LCModel on your own data](analysis-pipelines/lc-model/running-lcmodel-on-your-own-data.md)
 * [Quantitative Susceptibility Mapping (QSM)](analysis-pipelines/quantitative-susceptibility-mapping-qsm.md)
+* [Multi-Echo fMRI Analysis Using tedana](analysis-pipelines/multi-echo-fmri-analysis-using-tedana.md)
 
 ## Standalone Tools
 

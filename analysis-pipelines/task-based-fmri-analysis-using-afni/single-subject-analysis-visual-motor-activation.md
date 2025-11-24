@@ -157,6 +157,8 @@ sess='ses-01'
 #navigate to this subject/session's output directory
 cd $bidsdir/derivatives/afni/$subID/$sess
 
+module load afni
+
 afni_proc.py                                                         \
     -subj_id                  ${subID}_${sess}                               \
     -out_dir                  $bidsdir/derivatives/afni/$subID/$sess/$subID.results  \

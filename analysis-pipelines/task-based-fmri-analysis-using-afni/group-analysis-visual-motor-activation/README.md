@@ -1,11 +1,6 @@
----
-description: >-
-  This tutorial covers group analysis via batch scripting, sswarper2 (for
-  converting data to standard space), afniproc.py (for preprocessing), and
-  afni's 3dMEMA (for group statistical analysis).
----
-
 # Group Analysis: Visual/Motor Activation
+
+This tutorial covers group analysis via batch scripting and various AFNI functions: sswarper2 (for converting data to standard space), afniproc.py (for individual subject preprocessing), and gen\_group\_command.py (for group-level statistics with 3dttest++ or 3dMEMA).&#x20;
 
 ## Workflow Overview
 

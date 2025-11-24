@@ -1,30 +1,28 @@
 #!/bin/bash
-#SBATCH --job-name=preproc_behavior
+#SBATCH --job-name=behav_preproc
 #SBATCH --output=logs/%x_%A_%a.out   # logs/jobname_jobID_arrayID.out
 #SBATCH --time=01:00:00              # adjust as needed
 #SBATCH --mem=4G                     # adjust memory as needed
 #SBATCH --cpus-per-task=1
-#SBATCH --array=1-3
-#SBATCH --mail-user=example_username@brown.edu
+#SBATCH --array=0-2   # array over subject list file (3 subjects)
+#SBATCH --mail-user=gillian_leblanc@brown.edu
 #SBATCH --mail-type=ALL
-
-# To run this command, type: sbatch run_preprocess_behavior.sh subjects.txt
 
 # ============================
 # User configuration
 # ============================
-BIDS_DIR="/path/to/bids"        # <--- EDIT THIS PATH
+BIDS_DIR="/oscar/home/gleblan1/data/Demodat2/xnat-exports/bnc/study-demodat2/bids"        # <--- EDIT THIS PATH
 SCRIPT="preprocess_behavior.py"      # Python script path
+SUBJ_LIST=$1                         # First argument = text file of subject IDs
 
 # Make sure logs directory exists
 mkdir -p logs
 
 # Get subject for this array task
-SUBJ=$(sed -n "${SLURM_ARRAY_TASK_ID}p" subjects.txt)
+SUBJ=$(sed -n "$((SLURM_ARRAY_TASK_ID+1))p" $SUBJ_LIST)
 
 # Redirect stdout and stderr to log files with subjectID
-exec >logs/${SUBJ}_${SLURM_JOB_NAME}_${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}.out \
-     2>logs/${SUBJ}_${SLURM_JOB_NAME}_${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+exec >logs/${SUBJ}_%x_%A_%a.out 2>logs/${SUBJ}_%x_%A_%a.err
 
 echo "SLURM_ARRAY_TASK_ID: $SLURM_ARRAY_TASK_ID"
 echo "Processing subject: $SUBJ"

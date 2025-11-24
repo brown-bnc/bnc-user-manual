@@ -30,8 +30,7 @@ In this configuration file, you'll need a new row for any DICOM tag you want to 
    \
    `source /oscar/data/bnc/src/python_venvs/pydicom/bin/activate`\
    \
-   You will be able to tell that this environment is activated because it will say `(pydicom)` at the beginning of your terminal command prompt. \
-
+   You will be able to tell that this environment is activated because it will say `(pydicom)` at the beginning of your terminal command prompt. <br>
 2. Create your configuration .csv file (and copy it to Oscar if running there).
 
 ### Execution
@@ -44,7 +43,6 @@ python anonymize_dicoms.py -input_dir orig_data -output_dir anonymized_data -con
 ```
 {% endcode %}
 
-This will read all DICOMs in the folder "orig\_data", make the changes specified in the configuration file, and write them out to a new folder "anonymized\_data".\
-
+This will read all DICOMs in the folder "orig\_data", make the changes specified in the configuration file, and write them out to a new folder "anonymized\_data".<br>
 
 When you are done, you can deactivate the python environment with `deactivate`.

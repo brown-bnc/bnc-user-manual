@@ -17,7 +17,7 @@ MRtrix3 is a software package written in C++ that provides a large variety of DW
 
 * CSD is a method of tensor fitting that enables more accurate modeling of crossing fibers. It deconvolves the signal in every voxel to produce a fiber orientation density function (FOD).&#x20;
 
-### What is different about MRtrix Image Formats (.mih and .mif)?
+### What is unique about MRtrix Image Formats (.mih and .mif)?
 
 In diffusion imaging, a gradient table details the b-values and corresponding b-vectors (directions) for a run. This information is typically saved as two separate files (.bvec and .bval) and is combined into a gradient table, or b-table, during preprocessing. MRtrix files store the gradient table within the file header, which will always be embedded within the data file (.mif). This automatic process is particularly helpful because it reduces the chance of user error when creating and editing b-tables. The b-table and it's corresponding data will not be separated at any point of the processing pipeline.&#x20;
 
