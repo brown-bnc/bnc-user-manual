@@ -54,5 +54,5 @@ The [documentation](https://wiki.xnat.org/xnat-tools/xnat-desktop-client-dxm) fo
 
 We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates downloading your data and converting it to BIDS. The optimal way to install and run the code depends on your computation environment. The package [documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user.&#x20;
 
-If you do not need BIDS, you'll only need the [xnat-dicom-export](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/) utility. If you will be downloading and converting to BIDS, then please follow the instructions in the [XNAT TO BIDS](broken-reference) section.
+If you do not need BIDS, you'll only need the [xnat-dicom-export](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/) utility. If you will be downloading and converting to BIDS, then please follow the instructions in the [XNAT TO BIDS](/broken/pages/-M6_pXSCdmjerCli9EpX) section.
 
