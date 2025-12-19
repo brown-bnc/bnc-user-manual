@@ -8,11 +8,12 @@ description: >-
 
 ## Set Up the Button Box (if playing the Balloon Game)
 
-1. Ensure that the button box is attached to the extension fiber optic cable, and that the other end of that extender is plugged into one of the two FORPs (932 or 905).&#x20;
+1. Ensure that the button box is attached to the extension fiber optic cable, and that the other end of that extender is plugged into the FORP
+   1. Although you can use either FORP, we have the 905 connected to the PC which has the Motion Trainer downloaded (Sim PC). For that reason, we advise that you plug the button box into the FORP 905, as depicted in the image below.&#x20;
 2. The extension cable must be used so that the button box can reach the participant when they are in the simulator bore.
-3. There is a USB cable that goes from the FORP to a computer. Plug this into the Sim PC.
+3. There is a USB cable that goes from the FORP to a computer. Ensure this is plugged into the Sim PC.
 
-<figure><img src="../../.gitbook/assets/IMG_0991.jpeg" alt=""><figcaption><p>A) Attach the button box/PYKA to its extension cable. B) Plug the opposite end of the extension cable to the FORP 905 or 932 (in this example, we are using the 905). C) Make sure that the cable extending from the FORP is plugged in to the Sim PC. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/IMG_0991.jpeg" alt=""><figcaption><p>A) Attach the button box/PYKA to its extension cable. B) Plug the opposite end of the extension cable to the FORP 905. C) Make sure that the cable extending from the FORP is plugged in to the Sim PC. </p></figcaption></figure>
 
 ## Open Motion Trainer on the Sim PC
 
