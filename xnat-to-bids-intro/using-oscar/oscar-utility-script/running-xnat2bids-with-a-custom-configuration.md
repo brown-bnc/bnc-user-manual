@@ -181,7 +181,7 @@ verbose=1
 First, we need to load a module that will give us access to python and a few basic packages. From the command line, run the following:
 
 ```
-module load anaconda
+module load anaconda3
 ```
 
 Then we can launch the script, using `--config` to specify your custom configuration file.
@@ -189,6 +189,10 @@ Then we can launch the script, using `--config` to specify your custom configura
 ```
 python /oscar/data/bnc/scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
+
+{% hint style="warning" %}
+As of January 2026, loading the anaconda3 module can interfere with other modules like vscode. Load the anaconda3 module immediately before launching the run\_xnat2bids.py script, and open a new terminal once your job is off and running.
+{% endhint %}
 
 ***
 

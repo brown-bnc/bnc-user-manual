@@ -3,7 +3,7 @@
 First, we need to load a module that will give us access to python and a few basic packages. From the command line, run the following:
 
 ```
-module load anaconda
+module load anaconda3
 ```
 
 Then, if the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
@@ -23,3 +23,7 @@ After your jobs have completed, you can find all DICOM export and BIDS output da
 Likewise, logs can be found at `/oscar/scratch/<your_username>/logs/` under the following format: `xnat2bids-<session-id>-<array-job-id>.txt`
 
 To change these output locations or take advantage of additional xnat2bids features, you'll need to [create a custom configuration file](running-xnat2bids-with-a-custom-configuration.md).
+
+{% hint style="warning" %}
+As of January 2026, loading the anaconda3 module can interfere with other modules like vscode. Load the anaconda3 module immediately before launching the run\_xnat2bids.py script, and open a new terminal once your job is off and running.
+{% endhint %}
