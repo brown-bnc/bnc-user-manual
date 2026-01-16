@@ -26,33 +26,31 @@ We largely follow [their installation instructions for HPCs](https://qsmxt.githu
 2.  Clone the toolbox into this directory
 
     ```
-    git clone https://github.com/astewartau/transparent-apptainer qsmxt_8.2.2_20251216
+    git clone https://github.com/NeuroDesk/transparent-singularity qsmxt_7.2.2_20241029
     ```
 3.  Change directory into this new downloaded folder and run their "transparent singularity" script, which sets up your environment in a way that lets you use their tools from the command line, even though they're in a Singularity/Apptainer container
 
-    <pre><code><strong>cd qsmxt_8.2.2_20251216
-    </strong>./run_transparent_apptainer.sh --container qsmxt_8.2.2_20251216.simg
-    source activate_qsmxt_8.2.2_20251216.simg.sh
+    <pre><code><strong>cd qsmxt_7.2.2_20241029
+    </strong>./run_transparent_singularity.sh --container qsmxt_7.2.2_20241029.simg
+    source activate_qsmxt_7.2.2_20241029.simg.sh
     </code></pre>
-4.  Load the miniforge3 module on Oscar
+4.  Load the anaconda module on Oscar
 
     ```
-    module load miniforge3
-    source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
+    module load anaconda
     ```
 5.  Create a conda environment in which the QSMxT toolbox is installed
 
     ```
-    conda create -n qsmxt python=3.11
+    conda create -n qsmxt python=3.8
     conda activate qsmxt
-    pip install qsmxt==8.2.2
+    pip install qsmxt==7.2.2
     ```
 
 Now, any time you want to use the QSMxT toolbox, you'll need to&#x20;
 
 ```
-module load miniforge3
-source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
+module load anaconda
 conda activate qsmxt
 ```
 
@@ -66,8 +64,7 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt)
 2.  Activate your qsmxt environment
 
     ```
-    module load miniforge3
-    source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
+    module load anaconda
     conda activate qsmxt
     ```
 3.  Launch qsmxt and give it your bids directory
