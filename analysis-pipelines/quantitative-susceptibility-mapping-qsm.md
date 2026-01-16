@@ -34,10 +34,11 @@ We largely follow [their installation instructions for HPCs](https://qsmxt.githu
     </strong>./run_transparent_singularity.sh --container qsmxt_7.2.2_20241029.simg
     source activate_qsmxt_7.2.2_20241029.simg.sh
     </code></pre>
-4.  Load the anaconda module on Oscar
+4.  Load the miniforge3 module on Oscar
 
     ```
-    module load anaconda
+    module load miniforge3
+    source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
     ```
 5.  Create a conda environment in which the QSMxT toolbox is installed
 
@@ -50,7 +51,8 @@ We largely follow [their installation instructions for HPCs](https://qsmxt.githu
 Now, any time you want to use the QSMxT toolbox, you'll need to&#x20;
 
 ```
-module load anaconda
+module load miniforge3
+source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
 conda activate qsmxt
 ```
 
@@ -64,7 +66,8 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt)
 2.  Activate your qsmxt environment
 
     ```
-    module load anaconda
+    module load miniforge3
+    source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
     conda activate qsmxt
     ```
 3.  Launch qsmxt and give it your bids directory
