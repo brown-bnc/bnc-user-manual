@@ -191,7 +191,7 @@ python /oscar/data/bnc/scripts/run_xnat2bids.py --config <example_user_config.to
 ```
 
 {% hint style="warning" %}
-As of January 2026, loading the anaconda3 module can interfere with other modules like vscode. Load the anaconda3 module immediately before launching the run\_xnat2bids.py script, and open a new terminal once your job is off and running.
+As of January 2026 (and depending on which modules you already have loaded), loading the anaconda3 module can interfere with other modules like vscode. If you have trouble, load the anaconda3 module immediately before launching the run\_xnat2bids.py script, and open a new terminal once your job is off and running.
 {% endhint %}
 
 ***
