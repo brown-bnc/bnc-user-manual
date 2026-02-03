@@ -25,7 +25,7 @@ We keep up-to-date Singularity images for mriqc for the community. (Look in `/os
 #SBATCH --mail-type ALL
 
 #---------CONFIGURE THESE VARIABLES--------------
-mriqc_version=23.1.0
+mriqc_version=24.0.2
 bids_dir=/oscar/path/to/bids
 #---------END OF VARIABLES------------------------
 
