@@ -80,7 +80,7 @@ Regardless of the pipeline you are using, it is recommended that the brain mask 
 First, use fslmaths to combine the AP and PA outputs of topup into one file. the -Tmean option tells fslmaths to take the mean across time, resulting in a 3D dataset (one volume) named hifi\_nodif (high fidelity, no diffusion). Then, that volume will be input into bet (Brain Extraction Tool) to create a brain mask.&#x20;
 
 ```
-fslmaths topup_AP_PA_b0_iout -Tmean hifi_nodif \
+fslmaths topup_AP_PA_b0_iout -Tmean hifi_nodif
 bet hifi_nodif hifi_nodif_brain -m -f 0.2
 ```
 
@@ -106,6 +106,8 @@ eddy --imain=sub-101_ses-01_acq-b1500_dir-ap_dwi.nii.gz \
 <figure><img src="../../.gitbook/assets/Screenshot 2024-06-14 at 2.16.56 PM.png" alt=""><figcaption><p>On the left: b0 images acquired in the AP and PA directions, with susceptibility and eddy current distortions. On the right: the combined b0 after distortion correction via topup and eddy</p></figcaption></figure>
 
 ## Additional Resources
+
+FSL has recently updated [their documentation](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html) on these commands, and their background is very thorough.&#x20;
 
 If you would like to run topup and eddy as a batch script on multiple subjects/sessions, please refer to the excellent documentation written by Hannah Swearingen (Brown Clinical Neuroimaging Research Core), found here:&#x20;
 

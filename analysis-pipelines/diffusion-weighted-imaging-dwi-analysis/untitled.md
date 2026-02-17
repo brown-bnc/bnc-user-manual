@@ -13,19 +13,15 @@ Download [DSI Studio](http://dsi-studio.labsolver.org/dsi-studio-download) to yo
 
 ## Using DSI Studio on Oscar:&#x20;
 
-Copy this text into a terminal on Oscar OpenOnDemand to load DSI Studio:
+Copy this text into a terminal on Oscar OpenOnDemand to load DSI Studio as an apptainer:
 
-`module load dsi-studio`
+`module load dsistudio-container`
 
-Then enter this text to open the DSI Studio GUI from within a singularity container, while giving it access to `/oscar/data/<your-data-dir>` , which will be accessible at /data within the container.
+`apptainer run -W $PWD $DSISTUDIO_CONTAINER`
 
-`singularity exec -B /oscar/data/<your-data-dir>:/data /oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif dsi_studio`
+Then enter this text to open the DSI Studio GUI:
 
-
-
-{% hint style="info" %}
-<mark style="color:blue;">`singularity exec ... dsi_studio`</mark> launches dsi-studio installed in a singularity image.<mark style="color:blue;">`-B /oscar/data/<your-data-dir>:/data`</mark> binds your data directory, so that programs run inside the container can access files stored there. <mark style="color:blue;">`/oscar/runtime/opt/dsi/chen-march2023/dsistudio_chen-2023-03-07.sif`</mark> is where the DSI Studio singularity image is located on oscar.&#x20;
-{% endhint %}
+`dsi_studio`
 
 ## Perform Whole Brain Tractography:&#x20;
 

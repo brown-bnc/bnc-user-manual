@@ -6,12 +6,14 @@ hidden: true
 
 ## Introduction
 
-MRtrix3 is a software package written in C++ that provides a large variety of DWI processing tools. It is a wrapper from many common FSL commands for DWI. It's uses can be grouped into 4 major categories:&#x20;
+MRtrix3 is a software package written in C++ that provides a large variety of DWI processing tools. It is a wrapper for many common FSL commands for DWI. It's uses can be grouped into 4 major categories:&#x20;
 
 * DWI Preprocessing (denoising and distortion correction using [topup and eddy](https://docs.ccv.brown.edu/bnc-user-manual/analysis-pipelines/fsl-topup-and-eddy))
 * Constrained Spherical Deconvolution&#x20;
 * Fixel-Based Analysis (quantification of white matter fiber density per voxel)
 * Quantitative Structural Connectivity (Probabilistic Tractography, Connectome Construction using [Freesurfer](https://docs.ccv.brown.edu/bnc-user-manual/analysis-pipelines/freesurfer))
+
+The developers of Mrtrix3 have published excellent [documentation](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html), and this tutorial does not aim to serve as a replacement for that. Specifically, we provide an overview of why researchers would choose to use Mrtrix3, a walkthrough of an example pipeline using data from Demodat2, and specific tips to implement this software on Oscar.&#x20;
 
 ### What is Constrained Spherical Deconvolution (CSD)?
 
