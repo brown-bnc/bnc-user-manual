@@ -26,14 +26,15 @@ We largely follow [their installation instructions for HPCs](https://qsmxt.githu
 2.  Clone the toolbox into this directory
 
     ```
-    git clone https://github.com/NeuroDesk/transparent-singularity qsmxt_7.2.2_20241029
+    git clone https://github.com/astewartau/transparent-apptainer qsmxt_8.2.2_20260105
     ```
-3.  Change directory into this new downloaded folder and run their "transparent singularity" script, which sets up your environment in a way that lets you use their tools from the command line, even though they're in a Singularity/Apptainer container
+3.  Change directory into this new downloaded folder and run their "transparent singularity/apptainer" script, which sets up your environment in a way that lets you use their tools from the command line, even though they're in a Singularity/Apptainer container
 
-    <pre><code><strong>cd qsmxt_7.2.2_20241029
-    </strong>./run_transparent_singularity.sh --container qsmxt_7.2.2_20241029.simg
-    source activate_qsmxt_7.2.2_20241029.simg.sh
-    </code></pre>
+    ```
+    cd qsmxt_8.2.2_20260105
+    ./run_transparent_apptainer.sh --container qsmxt_8.2.2_20260105.simg
+    source activate_qsmxt_8.2.2_20260105.simg.sh
+    ```
 4.  Load the miniforge3 module on Oscar
 
     ```
@@ -45,7 +46,7 @@ We largely follow [their installation instructions for HPCs](https://qsmxt.githu
     ```
     conda create -n qsmxt python=3.8
     conda activate qsmxt
-    pip install qsmxt==7.2.2
+    pip install qsmxt==8.2.2
     ```
 
 Now, any time you want to use the QSMxT toolbox, you'll need to&#x20;
@@ -63,28 +64,31 @@ conda activate qsmxt
 Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt) for more details on each of these steps and possible settings, and take a look at [their paper - Stewart et al., 2021 -](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.29048) for more information.
 
 1. Get your data into valid BIDS format ([xnat2bids](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) can help you with this!).
-2.  Activate your qsmxt environment
+2. Edit your \~/.bashrc file to:
+   1. Comment out as many `module load` lines as possible. `module load r/4.4.0-c4wv` causes conflicts via `py-setuptools`, and other modules may as well.
+   2. Add a line that says `export APPTAINER_BINDPATH="/path/to/data/directory"` This needs to be a full path to wherever your BIDS data directory is. For example, if my BIDS directory is in `/oscar/data/myusername/xnat-exports/bnc/study-qsm`, I can use `export APPTAINER_BINDPATH="/oscar/data/myusername"` , which will give the QSM apptainer container access to any files in my data directory.
+3.  _Open a new terminal_ and activate your qsmxt environment
 
     ```
     module load miniforge3
     source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
     conda activate qsmxt
     ```
-3.  Launch qsmxt and give it your bids directory
+4.  Launch qsmxt and give it your bids directory
 
     ```
     qsmxt bids
     ```
-4.  Follow the interactive prompts to specify your desired outputs
+5.  Follow the interactive prompts to specify your desired outputs
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.14.59 PM.png" alt=""><figcaption></figcaption></figure>
-5.  Choose your desired pipeline
+6.  Choose your desired pipeline
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.15 PM.png" alt=""><figcaption></figcaption></figure>
-6.  Take a look at the resulting settings; make any changes necessary, or type `run` to launch the analysis
+7.  Take a look at the resulting settings; make any changes necessary, or type `run` to launch the analysis
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.59 PM (1).png" alt=""><figcaption></figcaption></figure>
-7. This will automatically create an output directory within your bids directory under /derivatives. If requested, you'll get a QSM map labeled \_Chimap that looks like this!
+8. This will automatically create an output directory within your bids directory under /derivatives. If requested, you'll get a QSM map labeled \_Chimap that looks like this!
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 1.31.15 PM copy.png" alt=""><figcaption><p>example chimap</p></figcaption></figure>
 
