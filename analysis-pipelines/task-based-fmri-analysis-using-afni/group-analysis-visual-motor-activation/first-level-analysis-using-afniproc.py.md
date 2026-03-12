@@ -16,22 +16,18 @@ mail-type = "ALL"
 output = "/oscar/home/example-user/logs/%x-%J.txt"
 
 [xnat2bids-args]
-bids_root = "/oscar/home/<example-username>/data/Demodat2"
+bids_root = "/oscar/home/<example-user>/data/Demodat2"
 project="BNC_DEMODAT2"
 verbose=2
-# Skip scanner-derived multi-planar reconstructions & non-distortion-corrected images 
-# These are used for MRS voxel placement on the scanner and will cause xnat2bids to fail. 
-skipseq=["anat-t1w_acq-memprage_MPR_Cor","anat-t1w_acq-memprage_MPR_Tra","anat-t1w_acq-memprage_MPR_Tra_ND","anat-t1w_acq-memprage RMS_ND","anat-t1w_acq-memprage_MPR_Cor_ND"]
-
 ```
 
 #### Run the xnat2bids command
 
 To run the xnat-tools export and BIDS conversion, ensure that you are working in a terminal in the same directory where you stored this .toml file (and if not, then give the full path to the .toml file in your command). On the command line, type:
 
-`module load anaconda`
+`module load anaconda3`
 
-`python /oscar/data/bnc/shared/scripts/run_xnat2bids.py --config x2b_demodat2_config.toml`
+`python /oscar/data/bnc/scripts/run_xnat2bids.py --config x2b_demodat2_config.toml`
 
 Enter your XNAT username and password when prompted.
 

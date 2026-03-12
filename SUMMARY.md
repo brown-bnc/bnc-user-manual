@@ -86,6 +86,7 @@
 * [ironmap](standalone-tools/ironmap.md)
 * [convert enhanced multi-frame DICOMs to legacy single-frame](standalone-tools/convert-enhanced-multi-frame-dicoms-to-legacy-single-frame.md)
 * [DICOM anonymization](standalone-tools/dicom-anonymization.md)
+* [Calculating SNR and TSNR using AFNI](standalone-tools/calculating-snr-and-tsnr-using-afni.md)
 
 ## MRF GUIDES
 

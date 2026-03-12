@@ -16,9 +16,6 @@ mail-type = "ALL"
 sessions = [
     "XNAT_E01849"
     ]
-# Skip scanner-derived multi-planar reconstructions & non-distortion-corrected images 
-# These are used for MRS voxel placement on the scanner and will cause xnat2bids to fail. 
-skipseq=["anat-t1w_acq-memprage_MPR_Cor","anat-t1w_acq-memprage_MPR_Tra","anat-t1w_acq-memprage_MPR_Tra_ND","anat-t1w_acq-memprage RMS_ND","anat-t1w_acq-memprage_MPR_Cor_ND"]
 overwrite=true
 verbose=1
 ```
@@ -28,7 +25,7 @@ The script will default to placing the BIDS-converted data in a folder called "b
 #### Launch the xnat2bids script
 
 * To use this configuration file and launch this xnat2bids job, open a terminal on the Oscar Open On Demand (OOD) virtual desktop.&#x20;
-* Install python and its necessary packages by typing `module load anaconda` .&#x20;
+* Install python and its necessary packages by typing `module load anaconda3` .&#x20;
 * Copy and paste this configuration file into a text editor and save it wherever you would like (for example, in a scripts folder in your home directory). The file suffix MUST be .toml
 * The python script for xnat2bids is located in `/oscar/data/bnc/scripts` . To run xnat2bids from the directory where you saved your .toml configuration file, type the command `python /oscar/data/bnc/scripts/run_xnat2bids.py --config <your_config_filename>` . If you run this command from a different directory than where you saved your config file, make sure to give the full path to it.&#x20;
 * You will receive an email when both xnat2bids and the bids-validator launch and are completed.
@@ -81,8 +78,7 @@ Osprey only requires a few files to successfully run (T1 anatomical NIFTI and th
 
 * Place the scan's dicoms inside the individual `mrs` subdirectories
 * #### Convert the Spectroscopy dicoms into NIFTIs
-
-- spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
+* spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
   * From within the `mrs-mrsref_acq-PRESS_voi-Lacc`  directory, type:
 
 ```
