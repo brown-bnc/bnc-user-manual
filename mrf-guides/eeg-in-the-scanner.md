@@ -6,6 +6,6 @@ description: >-
 
 # EEG in the scanner
 
-
+[Click here to download this guide as a PDF](https://docs.google.com/document/d/1rkVwSrhY2icV0DftTTacngcv502ANQMwlLQXvmkEutc/export?format=pdf)
 
 {% embed url="https://docs.google.com/document/d/1rkVwSrhY2icV0DftTTacngcv502ANQMwlLQXvmkEutc/edit?usp=sharing" %}
