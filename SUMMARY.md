@@ -31,6 +31,7 @@
   * [Step-wise via Interact Session](xnat-to-bids-intro/using-oscar/using-oscar.md)
 * [BIDS Validation](xnat-to-bids-intro/bids-validation/README.md)
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
+  * [Oscar - legacy validator](xnat-to-bids-intro/bids-validation/oscar-legacy-validator.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
 * [Converting non-MR data ](xnat-to-bids-intro/converting-non-mr-data/README.md)
   * [Physiological data](xnat-to-bids-intro/converting-non-mr-data/physiological-data.md)

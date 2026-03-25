@@ -6,12 +6,19 @@ description: Running the BIDS validator on Oscar
 
 ### 0. Summary of commands
 
+{% code overflow="wrap" %}
 ```bash
-version=v1.15.0
-bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
-simg=/oscar/data/bnc/simgs/bids/validator-${version}.sif
-singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
+version=v2.3.0
+bids_directory=${HOME}/xnat-exports/bnc/study-demodat2/bids
+simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
+apptainer exec \
+  --no-home \
+  -B ${bids_directory}:/bids:ro \
+  -B /oscar/scratch/${USER}:/scratch \
+  ${simg} \
+  env DENO_DIR=/scratch/deno deno run -A -qr jsr:@bids/validator /bids
 ```
+{% endcode %}
 
 ### 1. Log into oscar and start an interactive section
 
@@ -23,33 +30,38 @@ interact -n 2 -t 01:00:00 -m 8g
 
 ### 2. Define variables
 
-#### Specify the version of the validator you want to use.&#x20;
+#### Specify the version of xnat-tools you want to use. Any version from [v2.1.0](https://github.com/brown-bnc/xnat-tools/releases/tag/v2.1.0) onward will automatically run the most recent version of the BIDS validator.
 
 ```bash
-version=v1.15.0
+version=v2.3.0
 ```
 
-You can run `ls /oscar/data/bnc/simgs/bids/validator*` to print all available versions&#x20;
+You can run `ls /oscar/data/bnc/simgs/brownbnc/xnat-tools*` to print all available versions&#x20;
 
 #### Set up paths
 
 Specify your **bids directory.** This is where `dataset_description.json` file lives
 
 ```bash
-bids_directory=${HOME}/xnat-exports/bnc/study-demodat/bids
+bids_directory=${HOME}/xnat-exports/bnc/study-demodat2/bids
 ```
 
-Path to Singularity Image for the bids-validator (maintained by bnc)
+Path to Apptainer/Singularity Image for xnat-tools, which contains the BIDS validator&#x20;
 
 ```bash
-simg=/oscar/data/bnc/simgs/bids/validator-${version}.sif
+simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 ```
 
-### 3. Run the main executable via singularity
+### 3. Run the main executable via apptainer \[formerly singularity]
 
-The following command runs the `bids-validator` executable (via singularity) to test if a directory is BIDS compliant. The command tells singularity to launch the `validator-${version}.sif` image and execute the `bids-validator` command. The bids validator expects a directory as an input, which in this case corresponds to `${bids_directory}`. The `--bind ${bids_directory}:${bids_directory}:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat/bids` available read-only inside the container at the same path.&#x20;
+The following command runs the BIDS validator (via our xnat-tools apptainer image) to test if a directory is BIDS compliant. The command tells singularity to launch the `xnat-tools-${version}.sif` image and run the `@bids/validator` with a program called deno. The bids validator expects a directory as an input, which in this case corresponds to `${bids_directory}`. The `--bind ${bids_directory}:${bids_directory}:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat2/bids` available read-only inside the container at the same path.&#x20;
 
 ```bash
-singularity exec --bind ${bids_directory}:${bids_directory}:ro ${simg} \bids-validator ${bids_directory}
+apptainer exec \
+  --no-home \
+  -B ${bids_directory}:/bids:ro \
+  -B /oscar/scratch/${USER}:/scratch \
+  ${simg} \
+  env DENO_DIR=/scratch/deno deno run -A -qr jsr:@bids/validator /bids
 ```
 
