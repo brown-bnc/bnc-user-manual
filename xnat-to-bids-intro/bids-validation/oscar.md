@@ -54,7 +54,7 @@ simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 ### 3. Run the main executable via apptainer \[formerly singularity]
 
-The following command runs the BIDS validator (via our xnat-tools apptainer image) to test if a directory is BIDS compliant. The command tells apptainer to launch the `xnat-tools-${version}.sif` image and run the `@bids/validator` with a program called deno. The bids validator expects a directory as an input, which in this case corresponds to `${bids_directory}`. The `-B ${bids_directory}:/bids:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat2/bids` available read-only inside the container at the path `/bids`.&#x20;
+The following command runs the BIDS validator (via our xnat-tools apptainer image) to test if a directory is BIDS compliant. The command tells apptainer to launch the `xnat-tools-${version}.sif` image and run the `@bids/validator` with a program called deno. The bids validator expects a directory as an input, which in this case corresponds to `${bids_directory}`. The `-B ${bids_directory}:/bids:ro` makes the `${HOME}/xnat-exports/bnc/study-demodat2/bids` directory available read-only inside the container at the path `/bids`.&#x20;
 
 ```bash
 apptainer exec \
