@@ -8,21 +8,21 @@ To help users comply with data sharing requirements from the NIMH, we are extend
 
 ### Step 1: Get data into valid [BIDS format](https://bids-specification.readthedocs.io/en/stable/)
 
-If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow [these steps](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
+If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow the steps in [our Oscar Utility Script](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
 
 ### Step 2: Convert behavioral data into BIDS format
 
-If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an example using our demodat dataset [here](../analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
+If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an exampleof this in [our task-based fMRI analysis pipeline](../analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
 
 ### Step 3: Add stimulus information and stimulus files
 
 If you have stimulus files that you would also like to include in your upload to the NDA, make sure to include stimulus information in the stim\_file column of your \_events.tsv files like this:
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.33.53 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.33.53 PM.png" alt="An example _events.tsv file, where the &#x22;stim_file&#x22; column is populated with image filenames."><figcaption></figcaption></figure>
 
 The BIDS spec assumes that these files live in a "stimuli" folder at the top level of your BIDS directory like this:&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.38.36 PM.png" alt=""><figcaption><p>Including stimuli in your BIDS structure</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.38.36 PM.png" alt="Any images listed in the &#x22;stim_files&#x22; column of your _events.tsv file should be saved in a directory titled &#x22;stimuli&#x22;, nested under your &#x22;bids&#x22; directory. "><figcaption><p>Including stimuli in your BIDS structure</p></figcaption></figure>
 
 If you want to organize the stimuli further, you can have subfolders within your "stimuli" folder, and then include the subfolder in the stim\_file field. For example, if you want to put all the stimuli sub-001 saw in a folder called "001" within the "stimuli" folder, your events.tsv file would have 001/001\_stim1.png, etc. in the stim\_file column.
 
@@ -37,7 +37,7 @@ Save this file (i.e. guids.txt) in the same folder as your BIDS directory, but n
 
 ### Step 5: (optional) Create NDA Experiment IDs and BIDS task name-to-NDA Experiment ID mapping file
 
-The NDA requires that every experiment be [defined](https://nda.nih.gov/nda/tutorials/data-submission?chapter=experiment-id), and when approved, it will be assigned an ID number. Each task that your participants complete will need its own approved experiment ID (including resting state). Once you have received your experiment ID(s), you will need to create another mapping text file - this one providing the mapping between the task names in your fMRI BIDS filenames (i.e. sub-001\_ses-01\_task-**checks**\_run-01\_bold.nii.gz) and your approved experiment ID numbers. For example, if my participants completed a "checks" task that was assigned an ID of 9990, and a "rest" resting state scan that was assigned an ID of 9991, my experiment ID mapping file would look like this:
+The NDA requires that every experiment be [defined according to these NDA instructions](https://nda.nih.gov/nda/tutorials/data-submission?chapter=experiment-id), and when approved, it will be assigned an ID number. Each task that your participants complete will need its own approved experiment ID (including resting state). Once you have received your experiment ID(s), you will need to create another mapping text file - this one providing the mapping between the task names in your fMRI BIDS filenames (i.e. sub-001\_ses-01\_task-**checks**\_run-01\_bold.nii.gz) and your approved experiment ID numbers. For example, if my participants completed a "checks" task that was assigned an ID of 9990, and a "rest" resting state scan that was assigned an ID of 9991, my experiment ID mapping file would look like this:
 
 > checks - 9990\
 > rest - 9991

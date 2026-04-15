@@ -16,9 +16,9 @@ We maintain two versions of this utility:
 
 ## Accessing the script
 
-`dicomsort.py` and `dicomsort.sh` can be accessed on Oscar in the public BNC scripts directory: `/oscar/data/bnc/scripts/`.  From there, they can be used standalone or can be integrated into larger pipelines on Oscar. Additionally, they are available for local download on the BNC's github [found here](https://github.com/brown-bnc/oscar-scripts/blob/main/dicomsort). &#x20;
+`dicomsort.py` and `dicomsort.sh` can be accessed on Oscar in the public BNC scripts directory: `/oscar/data/bnc/scripts/`.  From there, they can be used standalone or can be integrated into larger pipelines on Oscar. Additionally, they are available for local download on [the BNC'S github](https://github.com/brown-bnc/oscar-scripts/blob/main/dicomsort). &#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-06-11 at 4.37.13 PM.png" alt=""><figcaption><p>DICOM files before and after organization via dicomsort.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-06-11 at 4.37.13 PM.png" alt="On the left: A parent directory called “001”, which contains numbered folder (1, 2, 3…). Within each subdirectory are two folders (DICOM and SNAPSHOTS). The DICOM directory is expanded to show 3 dicom files, with the default (and very long) naming. On the right are the folders/files organized by dicomsort. 001 is located within a new folder called “renamed”. The numerical subdirectories have suffixes with the scan type (for example, 01_anat-scout_acq-localizer). The dicoms are renamed to be more user friendly (shorter, no periods). "><figcaption><p>DICOM files before and after organization via dicomsort.</p></figcaption></figure>
 
 ## 1. dicomsort.py python script
 

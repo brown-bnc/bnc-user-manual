@@ -30,7 +30,7 @@ You can save your custom settings using the **“Save Config”** button. To reu
 
 When you modify any setting, you’ll see "Unsaved Changes" noted at the top of the page:
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt="The Motion Trainer settings page, with &#x22;Unsaved Changes&#x22; in the upper right corner. "><figcaption></figcaption></figure>
 
 If you want to revert to default values, press the **yellow “Defaults”** button.
 
@@ -40,7 +40,7 @@ If you want to revert to default values, press the **yellow “Defaults”** but
 2. A popup will appear prompting you to **name your configuration**
 3. Press **Save** to store your configuration locally as a JSON file
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt="Pressing the &#x22;Save Config&#x22; button will open a pop up where users can type a filename. "><figcaption></figcaption></figure>
 
 ### Load a Previous Configuration
 
@@ -50,6 +50,6 @@ To reuse a saved config:
 2. Use the file browser to select your previously saved file
 3. Press **Open**
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt="Pressing &#x22;Load Config&#x22; opens a file explorer where users can select their configuration file. "><figcaption></figcaption></figure>
 
 You can now launch your games with the restored settings.

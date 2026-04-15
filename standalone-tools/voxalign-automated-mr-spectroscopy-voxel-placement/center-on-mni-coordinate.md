@@ -13,7 +13,7 @@
 
 
 
-<figure><img src="../../.gitbook/assets/mni_lookup_gui_cursor.png" alt="" width="563"><figcaption><p>MNI lookup interface. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mni_lookup_gui_cursor.png" alt="The mni-lookup GUI, titled “Spectroscopy Voxel Position MNI Lookup Configuration”. First, an output folder is created. Then, the user can Select a T1 DICOM. There is a button to “Use existing MNI registration”. Below that, users can manually enter MNI coordinate(s). There are three text boxes to enter the coordinate, and a button below to add another. To the right of the entered coordinates, users can hover their mouse over a brain icon and read where in the brain the coordinate is located. To the right of the brain icon is an “x’ where users can delete the coordinate. Lastly, there is a check box that can be selected if users want to “Use fast (less accurate) registration to MNI space”. Once all options are fill in, users press the “Calculate voxel position” button at the very bottom. " width="563"><figcaption><p>MNI lookup interface. </p></figcaption></figure>
 
 ***
 

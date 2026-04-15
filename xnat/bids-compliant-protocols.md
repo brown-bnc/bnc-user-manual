@@ -6,13 +6,13 @@ description: How to name your protocols so they are easily converted to BIDS for
 
 ## BIDS Naming Pattern
 
-We provide custom code ([xnat-tools package](https://github.com/brown-bnc/xnat-tools)) to export your XNAT imaging sessions to BIDS format. The process relies on naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide a short overview of BIDS in [this section](../bids/introduction-to-bids.md).
+We provide custom code ([xnat-tools package](https://github.com/brown-bnc/xnat-tools)) to export your XNAT imaging sessions to BIDS format. The process relies on naming your series in a BIDS friendly manner. If you are new to BIDS, it may be helpful to familiarize yourself with the [BIDS Standard](https://bids-specification.readthedocs.io/en/stable/). We also provide [a short overview of BIDS](https://docs.ccv.brown.edu/bnc-user-manual/bids/introduction-to-bids).&#x20;
 
-When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type (i.e, anatomical, functional, etc), task information, acquisition parameters, the run id, among others. The examples and diagram below show the parts of the BIDS name that you **need to pay attention when naming your series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) of the BIDS specification for a full reference.
+When naming your series at the scanner you will need to think of the different parts that make up the BIDS name. More explicitly, the name of the series is composed of different parts that provide information about the sequence type (i.e, anatomical, functional, etc), task information, acquisition parameters, the run id, among others. The examples and diagram below show the parts of the BIDS name that you **need to pay attention when naming your series at the scanner**. These are only a subset of the full set defined by the BIDS specification. You can refer to the [Entity Table of the BIDS specification](https://bids-specification.readthedocs.io/en/stable/99-appendices/04-entity-table.html) for a full reference.
 
 ![Color coded examples of BIDS compliant protocols](<../.gitbook/assets/BIDS Naming (3).svg>)
 
-![Table how to build series at the scanner for BIDS compliance](<../.gitbook/assets/BIDS Naming (2).svg>)
+![Table on how to build series at the scanner for BIDS compliance](<../.gitbook/assets/BIDS Naming (2).svg>)
 
 {% hint style="info" %}
 To create the final name, the different parts shown above are concatenated using underscores (\_)
@@ -70,8 +70,8 @@ You can choose (on the scanner) whether to send each individual echo along with 
 
 ### Fieldmaps
 
-Currently the **fieldmaps** collected with our Siemens scanner use the "old way" described [here](https://osf.io/2hjhx/wiki/Brain%20Imaging%20Data%20Structure%20\(BIDS\)/#LCNI\_fieldmapshttpslcniuoregonedukbarticleskb0003\_29)
+Currently the **fieldmaps** collected with our Siemens scanner use the "old way" described in this [OSF documentation on field maps.](https://osf.io/2hjhx/wiki/Brain%20Imaging%20Data%20Structure%20\(BIDS\)/#LCNI_fieldmapshttpslcniuoregonedukbarticleskb0003_29)
 
 ### Scanner derivatives
 
-Some sequences are derivatives of the scanner and are not yet handled by our `xnat2bids` software smoothly. We recommend not exporting those sequences to BIDS at the moment. (This behavior may change in the future. See [here](https://github.com/brown-bnc/xnat-tools/issues/59) for more details)
+Our xnat2bids software skips over the MRI sequences that are derivatives of the scanner and are not included in the BIDS specification. Refer to [the github fix regarding this function](https://github.com/brown-bnc/xnat-tools/issues/59) for more details).&#x20;

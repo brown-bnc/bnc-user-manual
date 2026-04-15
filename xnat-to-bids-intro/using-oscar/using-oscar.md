@@ -4,7 +4,7 @@
 
 ## Running XNAT2BIDS
 
-The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented [here](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.&#x20;
+The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented on [the BNC github](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.&#x20;
 
 ### 0. Summary of commands
 
@@ -17,12 +17,12 @@ bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
-XNAT_SESSION="XNAT_E00114"
+XNAT_SESSION="XNAT_E01849"
 singularity exec --no-home --bind ${bids_root_dir} \
     ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
-    -i 7
+    -i 6
 ```
 
 
@@ -33,15 +33,15 @@ singularity exec --no-home --bind ${bids_root_dir} \
 
 Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt="After logging in to Oscar Open On Demand, you can start a virtual desktop session by navigating to &#x22;Home/Interactive Sessions/Desktop&#x22;"><figcaption></figcaption></figure>
 
 Once your requested session is running, you can launch it by clicking the Launch Desktop button.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt="Launch a virtual desktop on Oscar OOD by pressing the &#x22;Launch Desktop&#x22; button. "><figcaption></figcaption></figure>
 
 At this point, simply open the terminal
 
-![OOD Desktop app. Teal arrow points to Terminal icon to be launched](<../../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png>)
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png" alt="In the OOD Desktop, you can open a terminal by pressing the icon on the bottom of the screen. "><figcaption><p>OOD Desktop app. Teal arrow points to Terminal icon to be launched</p></figcaption></figure>
 
 #### 1.2 SSH&#x20;
 
@@ -71,10 +71,10 @@ If you want to copy-paste from these docs to the terminal in the OOD Desktop, cl
 
 #### 2.1 Define the version of `xnat-tools`
 
-We recommend using the latest available version. You can get a list of the released versions [here](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
+We recommend using the latest available version. We keep a list of the released versions on [our xnat-tools github](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
 ```
-version=v1.1.1
+version=v2.3.0
 ```
 
 #### &#x20;2.2 Set up paths
@@ -102,18 +102,18 @@ simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 #### XNAT USER and SESSION&#x20;
 
-Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [an earlier section](../getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 005 of the demo dataset
+Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [our "Getting Started" section](../getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 101 of the demo dataset
 
 ```
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
-XNAT_SESSION="XNAT_E00114" #ACCESSION of 005 participant in sample data
+XNAT_SESSION="XNAT_E01849" #ACCESSION of participant 101 session 01 in sample data
 ```
 
 ### 3. Understanding Singularity Containers&#x20;
 
-In the following section we will demonstrate how to run our software. Instead of directly installing the Python package `xnat-tools` we are going to run it from inside a **container**, which we have been referring to as "the singularity image/container". If you are new to containers, in a nutshell, a container allows for packaging all OS and package dependencies together so it can run in any computer. Docker containers have become very popular, you can learn a bit more about them [here](https://www.docker.com/resources/what-container). Singularity is a type of container that has specialized on running on shared HPC clusters. You can learn little more about Singularity [here](https://singularity.hpcng.org/user-docs/master/introduction.html#why-use-singularity). We referred to docker containers and singularity containers interchangeably, as they can easily be converted from one format to another.
+In the following section we will demonstrate how to run our software. Instead of directly installing the Python package `xnat-tools` we are going to run it from inside a **container**, which we have been referring to as "the singularity image/container". If you are new to containers, in a nutshell, a container allows for packaging all OS and package dependencies together so it can run in any computer. Docker containers have become very popular, you can learn a bit more about them [on Docker's resource site](https://www.docker.com/resources/what-container). Singularity is a type of container that has specialized on running on shared HPC clusters. You can learn little more about Singularity from this [Apptainer user manual](https://singularity.hpcng.org/user-docs/master/introduction.html#why-use-singularity). We refer to docker containers and singularity containers interchangeably, as they can easily be converted from one format to another.
 
-In the specific case of `xnat-tools` , the wrapping container has `Python` , `dcm2niix` and `heudiconv` installed which are all needed by our software. The [Dockerfile](https://github.com/brown-bnc/xnat-tools/blob/master/Dockerfile) for `xnat-tools` provides some insight into how containers are built.
+In the specific case of `xnat-tools` , the wrapping container has `Python` , `dcm2niix` and `heudiconv` installed which are all needed by our software. The [BNC Dockerfile for xnat-tools](https://github.com/brown-bnc/xnat-tools/blob/master/Dockerfile) provides some insight into how containers are built.
 
 **Understanding the file system of a container**
 
@@ -155,7 +155,7 @@ While generally speaking, a container is mostly isolated from the host, there ar
 --no-mount
 ```
 
-If you see such flags in our examples and want to learn more about them visit [this doc](https://singularity.hpcng.org/user-docs/master/bind\_paths\_and\_mounts.html)
+If you see such flags in our examples and want to learn more about them visit [the apptainer page on flag options.](https://singularity.hpcng.org/user-docs/master/bind_paths_and_mounts.html)
 
 ### 4. Running the executable
 
@@ -232,7 +232,7 @@ The following command will run the executable `xnat2bids` (via singularity) comm
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
-    -i 7
+    -i 6
 ```
 
 Once again, let's expand on the command above:
@@ -243,7 +243,7 @@ Once again, let's expand on the command above:
 
 `${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
 
-`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 7`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the  [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
+`xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 6`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
 After running the command, you'll be asked to interactively type your Brown/XNAT password.
 
@@ -252,85 +252,54 @@ A successful run will print out the following output:
 ```
 ------------------------------------------------
 Get project and subject information
-Project: BNC_DEMODAT
-Subject ID: XNAT_S00111
-Session Suffix:  SESSION1
-Subject label: 005
+Project: BNC_DEMODAT2
+Subject ID: XNAT_S01516
+Subject label: 101
+Session Suffix:  01
 ------------------------------------------------
-2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making output xnat-export session directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
-2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
-2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO Get scans.
-2023-04-10 13:45:51 node1147.oscar.ccv.brown.edu xnat_tools.xnat_utils[151813] INFO ------------------------------------------------
-2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO bids_session_dir: /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1
-2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO BIDSNAME: anat-T1w_acq-memprageRMS
-2023-04-10 13:45:53 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Making scan DICOM directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-005/ses-session1/anat-T1w_acq-memprageRMS.
-2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Downloading files
-2023-04-10 13:45:55 node1147.oscar.ccv.brown.edu py.warnings[151813] WARNING /usr/local/lib/python3.10/site-packages/xnat_tools/bids_utils.py:324: UserWarning: Changed DICOM HEADER[ProtocolName and SeriesDescription]:             anat-t1w_acq-memprage -> anat-T1w_acq-memprageRMS             anat-t1w_acq-memprage RMS -> anat-T1w_acq-memprageRMS                                                                                                                                                                        
-  warnings.warn(                                                                                                                                                           
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO Making output xnat-export session directory /users/gleblan1/xnat-exports/bnc/study-demodat2/xnat-export/sub-101/ses-01
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.xnat_utils[237987] INFO ------------------------------------------------
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.xnat_utils[237987] INFO Get scans.
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.xnat_utils[237987] INFO ------------------------------------------------
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO bids_session_dir: /users/gleblan1/xnat-exports/bnc/study-demodat2/xnat-export/sub-101/ses-01
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO BIDSNAME: anat-T1w_acq-memprageRMS
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO Making scan DICOM directory /users/gleblan1/xnat-exports/bnc/study-demodat2/xnat-export/sub-101/ses-01/anat-T1w_acq-memprageRMS.
+2026-03-24 14:52:50 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO Downloading files
+2026-03-24 14:52:51 node1825.oscar.ccv.brown.edu py.warnings[237987] WARNING /usr/local/lib/python3.10/site-packages/xnat_tools/bids_utils.py:471: UserWarning: Changed DICOM HEADER[ProtocolName and SeriesDescription]:             anat-t1w_acq-memprage -> anat-T1w_acq-memprageRMS             anat-t1w_acq-memprage RMS -> anat-T1w_acq-memprageRMS
+2026-03-24 14:52:51 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO Done.
+2026-03-24 14:52:51 node1825.oscar.ccv.brown.edu xnat_tools.bids_utils[237987] INFO ---------------------------------
 
-2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Done.
-2023-04-10 13:47:24 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO ---------------------------------
 ************************
-Making output BIDS Session directory /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids
-Executing Heudiconv command: heudiconv -f reproin --bids     -o /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids     --dicom_dir_template /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/xnat-export/sub-{subject}/ses-{session}/*/*.dcm     --subjects 005 --ses session1
-INFO: Running heudiconv version 0.11.6 latest 0.12.2
-INFO: Need to process 1 study sessions
-INFO: PROCESSING STARTS: {'subject': '005', 'outdir': '/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
-INFO: Processing 176 dicoms
-INFO: Analyzing 176 dicoms
-INFO: Filtering out 0 dicoms based on their filename
-INFO: Generated sequence info for 1 studies with 176 entries total
-INFO: Processing 1 seqinfo entries
-INFO: Doing conversion using dcm2niix
-INFO: Converting /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w (176 DICOMs) -> /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat . Converter: dcm2niix . Output types: ('nii.gz', 'dicom')
-230410-13:47:25,907 nipype.workflow INFO:
-         [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
-INFO: [Node] Setting-up "convert" in "/tmp/dcm2niixwwgutois/convert".
-230410-13:47:25,950 nipype.workflow INFO:
-         [Node] Executing "convert" <nipype.interfaces.dcm2nii.Dcm2niix>
-INFO: [Node] Executing "convert" <nipype.interfaces.dcm2nii.Dcm2niix>
-230410-13:47:26,127 nipype.interface INFO:
-         stdout 2023-04-10T13:47:26.127796:Compression will be faster with 'pigz' installed
-INFO: stdout 2023-04-10T13:47:26.127796:Compression will be faster with 'pigz' installed
-230410-13:47:26,127 nipype.interface INFO:
-         stdout 2023-04-10T13:47:26.127796:Chris Rorden's dcm2niiX version v1.0.20190902  (JP2:OpenJPEG) (JP-LS:CharLS) GCC5.5.0 (64-bit Linux)
-INFO: stdout 2023-04-10T13:47:26.127796:Chris Rorden's dcm2niiX version v1.0.20190902  (JP2:OpenJPEG) (JP-LS:CharLS) GCC5.5.0 (64-bit Linux)
-230410-13:47:26,127 nipype.interface INFO:
-         stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
-INFO: stdout 2023-04-10T13:47:26.127796:Found 176 DICOM file(s)
-230410-13:47:26,128 nipype.interface INFO:
-         stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
-INFO: stdout 2023-04-10T13:47:26.127796:Convert 176 DICOM as /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w_heudiconv918 (256x256x176x1)
-230410-13:47:27,158 nipype.interface INFO:
-         stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
-INFO: stdout 2023-04-10T13:47:27.158623:Conversion required 1.140682 seconds (1.140108 for core code).
-230410-13:47:27,174 nipype.workflow INFO:
-         [Node] Finished "convert", elapsed time 1.166935s.
-INFO: [Node] Finished "convert", elapsed time 1.166935s.
-WARNING: Failed to find task field in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json.
-230410-13:47:37,646 nipype.workflow INFO:
-         [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
-INFO: [Node] Setting-up "embedder" in "/tmp/embedmeta9qnhxt9z/embedder".
-230410-13:47:37,659 nipype.workflow INFO:
-         [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
-INFO: [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
-230410-13:47:40,993 nipype.workflow INFO:
-         [Node] Finished "embedder", elapsed time 3.333115s.
-INFO: [Node] Finished "embedder", elapsed time 3.333115s.
-INFO: Post-treating /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1/anat/sub-005_ses-session1_acq-memprageRMS_T1w.json file
-INFO: Adding "IntendedFor" to the fieldmaps in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1.
-WARNING: We cannot add the IntendedFor field: no fmap/ in /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005/ses-session1
-INFO: Populating template files under /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/
-INFO: PROCESSING DONE: {'subject': '005', 'outdir': '/oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/', 'session': 'session1'}
-Done with Heudiconv BIDS Convesion.
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Subjects ['005']: 
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO Processing Sessions ['session1']: 
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_postprocess[151813] INFO ---------------------------------
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO Processing participant 005 at path /oscar/data/<group>/<user>/xnat-exports/bnc/study-demodat/bids/sub-005
-2023-04-10 13:47:41 node1147.oscar.ccv.brown.edu xnat_tools.bids_utils[151813] INFO List of sessions sub-directories ['session1']
+Making output BIDS Session directory /users/gleblan1/xnat-exports/bnc/study-demodat2/bids
+Executing Heudiconv command: heudiconv -f reproin --bids -o /users/gleblan1 --files /users/gleblan1/xnat-exports/bnc/study-demodat2/xnat-export/sub-101/ses-01/anat-T1w_acq-memprageRMS --locator xnat-exports/bnc/study-demodat2/bids --subjects 101 --ses 01
+260324-15:23:58,137 nipype.workflow INFO:
+	 [Node] Setting-up "convert" in "/tmp/dcm2niixqjsr3h16/convert".
+260324-15:23:58,139 nipype.workflow INFO:
+	 [Node] Executing "convert" <nipype.interfaces.dcm2nii.Dcm2niix>
+260324-15:23:58,274 nipype.interface INFO:
+	 stdout 2026-03-24T15:23:58.273996:Chris Rorden's dcm2niiX version v1.0.20241211  (JP2:OpenJPEG) (JP-LS:CharLS) GCC8.4.0 x86-64 (64-bit Linux)
+260324-15:23:58,274 nipype.interface INFO:
+	 stdout 2026-03-24T15:23:58.273996:Found 1 DICOM file(s)
+260324-15:23:58,274 nipype.interface INFO:
+	 stdout 2026-03-24T15:23:58.273996:Convert 1 DICOM as /users/gleblan1/xnat-exports/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w_heudiconv879 (256x256x176x1)
+260324-15:23:59,122 nipype.interface INFO:
+	 stdout 2026-03-24T15:23:59.122845:Conversion required 0.926040 seconds (0.863915 for core code).
+260324-15:23:59,142 nipype.workflow INFO:
+	 [Node] Finished "convert", elapsed time 0.954788s.
+260324-15:24:14,7 nipype.workflow INFO:
+	 [Node] Setting-up "embedder" in "/tmp/embedmeta9_mznee6/embedder".
+260324-15:24:14,11 nipype.workflow INFO:
+	 [Node] Executing "embedder" <nipype.interfaces.utility.wrappers.Function>
+260324-15:24:14,838 nipype.workflow INFO:
+	 [Node] Finished "embedder", elapsed time 0.826124s.
+Done with Heudiconv BIDS conversion.
+------------------------------------------------
+Get project and subject information
+Project: BNC_DEMODAT2
+Subject ID: XNAT_S01516
+Subject label: 101
+Session Suffix:  01
+------------------------------------------------
 ```
 
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
@@ -338,15 +307,10 @@ After confirming that XNAT2BIDS is behaving as expected we will run the program 
 ```
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
-    -u ${XNAT_USER} \
-    -s 6
+    -u ${XNAT_USER} 
 ```
 
-The command above is almost identical to the one executed earlier, the only new argument is `-s 6` . In this instance we are running `xnat2bids` on all scan sequences, except series 6. Series 6 corresponds to the individual echoes of a multi-echo MPRAGE and it's typically not used in BIDS apps. We only export the RMS of the echos (#7). We explain this a bit more in the [BIDS Ready Protocols](../../xnat/bids-compliant-protocols.md#important-considerations) section. After successful execution, near the bottom of your log should be the line:
-
-```
-INFO: PROCESSING DONE: {'subject': '001', 'outdir': '/users/<your-user>/xnat-exports/bnc/study-demodat/bids/', 'session': '01'}
-```
+The command above is almost identical to the one executed earlier, except we removed the line that selecteed only one run to be exported (`-i 6`) .&#x20;
 
 ### 5. Checking XNAT2BIDS results
 
@@ -365,7 +329,7 @@ You can check these logs for any errors or warning messages.
 If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the data from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
 
 ```
-module load tree/2.0.2
+module load tree
 tree -d ${HOME}/xnat-exports
 ```
 
@@ -374,47 +338,53 @@ Which should result in a structure similar to the output shown below:
 ```
 xnat-exports/
 └── bnc
-    └── study-demodat
+    └── study-demodat2
         ├── bids
         │   ├── sourcedata
-        │   │   └── sub-001
+        │   │   └── sub-101
         │   │       └── ses-01
         │   │           ├── anat
         │   │           ├── dwi
         │   │           ├── fmap
         │   │           └── func
-        │   └── sub-001
+        │   │           └── mrs
+        │   └── sub-101
         │       └── ses-01
         │           ├── anat
         │           ├── dwi
         │           ├── fmap
         │           └── func
+        │           └── mrs
         ├── logs
         └── xnat-export
-            └── sub-001
+            └── sub-101
                 └── ses-01
+                    ├── PhoenixZIPReport
+                    ├── anat-T1w_acq-memprageRMS
+                    ├── anat-T1w_acq-memprageRMS_ND
+                    ├── anat-T1w_acq-memprage_MPR_Cor
+                    ├── anat-T1w_acq-memprage_MPR_Cor_ND
+                    ├── anat-T1w_acq-memprage_MPR_Tra
+                    ├── anat-T1w_acq-memprage_MPR_Tra_ND
                     ├── anat-scout_acq-aascout
                     ├── anat-scout_acq-aascoutMPRcor
                     ├── anat-scout_acq-aascoutMPRsag
                     ├── anat-scout_acq-aascoutMPRtra
                     ├── anat-scout_acq-localizer
-                    ├── anat-T1w_acq-memprageRMS
                     ├── dwi_acq-b1500_dir-ap
-                    ├── dwi_acq-b1500_dir-ap_SBRef
                     ├── dwi_acq-b1500_dir-pa
-                    ├── dwi_acq-b1500_dir-pa_SBRef
                     ├── fmap_acq-boldGRE
-                    ├── fmap_acq-boldSE_dir-ap
-                    ├── fmap_acq-boldSE_dir-pa
-                    ├── fmap_acq-diffSE_dir-ap
-                    ├── fmap_acq-diffSE_dir-pa
                     ├── func-bold_task-checks_run-01
+                    ├── func-bold_task-checks_run-01_WIP_PMU
                     ├── func-bold_task-checks_run-02
-                    ├── func-bold_task-motionloc
-                    ├── func-bold_task-resting
-                    └── func-bold_task-ssrt
+                    ├── func-bold_task-checks_run-02_WIP_PMU
+                    └── func-bold_task-resting_run-01
+                    └── func-bold_task-resting_run-01_WIP_PMU
+                    └── mrs-mrsref_acq-PRESS_voi-Lacc
+                    └── mrs-svs_acq-PRESS_voi-Lacc
 ```
 
 ### 6. Validate the BIDS output
 
 After successfully running `xnat2bids` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](../bids-validation/)
+

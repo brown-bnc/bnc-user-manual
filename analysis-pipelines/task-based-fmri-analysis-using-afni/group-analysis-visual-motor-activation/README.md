@@ -4,7 +4,7 @@ This tutorial covers group analysis via batch scripting and various AFNI functio
 
 ## Workflow Overview
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-11-24 at 10.01.25 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-11-24 at 10.01.25 AM.png" alt="Flow chart depicting the first and second level analysis steps. First Level: MRI data is collected and then downloaded and organized using xnat2bids. Task/timing data is collected and converted to BIDS tsv files, then converted to AFNI 1D files. fMRI data is then warped to standard space using sswarper2. All MRI data and stimulus timing files are input into afniproc.py for preprocessing. Second Level: The output from afniproc is passed to 3dMEMA for statistical analysis. Then, group masks and average smoothness are calculated. Finally, 3dClustSim and 3dClusterize are used to create estimate maps. "><figcaption></figcaption></figure>
 
 The basic flow of this pipeline is as follows:&#x20;
 

@@ -4,7 +4,7 @@
 
 _**B-value:**_ A factor which describes the amount of diffusion weighting, i.e., the duration, amplitude, and time between the application of diffusion gradients. Higher b-values indicate stronger diffusion effects and are achieved by increased amplitude/duration of gradient pulses as well widening the intervals between the pulses ([Abou khadrah & Imam, 2019](https://ejrnm.springeropen.com/articles/10.1186/s43055-019-0054-3)). The higher the b-value, the lower the signal. Volumes with a b-value of 0 are those with no diffusion gradient applied.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-06-14 at 2.07.27 PM (1).png" alt=""><figcaption><p>Three diffusion weighted images with b-values of bval=0, 750, and 1500</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-06-14 at 2.07.27 PM (1).png" alt="Transverse slices of three diffusion weighted images. B-values from left to right: 0, 750, and 1500. As b-value increases, signal across the brain is decreased. "><figcaption><p>Three diffusion weighted images with b-values of bval=0, 750, and 1500</p></figcaption></figure>
 
 _**B-vector:**_ A 3x1 vector (x, y, and z) for each volume, which describes the direction that the diffusion gradient will be applied.&#x20;
 
@@ -20,7 +20,7 @@ _**Shell:**_ The number of shells of a DWI protocol describes the number of non-
 
 The b-table can be viewed in q-space, where you can more clearly see how volumes are differentiated by shell. Volumes with equal diffusion sensitization (b-values) but different diffusion directions (b-vectors) will form a spherical shape, such as the two shown below in blue and yellow:&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-07-15 at 4.37.33 PM.png" alt=""><figcaption><p>q-space visualization of the b-table of Demodat2 subject 101 session 01 (sub-101_ses-01_acq-b1500_dir-ap_dwi) in q-space. As you can see, this is a two shell acquisition with b-values of 750 and 1500. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-07-15 at 4.37.33 PM.png" alt="Q-space visualization of the b-table of Demodat2 subject 101 session 01. This is a two shell acquisition, with b values of 750 (shown in blue) and 1500 (shown in yellow). "><figcaption><p>q-space visualization of the b-table of Demodat2 subject 101 session 01 (sub-101_ses-01_acq-b1500_dir-ap_dwi). This is a two shell acquisition with b-values of 750 and 1500. </p></figcaption></figure>
 
 <details>
 
@@ -76,6 +76,6 @@ plt.show()
 
 </details>
 
-_**Susceptibility Distortion:**_ Susceptibility is the property of a substance that determines if it becomes magnetized when placed in a magnetic field. Further, substances can be diamagnetic (resulting in a repelling/dispersion of the magnetic field around it), or paramagnetic (resulting in an attraction/concentration of the magnetic field around it). Most biological tissues such as bone, muscle, and fat are slightly diamagnetic. Air, such as that in the sinuses, is slightly paramagnetic. Certain MRI sequences are more prone to susceptibility distortion artifacts, including many common diffusion scans ([Embleton et al., 2010](https://pmc.ncbi.nlm.nih.gov/articles/PMC6870737/)). More information on magnetic susceptibility and how it can create artifacts can be found [here](https://mriquestions.com/susceptibility-artifact.html).&#x20;
+_**Susceptibility Distortion:**_ Susceptibility is the property of a substance that determines if it becomes magnetized when placed in a magnetic field. Further, substances can be diamagnetic (resulting in a repelling/dispersion of the magnetic field around it), or paramagnetic (resulting in an attraction/concentration of the magnetic field around it). Most biological tissues such as bone, muscle, and fat are slightly diamagnetic. Air, such as that in the sinuses, is slightly paramagnetic. Certain MRI sequences are more prone to susceptibility distortion artifacts, including many common diffusion scans ([Embleton et al., 2010](https://pmc.ncbi.nlm.nih.gov/articles/PMC6870737/)). More information on magnetic susceptibility and how it can create artifacts can be found in [this post from "Questions and Answers in MRI"](https://mriquestions.com/susceptibility-artifact.html).&#x20;
 
 _**Eddy Currents:**_ Electrical currents (eddy currents) appear in nearby conductive materials (coils, shields, the participant) when an MRI is creating a rapidly changing magnetic field. The magnitude of the eddy current increases as the rate of change of the magnetic field increases. Because of this, EPI, DWI, MR Spectroscopy, and anything else with a short echo time will be affected. It is an issue in MRI processing because it results in image distortions (shearing/scaling artifacts, global position shifts) and in the case of DWI, it can result in spuriously high ADC values.&#x20;

@@ -17,3 +17,7 @@
 {% content-ref url="adding-your-own-videos-and-images.md" %}
 [adding-your-own-videos-and-images.md](adding-your-own-videos-and-images.md)
 {% endcontent-ref %}
+
+{% content-ref url="motion-trainer-hardware-setup.md" %}
+[motion-trainer-hardware-setup.md](motion-trainer-hardware-setup.md)
+{% endcontent-ref %}

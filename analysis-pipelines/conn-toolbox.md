@@ -7,4 +7,5 @@ noIndex: true
 
 # 🚧 CONN Toolbox
 
-Oscar-specific documentation coming soon! In the meantime, you can find the CONN toolbox documentation [here](https://web.conn-toolbox.org/resources), with specific guidance for use on an HPC [here](https://web.conn-toolbox.org/resources/hpc-configuration).
+Oscar-specific documentation coming soon! In the meantime, you can read [the CONN toolbox documentation](https://web.conn-toolbox.org/resources), with [specific guidance for use on an HPC](https://web.conn-toolbox.org/resources/hpc-configuration).
+

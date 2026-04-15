@@ -536,14 +536,14 @@ Expand the window by clicking the `Define Overlay -->` button , and set the Olay
 
 The same thing can be done for the keypress task by selecting the Olay as `keypress:b` and the threshold as `keypress:t`.&#x20;
 
-Remember: At the stage in the pipeline, no group mask has been applied. That is why you see tiny voxels outside the brain.&#x20;
+Remember: At the stage in the pipeline, no group mask has been applied, which is why you see voxels outside the brain.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2025-11-24 at 1.19.52 AM.png" alt=""><figcaption><p>The output of 3dMEMA overlaid onto the MNI template. The transverse images (left) show the checkerboard task and the coronal images (right) show the button pressing task (p=0.01). </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-11-24 at 1.19.52 AM.png" alt="The output of 3dMEMA overlaid onto the MNI template. The transverse images (left) show the checkerboard task and the coronal images (right) show the button pressing task (p=0.01). "><figcaption><p>The output of 3dMEMA overlaid onto the MNI template. The transverse images (left) show the checkerboard task and the coronal images (right) show the button pressing task (p=0.01). </p></figcaption></figure>
 
 The final output of this pipeline is the thresholded effect estimate (EE) map (`clust_bisided_EE_chx.nii.gz`).  An effect estimate is the scaled beta coefficient (β) for a regressor, in units of percent signal chang&#x65;**.** The EE map is masked by significant clusters, thresholded at the chosen p-value, and corrected for whole-brain cluster-level FWE. In our case, it is in MNI space as well. Importantly, these maps only contain _significant_ clusters, and all other voxels are set to 0. There were no significant clusters found for the keypress task- likely due to our low N. This is why you will see a report for the keypress task in the final output folder, but no EE map or cluster map. However, active clusters were output for the checks task!
 
 You can view the effect estimate map for the checks task by changing the overlay in the AFNI GUI to `clust_bisided_EE_chx.nii.gz`.&#x20;
 
-<figure><img src="../../../.gitbook/assets/EE_montage.jpg" alt=""><figcaption><p>The Effect Estimate Map for the checks task overlayed onto the MNI template. The value of each blue and yellow voxel corresponds to the value of the % signal change </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/EE_montage.jpg" alt="The Effect Estimate Map for the checks task overlayed onto the MNI template. The value of each blue and yellow voxel corresponds to the value of the % signal change "><figcaption><p>The Effect Estimate Map for the checks task overlayed onto the MNI template. The value of each blue and yellow voxel corresponds to the value of the % signal change </p></figcaption></figure>
 
 To summarize, the voxel values in these effect-estimate maps are group-level % signal-change values derived from the subject-level beta coefficients. Unlike the output from 3dMEMA that we just looked at above, these maps are masked to only include significant clusters. Values can be extracted from these final output files (`clust_bisided_EE_chx.nii.gz`, `clust_bisided_map_chx.nii.gz`, and `clust_bisided_report_chx.txt`) to be reported in your final analysis.

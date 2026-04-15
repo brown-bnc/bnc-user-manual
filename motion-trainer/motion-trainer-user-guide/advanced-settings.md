@@ -36,7 +36,7 @@ This section shows the current status of the **Polhemus 3D Digitizer** (or other
 * ❌ **Device Not Connected**: Shows if no valid data stream is detected
 
 {% hint style="info" %}
-For more information on how to set up the Polhemus 3D Digitizer in the Simulator Room at Brown University, please refer to our earlier documentation [here](https://docs.ccv.brown.edu/bnc-user-manual/mrf-guides/mri-simulator-room/motion-trainer-balloon-task).&#x20;
+For more information on how to set up the Polhemus 3D Digitizer in the Simulator Room at Brown University, please refer to our [documentation on hardware setup in the simulator room.](https://docs.ccv.brown.edu/bnc-user-manual/motion-trainer/motion-trainer-user-guide/motion-trainer-hardware-setup)
 {% endhint %}
 
 ### Connection Fields
@@ -44,6 +44,6 @@ For more information on how to set up the Polhemus 3D Digitizer in the Simulator
 * **Serial Device:** File path of the connected USB or serial interface (e.g. `/dev/tty.usbserial-A10NW`)
 * **Driver Class:** The software driver currently in use (e.g. `PolhemusDriver`)
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt="The advanced settings pop up, where the user can check/change the serial device and driver class."><figcaption></figcaption></figure>
 
 ***

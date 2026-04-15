@@ -1,6 +1,6 @@
 # Multi-Echo fMRI Analysis Using tedana
 
-This tutorial is a walkthrough of task-based multi-echo fMRI preprocessing using fmriprep, tedana, and afni. There are multiple pipelines available that can be customized to your specific project and which utilize different combination methods. Even if you do not choose to use tedana, their documentation is very thoroughly and provides a strong basis to build your own workflow. Their background on multi-echo methods and general guidelines for preprocessing can be found [at this link.](https://tedana.readthedocs.io/en/stable/multi-echo.html) A more comprehensive list of resources will be listed at the end of this tutorial.&#x20;
+This tutorial is a walkthrough of task-based multi-echo fMRI preprocessing using fmriprep, tedana, and afni. There are multiple pipelines available that can be customized to your specific project and which utilize different combination methods. Even if you do not choose to use tedana, their documentation is very thoroughly and provides a strong basis to build your own workflow. Their background on multi-echo methods and general guidelines for preprocessing can be found [in the tedana documentation.](https://tedana.readthedocs.io/en/stable/multi-echo.html) A more comprehensive list of resources will be listed at the end of this tutorial.&#x20;
 
 ## Background
 
@@ -8,7 +8,7 @@ This tutorial is a walkthrough of task-based multi-echo fMRI preprocessing using
 
 Researchers interested in multi-echo (ME) fMRI are likely already familiar with standard, single-echo (SE) fMRI sequences. In SE fMRI, one volume is collected at each repetition time (TR). This is done with an excitation pulse, followed by one readout of the data at the echo time (TE). Choosing an echo time depends on what tissue type and brain region you are interested in- typically it is chosen to maximize bold contrast across the brain (the average T2\* of brain). Since you are measuring one readout for every TR, the resulting dataset is a complete time series for every voxel as depicted below.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 3.29.30 PM.png" alt=""><figcaption><p>A typical time series for one voxel, as seen in the afni viewer. This time series is taken from the occipital lobe of a brain scanned using a standard single echo EPI fMRI sequence. The vertical y axis is the raw signal of the voxel and the horizontal x axis is time. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 3.29.30 PM.png" alt="A typical time series for one voxel, as seen in the afni viewer."><figcaption><p>A typical time series for one voxel, as seen in the afni viewer. This time series is taken from the occipital lobe of a brain scanned using a standard single echo EPI fMRI sequence. The vertical y axis is the raw signal of the voxel and the horizontal x axis is time. </p></figcaption></figure>
 
 ME fMRI is similar to SE fMRI in that there is only one initial excitation pulse. However, immediately following that pulse, multiple readouts are acquired at various chosen echo times. The subsequent "echos" come at the cost of an increased TR, but with the integration of acceleration methods like GRAPPA and multiband, little TR sacrifice (if any) is necessary. The number of echos typically ranges from 3-5, but it is possible to acquire more. The upper limit to the number of echos is when the signal fully decays, requiring another excitation pulse.&#x20;
 
@@ -16,15 +16,15 @@ Typically, the first echo is acquired immediately following the excitation pulse
 
 The result of ME fMRI is multiple complete time series per voxel (one for each echo). These separate time series can be combined using various methods.
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 4.04.18 PM.png" alt=""><figcaption><p>Time series of one voxel, across the three echos acquired (single-subject ME fMRI data collected at Brown University's MRF). </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-11 at 4.04.18 PM.png" alt="Time course (viewed in AFNI) and the corresponding occipital lobe voxels for each of the three time series output from our multi-echo fMRI. Voxels are shown in a transverse slice of the brain. As TE increases, voxel values decrease. "><figcaption><p>Time series of one voxel, across the three echos acquired (single-subject ME fMRI data collected at Brown University's MRF). </p></figcaption></figure>
 
 #### Why collect multiple echos?
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-02 at 10.46.45 AM.png" alt=""><figcaption><p>Single-subject ME fMRI data collected at Brown University's MRF. This scan collected three echos, viewed from left to right: TE=12.2, 30.66, and 49.10. This data is presented prior to any preprocessing. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-02 at 10.46.45 AM.png" alt="Transverse slices of single-subject ME fMRI data collected at Brown University&#x27;s MRF. This scan collected three echos, which are viewed from left to right (TE=12.2, 30.66, and 49.10). This data is presented prior to any preprocessing. As echo time increases, signal decays and dropout increases. "><figcaption><p>Single-subject ME fMRI data collected at Brown University's MRF. This scan collected three echos, viewed from left to right: TE=12.2, 30.66, and 49.10. This data is presented prior to any preprocessing. </p></figcaption></figure>
 
 As TE increases, signal decays. Typically, in SE fMRI, researchers select a TE that maximizes the BOLD contrast across the brain. This is not perfect, due to variations in susceptibility across different tissue types, blood, CSF, and the sinuses. Choosing a TE that maximizes BOLD contrast across the brain often results in signal dropout in regions near air/sinuses. For example, you can see below that the signal in the temporal lobe decays at a faster rate than other brain regions. This is due to its close proximity to air in the ear canals.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-02 at 1.03.59 PM.png" alt=""><figcaption><p>This view of the brain across multiple echos clearly depicts signal dropout at the tissue border between the temporal lobe and the air in the ear canals. One benefit of combining echos is the recovery of signal in these regions. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-02 at 1.03.59 PM.png" alt="This transverse view of the brain across multiple echos depicts signal dropout at the tissue border between the temporal lobe and the air in the ear canals."><figcaption><p>This transverse view of the brain across multiple echos depicts signal dropout at the tissue border between the temporal lobe and the air in the ear canals. One benefit of combining echos is the recovery of signal in these regions. </p></figcaption></figure>
 
 Each echo comes with a unique cost/benefit:
 
@@ -62,7 +62,7 @@ tedana then takes individual echoes and combines them in various ways. It will p
 1. Install tedana
    1. For ease of use, you can [download tedana](https://tedana.readthedocs.io/en/stable/installation.html) to your local bin directory on Oscar
 2. Download your MRI data and save it in a BIDS formatted directory
-   1. This can be completed via xnat2bids on oscar ([Instructions here](https://docs.ccv.brown.edu/bnc-user-manual/xnat-to-bids-intro/using-oscar/oscar-utility-script))
+   1. This can be completed via xnat2bids on oscar ([Instructions on using xnat2bids](https://docs.ccv.brown.edu/bnc-user-manual/xnat-to-bids-intro/using-oscar/oscar-utility-script))
 3. Prepare behavioral task timing files (If doing task based ME-EPI)
    1. Download your behavioral timing files (e.g. from psychopy) and place them in `$bidsroot/sourcedata/sub-xxx/ses-xx/beh`
       1. Convert them to BIDS-friendly tsv files located in `$bidsroot/sub-xxx/ses-xx/func` &#x20;
@@ -72,7 +72,7 @@ tedana then takes individual echoes and combines them in various ways. It will p
 
 #### Preprocess the individual echos using fmriprep
 
-1. &#x20;Launch the script below by following [the instructions found here](https://docs.ccv.brown.edu/bnc-user-manual/bids/fmriprep).
+1. &#x20;Launch the script below by following [our fmriprep tutorial](https://docs.ccv.brown.edu/bnc-user-manual/bids/fmriprep).
    1. It is important that the “`--me-output-echos`” flag is included
    2. Data can be in any space you want
    3. **Input:** the BIDS-formatted data per subject
@@ -156,7 +156,7 @@ For further detail on all possible tedana flags, please refer to [tedana's docum
 
 Information on the outputs of tedana can be found on the [tedana website](https://tedana.readthedocs.io/en/stable/outputs.html). tedana does not have its own GUI- to visually inspect the data, you can open the viewer of your choice (afni, fsleyes, etc).&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-12-18 at 3.48.11 PM.png" alt=""><figcaption><p>Left: The middle echo after preprocessing via fmriprep. Right: The same transverse slice of the brain, after multi-echo denoising/ tedana. Notably, there is recovery from dropout in the temporal and frontal lobes. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-12-18 at 3.48.11 PM.png" alt="Left: The middle echo after preprocessing via fmriprep. Right: The same transverse slice of the brain, after multi-echo denoising/ tedana. Notably, there is recovery from dropout in the temporal and frontal lobes. "><figcaption><p>Left: The middle echo after preprocessing via fmriprep. Right: The same transverse slice of the brain, after multi-echo denoising/ tedana. Notably, there is recovery from dropout in the temporal and frontal lobes. </p></figcaption></figure>
 
 #### Run a regression for task data using afni
 

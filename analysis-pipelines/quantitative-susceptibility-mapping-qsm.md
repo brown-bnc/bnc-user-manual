@@ -20,7 +20,7 @@ For the data to automatically be converted into BIDS format with [xnat2bids](../
 
 ### Installing QSMxT on Oscar
 
-We largely follow [their installation instructions for HPCs](https://qsmxt.github.io/QSMxT/installation#hpc-installation):
+We largely follow [the QSMxT installation instructions for HPCs](https://qsmxt.github.io/QSMxT/installation#hpc-installation):
 
 1. In a terminal on Oscar, change to whichever directory you would like to install the QSMxT image and scripts into (I have a "scripts" directory in my home directory, but you can put it wherever you'd like).
 2.  Clone the toolbox into this directory
@@ -81,14 +81,14 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt)
     ```
 5.  Follow the interactive prompts to specify your desired outputs
 
-    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.14.59 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.14.59 PM.png" alt="A terminal window where the command “qsmxt bids” was ran. After an automated description of the output options is listed, the user is prompted to type their desired images (space-separated). The default is qsm”. In this example, the user typed: “qsm swi t2s r2s seg analysis”. "><figcaption></figcaption></figure>
 6.  Choose your desired pipeline
 
-    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.15 PM.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.15 PM.png" alt="A terminal window where users select a premade QSM pipeline. The default is “default”. In this example, the user typed “default” on the command line. "><figcaption></figcaption></figure>
 7.  Take a look at the resulting settings; make any changes necessary, or type `run` to launch the analysis
 
-    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.59 PM (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.15.59 PM (1).png" alt="The selected QSM settings are printed to the command line. "><figcaption></figcaption></figure>
 8. This will automatically create an output directory within your bids directory under /derivatives. If requested, you'll get a QSM map labeled \_Chimap that looks like this!
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 1.31.15 PM copy.png" alt=""><figcaption><p>example chimap</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 1.31.15 PM copy.png" alt="An example chimap of the brain, output from qsmxt. This chimpa is overlaid onto the anatomical scan and is viewed from the three planes (coronal, transverse, and sagittal). "><figcaption><p>example chimap</p></figcaption></figure>
 

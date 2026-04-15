@@ -15,7 +15,7 @@ description: >-
 3. When the application launches, you should see the following splash screen.
 4. **Click** the arrow to continue.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-09 at 3.51.29 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-09 at 3.51.29 PM.png" alt="The Motion Trainer splash page shows the version (v1.0) and an arrow button to enter the application. "><figcaption></figcaption></figure>
 
 ## Configuring Game Settings
 
@@ -27,7 +27,7 @@ Next, you should be navigated to the Settings Page.  The Settings Page allows yo
 
 Each game has a few tunable parameters (like movement tolerance and duration), but for now, you can use the defaults to get started.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-09 at 4.02.36 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-09 at 4.02.36 PM.png" alt="The “Game Settings” page of the Motion Trainer Application. Sections include: Balloon Game, Fixation Game, and Video Game. The upper right corner shows that the current settings are the default. "><figcaption></figcaption></figure>
 
 Press **"Done"** to begin the session after configuring your games.
 
@@ -44,7 +44,7 @@ After saving your settings and clicking **Done**, you'll arrive at the **Game Se
 
 To change game parameters, click **Settings** to return to the previous configuration screen.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt="The “Select the game you would like to play” page of the Motion Trainer application. Options include: “Blow Up the Balloon”, “Stay Still”, “Watch Video”, and “Settings”. "><figcaption></figcaption></figure>
 
 ## 🎈 Blow Up the Balloon
 
@@ -64,7 +64,7 @@ In this game, the participant inflates a balloon by pressing a button on a handh
 * It gradually scales down to the **“Movement Tolerance End”** as the balloon inflates
 * Movement is monitored continuously, so the participant must press carefully and remain still
 
-<figure><img src="../../.gitbook/assets/image (1) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (3).png" alt="An example of the &#x22;Blow Up the Balloon&#x22; game. A white background contains a small image of a nail toward the top of the screen, and a balloon below. "><figcaption></figcaption></figure>
 
 ## ✳️ Stay Still
 
@@ -82,7 +82,7 @@ In this game, the participant is shown a fixation graphic on screen and must rem
 * A **fixed movement threshold** is used (does not change over time like in the balloon game)
 * The trial ends automatically after either a success or a failure
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt="An example of the &#x22;Stay Still&#x22; game. A black fixation cross is displayed over a white background. "><figcaption></figcaption></figure>
 
 ## 📺 Watch Video
 
@@ -101,4 +101,4 @@ In this game, a video (e.g., a short animated clip) plays while the participant 
 * A **fixed movement tolerance** (in mm) is configured for this game
 * There is also a **timeout value** — if the participant doesn’t return to stillness within this time, the session can be stopped or retried
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt="An example of the &#x22;Watch Video&#x22; feature of Motion Trainer. A default childrens video is shown on screen. "><figcaption></figcaption></figure>

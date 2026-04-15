@@ -14,7 +14,7 @@ We have set up a shared folder ("scannershare") that is accessible from the scan
 
 Exporting DICOM data is the same as saving it to an external drive, except the destination should be the Z drive. If you don't see it in the dropdown menu, you can click Browse and navigate to it. If you are still unable to access it, check that you are logged in as medadmin (exit kiosk mode).&#x20;
 
-<figure><img src="../.gitbook/assets/scannershare_export.png" alt=""><figcaption><p>Exporting DICOMs to the scannershare Z drive</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/scannershare_export.png" alt="The export data page on the Siemens console. The Destination is set to “Z:\”. "><figcaption><p>Exporting DICOMs to the scannershare Z drive</p></figcaption></figure>
 
 #### TWIX
 
@@ -24,12 +24,12 @@ In the twix interface, after clicking "copy total RAID file", you can choose the
 
 Any other data can be copy & pasted into the Z drive from the File Explorer.&#x20;
 
-<figure><img src="../.gitbook/assets/scannershare_fileexplorer (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/scannershare_fileexplorer (1).png" alt="Scannershare as seen from the file manager. It is listed as “scannershare (\\10.2.140.21) (Z:)”. "><figcaption></figcaption></figure>
 
 ### Accessing your data
 
 The scannershare drive is mounted as a network drive on Tess and on the computer in the waiting room. After you copy your data there, you can access it via one of these computers and grab it however you'd like: copy to an external hard drive, upload to Oscar via OOD, scp to Oscar via Terminal, upload to XNAT, burn to DVD, etc. If for the scannershare drive doesn't open when you click on it, try restarting the computer. The computer will automatically remount the drive when it restarts.
 
-<figure><img src="../.gitbook/assets/scannershare_access_comp (2).jpg" alt=""><figcaption><p>The computer behind the screen in the waiting room has scannershare persistently mounted</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/scannershare_access_comp (2).jpg" alt="Scannershare as seen from the dock on the bottom of a mac desktop. "><figcaption><p>The computer behind the screen in the waiting room has scannershare persistently mounted</p></figcaption></figure>
 
 Best practice is to delete your data from the share when you are done grabbing it, but if you forget, it will automatically get deleted overnight after it has been there for at least 24 hours.&#x20;

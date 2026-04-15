@@ -17,10 +17,9 @@ We will use the [BNC's Demo Dataset](getting-started.md#1.-xnat-login-informatio
 
 ### 1. XNAT Login Information
 
-If you have not registered to use our XNAT, please follow instructions [here](../xnat/accessing-xnat.md#first-time-users)
+If you have not registered to use our XNAT, please follow these [instructions to create a new XNAT account](../xnat/accessing-xnat.md#first-time-users).&#x20;
 
-* XNAT Username
-* XNAT Password
+Then, log in with your XNAT username and password
 
 ### 2. Image Session Identifier
 
@@ -28,18 +27,16 @@ In order to export an imaging session, we need to find XNAT's ID for that sessio
 
 #### 2.1 Navigate to project of interest
 
-![](<../.gitbook/assets/demodat-landing (1).png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 2.19.54 PM.png" alt="BNC Demodat 2 is listed under projects on the XNAT portal&#x27;s home page. "><figcaption></figcaption></figure>
 
 #### 2.2 Navigate to subject of interest
 
-![Participants associated with a project](../.gitbook/assets/demodat-subj.png)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 2.23.33 PM.png" alt="Subjects are listed in the BNC Demodat 2 project page on XNAT. "><figcaption><p>Participants associated with a project</p></figcaption></figure>
 
 #### 2.3 Navigate to MR Session&#x20;
 
-![MR Sessions associated with a participant](../.gitbook/assets/mr-session.png)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 2.27.00 PM.png" alt="Sessions are listed in the Subject Details page on XNAT. "><figcaption><p>MR Sessions associated with a participant</p></figcaption></figure>
 
-#### 2.4. Find Accession \#
+2.4. Find Accession #
 
-![Accession # for a session](../.gitbook/assets/accession.png)
-
-###
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 2.30.08 PM.png" alt="Accession # is listed under the Details tab for an individual session of data on XNAT. "><figcaption><p>Accession # for a session</p></figcaption></figure>

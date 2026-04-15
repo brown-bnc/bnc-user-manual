@@ -6,9 +6,7 @@ description: >-
 
 # Freesurfer
 
-It is developed by the [Laboratory for Computational Neuroimaging](https://www.martinos.org/lab/lcn) at the [Martinos Center for Biomedical Imaging](https://www.nmr.mgh.harvard.edu/).
-
-FreeSurfer provides full processing streams for structural and functional MRI and includes tools for linear and nonlinear registration, cortical and subcortical segmentation, cortical surface reconstruction, statistical analysis of group morphometry, diffusion MRI, PET analysis, and _much more_. It is also the structural MRI analysis software of choice for the [Human Connectome Project](http://www.humanconnectomeproject.org/about).
+Freesurfer is developed by the [Laboratory for Computational Neuroimaging](https://www.martinos.org/lab/lcn) at the [Martinos Center for Biomedical Imaging](https://www.nmr.mgh.harvard.edu/). It provides full processing streams for structural and functional MRI and includes tools for linear and nonlinear registration, cortical and subcortical segmentation, cortical surface reconstruction, statistical analysis of group morphometry, diffusion MRI, PET analysis, and _much more_. It is also the structural MRI analysis software of choice for the [Human Connectome Project](http://www.humanconnectomeproject.org/about).
 
 For expansive documentation on using and understanding FreeSurfer tools, please visit the [FS Wiki](https://surfer.nmr.mgh.harvard.edu/fswiki).&#x20;
 
@@ -19,7 +17,7 @@ Recon-all (recon = reconstruction) is a command that takes an anatomical dataset
 To run recon-all on Oscar:&#x20;
 
 ```
-module load freesurfer/8.0.0
+module load freesurfer
 recon-all -i t1w.nii.gz -s <subject_name> -sd <path_to_your_folder> -all 
 ```
 
@@ -33,11 +31,11 @@ The `-i` flag points to the T1-weighted anatomical file. If you are running reco
 `-all`tells recon-all to perform all preprocessing steps. For the full list of steps, please refer to Freesurfer's documentation found here: [https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all](https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all).&#x20;
 {% endhint %}
 
-The most recent version of Freesurfer on Oscar, `freesurfer/8.0.0`, requires python3 and takes approximately 2.5 hours to complete. The previous version,  `freesurfer/7.3.2`, is still available and takes 6-8 hours.&#x20;
+The version of Freesurfer on Oscar, `freesurfer/8.0.0-7ye6`, requires python3 and takes approximately 2.5 hours to complete.
 
 These are the output directories you will see, located in the specified `-sd` path:
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 11.05.50 AM.png" alt=""><figcaption><p>Output directories of recon-all.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 11.05.50 AM.png" alt="The recon-all output directories are listed as follows: “label”, “mri”, “scripts”, “stats”, “surf”, “tmp”, “touch”, and “trash”. "><figcaption><p>Output directories of recon-all.</p></figcaption></figure>
 
 {% hint style="info" %}
 `label` contains text files which hold spatial information on different regions of the brain, along with those regions' atlas annotations.&#x20;
@@ -62,16 +60,16 @@ freeview -f lh.pial rh.pial
 ```
 
 {% hint style="info" %}
-If you are using `freesurfer/8.0.0`  and are having issues opening the freeview GUI, try checking whether or not you have the `anaconda` module loaded. If you do, unload it and try again.&#x20;
+If you are using `freesurfer/8.0.0`  and are having issues opening the freeview GUI, try checking whether or not you have the `anaconda3` module loaded. If you do, unload it and try again.&#x20;
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 12.52.18 PM.png" alt=""><figcaption><p>The left and right pial surfaces viewed using freeview. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 12.52.18 PM.png" alt="The left and right pial surfaces, opened using freeview. "><figcaption><p>The left and right pial surfaces viewed using freeview. </p></figcaption></figure>
 
 ```
 freeview -f lh.inflated rh.inflated 
 ```
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 1.02.28 PM.png" alt=""><figcaption><p>The left and right inflated brain surfaces viewed using freeview. In this image, red represents the sulci and green represents the gyri. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 1.02.28 PM.png" alt="The left and right inflated brain surfaces viewed using freeview. "><figcaption><p>The left and right inflated brain surfaces viewed using freeview. In this image, red represents the sulci and green represents the gyri. </p></figcaption></figure>
 
 
 
@@ -83,7 +81,7 @@ Included in recon-all's workflow is segmentation of the subcortical white and gr
 freeview -v orig.mgz aparc.a2009s+aseg.mgz
 ```
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 1.20.37 PM.png" alt=""><figcaption><p>T1w image with the Destrieux Atlas segmentation/parcellation overlayed. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 1.20.37 PM.png" alt="T1w image with the Destrieux Atlas segmentation/parcellation overlayed. "><figcaption><p>T1w image with the Destrieux Atlas segmentation/parcellation overlayed. </p></figcaption></figure>
 
 Volumes/surfaces can also be opened within the freeview window via the file tab.&#x20;
 

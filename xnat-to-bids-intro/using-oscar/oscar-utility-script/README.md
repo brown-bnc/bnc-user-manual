@@ -16,11 +16,11 @@ This script is a Python-based command-line tool that is designed to help neuroim
 
 {% tabs %}
 {% tab title="Desktop app on Open OnDemand" %}
-[https://ood.ccv.brown.edu/pun/sys/dashboard](https://ood.ccv.brown.edu/pun/sys/dashboard)
+[Log in to Oscar Open on Demand](https://ood.ccv.brown.edu/pun/sys/dashboard).&#x20;
 
-Connecting via the Desktop app on Open OnDemand is a friendly way to request a graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once your requested session is running, you can launch it by clicking the Launch Desktop button. Finally, just open the terminal; you are already inside an interactive session.&#x20;
+Connecting via the Desktop app on Open OnDemand is a friendly way to request a graphical interactive session in Brown's supercomputer Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once your requested session is running, you can launch it by clicking the Launch Desktop button. Finally, just open the terminal; you are already inside an interactive session.&#x20;
 
-<figure><img src="../../../.gitbook/assets/openterminal.png" alt=""><figcaption><p>Click to open a terminal</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/openterminal.png" alt="The icon to open a terminal is on the bottom of the Oscar Open On Demand virtual desktop. "><figcaption><p>Click to open a terminal</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="SSH" %}

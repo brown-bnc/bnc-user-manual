@@ -19,7 +19,7 @@ To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.cc
 * Inside your VNC session, open a **Terminal** window.
 * Navigate to LCModel's **hidden** directory `cd ~/.lcmodel`
 
-![Sample Terminal Window inside Oscar's VNC ](<../../.gitbook/assets/image (27).png>)
+<figure><img src="../../.gitbook/assets/image (27).png" alt="Example terminal in a VNC session (Oscar). The user navigated into the directory called “.lcmodel” and listed its contents with the “ls” command. Notably, “lcmgui” is listed in the directory. "><figcaption><p>Sample Terminal Window inside Oscar's VNC </p></figcaption></figure>
 
 ### 3. Launch lcmgui
 
@@ -30,11 +30,11 @@ To run LCModel's GUI you will need to start [Oscar's VNC Client](https://docs.cc
 
 * Select Siemens at the data type prompt
 
-![Sample Data Type Window](<../../.gitbook/assets/image (5) (1).png>)
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="A LC Model pop up window with the title, “Select your data type”. Users should select “Siemens”. "><figcaption><p>Sample Data Type Window</p></figcaption></figure>
 
 * Search for the share data: `/oscar/data/bnc/shared/lcmodel/TestData.rda`&#x20;
 
-![Sample Data Browser Window](<../../.gitbook/assets/image (2) (1).png>)
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt="In the pop up titled “Select your Siemens file.”, enter your path and RDA file. In this example, the path is: “/oscar/data/bnc/shared/lcmodel/“ and the file is: “TestData.rda”. Then press “Ok”.  "><figcaption><p>Sample Data Browser Window</p></figcaption></figure>
 
 ### 5. Select Basis
 
@@ -42,7 +42,7 @@ During installation, the basis-set was installed under the LCModels' hidden dire
 
 * Change the basis file to: `$HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis`
 
-![Sample Control Parameters Window](<../../.gitbook/assets/image (25).png>)
+<figure><img src="../../.gitbook/assets/image (25).png" alt="In the “Control Parameters” pop up, there is a section titled &#x22;BASIS file:&#x22;. In the text box, enter: $HOME/.lcmodel/basis-sets/press_te30_3t_gsh_v3.basis. $HOME should be the path to your individual home directory."><figcaption><p>Sample Control Parameters Window</p></figcaption></figure>
 
 ### 6. Add License Key to Control Parameters
 
@@ -50,7 +50,7 @@ You will need to add a key to the Control Parameters. We do so as follows:
 
 #### a. Open Advanced Setting Dialog
 
-![](../../.gitbook/assets/Untitled.png)
+<figure><img src="../../.gitbook/assets/Untitled.png" alt="In the “Control Parameters” pop up, select the “Advanced Settings” button. "><figcaption></figcaption></figure>
 
 #### b. Select View/Edit Control Parameters.&#x20;
 
@@ -60,7 +60,7 @@ A dialog will open
 
 Add `key= 210387309` to the control parameters as shown in the figure below. Be careful to match spaces. When done, press OK
 
-![](../../.gitbook/assets/lc-model-params-with-key.png)
+<figure><img src="../../.gitbook/assets/lc-model-params-with-key.png" alt="In the “View/Edit Control Parameters” pop up, a new line was added to the text box, which states: “key= 210387309”."><figcaption></figcaption></figure>
 
 #### d. Save parameters file (optional)
 
@@ -70,6 +70,6 @@ LCModel will ask you if you want to save the new parameters to a new file. You c
 
 After pressing **Run LCModel**, a two page PDF will appear, which looks as follows
 
-![LCModel Result PDF - Page 1](<../../.gitbook/assets/image (9).png>)
+<figure><img src="../../.gitbook/assets/image (9).png" alt="Page 1 of the LC Model PDF, which depicts the metabolite spectra  and a table of metabolite values from the dataset."><figcaption><p>LCModel Result PDF - Page 1</p></figcaption></figure>
 
-![LCModel Result PDF - Page 2](<../../.gitbook/assets/image (3) (1) (1).png>)
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="Page 2 of the LC Model PDF, which depicts the same table of metabolite values, without the spectra. Additionally, there are sections on “MISCELLANEOUS OUTPUT” and “INPUT CHANGES”. "><figcaption><p>LCModel Result PDF - Page 2</p></figcaption></figure>

@@ -13,9 +13,9 @@ description: >-
 
 `topup` requires at least one volume in each of the two opposite phase encoding (PE) directions. `topup` _can_ work if the PE directions are different but not opposite (for example, A->P and R->L), but the distortion correction may not be as high quality as using two opposing acquisitions. For diffusion imaging, you may use one b0 image per PE direction, or you may merge multiple b0 images before inputting to `topup`.&#x20;
 
-To follow this tutorial using the DWI runs acquired in demodat2, please download the data from subject 101 session 1. More details on how to do this can be found [here](../../demo-dataset/how-to-access-it.md). In this tutorial, scans 18 and 23 were exported using [xnat2bids](../../xnat-to-bids-intro/xnat2bids-software/), which converts them to NIFTI and names them according to the BIDS format. If you choose not to use xnat2bids and instead download the DICOMs directly, please use dcm2niix to convert the DICOM images to NIFTI.&#x20;
+To follow this tutorial using the DWI runs acquired in demodat2, please download the data from subject 101 session 1. Details on how to do this using xnat2bidscan be found [in our demodat2 documentation](../../demo-dataset/how-to-access-it.md). If you choose not to use xnat2bids and instead download the DICOMs directly, please use dcm2niix to convert the DICOM images to NIFTI.&#x20;
 
-The first 8 volumes of each demodat DWI run are b0 images. We will extract the first volume of both runs using the command fslroi, and merge them over time using fslmerge. The result of these transformations is one image named AP\_PA\_b0, which contains 2 b0 volumes: one in each PE direction.
+The first 8 volumes of each demodat2 DWI run are b0 images. We will extract the first volume of both runs using the command `fslroi`, and merge them over time using `fslmerge`. The result of these transformations is one image named AP\_PA\_b0, which contains 2 b0 volumes: one in each PE direction.
 
 ```
 fslroi sub-101_ses-01_acq-b1500_dir-ap_dwi.nii.gz AP_b0.nii.gz 0 1 \
@@ -29,9 +29,9 @@ Extracting only the first b0 image (per phase encoding direction) is often adequ
 
 ### 2: Create the parameters file
 
-The parameters file is a simple text file, with one line for each volume in the --imain file. Since we just merged the first b0 files for each PE dir, there will be 2 lines. &#x20;
+The parameters file is a simple text file, with one row for each volume in the --imain file. Since we just merged the first b0 files for each PE dir, there will be 2 lines. &#x20;
 
-For each line, the first three values describe the phase encoding direction vector, in the x, y, and z planes respectively. The fourth column of this file describes the total readout time, which can be found in the .json file corresponding to each run. This number is typically the same for each row in the column and does not change with differing PE directions unless otherwise specified in your sequence protocol.&#x20;
+For each row, the first three values describe the phase encoding direction vector, in the x, y, and z planes respectively. The fourth column of this file describes the total readout time, which can be found in the .json file corresponding to each run. This number is typically the same for each row in the column and does not change with differing PE directions unless otherwise specified in your sequence protocol.&#x20;
 
 Name this file acqparams.txt. Its contents should look like this:
 
@@ -74,17 +74,17 @@ The text-file index.txt contains a row of numbers, one for each volume in your d
 ### 2: Create a brain mask&#x20;
 
 {% hint style="info" %}
-Regardless of the pipeline you are using, it is recommended that the brain mask is created after susceptibility distortion correction, but before eddy current correction (Tax et al., 2022). This is because the signal pile up/reduction due to susceptibility artifact can lead to inaccurate masking.&#x20;
+Regardless of the pipeline you are using, it is recommended that the brain mask is created after susceptibility distortion correction, but before eddy current correction ([Tax et al., 2022](https://www.sciencedirect.com/science/article/pii/S1053811921011010)). This is because the signal pile up/reduction due to susceptibility artifact can lead to inaccurate masking.&#x20;
 {% endhint %}
 
-First, use fslmaths to combine the AP and PA outputs of topup into one file. the -Tmean option tells fslmaths to take the mean across time, resulting in a 3D dataset (one volume) named hifi\_nodif (high fidelity, no diffusion). Then, that volume will be input into bet (Brain Extraction Tool) to create a brain mask.&#x20;
+First, use fslmaths to combine the AP and PA outputs of topup into one file. the -Tmean option tells `fslmaths` to take the mean across time, resulting in a 3D dataset (one volume) named hifi\_nodif (high fidelity, no diffusion). Then, that volume will be input into `bet` (Brain Extraction Tool) to create a brain mask.&#x20;
 
 ```
 fslmaths topup_AP_PA_b0_iout -Tmean hifi_nodif
 bet hifi_nodif hifi_nodif_brain -m -f 0.2
 ```
 
-<figure><img src="../../.gitbook/assets/brainmask_overlay.png" alt=""><figcaption><p>The brain mask (in red) created using bet, overlaid onto the AP and PA combined hifi_nodif image. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/brainmask_overlay.png" alt="The brain mask (in red) created using bet, overlaid onto the AP and PA combined hifi_nodif image. "><figcaption><p>The brain mask (in red) created using bet, overlaid onto the AP and PA combined hifi_nodif image. </p></figcaption></figure>
 
 ### 3: Run eddy
 
@@ -103,11 +103,11 @@ eddy --imain=sub-101_ses-01_acq-b1500_dir-ap_dwi.nii.gz \
 --verbose
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-06-14 at 2.16.56 PM.png" alt=""><figcaption><p>On the left: b0 images acquired in the AP and PA directions, with susceptibility and eddy current distortions. On the right: the combined b0 after distortion correction via topup and eddy</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-06-14 at 2.16.56 PM.png" alt="On the left: b0 images acquired in the AP and PA directions, with susceptibility and eddy current distortions. On the right: the combined b0 after distortion correction via topup and eddy"><figcaption><p>On the left: b0 images acquired in the AP and PA directions, with susceptibility and eddy current distortions. On the right: the combined b0 after distortion correction via topup and eddy</p></figcaption></figure>
 
 ## Additional Resources
 
-FSL has recently updated [their documentation](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html) on these commands, and their background is very thorough.&#x20;
+FSL has recently updated [their documentation on commands](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html), and their background is very thorough.&#x20;
 
 If you would like to run topup and eddy as a batch script on multiple subjects/sessions, please refer to the excellent documentation written by Hannah Swearingen (Brown Clinical Neuroimaging Research Core), found here:&#x20;
 

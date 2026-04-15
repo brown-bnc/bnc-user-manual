@@ -4,7 +4,7 @@ description: Running the legacy BIDS validator on Oscar
 
 # Oscar - legacy validator
 
-### ⚠️ BIDS has [switched to a new BIDS Schema Validator 2.0](https://bids.neuroimaging.io/blog/2024/11/13/bids-validator-2.html), so these instructions are maintained for historical reasons only. You can find updated instructions for the new validator [on this page](oscar.md).
+### ⚠️ BIDS has [switched to a new BIDS Schema Validator 2.0](https://bids.neuroimaging.io/blog/2024/11/13/bids-validator-2.html), so these instructions are maintained for historical reasons only. You can find updated instructions for the new validator [in this previous section. ](oscar.md).
 
 ### 0. Summary of commands
 

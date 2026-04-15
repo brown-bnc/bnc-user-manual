@@ -31,10 +31,10 @@ To do this:
 1. Open XNAT and navigate to the session page you would like to sync
 2. Select Edit from the Actions panel&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-21 at 2.57.07 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-03-24 at 11.07.14 AM.png" alt="A view of the Edit button, underneath &#x22;Actions&#x22; on the right hand side of a session on XNAT. "><figcaption></figcaption></figure>
 
 3. Update the "Date" field to the current date, or the date of manual change.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-09-21 at 2.57.23 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2026-03-24 at 11.12.21 AM.png" alt="After pressing the &#x22;edit option&#x22;, you will be able to edit the Date of a scan session on XNAT. "><figcaption></figcaption></figure>
 
 4. Select "Submit" at the bottom of the page.&#x20;

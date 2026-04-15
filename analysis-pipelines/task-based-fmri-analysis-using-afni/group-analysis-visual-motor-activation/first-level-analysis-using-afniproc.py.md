@@ -2,11 +2,11 @@
 
 ## Step 1: Download data from XNAT and automatically convert to BIDS format using xnat2bids
 
-Running xnat2bids on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the xnat-tools Oscar utility script explained [here](../../../xnat-to-bids-intro/using-oscar/oscar-utility-script/). The Demodat2 dataset has 3 subjects with 2 sessions each. We will be exporting this entire project.&#x20;
+Running xnat2bids on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the [xnat-tools Oscar utility script](../../../xnat-to-bids-intro/using-oscar/oscar-utility-script/). The Demodat2 dataset has 3 subjects with 2 sessions each. We will be exporting this entire project.&#x20;
 
 #### Create a configuration file&#x20;
 
-The configuration .toml file contains information that xnat-tools needs to download the correct data and put it where we want. Name this file x2b\_demodat2\_config.toml and place wherever you'd like. Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/data/<projectname>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
+The xnat2bids configuration .toml file contains information that xnat-tools needs to download the correct data and put it where we want. Name this file x2b\_demodat2\_config.toml and place it wherever you'd like. Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/data/<projectname>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
 ```toml
 # Configuring arguments here will override default parameters.
@@ -141,11 +141,11 @@ sswarper2             \
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/sswarper_image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/sswarper_image.png" alt="A Demodat2 anatomical brain scan before and after warping it to MNI space (using the AFNI tool sswarper2). "><figcaption></figcaption></figure>
 
 ## Step 4: Use afni\_proc.py to create a preprocessing stream and run the general linear model per subject
 
-This basic example of a univariate analysis with AFNI is based on the [example 6b](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html) for afni\_proc.py.&#x20;
+This basic example of a univariate analysis with AFNI is based on [example 6b of the afni\_proc.py documentation](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html).&#x20;
 
 #### Run the afniproc.py batch script
 

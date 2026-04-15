@@ -8,7 +8,7 @@ description: >-
 
 ### Step 1: Download data from XNAT and automatically convert to BIDS format with xnat-tools
 
-In this example, we will use the data from demodat2 participant 101, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the xnat-tools Oscar utility script explained [here](../../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
+In this example, we will use the data from demodat2 participant 101, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. To do that, we will be using the xnat-tools [Oscar utility script](../../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
 
 First, we need to create a configuration .toml file that contains some information xnat-tools needs to download the correct data and put it where we want. Let's call this file x2b\_demodat2\_config.toml and place wherever you'd like (simplest would be your home directory). Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
@@ -93,7 +93,7 @@ If you are unable to run this script for any reason, you can download the .1D fi
 To access AFNI on Oscar, type `module load afni`.
 {% endhint %}
 
-This basic example of a univariate analysis with AFNI is based on the [example 6b](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html) for afni\_proc.py. The -blocks flag lists the processing blocks that will be executed, in order:&#x20;
+This basic example of a univariate analysis with AFNI is based on the [example 6b in the afni\_proc.py documentation](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html). The -blocks flag lists the processing blocks that will be executed, in order:&#x20;
 
 1. tshift (slice time correction)
 2. align (aligning the EPIs to the anatomical scan)
@@ -147,7 +147,7 @@ This `demodat2_afniproc.sh` script will create a much longer `proc.sub-101_ses-0
 
 # This script runs GLM regressions for both the hemifield activation task (LRChx) and the motor task (key press). 
 
-bidsdir='enter your $bidsdir path here'
+bidsdir='/path/to/bids'
 subID='sub-101'
 sess='ses-01'
 
@@ -200,10 +200,10 @@ afni_proc.py                                                         \
 
 After the `demodat2_afniproc.sh` script executes successfully, a results directory will be created: `$bidsdir/derivatives/afni/sub-101/ses-01/sub-101_results`. Start AFNI from within this directory (just type `afni` on the command line), set the underlay to `anat_final.sub-101_ses-01` and the overlay to `stats.sub-101_ses-01_REML`. In the Define Overlay menu, set the OLay to `#13 left_vs_right_chx#0_Coef` , the Thr to `#13left_vs_right_chx#0_Tstat`, and change the threshold to your desired alpha (here we've used p = 0.001). This left vs. right contrast shows regions of the brain that show a stronger BOLD response to left vs. right visual hemifield stimulation, so we can easily localize the right visual cortex and the right LGN, as expected.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.48.38 PM.png" alt=""><figcaption><p>Results of a general linear test contrasting left vs. right visual hemifield stimulation, in demodat subject 101 session 01</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.48.38 PM.png" alt="Using the AFNI GUI, you can view the anatomical scan with the statistical overlay. Activation of the visual cortex and LGN (from the flashing checkerboard task) is represented by blue and yellow voxels. "><figcaption><p>Results of a general linear test contrasting left vs. right visual hemifield stimulation, in demodat subject 101 session 01</p></figcaption></figure>
 
 #### Motor Activation (Button Press) Task&#x20;
 
 To view the GLT results for left versus right button presses, change the overlay to `#16left_vs_right_press#0_Coef` and the Thr to `#17left_vs_right_press#0_Tstat`.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.52.00 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-26 at 4.52.00 PM.png" alt="Activation of the motor cortex (from the button press task) can be viewed in the AFNI GUI. "><figcaption></figcaption></figure>

@@ -4,7 +4,7 @@ The Brain Imaging Data Structure (BIDS) provides a simple and intuitive way to o
 
 ## BIDS Specification
 
-The main specification lives here [https://bids-specification.readthedocs.io/en/stable/](https://bids-specification.readthedocs.io/en/stable/)
+The main specification lives here: [https://bids-specification.readthedocs.io/en/stable/](https://bids-specification.readthedocs.io/en/stable/)
 
 ### Organization Principles
 
@@ -12,7 +12,7 @@ BIDS principles can be summarized as:
 
 * NIFTI files are the chosen imaging format
 * Key data is accompanied by `json` file providing parameters and descriptions
-* Folder structure and files are named in a consistant manner as prescribed by the specification
+* Folder structure and files are named in a consistent manner as prescribed by the specification
 
 ### Directory Structure
 
@@ -47,7 +47,7 @@ Overall directories hierarchy is as follows (\[] indicates optional fields):
     * sub-control01\_magnitude1.nii.gz
     * sub-control01\_scans.tsv
 
-Additional files and folders containing raw data may be added as needed for special cases. They should be named using all lowercase with a name that reflects the nature of the scan (e.g., “calibration”). Naming of files within the directory should follow the same scheme as above (e.g., “sub-control01\_calibration\_Xcalibration.nii.gz”)
+Additional files and folders containing raw data may be added as needed for special cases. They should be named using all lowercase with a name that reflects the nature of the scan (e.g., “calibration”). Naming of files within the directory should follow the same scheme as above (e.g., “sub-control01\_calibration\_Xcalibration.nii.gz”).
 
 #### BIDS Entity Table
 

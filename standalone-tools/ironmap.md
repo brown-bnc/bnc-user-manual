@@ -2,7 +2,7 @@
 
 Ironmap is a script that receives preprocessed 3D+Time fMRI data and outputs one volume, where the value of each voxel is the inverse of the normalized T2\* measurement. 1/T2\* can be used as a proxy for intracellular iron (ferritin) and is particularly useful in the study of dopaminergic systems in the brain.
 
-You can find the ironmap bash script (ironmap.sh) either in the BNC scripts directory on Oscar (`/oscar/data/bnc/scripts`) or on [github](https://github.com/brown-bnc/oscar-scripts/blob/main/ironmap.sh).&#x20;
+You can find the ironmap bash script (ironmap.sh) either in the BNC scripts directory on Oscar (`/oscar/data/bnc/scripts`) or on [the BNC github](https://github.com/brown-bnc/oscar-scripts/blob/main/ironmap.sh).&#x20;
 
 <details>
 
@@ -122,7 +122,7 @@ done
 
 ### Example Output File
 
-<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/Screenshot 2024-12-13 at 12.03.01 PM.png" alt="" width="434"><figcaption><p>Single-volume ironmap of the <a href="https://docs.ccv.brown.edu/bnc-user-manual/demo-dataset/introduction">demodat </a>subject 005 resting state scan. The data was preprocessed using fmriprep and the mask was created within ironmap.sh using 3dautomask. Higher values are shown in white. </p></figcaption></figure></div>
+<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/Screenshot 2024-12-13 at 12.03.01 PM.png" alt="Single-volume transverse ironmap of a resting state scan. Higher values are shown in white." width="434"><figcaption><p>Single-volume ironmap of the a resting state scan. The data was preprocessed using fmriprep and the mask was created within ironmap.sh using 3dautomask. Higher values are shown in white. </p></figcaption></figure></div>
 
 ### Additional Information
 
@@ -141,4 +141,3 @@ done
 #### What information can I gather from the ironmap?&#x20;
 
 * Typically, the whole-brain ironmap calculation is followed by an ROI analysis that examines the mean ironmap values within specific regions of interest. Voxels across the brain should have an ironmap value of roughly \~1, with higher values associated with higher intracellular iron.&#x20;
-

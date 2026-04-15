@@ -6,11 +6,11 @@ description: Details of the different options available to download your data fr
 
 ## Summary of tools and methods to download your data
 
-| Method/Tool                            | Recommended Usage                                                                                                               | Requirements                                                                                                                                                                |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Download via UI                        | Downloading DICOM data that is not super large and when pausing, resuming is not needed.                                        | Browser (campus network)                                                                                                                                                    |
-| Download via XNAT Desktop Client       | Download DICOM data with greater granularity and for large number of participants. Pausing, resuming and reporting is available | App installed. Doesn't work in OSCAR                                                                                                                                        |
-| Download via xnat-tools python package | Programmatic download. Great for batch uploads and for combining with **BIDS conversion**                                       | Installation of xnat-tools python package. This can be done from local computer or Oscar as explained in the [XNAT2BIDS section](../xnat-to-bids-intro/xnat2bids-software/) |
+| Method/Tool                            | Recommended Usage                                                                                                               | Requirements                                                                                                                                                                                      |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Download via UI                        | Downloading DICOM data that is not super large and when pausing, resuming is not needed.                                        | Browser (campus network)                                                                                                                                                                          |
+| Download via XNAT Desktop Client       | Download DICOM data with greater granularity and for large number of participants. Pausing, resuming and reporting is available | App installed. Doesn't work in OSCAR                                                                                                                                                              |
+| Download via xnat-tools python package | Programmatic download. Great for batch uploads and for combining with **BIDS conversion**                                       | Installation of xnat-tools python package. This can be done from local computer or Oscar as explained in the [XNAT2BIDS section of this documentation](../xnat-to-bids-intro/xnat2bids-software/) |
 
 ## 1. Download via Web UI&#x20;
 
@@ -18,13 +18,13 @@ This is the **simplest but slowest** way to download data. If you'll be download
 
 ### 1.1 Navigate to your MR Data Session
 
-![MR session list for a given participant](<../.gitbook/assets/image (18).png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.28.22 PM.png" alt="A view of the two sessions listed under Demodat2 subject 101 on the XNAT portal"><figcaption><p>MR session list for a given participant</p></figcaption></figure>
 
 ### 1.2 Download ONE sequence
 
 If you only need to download one sequence, you can use the download button on the corresponding row
 
-![Highlighting download button for a single sequence](<../.gitbook/assets/image (23).png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.34.45 PM.png" alt="A download button is located to the left of each individual scan name within one session on XNAT."><figcaption><p>Highlighting download button for a single sequence</p></figcaption></figure>
 
 ### 1.3 Download ALL sequences
 
@@ -34,25 +34,22 @@ You have multiple options here
 
 Depending on the size of your data, this may take a while
 
-![Highlighting SELECT ALL and BULK DOWNLOAD BUTTONS](<../.gitbook/assets/image (12).png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.41.06 PM.png" alt="To download one entire session of data on XNAT, use the check box to select all runs, and press &#x22;Download&#x22;. "><figcaption><p>Highlighting SELECT ALL and BULK DOWNLOAD BUTTONS</p></figcaption></figure>
 
 ### 1.4 Download with granularity
 
 If you wish to have greater granularity on the types of resources downloaded you can use the menu under **Actions -> Download -> Images.**&#x20;
 
-
-
-![Highlighting the Actions -> Download menu to access detailed downloading options](<../.gitbook/assets/image (28).png>)
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.45.08 PM.png" alt="Data can be downloaded on XNAT by selecting one of the options in the &#x22;Download&#x22; tab, nested below &#x22;Actions&#x22;."><figcaption><p>Highlighting the Actions -> Download menu to access detailed downloading options</p></figcaption></figure>
 
 ## 2. Downloading via XNAT Desktop Client
 
 The [XNAT Desktop Client](https://wiki.xnat.org/xnat-tools/xnat-desktop-client-dxm) is a convenient way to upload and download data to XNAT. Unfortunately, at this time, the application doesn't work in Oscar, but if you are downloading data to your personal computer, you may want to give it a try.
 
-The [documentation](https://wiki.xnat.org/xnat-tools/xnat-desktop-client-dxm) for the Desktop Client is quite detailed, so we won't repeat the steps here.
+The [documentation for the Desktop Client](https://wiki.xnat.org/xnat-tools/xnat-desktop-client-dxm) is quite detailed, so we won't repeat the steps here.
 
 ## 3. Download data programmatically
 
-We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates downloading your data and converting it to BIDS. The optimal way to install and run the code depends on your computation environment. The package [documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user.&#x20;
+We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates downloading your data and converting it to BIDS. The optimal way to install and run the code depends on your computation environment. [The xnat-tools package documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user.&#x20;
 
-If you do not need BIDS, you'll only need the [xnat-dicom-export](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/) utility. If you will be downloading and converting to BIDS, then please follow the instructions in the [XNAT TO BIDS](/broken/pages/-M6_pXSCdmjerCli9EpX) section.
-
+If you do not need BIDS, you'll only need the [xnat-dicom-export utility](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/). If you will be downloading and converting to BIDS, then please follow the instructions in the [ XNAT2BIDS section of this documentation](/broken/pages/-M6_pXSCdmjerCli9EpX).
