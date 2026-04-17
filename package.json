@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "scripts": {
+    "lint:md": "markdownlint-cli2",
+    "lint:md:all": "markdownlint-cli2 \"**/*.{md,mdx}\"",
+    "lint:md:fix": "markdownlint-cli2 --fix",
+    "lint:md:fix:all": "markdownlint-cli2 --fix \"**/*.{md,mdx}\"",
+    "lint:md:report": "REPORT=1 markdownlint-cli2",
+    "lint:md:report:all": "REPORT=1 markdownlint-cli2 \"**/*.{md,mdx}\""
+  },
+  "devDependencies": {
+    "@github/markdownlint-github": "^0.8.0",
+    "markdownlint-cli2": "^0.22.0",
+    "markdownlint-cli2-formatter-json": "^0.0.9",
+    "markdownlint-cli2-formatter-pretty": "^0.0.10",
+    "markdownlint-cli2-formatter-summarize": "^0.0.8"
+  }
+}

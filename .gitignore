@@ -1,0 +1,11 @@
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# misc
+.DS_Store
+
+# logs
+markdownlint-cli2-results.json
