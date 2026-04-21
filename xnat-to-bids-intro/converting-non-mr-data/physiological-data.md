@@ -1,6 +1,6 @@
 # Physiological data
 
-Physiological data collected at the scanner is automatically exported as single DICOM files alongside each fMRI run. When you [transfer your data to XNAT](../../xnat/uploading-data.md), this data will come along, named the same as its associated functional run but with a \_WIP\_PMU suffix (or just \_PMU, before the XA30 scanner software upgrade).
+Physiological data collected at the scanner is automatically exported as single DICOM files alongside each fMRI run. When you [transfer your data to XNAT](../../xnat/uploading-data/), this data will come along, named the same as its associated functional run but with a \_WIP\_PMU suffix (or just \_PMU, before the XA30 scanner software upgrade).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2024-04-05 at 12.17.41 PM.png" alt="A view of a scanning session’s runs, in the XNAT portal. The functional run (func-bold_task_checks_run+) is followed by its respective physiological data (func-bold_task-checks_run+_WIP_PMU)."><figcaption><p>Paired fMRI and physiological data on XNAT</p></figcaption></figure>
 

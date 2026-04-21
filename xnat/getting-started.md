@@ -32,12 +32,12 @@ If you will be using our XNAT to BIDS conversion tools, your sequences on the sc
 
 At the scanner, once your scan is complete, export your data to XNAT. &#x20;
 
-{% content-ref url="uploading-data.md" %}
-[uploading-data.md](uploading-data.md)
+{% content-ref url="uploading-data/" %}
+[uploading-data](uploading-data/)
 {% endcontent-ref %}
 
 {% hint style="warning" %}
-If you are collecting multi-session data, follow these [instructions to add a session label to your subject ID](uploading-data.md#naming-for-multi-session-studies). This will allow XNAT to organize your data properly and avoid conflicts. &#x20;
+If you are collecting multi-session data, follow these [instructions to add a session label to your subject ID](uploading-data/#naming-for-multi-session-studies). This will allow XNAT to organize your data properly and avoid conflicts. &#x20;
 {% endhint %}
 
 ### 4. Check that ALL your data has been received and it is complete

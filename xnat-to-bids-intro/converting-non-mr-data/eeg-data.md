@@ -63,7 +63,7 @@ For EEG data collected concurrently with fMRI data, we recommend following these
 
 #### Uploading EEG data to an MR Session
 
-Then, when you complete an EEG-fMRI session, first follow the usual procedure to [transfer your MR data from the scanner to XNAT](../../xnat/uploading-data.md). Once your data has appeared on XNAT (typically within an hour), you can navigate to the MR Session that was just created, and click "Upload Additional Files" to upload the associated EEG data:
+Then, when you complete an EEG-fMRI session, first follow the usual procedure to [transfer your MR data from the scanner to XNAT](../../xnat/uploading-data/). Once your data has appeared on XNAT (typically within an hour), you can navigate to the MR Session that was just created, and click "Upload Additional Files" to upload the associated EEG data:
 
 <figure><img src="../../.gitbook/assets/add_EEG_to_MR_data.jpg" alt="To upload ECG data to a session on the XNAT portal, press &#x22;Upload Additional Files&#x22; under the Actions panel. " width="563"><figcaption><p>Add EEG data to an MR Session</p></figcaption></figure>
 

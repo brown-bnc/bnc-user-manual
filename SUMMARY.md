@@ -9,7 +9,8 @@
 * [Accessing XNAT](xnat/accessing-xnat.md)
 * [BIDS Ready Protocols](xnat/bids-compliant-protocols.md)
 * [New XNAT projects](xnat/project-creation-in-xnat.md)
-* [Uploading Data](xnat/uploading-data.md)
+* [Uploading Data](xnat/uploading-data/README.md)
+  * [Uploading raw spectroscopy data](xnat/uploading-data/uploading-raw-spectroscopy-data.md)
 * [Downloading Data](xnat/downloading-data.md)
 
 ## Demo Dataset
