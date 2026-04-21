@@ -1,0 +1,76 @@
+name: 🧹 Lint Markdown Report
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "Folder (e.g. oscar) or file path (e.g. oscar/file.md) to lint. Leave empty to lint all files."
+        required: false
+        type: string
+      group_by:
+        description: "How to group issues: 'all' (one issue), 'folder' (one per top-level folder), 'file' (one per file)"
+        required: false
+        type: choice
+        default: all
+        options:
+          - all
+          - folder
+          - file
+
+env:
+  LABEL_LINT: "lint"
+  LABEL_REPORT: "automated-report"
+  RESULTS_FILE: "./markdownlint-cli2-results.json"
+  GLOB_INPUT: ${{ github.event.inputs.path }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+    - name: ⬇️ Checkout repo
+      uses: actions/checkout@v6
+
+    - name: ⎔ Setup node
+      uses: actions/setup-node@v6
+      with:
+        node-version: 24
+        cache: 'npm'
+
+    - name: 📦 Install dependencies
+      run: npm ci
+
+    - name: 🧹 Markdownlint
+      # Run markdownlint-cli2 directly via npm instead of using DavidAnson/markdownlint-cli2-action,
+      # so that the JSON results file produced by the formatter is available to subsequent steps.
+      # The action runs in an isolated container and does not expose its output files to the runner.
+      # `|| true` prevents a non-zero exit from halting the workflow before we can report results.
+      run: |
+        PATH_INPUT="${GLOB_INPUT}"
+        if [ -z "$PATH_INPUT" ]; then
+          GLOB="**/*.{md,mdx}"
+        elif [[ "$PATH_INPUT" == *.md || "$PATH_INPUT" == *.mdx ]]; then
+          GLOB="$PATH_INPUT"
+        else
+          GLOB="${PATH_INPUT}/**/*.{md,mdx}"
+        fi
+        npm run lint:md:report -- "$GLOB" > /tmp/lint-summary.txt 2>/dev/null || true
+
+    - name: 📝 Create or update issues
+      run: |
+        bash .github/scripts/lint-report.sh \
+          "${GROUP_BY}" \
+          "$RESULTS_FILE" \
+          "/tmp/lint-summary.txt" \
+          "${RUN_NUMBER}" \
+          "${ACTION_URL}" \
+          "${GLOB_INPUT}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GROUP_BY: ${{ github.event.inputs.group_by || 'all' }}
+        RUN_NUMBER: ${{ github.run_number }}
+        ACTION_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
