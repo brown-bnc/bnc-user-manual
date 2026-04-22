@@ -28,7 +28,7 @@ We largely follow [the QSMxT installation instructions for HPCs](https://qsmxt.g
     ```bash
     git clone https://github.com/astewartau/transparent-apptainer qsmxt_8.2.2_20260105
     ```
-    \
+    
 3.  Change directory into this new downloaded folder and run their "transparent singularity/apptainer" script, which sets up your environment in a way that lets you use their tools from the command line, even though they're in a Singularity/Apptainer container
 
     ```bash
@@ -82,7 +82,7 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt)
     ```bash
     qsmxt bids
     ```
-    
+
 5.  Follow the interactive prompts to specify your desired outputs
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.14.59 PM.png" alt="A terminal window where the command “qsmxt bids” was ran. After an automated description of the output options is listed, the user is prompted to type their desired images (space-separated). The default is qsm”. In this example, the user typed: “qsm swi t2s r2s seg analysis”. "><figcaption></figcaption></figure>

@@ -56,7 +56,7 @@ A dialog will open
 
 3. Add key to Control Parameters  
 Add `key= 210387309` to the control parameters as shown in the figure below. Be careful to match spaces. When done, press OK  
-<figure><img src="../../.gitbook/assets/lc-model-params-with-key.png" alt="In the “View/Edit Control Parameters” pop up, a new line was added to the text box, which states: “key= 210387309”."><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/lc-model-params-with-key.png" alt="In the “View/Edit Control Parameters” pop up, a new line was added to the text box, which states: “key= 210387309”."><figcaption></figcaption></figure>
 
 4. Save parameters file (optional)  
 LCModel will ask you if you want to save the new parameters to a new file. You can do so. If you do, the next time you can select the saved file from **Advanced Settings -> Change Control-Defaults file**
