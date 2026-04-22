@@ -124,7 +124,7 @@ This basic example of a univariate analysis with AFNI is based on the [example 6
 
 `-regress_opts_3dD` to specify our contrasts. Here, we do a "left\_vs\_right\_press" contrast to find voxels whose activity is greater for the left index finger motor activation than for the right.&#x20;
 
-#### Run the batch script
+### Run the batch script
 
 Copy the text in the box below into a file editor on Oscar.  Change your email in the beginning section, and change the value of the `bidsdir` variable to your own location (path should end in `/bids`). Save this script as a file called `demodat2_afniproc.sh`, and then execute it on the command line with `sbatch demodat2_afniproc.sh`. It will launch as a batch script, similar to how xnat2bids is used. You will receive an email when the job has completed.&#x20;
 

@@ -28,6 +28,7 @@ We largely follow [the QSMxT installation instructions for HPCs](https://qsmxt.g
     ```bash
     git clone https://github.com/astewartau/transparent-apptainer qsmxt_8.2.2_20260105
     ```
+    \
 3.  Change directory into this new downloaded folder and run their "transparent singularity/apptainer" script, which sets up your environment in a way that lets you use their tools from the command line, even though they're in a Singularity/Apptainer container
 
     ```bash
@@ -35,12 +36,14 @@ We largely follow [the QSMxT installation instructions for HPCs](https://qsmxt.g
     ./run_transparent_apptainer.sh --container qsmxt_8.2.2_20260105.simg
     source activate_qsmxt_8.2.2_20260105.simg.sh
     ```
+
 4.  Load the miniforge3 module on Oscar
 
     ```bash
     module load miniforge3
     source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
     ```
+
 5.  Create a conda environment in which the QSMxT toolbox is installed
 
     ```bash
@@ -58,7 +61,6 @@ conda activate qsmxt
 ```
 
 
-
 ## Using QSMxT on Oscar
 
 Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt) for more details on each of these steps and possible settings, and take a look at [their paper - Stewart et al., 2021 -](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.29048) for more information.
@@ -74,11 +76,13 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/using-qsmxt/qsmxt)
     source $MAMBA_ROOT_PREFIX/etc/profile.d/conda.sh
     conda activate qsmxt
     ```
+
 4.  Launch qsmxt and give it your bids directory
 
     ```bash
     qsmxt bids
     ```
+    
 5.  Follow the interactive prompts to specify your desired outputs
 
     <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 12.14.59 PM.png" alt="A terminal window where the command “qsmxt bids” was ran. After an automated description of the output options is listed, the user is prompted to type their desired images (space-separated). The default is qsm”. In this example, the user typed: “qsm swi t2s r2s seg analysis”. "><figcaption></figcaption></figure>

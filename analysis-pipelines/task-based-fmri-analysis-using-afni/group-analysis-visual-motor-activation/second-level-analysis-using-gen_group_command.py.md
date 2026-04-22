@@ -386,11 +386,11 @@ echo "++ Group average ACF params: ${blur_est[@]}"
    * Takes only the first 3 numbers, which are all that's needed by 3dClustSim.
    * The resulting variable `blur_est_lines` is:
 
-```text
-0.727118 2.91228 10.7089
-0.746814 2.93786 10.8411
-0.754144 2.9418 10.3588
-```
+    ```text
+    0.727118 2.91228 10.7089
+    0.746814 2.93786 10.8411
+    0.754144 2.9418 10.3588
+    ```
 
 4. A check is included at the end ("`if [[ -z "$blur_est_lines" ]]; then` ...") to ensure that the values were properly parsed from the `blur_est*` file.&#x20;
 

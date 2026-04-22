@@ -49,7 +49,7 @@ During installation, the basis-set was installed under the LCModels' hidden dire
 You will need to add a key to the Control Parameters. We do so as follows:
 
 1.  Open Advanced Setting Dialog  
-<figure><img src="../../.gitbook/assets/Untitled.png" alt="In the “Control Parameters” pop up, select the “Advanced Settings” button. "><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/Untitled.png" alt="In the “Control Parameters” pop up, select the “Advanced Settings” button. "><figcaption></figcaption></figure>
 
 2. Select View/Edit Control Parameters.&#x20;  
 A dialog will open  
