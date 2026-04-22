@@ -6,7 +6,7 @@ description: >-
 
 # Single Subject Analysis: Visual/Motor Activation
 
-### Step 1: Download data from XNAT and automatically convert to BIDS format with xnat-tools
+## Step 1: Download data from XNAT and automatically convert to BIDS format with xnat-tools
 
 In this example, we will use the data from demodat2 participant 101, session 1. Running the following series of commands on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. To do that, we will be using the xnat-tools [Oscar utility script](../../xnat-to-bids-intro/using-oscar/oscar-utility-script/).&#x20;
 
@@ -27,15 +27,16 @@ verbose=1
 
 To run the xnat-tools export and BIDS conversion, change directory to `/oscar/data/bnc/scripts/`. On the command line, type:
 
-`module load anaconda3`
-
-`python run_xnat2bids.py --config ~/x2b_demodat2_config.toml`
+```bash
+module load anaconda3`
+python run_xnat2bids.py --config ~/x2b_demodat2_config.toml
+```
 
 If you named your .toml file differently or placed it somewhere other than your home directory, make sure to include the full path to your file and the correct filename. Enter your XNAT username and password when prompted.&#x20;
 
 You should receive output that looks like this:
 
-```
+```sh
 Enter XNAT Username: example-username
 Enter Password: 
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E01849', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user gillian_leblanc@brown.edu', '--mail-type ALL', '--output /oscar/scratch/gleblan1/logs/%x-XNAT_E01849-%J.txt'], 'x2b_param_list': ['XNAT_E01849', '/oscar/home/gleblan1/data/Demodat2_documentation', '--user gleblan1', '--host "https://xnat.bnc.brown.edu"', '--skipseq 3 --skipseq 4 --skipseq 5 --skipseq 7 --skipseq 8 --skipseq 19 --skipseq 20 --skipseq 21', '--overwrite', '--verbose']}
@@ -57,7 +58,7 @@ This will create a sourcedata folder for subject 101 within `$bids_root/bnc/stud
 We will call this output BIDS-compatible folder (`/oscar/home/<yourusername>/xnat-export/bnc/study-demodat/bids/` , unless you specified a different `$bids_root` location) `$bidsdir` for the remainder of the tutorial.
 {% endhint %}
 
-### Step 2: Extract stimulus timing information from stimulus presentation output files.
+## Step 2: Extract stimulus timing information from stimulus presentation output files.
 
 To make our data BIDS compatible and facilitate future data sharing, we need to create events.tsv files that correspond to each of our functional runs and contain information about each stimulus event of interest (onset time, condition, etc.). First, download the participant's data files (in our case, created by PsychoPy) and place them in the sourcedata subfolder of your BIDS directory in a subfolder named 'beh'. So, for this participant and session, the full path should be: `$bidsdir/sourcedata/sub-101/ses-01/beh`.&#x20;
 
@@ -75,7 +76,7 @@ If you are unable to run this script for any reason, you can download the events
 
 {% file src="../../.gitbook/assets/sub-101_ses-01_eventsfiles.zip" %}
 
-### Step 3: Convert events.tsv files into AFNI stimulus timing files
+## Step 3: Convert events.tsv files into AFNI stimulus timing files
 
 We needed to make those events.tsv files for BIDS compatibility, but in order to run our statistical analysis in AFNI, we need to transform them into .1D text files required by AFNI for specifying stimulus timing information. Instead of one file per run, as we had with the events.tsv files, here we need one file per condition (e.g. left hemifield checks or right button presses). These files are formatted to have one line per run of the task, specifying all the onset times for that condition. Since we collected two runs of the functional tasks, there should be two lines in this file. We have created an example python script make\_afni\_stimtimes\_LRChx.py, which you can run from the command line just as you did make\_events.py: `python make_afni_stimtimes_LRChx.py --bids_dir $bidsdir --subj sub-101 --sess ses-01` . This will create stimulus timing files in `$bidsdir/derivatives/afni/sub-101/ses-01/stimtimes/` .
 
@@ -87,7 +88,7 @@ If you are unable to run this script for any reason, you can download the .1D fi
 
 {% file src="../../.gitbook/assets/sub-101_ses-01_stimtimes.zip" %}
 
-### Step 4: Use afni\_proc.py to create a simple preprocessing stream and run the general linear model for the checks task
+## Step 4: Use afni\_proc.py to create a simple preprocessing stream and run the general linear model for the checks task
 
 {% hint style="info" %}
 To access AFNI on Oscar, type `module load afni`.
@@ -134,6 +135,7 @@ afniproc.py will create its output folders in the directory that it is run from.
 This `demodat2_afniproc.sh` script will create a much longer `proc.sub-101_ses-01` tcsh script, which will be automatically executed because we included the -execute flag at the bottom of the script. Looking at the proc.sub-101\_ses-01 script is the best way to gain a deeper understanding of each of AFNI's processing steps.&#x20;
 
 {% code title="demodat2_afniproc.sh" %}
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -192,11 +194,12 @@ afni_proc.py                                                         \
     -html_review_style        pythonic                               \
     -execute
 ```
+
 {% endcode %}
 
-### Step 5: Viewing the Output
+## Step 5: Viewing the Output
 
-#### Visual Hemifield Localizer Task
+### Visual Hemifield Localizer Task
 
 After the `demodat2_afniproc.sh` script executes successfully, a results directory will be created: `$bidsdir/derivatives/afni/sub-101/ses-01/sub-101_results`. Start AFNI from within this directory (just type `afni` on the command line), set the underlay to `anat_final.sub-101_ses-01` and the overlay to `stats.sub-101_ses-01_REML`. In the Define Overlay menu, set the OLay to `#13 left_vs_right_chx#0_Coef` , the Thr to `#13left_vs_right_chx#0_Tstat`, and change the threshold to your desired alpha (here we've used p = 0.001). This left vs. right contrast shows regions of the brain that show a stronger BOLD response to left vs. right visual hemifield stimulation, so we can easily localize the right visual cortex and the right LGN, as expected.&#x20;
 

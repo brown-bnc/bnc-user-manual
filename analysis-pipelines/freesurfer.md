@@ -10,13 +10,13 @@ Freesurfer is developed by the [Laboratory for Computational Neuroimaging](https
 
 For expansive documentation on using and understanding FreeSurfer tools, please visit the [FS Wiki](https://surfer.nmr.mgh.harvard.edu/fswiki).&#x20;
 
-### Running the recon-all command
+## Running the recon-all command
 
 Recon-all (recon = reconstruction) is a command that takes an anatomical dataset (T1-weighted image) and performs many common preprocessing steps on it, with the goal of converting the 3D brain image (.nii or .dcm) into a 2D surface. It is helpful to imagine the reconstruction as taking a crumpled balloon (T1w) and blowing it up (inflated surface).  This inflated surface is particularly helpful when analyzing regions of the cortex where some voxels may contain signal from two separate gyri. However, it is also helpful when analyzing signal found in the sulci.  &#x20;
 
 To run recon-all on Oscar:&#x20;
 
-```
+```bash
 module load freesurfer
 recon-all -i t1w.nii.gz -s <subject_name> -sd <path_to_your_folder> -all 
 ```
@@ -55,7 +55,7 @@ The temporary directory `(tmp)` and `trash` should both be empty at the end of p
 
 Output from recon-all can be viewed with Freesurfer's image viewer (freeview). To view a surface from the `surf` directory, use the `-f` flag followed by the file name. To view a volume from the `mri` directory, use the `-v` flag. Volume files have the .mgh or .mgz extension, which are unique to Freesurfer and stand for Massachusetts General Hospital, and Massachusetts General Zipped, respectively.&#x20;
 
-```
+```bash
 freeview -f lh.pial rh.pial 
 ```
 
@@ -65,7 +65,7 @@ If you are using `freesurfer/8.0.0`  and are having issues opening the freeview 
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 12.52.18 PM.png" alt="The left and right pial surfaces, opened using freeview. "><figcaption><p>The left and right pial surfaces viewed using freeview. </p></figcaption></figure>
 
-```
+```bash
 freeview -f lh.inflated rh.inflated 
 ```
 
@@ -73,11 +73,11 @@ freeview -f lh.inflated rh.inflated
 
 
 
-### Segmentation and Parcellation
+## Segmentation and Parcellation
 
 Included in recon-all's workflow is segmentation of the subcortical white and grey matter structures (hippocampus, amygdala, caudate, putamen, thalamus, etc) and parcellation of the cortex. Parcellation is conducted with respect to two different atlases, the Desikan-Killiany atlas (/mri/aparc.DKTatlas+aseg.mgz) and the Destrieux atlas (/mri/aparc.a2009s+aseg.mgz). The main difference between the two is that the Destrieux atlas contains more parcellations and is used in more fine-tuned analyses.&#x20;
 
-```
+```bash
 freeview -v orig.mgz aparc.a2009s+aseg.mgz
 ```
 

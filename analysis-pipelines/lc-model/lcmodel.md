@@ -23,14 +23,14 @@ Installing LCModel in Oscar for personal use is a simple process. Because LCMode
 
 ### 1. Download LCModel tar under your HOME
 
-```
+```bash
 # change directory to your HOME 
 cd ~
 ```
 
 ### 2. Download LCModel binaries and uncompress file
 
-```
+```bash
 # download LCModel
 wget http://s-provencher.com/pub/LCModel/programs/lcm-64.tar -O lcm-64.tar
 # un-tar file
@@ -39,7 +39,7 @@ tar xf lcm-64.tar
 
 ### 3. Run the installer script
 
-```
+```bash
 ./install-lcmodel
 ```
 
@@ -65,7 +65,7 @@ You may see the following error message: Infiniband hardware address can be inco
 
 LCModel is now free. However, you'll need to create an empty license file. You can do so from the terminal as follows.&#x20;
 
-```
+```bash
 cd ~/.lcmodel
 touch license
 ```
@@ -76,7 +76,7 @@ If you have used LCModel before and have an outdated license file, please remove
 
 ### 5. Copy the Basis Set
 
-```
+```bash
 cp -r /oscar/data/bnc/shared/lcmodel/basis-sets ~/.lcmodel/basis-sets
 ```
 
