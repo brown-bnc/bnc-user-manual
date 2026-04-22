@@ -29,7 +29,7 @@ The gradient table can also be stored within a separate header file (.mih). This
 
 MRtrix3 version 3.0.6 is now available as a module on Oscar. To access it, open a terminal in a virtual desktop and type:&#x20;
 
-```sh
+```bash
 module load mrtrix3
 ```
 
