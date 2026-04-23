@@ -53,12 +53,12 @@ In this game, the participant inflates a balloon by pressing a button on a handh
 * The balloon **grows slightly**
 * The **tolerance for movement decreases**, making it harder to stay still as the game progresses
 
-**Objective**
+### Objective
 
 * Inflate the balloon until it **pops** — this counts as a successful trial!
 * If the participant moves **outside the allowed tolerance**, the balloon **deflates** and they are given a chance to try again
 
-**How It Works**
+### How It Works
 
 * The movement tolerance begins at the **“Movement Tolerance Start”** value (set in the Settings Page)
 * It gradually scales down to the **“Movement Tolerance End”** as the balloon inflates
@@ -70,13 +70,13 @@ In this game, the participant inflates a balloon by pressing a button on a handh
 
 In this game, the participant is shown a fixation graphic on screen and must remain completely still for a set amount of time.
 
-**Objective**
+### Objective
 
 * Stay still for the full **duration** (set via `Fixation Duration` in the Settings Page)
 * If movement exceeds the allowed **tolerance** (set via `Movement Tolerance`), the trial **fails** and the participant is prompted to try again
 * If they successfully remain within tolerance for the entire duration, the trial is **a success**
 
-**How It Works**
+### How It Works
 
 * The fixation graphic remains visible on screen throughout the task
 * A **fixed movement threshold** is used (does not change over time like in the balloon game)
@@ -88,14 +88,14 @@ In this game, the participant is shown a fixation graphic on screen and must rem
 
 In this game, a video (e.g., a short animated clip) plays while the participant remains still. It pauses whenever movement exceeds a configured threshold and resumes once the participant is still again.
 
-**Objective**
+### Objective
 
 * Watch the full video without interruption
 * If the participant **moves too much**, the video **pauses**
 * A message saying **“Stay still!”** appears as feedback
 * Once the participant’s movement falls **back within the tolerance**, the video automatically resumes
 
-**How It Works**
+### How It Works
 
 * The video file is selected on the **Settings Page**
 * A **fixed movement tolerance** (in mm) is configured for this game
