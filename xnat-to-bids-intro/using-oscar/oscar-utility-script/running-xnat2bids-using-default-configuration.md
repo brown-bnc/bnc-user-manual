@@ -2,19 +2,19 @@
 
 First, we need to load a module that will give us access to python and a few basic packages. From the command line, run the following:
 
-```
+```bash
 module load anaconda3
 ```
 
 Then, if the default values for resource allocation are suitable and you do not need to pass any specific arguments to `xnat2bids`, you may run the script as follows:
 
-```
+```bash
 python /oscar/data/bnc/scripts/run_xnat2bids.py
 ```
 
 Since, by default, no sessions are flagged for processing, you will immediately be prompted to enter a Session ID to proceed.  If you would like to process multiple sessions simultaneously, you can enter them as a comma-separated list.  Here's an example:
 
-```
+```bash
 Enter Session(s) (comma separated): XNAT_E00080, XNAT_E00114, XNAT_E00152
 ```
 

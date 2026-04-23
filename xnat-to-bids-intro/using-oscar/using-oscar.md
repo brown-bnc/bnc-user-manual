@@ -1,6 +1,6 @@
 # Step-wise via Interact Session
 
-## 🛑 We highly recommend using the [Oscar utility script](oscar-utility-script/) instead of this older approach.
+🛑 We highly recommend using the [Oscar utility script](oscar-utility-script/) instead of this older approach.
 
 ## Running XNAT2BIDS
 
@@ -10,7 +10,7 @@ The xnat-tools package provides a convenient `xnat2bids` script to facilitate da
 
 Before getting started, we have grouped all the commands executed in this page for your reference
 
-```
+```bash
 interact -n 2 -t 01:00:00 -m 8g
 version=v1.1.1
 bids_root_dir=${HOME}/xnat-exports
@@ -49,7 +49,7 @@ To connect via SSH, you type `ssh username@ssh.ccv.brown.edu`. If this is your f
 
 At this point you arrive at a login node. **We will need to start an interactive session/job** by typing
 
-```
+```bash
 interact -n 2 -t 01:00:00 -m 8g
 ```
 
@@ -73,7 +73,7 @@ If you want to copy-paste from these docs to the terminal in the OOD Desktop, cl
 
 We recommend using the latest available version. We keep a list of the released versions on [our xnat-tools github](https://github.com/brown-bnc/xnat-tools/releases). The version specified here is likely the latest we have tested. If you test a newer version, we'd love your contributions to this documentation!
 
-```
+```bash
 version=v2.3.0
 ```
 
@@ -87,7 +87,7 @@ This is the directory where data will be written. If the directory does not exis
 For this sample walkthrough, you can use the path exactly as shown below. The `${USER}` variable is a systemwide variable and it is automatically interpreted as your OSCAR user. However, once you are using your own data, you should export to directories in your PI's data folder, which typically follows the pattern `/gpfs/data/<PI oscar user>`
 {% endhint %}
 
-```
+```bash
 bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 ```
@@ -96,7 +96,7 @@ mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 
 This is maintained by bnc and we will be pointing to the version defined above
 
-```
+```bash
 simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 ```
 
@@ -104,7 +104,7 @@ simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [our "Getting Started" section](../getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 101 of the demo dataset
 
-```
+```bash
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
 XNAT_SESSION="XNAT_E01849" #ACCESSION of participant 101 session 01 in sample data
 ```
@@ -115,7 +115,7 @@ In the following section we will demonstrate how to run our software. Instead of
 
 In the specific case of `xnat-tools` , the wrapping container has `Python` , `dcm2niix` and `heudiconv` installed which are all needed by our software. The [BNC Dockerfile for xnat-tools](https://github.com/brown-bnc/xnat-tools/blob/master/Dockerfile) provides some insight into how containers are built.
 
-**Understanding the file system of a container**
+#### Understanding the file system of a container
 
 Containers have their own file system, which is completely independent and isolated from the host where the container is run
 
@@ -123,7 +123,7 @@ Containers have their own file system, which is completely independent and isola
 Because a container does not have the same directory structure as the host, we have to remember that paths like `/oscar/data/<PI>` only exist in Oscar, but not inside the container
 {% endhint %}
 
-**Sharing paths between a container and the host computer (OSCAR)**
+#### Sharing paths between a container and the host computer (OSCAR)
 
 If we want a directory/file that exists in OSCAR to be available inside our container, we need to tell Singularity that. We do so, by **binding a volume. This achieved by passing the flag `--bind <oscar_path>:<container_path>`.** If we want the path inside the container to be exactly as the path in OSCAR, we can omit the destination path, that is `--bind <oscar_path>`.
 
@@ -131,11 +131,11 @@ If we want a directory/file that exists in OSCAR to be available inside our cont
 The `--bind` flag can also be passed as `-B`
 {% endhint %}
 
-**Singularity default behavior when it comes to sharing paths and environment variables**
+#### Singularity default behavior when it comes to sharing paths and environment variables
 
 While generally speaking, a container is mostly isolated from the host, there are few exceptions. And these exceptions and default behaviors are different for Singularity and Docker. We will focus on Singularity rules here. By default Singularity binds the following locations
 
-```
+```dockerfile
  $HOME
  /sys:/sys
  /proc:/proc
@@ -148,7 +148,7 @@ While generally speaking, a container is mostly isolated from the host, there ar
 
 **(Pro-Tip):** Generally speaking, the default behavior of Singularity works great. Sometimes however, some of the configurations included in your `$HOME` or environment variables set in your `$HOME/.bashrc` may create conflicts. Singularity offers several flags that can be passed to further isolate the container from the local host. These include
 
-```
+```dockerfile
 --no-home
 --contain
 --containall
@@ -163,7 +163,7 @@ If you see such flags in our examples and want to learn more about them visit [t
 
 Let's start by making sure that we can successfully run our `xnat2bids` executable inside the container.
 
-```
+```bash
 singularity exec ${simg} xnat2bids --help
 ```
 
@@ -179,7 +179,7 @@ Let's expand on the above command:
 
 If the above command is successful, you'll be seeing the following output in your terminal
 
-```
+```bash
 Usage: xnat2bids [OPTIONS] SESSION BIDS_ROOT_DIR
 
   Export DICOM images from an XNAT experiment to a BIDS compliant directory
@@ -228,7 +228,7 @@ Options:
 
 The following command will run the executable `xnat2bids` (via singularity) command to extract DICOMs from XNAT and export to BIDS.&#x20;
 
-```
+```bash
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
@@ -249,7 +249,7 @@ After running the command, you'll be asked to interactively type your Brown/XNAT
 
 A successful run will print out the following output:
 
-```
+```bash
 ------------------------------------------------
 Get project and subject information
 Project: BNC_DEMODAT2
@@ -304,7 +304,7 @@ Session Suffix:  01
 
 After confirming that XNAT2BIDS is behaving as expected we will run the program on the full dataset. To do so, we invoke it as follows:
 
-```
+```bash
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} 
@@ -328,14 +328,14 @@ You can check these logs for any errors or warning messages.
 
 If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the data from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
 
-```
+```bash
 module load tree
 tree -d ${HOME}/xnat-exports
 ```
 
 Which should result in a structure similar to the output shown below:
 
-```
+```bash
 xnat-exports/
 └── bnc
     └── study-demodat2

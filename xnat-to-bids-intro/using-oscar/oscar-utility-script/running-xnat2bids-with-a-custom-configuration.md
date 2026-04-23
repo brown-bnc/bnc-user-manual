@@ -8,7 +8,7 @@ To open VSCode in an interactive desktop, open a terminal with a right click fol
 To launch VSCode, run **`code`** on the command line.
 {% endhint %}
 
-### 1. Configure slurm parameters
+## 1. Configure slurm parameters
 
 First, let's configure a couple of slurm arguments; paste the following into your .toml file:
 
@@ -31,9 +31,10 @@ If you would like your logs to live somewhere else, update your configuration as
 [slurm-args]
 output="/path/to/logs/dir/%x-%J.txt"
 ```
+
 {% endhint %}
 
-### 2. Configure xnat2bids parameters
+## 2. Configure xnat2bids parameters
 
 Next, you'll need to configure what arguments to pass to `xnat2bids`, such as the session (or comma-separated list of sessions) you would like to process, as well as any other arguments.
 
@@ -42,7 +43,8 @@ Next, you'll need to configure what arguments to pass to `xnat2bids`, such as th
 <summary>💡Click here for a comprehensive list of all available options</summary>
 
 {% code overflow="wrap" %}
-```
+
+```toml
 project TEXT: Project ID from XNAT
 
 subjects LIST[TEXT]: List of one or more subjects. Corresponds with the "last name" provided when registering the participant on the scanner, which becomes the "subject" ID on XNAT. If subjects parameter is specified, project must also be specified.
@@ -75,6 +77,7 @@ skip-export BOOLEAN: Skip DICOM export and initiate BIDS conversion [default: fa
 
 validate_frames BOOLEAN: Use if you manually terminate your fMRI runs. If the final volume does not contain the expected number of slices, the associated DICOM file(s) will be deleted. [default: false]
 ```
+
 {% endcode %}
 
 
@@ -91,7 +94,7 @@ skipseq=["anat-scout_acq-localizer", "anat-scout_acq-aascout"]
 
 Here, we are setting the sessions to be processed as XNAT\_E01849, XNAT\_E01867, and XNAT\_E01943, which are the XNAT Accession numbers for subject 101 (sessions 1 and 2) and subject 102 (session 1) in our [BNC demo dataset](https://xnat.bnc.brown.edu/app/action/DisplayItemAction/search_element/xnat%3AprojectData/search_field/xnat%3AprojectData.ID/search_value/BNC_DEMODAT). Notice that by defining `skipseq`, we are choosing to  process everything except the scan with a "series description" on XNAT of "anat-scout\_acq-localizer" and "anat-scout\_acq-aascout". You can skip or include particular scans either by their series description like this, or by their scan number on XNAT (i.e. `includeseq = [7,10]`).
 
-#### 2.1 (Optional) Specify sessions to process with Project ID and Subject IDs rather than Accession numbers
+### 2.1 (Optional) Specify sessions to process with Project ID and Subject IDs rather than Accession numbers
 
 To process all sessions from a given project, you only need to add the Project ID to your config file's `project` field.  If you only would like to process sessions from a subset of a project's subjects, add the `subjects` field with a list of one or more Subject IDs. _If you specify a project and subject(s) this way, you do not need to include a "sessions" list of Accession numbers._
 
@@ -107,7 +110,7 @@ verbose=0
 
 **NOTE:**  Here, `overwrite=true` will tell `xnat2bids` to reprocess any existing session exports specified in your config file. Use this with caution- it may also overwrite any preprocessing done in the '/bids/derivatives' folder. Enabling the `verbose=1` flag will turn on DEBUG logging for your script and signal `xnat2bids` to output more detailed printing to your logs.
 
-#### 2.2 (Optional) Define Custom Parameters for Each Session
+### 2.2 (Optional) Define Custom Parameters for Each Session
 
 There may be the case in which you would like to add new arguments or override default parameters for processing a given session—for instance, defining logging verbosity levels or including or excluding certain sequences.&#x20;
 
@@ -126,17 +129,17 @@ verbose=1
 
 **NOTE:** The section name must match an entry in your `sessions` list.  Each session will inherit all default parameters and those specified under `[xnat2bids-args]`, overriding when necessary. _At the moment, you need to provide a sessions list of Accession numbers (rather than Project/Subject IDs) if you want to define custom parameters for each session._
 
-#### 2.3 (Optional) Executing Pipeline Components Separately: Export Only or Skip Export Flags
+### 2.3 (Optional) Executing Pipeline Components Separately: Export Only or Skip Export Flags
 
 If you're only interested in exporting your data from XNAT without converting your DICOM data into BIDS, you can add the following entry to your user config:
 
-```
+```toml
 export-only=true
 ```
 
 Similarly, if you would like to BIDS-convert data already exported to Oscar, you can add the following entry to your user config:
 
-```
+```toml
 skip-export=true
 ```
 
@@ -154,7 +157,7 @@ skip-export=true
 **NOTE:**  By default, `run_xnat2bids` uses the latest version of `xnat-tools xnat2bids`, unless specified under `[xnat2bids-args]` with the following format: `version="vX.X.X"`
 {% endhint %}
 
-### 3.  Running XNAT2BIDS
+## 3.  Running XNAT2BIDS
 
 Now that you have a complete configuration file like this, you are ready to run the pipeline!
 
@@ -179,13 +182,13 @@ verbose=1
 
 First, we need to load a module that will give us access to python and a few basic packages. From the command line, run the following:
 
-```
+```bash
 module load anaconda3
 ```
 
 Then we can launch the script, using `--config` to specify your custom configuration file.
 
-```
+```bash
 python /oscar/data/bnc/scripts/run_xnat2bids.py --config <example_user_config.toml> 
 ```
 
@@ -197,7 +200,7 @@ As of January 2026 (and depending on which modules you already have loaded), loa
 
 In your terminal, you should immediately see the following print statements:
 
-```
+```console
 DEBUG: {'message': 'Argument List', 'session': 'XNAT_E01943', 'slurm_param_list': ['--time 04:00:00', '--mem 16000', '--nodes 1', '--cpus-per-task 2', '--job-name xnat2bids', '--mail-user gillian_leblanc@brown.edu', '--mail-type ALL', '--output /oscar/scratch/gleblan1/logs/%x-XNAT_E01943-%J.txt'], 'x2b_param_list': ['XNAT_E01943', '/users/gleblan1/bids-export/', '--host "https://xnat.bnc.brown.edu"', '--user gleblan1', '--skipseq "anat-scout_acq-localizer" --skipseq "anat-scout_acq-aascout"', '--verbose']}
 sbatch: slurm_job_submit: No partition specified, moved to batch.
 sbatch: slurm_job_submit: No partition specified, moved to batch.
@@ -240,7 +243,7 @@ Check `/oscar/scratch/<your-username>/logs/` for four new log files
 
 <summary>Click here for an example <code>xnat2bids</code> output log</summary>
 
-```
+```bash
 ## SLURM PROLOG ###############################################################
 ##    Job ID : 992820
 ##  Job Name : xnat2bids
@@ -344,7 +347,7 @@ Session Suffix:  01
 
 <summary>Click here for an example <code>bids-validator</code> output log</summary>
 
-```
+```bash
 ## SLURM PROLOG ###############################################################
 ##    Job ID : 992824
 ##  Job Name : bids-validator
@@ -770,7 +773,7 @@ Finally, go to your \~/bids-export directory to check your exported DICOM data a
 
 <summary>Click here to see how it should look</summary>
 
-```
+```bash
 bnc/study-demodat/bids/
 |-- CHANGES
 |-- README

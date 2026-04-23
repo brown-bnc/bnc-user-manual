@@ -6,7 +6,7 @@ description: >-
 
 # Extra tools & features
 
-### Correct DICOM headers during XNAT export
+## Correct DICOM headers during XNAT export
 
 {% hint style="warning" %}
 Use this tool responsibly! Modifying DICOM headers can create corrupt or invalid DICOM data if not done correctly. (Although your data on XNAT will not be modified, so you can always re-export if necessary)
@@ -83,7 +83,7 @@ For example, say that I am exporting the data from demodat subject 004, and I wo
 
 After saving it as "x2b\_demodat\_dicomfix\_config.json" on Oscar, I just need to add one line to the \[xnat2bids-args] section of my [configuration file](running-xnat2bids-with-a-custom-configuration.md#id-2.-configure-xnat2bids-parameters):
 
-```
+```md
 dicomfix-config="/oscar/home/elorenc1/scripts/demodat/x2b_demodat_dicomfix_config.json"
 ```
 
