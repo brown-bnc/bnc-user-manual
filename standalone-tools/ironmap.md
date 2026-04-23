@@ -8,7 +8,7 @@ You can find the ironmap bash script (ironmap.sh) either in the BNC scripts dire
 
 <summary>Click here to see the full ironmap.sh script</summary>
 
-```
+```bash
 #!/bin/bash
 #This script calls multiple afni commands to generate a one volume NIFTI file, 
 #where each voxel contains the median of the 1/nT2* measurement across time
@@ -109,7 +109,7 @@ done
 
 </details>
 
-### Script usage:&#x20;
+## Script usage:&#x20;
 
 `bash ironmap.sh -i <input> [optional flags]`
 

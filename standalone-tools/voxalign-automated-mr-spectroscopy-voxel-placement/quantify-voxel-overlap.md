@@ -1,6 +1,6 @@
 # Quantify voxel overlap
 
-### Calculate dice coefficient
+## Calculate dice coefficient
 
 Voxalign also has a built-in function to verify the accuracy of longitudinal voxel placement. This tool takes as input session 1 and session 2 T1 and spectroscopy DICOMs or NIFTIs, coregisters the two T1s and applies the same transform to the session 1 spectroscopy voxel, and then calculates the dice coefficient between the two spectroscopy voxels. A dice coefficient of 1 reflects perfect overlap.
 

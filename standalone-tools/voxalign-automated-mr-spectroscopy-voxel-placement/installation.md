@@ -8,7 +8,7 @@ description: Voxalign runs on a separate computer, not the scanner console
 Voxalign is available on github at [https://github.com/brown-bnc/voxalign](https://github.com/brown-bnc/voxalign)&#x20;
 {% endhint %}
 
-### Use voxalign on Tess (mac mini behind scanner operator)  \<RECOMMENDED>&#x20;
+## Use voxalign on Tess (mac mini behind scanner operator)  \<RECOMMENDED>&#x20;
 
 \*Make sure you log in as mrfuser\*
 
@@ -17,7 +17,7 @@ A voxalign environment is already created, so all you have to do is open a termi
 
 ***
 
-### Set up on your own computer:
+## Set up on your own computer:
 
 {% hint style="info" %}
 voxalign has so far only been tested on macOS
@@ -34,7 +34,7 @@ You'll also need to [install FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/install/
 
 ***
 
-### Now that your environment is activated, you can:
+## Now that your environment is activated, you can:
 
 * Calculate a voxel prescription that exactly matches a prescription from an earlier scan session on the same participant: [**run-voxalign**](multi-session-alignment.md)&#x20;
 * Calculate a voxel position(s) that matches an MNI coordinate(s) of your choice: [**mni-lookup**](center-on-mni-coordinate.md)&#x20;
