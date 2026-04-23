@@ -18,10 +18,8 @@ You can organize your data however you like, but it is helpful to collect the se
 2. Start voxalign by typing `run-voxalign`.
 3. Use the voxalign file selector to select your T1 and spectroscopy DICOMs. You can get everything but the session 2 T1 loaded in advance.
 4. Specify an output directory. I usually just create a folder called "output" in the participant's directory.&#x20;
-5. Once the session 2 T1 has been collected, [export it to scannershare](../../mrf-guides/exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.
-
-  <figure><img src="../../.gitbook/assets/voxalign_gui (1).png" alt="The VoxAlign GUI. The “Select Session 1 T1 DICOM” button allows users to search in their file explorer for the first session’s anatomical scan. Then, they can select one or more spectroscopy dicoms with the button “Add Session 1 Spectroscopy DICOM(s)”. Next, the session 2 anatomical scan, which was just acquired, is selected using the “Select Session 2 T1 DICOM” button. Finally, the path to the output folder is provided, and users can press “Run VoxAlign”. "><figcaption></figcaption></figure>
-
+5. Once the session 2 T1 has been collected, [export it to scannershare](../../mrf-guides/exporting-data-via-scannershare.md) and copy it to your participant/sess2 folder on Tess. Then select it in the voxalign GUI.  
+  <figure><img src="../../.gitbook/assets/voxalign_gui (1).png" alt="The VoxAlign GUI. The “Select Session 1 T1 DICOM” button allows users to search in their file explorer for the first session’s anatomical scan. Then, they can select one or more spectroscopy dicoms with the button “Add Session 1 Spectroscopy DICOM(s)”. Next, the session 2 anatomical scan, which was just acquired, is selected using the “Select Session 2 T1 DICOM” button. Finally, the path to the output folder is provided, and users can press “Run VoxAlign”. "><figcaption></figcaption></figure>  
 6. Verify that everything looks correct, then click **Run VoxAlign**
 
 
