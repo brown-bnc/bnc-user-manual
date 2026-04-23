@@ -32,7 +32,7 @@ interact -n 2 -t 01:00:00 -m 8g
 
 ## 2. Define variables
 
-#### Specify the version of xnat-tools you want to use. Any version from [v2.1.0](https://github.com/brown-bnc/xnat-tools/releases/tag/v2.1.0) onward will automatically run the most recent version of the BIDS validator.
+### Specify the version of xnat-tools you want to use. Any version from [v2.1.0](https://github.com/brown-bnc/xnat-tools/releases/tag/v2.1.0) onward will automatically run the most recent version of the BIDS validator.
 
 ```bash
 version=v2.3.0

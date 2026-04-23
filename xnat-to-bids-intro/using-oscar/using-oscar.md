@@ -79,7 +79,7 @@ version=v2.3.0
 
 #### &#x20;2.2 Set up paths
 
-**BIDS Root directory**
+##### BIDS Root directory
 
 This is the directory where data will be written. If the directory does not exist then it needs to be created.&#x20;
 
