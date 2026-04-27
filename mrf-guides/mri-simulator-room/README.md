@@ -10,11 +10,9 @@ The room is equipped with a mock scanner and audiovisual equipment that will hel
 
 1. BOLDscreen for stimulus display
 
-<figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeEEVyC8hd8tUukCK5F7ABlVRUY1RzvKzRYGZzjelfIKeF2TVFgS8kzYFk2KkVG_J3JIBcUEbYKs7rQwcGtCfWHbwN-3yG1ua_DtedNVqEqXW5VK75EqkVAz8AZXq88IPV3NExFHQQxeBzvfXRY4OL4agho?key=4obomWZsY6WguZTCVulLWA" alt="A BOLDscreen is located at the end of the simulator MRI bore, on a tripod so that it is visible to the participants inside the bore. " width="563"><figcaption><p>a BOLDscreen behind the simulator bore matches the setup at the scanner</p></figcaption></figure>
+    <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeEEVyC8hd8tUukCK5F7ABlVRUY1RzvKzRYGZzjelfIKeF2TVFgS8kzYFk2KkVG_J3JIBcUEbYKs7rQwcGtCfWHbwN-3yG1ua_DtedNVqEqXW5VK75EqkVAz8AZXq88IPV3NExFHQQxeBzvfXRY4OL4agho?key=4obomWZsY6WguZTCVulLWA" alt="A BOLDscreen is located at the end of the simulator MRI bore, on a tripod so that it is visible to the participants inside the bore. " width="563"><figcaption><p>a BOLDscreen behind the simulator bore matches the setup at the scanner</p></figcaption></figure>
 
 2.  BOLDscreen AVI switchbox
-
-
 
     <figure><img src="../../.gitbook/assets/BOLDScreenswitchbox.jpg" alt="The BOLDscreen 32 AVI switch box is turned on (indicated with the glowing blue button on the left) and the “SIM PC” option is selected. Additional output options are: NEW PC, AUX, and LINUX. " width="563"><figcaption><p>Just as in the scanner control room, a BOLDScreen AVI controls the display on the BOLDScreen.</p></figcaption></figure>
 

@@ -4,7 +4,7 @@ The Signal-to-Noise Ratio of an MRI scan offers important information on data qu
 
 A common metaphor for SNR is the sound of a busy party. If you imagine that you are speaking to your friend, you'll notice that you do not only hear your friend's voice- you also hear other people, music, footsteps, glassware, doors opening, and much more. In this example, your friend's voice is the signal that you wish to separate from the noise. If you took a recording of the sound of the party, there are processing methods you could use to separate the various sources of sound. However, it is also ideal to make recording itself as high quality as possible. This is done by neuroimagers by fine-tuning the MRI sequence so that it it is more sensitive to signal that you are interested in. For anatomical T1-weighted MRI, the sequence is optimized to be sensitive to brain matter. In a functional MRI (fMRI), it is sensitive to the BOLD response.&#x20;
 
-### SNR
+## SNR
 
 As previously defined, SNR is a number that describes the ratio of structured signal to random noise. In T1-weighted anatomical MRI, spatial SNR is calculated with this equation:
 
@@ -38,7 +38,7 @@ echo "$fname snr = $snr"
 
 If you run this script on Demodat2 subject 101 session 1, scan `sub-101_ses-01_acq-memprageRMS_T1w.nii`, this text prints at the very end of processing:
 
-```
+```console
 +++ 6736247 voxels survive the mask
 sub-101_ses-01_acq-memprageRMS_T1w snr = 96.97
 ```
@@ -49,7 +49,7 @@ If you then use the AFNI GUI to overlay the signal mask (\*.obj.nii) and the noi
 
 You will notice that the mask used to measure signal does not cover just the brain: it also includes sinuses, CSF, bone, and muscle. It is also common to measure signal using a brain/ROI mask, and then measure the background by masking one or multiple ROIs away from the head. There is no one universal method to calculate SNR, and the resources at the end of this tutorial offer various methods.&#x20;
 
-### TSNR
+## TSNR
 
 The Temporal Signal-to-Noise Ratio, or TSNR, is very similar to SNR except that the values are measured across time (in a multi-frame 3D+Time dataset). This means that the TSNR value for each voxel is the mean signal intensity over time, divided by the standard deviation of that voxel's time course.&#x20;
 
@@ -76,7 +76,7 @@ echo "$fname tsnr = $tsnr"
 
 If you run this script on Demodat2 subject 101, session 1, scan `sub-101_ses-01_task-resting_run-01_bold.nii`, this text prints at the very end of processing:
 
-```
+```console
 +++ 80151 voxels survive the mask
 sub-101_ses-01_task-resting_run-01_bold tsnr = 56.82
 ```
@@ -87,7 +87,7 @@ Open these files in the AFNI GUI to see how the resting state scan is transforme
 
 Both the SNR and TSNR scripts can be run individually, or they can be adapted to loop through multiple subjects/scans and print the values to a summary file.&#x20;
 
-### Additional background on SNR and TSNR:
+## Additional background on SNR and TSNR:
 
 [The mriquestions.com section titled: "MR Quality Control: SNR"](https://mriquestions.com/signal-to-noise.html)
 

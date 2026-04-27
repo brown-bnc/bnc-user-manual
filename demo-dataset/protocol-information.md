@@ -4,7 +4,7 @@ description: Explanation of BNC's Demo Dataset Protocol
 
 # Protocol Information
 
-### Protocol Design at the Scanner
+## Protocol Design at the Scanner
 
 This image shows the protocol as it appears on the scanner under the protocol tree. The order in which the scans are listed corresponds to the order in which they are run during scanning.  Additional descriptions for each of the scans can be found below.&#x20;
 
@@ -53,7 +53,7 @@ The dataset includes functional MRI scans for two simple tasks and a resting sta
 
 {% file src="../.gitbook/assets/Demodat2_Psychopy_Files.zip" %}
 
-**Resting State**
+#### Resting State
 
 * **Name at the scanner:** func-bold\_task-resting
 * **Description:** During this scan, there are no tasks involved. The subject is “resting” with their eyes open and looking at a fixation cross. The baseline brain activity is observed. Resting state scans are typically used to characterize functional connectivity between brain areas and to characterize the default mode network.

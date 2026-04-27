@@ -4,7 +4,7 @@
 
 ### Download the data using xnat2bids
 
-For this tutorial, we will use data from demodat2 subject 101 session 1. If you have not downloaded the demo dataset already, you can download this single subject and session data with this custom xnat2bids configuration file.&#x20;
+For this tutorial, we will use data from demodat2 subject 101 session 1. If you have not downloaded the demo dataset already, you can download this single subject and session data with this custom xnat2bids configuration file.
 
 ```toml
 # Configuring arguments here will override default parameters.
@@ -20,66 +20,67 @@ overwrite=true
 verbose=1
 ```
 
-The script will default to placing the BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<example-user>/projectname"` . **For the rest of this tutorial, we will call this path the "$bidsroot".**&#x20;
+The script will default to placing the BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<example-user>/projectname"` . **For the rest of this tutorial, we will call this path the "$bidsroot".**
 
 #### Launch the xnat2bids script
 
-* To use this configuration file and launch this xnat2bids job, open a terminal on the Oscar Open On Demand (OOD) virtual desktop.&#x20;
-* Install python and its necessary packages by typing `module load anaconda3` .&#x20;
+* To use this configuration file and launch this xnat2bids job, open a terminal on the Oscar Open On Demand (OOD) virtual desktop.
+* Install python and its necessary packages by typing `module load anaconda3` .
 * Copy and paste this configuration file into a text editor and save it wherever you would like (for example, in a scripts folder in your home directory). The file suffix MUST be .toml
-* The python script for xnat2bids is located in `/oscar/data/bnc/scripts` . To run xnat2bids from the directory where you saved your .toml configuration file, type the command `python /oscar/data/bnc/scripts/run_xnat2bids.py --config <your_config_filename>` . If you run this command from a different directory than where you saved your config file, make sure to give the full path to it.&#x20;
+* The python script for xnat2bids is located in `/oscar/data/bnc/scripts` . To run xnat2bids from the directory where you saved your .toml configuration file, type the command `python /oscar/data/bnc/scripts/run_xnat2bids.py --config <your_config_filename>` . If you run this command from a different directory than where you saved your config file, make sure to give the full path to it.
 * You will receive an email when both xnat2bids and the bids-validator launch and are completed.
-* Once the job is complete, you will see three output directories created at your bids root. &#x20;
-  * `xnat-export` contains the dicoms placed in folders named after the sequences at the scanner.&#x20;
-  * `bids` contains all subdirectories required in the BIDS specification. Here you will find your converted NIFTIs. There will be subfolders for the subject and session, containing the different sequence types (notably, `anat` and `mrs)`. This bids directory is also where the output of your preprocessing will go (in derivatives).&#x20;
-  * `logs` contains the log files from the xnat2bids job.&#x20;
+* Once the job is complete, you will see three output directories created at your bids root.
+  * `xnat-export` contains the dicoms placed in folders named after the sequences at the scanner.
+  * `bids` contains all subdirectories required in the BIDS specification. Here you will find your converted NIFTIs. There will be subfolders for the subject and session, containing the different sequence types (notably, `anat` and `mrs)`. This bids directory is also where the output of your preprocessing will go (in derivatives).
+  * `logs` contains the log files from the xnat2bids job.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 1.39.07 PM.png" alt="Folder tree showing the Demodat2_documentation directory structure, containing a bnc folder with study-demodat2, which includes bids (with derivatives, sourcedata, sub-101/ses-01 subfolders), logs, and xnat-export (with sub-101/ses-01)."><figcaption><p>The structure of output directories after running xnat2bids for sub-101 ses-01 of demodat2. In this case, the bids root is "Demodat2_documentation".  </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 1.39.07 PM.png" alt="Folder tree showing the Demodat2_documentation directory structure, containing a bnc folder with study-demodat2, which includes bids (with derivatives, sourcedata, sub-101/ses-01 subfolders), logs, and xnat-export (with sub-101/ses-01)."><figcaption><p>The structure of output directories after running xnat2bids for sub-101 ses-01 of demodat2. In this case, the bids root is "Demodat2_documentation".</p></figcaption></figure>
 
 ### Organizing the Spectroscopy Data According to the BIDS Specification (RDA Files)
 
-If you export your data with xnat2bids, the spectroscopy DICOMs collected at the scanner will be converted to NIFTIs and placed in a BIDS directory (along with your T1 anatomical files and all other sequences/runs). However, there are additional file types acquired, which cannot be sent to XNAT by the scanner. These file types (RDA and twix files) must be saved to a drive and manually uploaded to Oscar.&#x20;
+If you export your data with xnat2bids, the spectroscopy DICOMs collected at the scanner will be converted to NIFTIs and placed in a BIDS directory (along with your T1 anatomical files and all other sequences/runs). However, there are additional file types acquired, which are not automatically sent to XNAT by the scanner. These file types (RDA and twix files) can either be [uploaded to XNAT with our custom webapp](../../xnat/uploading-data/uploading-raw-spectroscopy-data.md) (and then exported along with the DICOMs by xnat2bids) or saved to a drive and manually uploaded to Oscar.&#x20;
 
-#### Place all necessary files into sourcedata&#x20;
+#### Place all necessary files into sourcedata
 
 {% hint style="info" %}
-The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started.html#how-to-organize-your-raw-data) notes that when performing MRS preprocessing on data acquired on a Siemens MRI, it is absolutely necessary to separate the dicoms/RDAs into separate folders based on scan.&#x20;
+The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started.html#how-to-organize-your-raw-data) notes that when performing MRS preprocessing on data acquired on a Siemens MRI, it is absolutely necessary to separate the dicoms/RDAs into separate folders based on scan.
 {% endhint %}
 
-* You will find that after running xnat2bids, there are spectroscopy subfolders called `mrs` in the `sourcedata` directory. In that subfolder you will find one subject/session's mrs dicoms. There are no further subfolders automatically created for each spectroscopy run , so we will need to manually make them (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.&#x20;
+* You will find that after running xnat2bids, there are spectroscopy subfolders called `mrs` in the `sourcedata` directory. In that subfolder you will find one subject/session's MRS DICOMs. If you also uploaded your .dat and .rda files to XNAT, each DICOM will also have a corresponding .tar.gz archive that contains those raw data files (e.g. sub-101\_ses-01\_acq-PRESS\_voi-Lacc\_mrsref\_rawMRSfiles.tar.gz).&#x20;
+* There are no further subfolders automatically created for each spectroscopy run , so we will need to manually make them (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.&#x20;
 * In this example there was only one VOI, the left anterior cingulate cortex (Lacc). Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 2.08.57 PM.png" alt="Folder tree showing Demodat2_documentation directory structure. The bids folder is expanded to show sourcedata containing sub-101/ses-01, which holds anat, beh, dwi, fmap, func, and mrs (with Lacc_mrsref and Lacc_svs subfolders). Bids also contains a separate sub-101 folder. Other top-level folders include logs and xnat-export."><figcaption></figcaption></figure>
 
-* Move the dicoms into their respective subfolders (Lacc\_mrsref and Lacc\_svs).
-* Then copy the corresponding RDA and twix files (saved to your drive via scannershare).&#x20;
+* Move the DICOMs into their respective subfolders (Lacc\_mrsref and Lacc\_svs).
+* Then copy in the corresponding RDA and twix files (either saved to your drive via scannershare or in a tar.gz archive from xnat2bids). To extract the raw data files from a .tar.gz archive, you can run `tar -xf sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref_rawMRSfiles.tar.gz`  in a terminal.
 * You can download the RDA files for sub-101 ses-01 of demodat2 here:&#x20;
 
 {% file src="../../.gitbook/assets/101.MR.BNCDEMODAT2.mrsref.rda.zip" %}
 
 {% file src="../../.gitbook/assets/101.MR.BNCDEMODAT2.svs.rda.zip" %}
 
-* For the sake of this tutorial you do not need the twix files, but typically you should see three files in each sourcedata mrs subdirectory:  1) the dicom, 2) the RDA, and 3) the twix (.dat).&#x20;
+* For the sake of this tutorial you do not need the twix files, but typically you should see three files in each sourcedata mrs subdirectory: 1) the dicom, 2) the RDA, and 3) the twix (.dat).
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 3.40.51 PM.png" alt=""><figcaption><p>Navigate into one of the <code>mrs</code> subdirectories (in <code>sourcedata</code>) and list the contents. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 3.40.51 PM.png" alt=""><figcaption><p>Navigate into one of the <code>mrs</code> subdirectories (in <code>sourcedata</code>) and list the contents.</p></figcaption></figure>
 
 <details>
 
-<summary>Manually Organizing Spectroscopy Data in BIDS (without using xnat2bids) </summary>
+<summary>Manually Organizing Spectroscopy Data in BIDS (without using xnat2bids)</summary>
 
-Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.&#x20;
+Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.
 
 #### Place all necessary files into sourcedata
 
 * As explained in the section above, mrs data must be organized into separate subfolders within sourcedata in order to be used by Osprey
-* Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
+* Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 2.08.57 PM.png" alt=""><figcaption></figcaption></figure>
 
 * Place the scan's dicoms inside the individual `mrs` subdirectories
-* #### Convert the Spectroscopy dicoms into NIFTIs
+* **Convert the Spectroscopy dicoms into NIFTIs**
 * spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
-  * From within the `mrs-mrsref_acq-PRESS_voi-Lacc`  directory, type:
+  * From within the `mrs-mrsref_acq-PRESS_voi-Lacc` directory, type:
 
 ```bash
 spec2nii dicom -j -f sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref -o <$bidsroot>/bnc/study-demodat2/bids/sub-101/ses-01/mrs/ 1.3.12.2.1107.5.2.43.67050.30000025030414003908900000017-24-1-zkc899.dcm
@@ -88,39 +89,39 @@ spec2nii dicom -j -f sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref -o <$bidsroot>/bnc
 {% hint style="info" %}
 **More information on the spec2nii command:**
 
-**spec2nii:** the name of the command used for MRS dicom to nifti conversion. This is built into FSL but can also be downloaded on [the spec2nii github](https://github.com/wtclarke/spec2nii).&#x20;
+**spec2nii:** the name of the command used for MRS dicom to nifti conversion. This is built into FSL but can also be downloaded on [the spec2nii github](https://github.com/wtclarke/spec2nii).
 
-**dicom:** indicates that the file handed to spec2nii is a dicom.&#x20;
+**dicom:** indicates that the file handed to spec2nii is a dicom.
 
-**-j:** specifies the creation of a .json sidecar along with the NIFTI. This is necessary for BIDS compatibility.&#x20;
+**-j:** specifies the creation of a .json sidecar along with the NIFTI. This is necessary for BIDS compatibility.
 
-**-f:** specifies the output file name. This file name was chosen based on the [BIDS recommendation](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). The "\*\_mrsref" suffix indicates that this is the water reference scan.&#x20;
+**-f:** specifies the output file name. This file name was chosen based on the [BIDS recommendation](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). The "\*\_mrsref" suffix indicates that this is the water reference scan.
 
 Lastly, include the name of the dicom file which will be converted.
 {% endhint %}
 
-* Although this step is not necessary in order to run a preprocessing pipeline using Osprey, it is recommended so that your data is consistent with the BIDS specification.&#x20;
+* Although this step is not necessary in order to run a preprocessing pipeline using Osprey, it is recommended so that your data is consistent with the BIDS specification.
 
 #### Unzip the T1w Anatomical Scans So They Can Be Read by Osprey
 
 * Osprey requires an unzipped NIFTI file for your T1w anatomical input. xnat2bids outputs a zipped NIFTI which can be found here: `$bidsroot/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w.nii.gz` .
-* Navigate to the directory containing this file and type this command:&#x20;
+* Navigate to the directory containing this file and type this command:
 
 ```bash
 gunzip sub-101_ses-01_acq-memprageRMS_T1w.nii.gz
 ```
 
-* You should now see an unzipped NIFTI in this directory (`sub-101_ses-01_acq-memprageRMS_T1w.nii)` .&#x20;
+* You should now see an unzipped NIFTI in this directory (`sub-101_ses-01_acq-memprageRMS_T1w.nii)` .
 
 </details>
 
 #### Prepare Your Output Directories
 
-In your BIDS `derivatives` folder, make a new folder called `osprey` . Within that, make subdirectories for your subject (`sub-101`) and session (`ses-01`). You will save your Osprey outputs here.&#x20;
+In your BIDS `derivatives` folder, make a new folder called `osprey` . Within that, make subdirectories for your subject (`sub-101`) and session (`ses-01`). You will save your Osprey outputs here.
 
 ### Installing Osprey on Oscar
 
-* In the OOD Virtual Desktop, download SPM12 (not 25) to your home directory from the [SPM github](https://github.com/spm/spm12) and unzip the file. The SPM site offers [instructions on downloading SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/).&#x20;
+* In the OOD Virtual Desktop, download SPM12 (not 25) to your home directory from the [SPM github](https://github.com/spm/spm12) and unzip the file. The SPM site offers [instructions on downloading SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/).
 
 ```bash
 unzip spm12.zip
@@ -132,7 +133,7 @@ unzip spm12.zip
 git clone https://github.com/schorschinho/osprey.git 
 ```
 
-* It is important that both Osprey and SPM12 are located in the same directory (even if you choose to save them into something other than `/oscar/home/<example-username>` ).&#x20;
+* It is important that both Osprey and SPM12 are located in the same directory (even if you choose to save them into something other than `/oscar/home/<example-username>` ).
 * To use Osprey, you need to open Matlab:
 
 ```bash
@@ -147,7 +148,7 @@ matlab-threaded
     * GUI Layout Toolbox
     * Widgets Toolbox
     * Widgets Toolbox - Compatibility Support
-* Once the Matlab interface pops up, you will want to add SPM12, Osprey, and your project folder to your path. Do NOT add SPM12 subfolders to your Matlab path, this will cause Osprey to fail. Add only the top-level SPM12 directory. You can do this by copy and pasting the following commands into the matlab terminal (and filling in your username and $bidsroot).&#x20;
+* Once the Matlab interface pops up, you will want to add SPM12, Osprey, and your project folder to your path. Do NOT add SPM12 subfolders to your Matlab path, this will cause Osprey to fail. Add only the top-level SPM12 directory. You can do this by copy and pasting the following commands into the matlab terminal (and filling in your username and $bidsroot).
 
 ```matlab
 addpath('/oscar/home/example-username/spm12')
@@ -155,7 +156,7 @@ addpath(genpath('/oscar/home/example-username/osprey'))
 addpath(genpath('/oscar/home/example-username/$bidsroot'))
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.09.40 AM.png" alt="Adding paths to spm12, osprey, and your bids directory on Matlab. "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.09.40 AM.png" alt="Adding paths to spm12, osprey, and your bids directory on Matlab."><figcaption></figcaption></figure>
 
 ## Using Osprey to Preprocess your Data
 
@@ -169,34 +170,34 @@ Osprey
 
 * Click “Create job” and the “Interactive Osprey job file generator” will pop up on your screen.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.24.58 AM.png" alt="The Osprey Startup menu contains various options, including: &#x22;Create Job&#x22;, &#x22;Load Job file&#x22;, &#x22;Load MRS Cont file&#x22;, and &#x22;Exit&#x22;. Select &#x22;Create Job&#x22;. "><figcaption><p>Type 'Osprey' into the command window of MATLAB to open the Osprey Startup window. Then press "Create Job" to open the jobfile generator. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.24.58 AM.png" alt="The Osprey Startup menu contains various options, including: &#x22;Create Job&#x22;, &#x22;Load Job file&#x22;, &#x22;Load MRS Cont file&#x22;, and &#x22;Exit&#x22;. Select &#x22;Create Job&#x22;."><figcaption><p>Type 'Osprey' into the command window of MATLAB to open the Osprey Startup window. Then press "Create Job" to open the jobfile generator.</p></figcaption></figure>
 
 * How you specify information in the jobfile generator will depend on your sequence type and what files you want to extract. This example will walk you through an unedited PRESS acquisition.
   * In section 1, "Specify Sequence Information”:
-    * &#x20;Do not change any of the input values.
+    * Do not change any of the input values.
   * In section 2, “Specify Data Handling and Modeling Options”:
-    * Keep all input values the same.&#x20;
-    * Check off the “Save PDF” box.&#x20;
+    * Keep all input values the same.
+    * Check off the “Save PDF” box.
     * Click “basis set folder” and select the appropriate basis set folder from the Osprey package: `/oscar/home/username/osprey/fit/basissets/3T/siemens/unedited/press/30`
     * Now, click “basis set file” and select the appropriate basis set file (.mat) from this folder: `/oscar/home/username/osprey/fit/basissets/3T/siemens/unedited/press/30/basis_siemens_press30.mat`
       * Note: Do not use any basis sets provided by LCModel. The file type (.basisset) is not compatible with Osprey, as Osprey requires a matlab file input (.m).
   * In section 3, “Specify MRS and Anatomical Imaging Files":
     * Click “MRS data” and select the metabolite (svs) RDA file: `$bidsroot/bnc/study-demodat2/bids/sourcedata/sub-101/ses-01/mrs/Lacc_svs/*.RDA`
     * Click “H2O Reference” and select the water reference RDA file: `$bidsroot/bnc/study-demodat2/bids/sourcedata/sub-101/ses-01/mrs/Lacc_mrsref/*.RDA`
-    * &#x20;Click “T1 Data (nifti \*.nii)” and select your T1-weighted image that has been converted to NIFTI and unzipped: `$bidsroot/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w.nii`
+    * Click “T1 Data (nifti \*.nii)” and select your T1-weighted image that has been converted to NIFTI and unzipped: `$bidsroot/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w.nii`
     * Do not input data for “H2O Short TE” or “Metabolite-Nulled” or select the “DICOM T1 data (GE only)” button.
   * In section 4, “Specify Output Folder":
     * Click “Output Folder” and select the subject/session folder that you created in the “derivatives” folder of your project: `$bidsroot/bnc/study-demodat2/bids/derivatives/osprey/sub-101/ses-01/`
     * Change the “Job Name” to your subject ID and the date: “sub101ses01mmddyyyy”.
       * You do not have to input anything for the “Stat csv File”.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 10.55.32 AM.png" alt="The “Interactive Osprey job file generator” pop up, where users set up their osprey job. Multiple entries are highlighted, including: “basis set folder”, “basis set file”,  “MRS Data”, “H20 Reference”, “T1 Data (nifti *.nii)”, “Job Name”, and unchecking the “Save PDF” box. Once those entries are filled, press ‘CREATE JOB”. "><figcaption><p>The jobfile generator, with necessary fields underlined in red. After filling in each field with your specific folders/file information, press the "Create Job" button on the bottom left. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 10.55.32 AM.png" alt="The “Interactive Osprey job file generator” pop up, where users set up their osprey job. Multiple entries are highlighted, including: “basis set folder”, “basis set file”,  “MRS Data”, “H20 Reference”, “T1 Data (nifti *.nii)”, “Job Name”, and unchecking the “Save PDF” box. Once those entries are filled, press ‘CREATE JOB”."><figcaption><p>The jobfile generator, with necessary fields underlined in red. After filling in each field with your specific folders/file information, press the "Create Job" button on the bottom left.</p></figcaption></figure>
 
 * Click the “CREATE JOB” button at the bottom.
   * It will take a few seconds to load, but the Osprey window should then pop up.
 * On the left hand side of the screen, click “Save MRS Cont". This allows you to save the container so you don’t have to re-do the job file inputs if you want to open this participant in Osprey again. It will save as a matlab script file (.m) with the name specified in the "Job Name" field: `$bidsroot/bnc/study-demodat2/bids/derivatives/osprey/sub-101/ses-01/sub101ses01mmddyyyy.m`
 
-### Walking through the Osprey Preprocessing Pipeline&#x20;
+### Walking through the Osprey Preprocessing Pipeline
 
 #### Load Data
 
@@ -204,19 +205,19 @@ Osprey
   * This will output the subspectra from your RDA file. Because the data in the RDA file is already coil combined, there will only be one mean subspectrum that has already been preprocessed.
   * This output can be seen under the “Raw” tab at the top at any point when Osprey is running your container.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 10.55.47 AM.png" alt="The &#x22;Raw&#x22; tab of the Osprey GUI depicts a raw (unprocessed) metabolite data plot. "><figcaption><p>Output of the 'Load Data' Step can be viewed in the "Raw" tab.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 10.55.47 AM.png" alt="The &#x22;Raw&#x22; tab of the Osprey GUI depicts a raw (unprocessed) metabolite data plot."><figcaption><p>Output of the 'Load Data' Step can be viewed in the "Raw" tab.</p></figcaption></figure>
 
 {% hint style="info" %}
-Steps appearing in blue on the left hand panel are available to run. Once you have completed a step, it will turn gray. As you progress through the the pipeline, new steps will become available. For example, you cannot run segment until you have already run CoRegister.&#x20;
+Steps appearing in blue on the left hand panel are available to run. Once you have completed a step, it will turn gray. As you progress through the the pipeline, new steps will become available. For example, you cannot run segment until you have already run CoRegister.
 {% endhint %}
 
 #### Process Data
 
-* Click the “Process data” button (which should now be in blue letters because the Load data step ran correctly). This step is meant to show you how the data are preprocessed via alignment, averaging, and accounting for chemical shift drift.&#x20;
+* Click the “Process data” button (which should now be in blue letters because the Load data step ran correctly). This step is meant to show you how the data are preprocessed via alignment, averaging, and accounting for chemical shift drift.
   * Again, because our data is already coil combined, you will only see one averaged spectrum under “Pre-alignment,” “Post-alignment,” and “Aligned and averaged”- they will all be the same original spectrum you saw on the “Raw” tab.
   * This output can be seen under the “Processed” tab at the top.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.05.58 AM.png" alt="The “Processed” tab of the Osprey GUI shows various plots of the data: “Pre-alignment”, “Post-alignment”, and “Aligned and averaged”. "><figcaption><p>Output of the "Process Data" step, viewed in the "Processed" tab. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.05.58 AM.png" alt="The “Processed” tab of the Osprey GUI shows various plots of the data: “Pre-alignment”, “Post-alignment”, and “Aligned and averaged”."><figcaption><p>Output of the "Process Data" step, viewed in the "Processed" tab.</p></figcaption></figure>
 
 #### Model data
 
@@ -225,15 +226,15 @@ Steps appearing in blue on the left hand panel are available to run. Once you ha
   * This data exists under the “LCmodel” tab at the top of the screen.
   * If you want to check that your water reference file looks correct, go to the bottom left hand corner and click the “ref” tab to see.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.08 AM.png" alt="The metab fit plot, viewed in the &#x22;LC Model&#x22; tab of the Osprey GUI. "><figcaption><p>Output of the 'Model Data" step, viewed in the "LC Model" Tab. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.08 AM.png" alt="The metab fit plot, viewed in the &#x22;LC Model&#x22; tab of the Osprey GUI."><figcaption><p>Output of the 'Model Data" step, viewed in the "LC Model" Tab.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.17 AM.png" alt="The ref fit plot, viewed in the &#x22;LC Model&#x22; tab of the Osprey GUI. "><figcaption><p>The LC Model "ref" tab, accessed via the bottom left of the graph. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.17 AM.png" alt="The ref fit plot, viewed in the &#x22;LC Model&#x22; tab of the Osprey GUI."><figcaption><p>The LC Model "ref" tab, accessed via the bottom left of the graph.</p></figcaption></figure>
 
 #### CoRegister
 
-* Next, click the “CoRegister” button. This step allows you to coregister the MRS data to the anatomical data, to see where your voxel was placed on the T1-weighted image in the coronal, axial, and horizontal planes.&#x20;
+* Next, click the “CoRegister” button. This step allows you to coregister the MRS data to the anatomical data, to see where your voxel was placed on the T1-weighted image in the coronal, axial, and horizontal planes.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.42 AM.png" alt="The “Cor/Seg” tab of the Osprey GUI shows the MRS voxel overlaid on the T1w anatomical scan. "><figcaption><p>Output of the "Coregister" step, accessed via the "Cor/Seg" tab. Here you can view the MRS voxel placement (Lacc) overlaid on the T1w scan. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-04-02 at 11.06.42 AM.png" alt="The “Cor/Seg” tab of the Osprey GUI shows the MRS voxel overlaid on the T1w anatomical scan."><figcaption><p>Output of the "Coregister" step, accessed via the "Cor/Seg" tab. Here you can view the MRS voxel placement (Lacc) overlaid on the T1w scan.</p></figcaption></figure>
 
 #### Segment
 
@@ -241,25 +242,25 @@ Steps appearing in blue on the left hand panel are available to run. Once you ha
   * Now the coregistration image and segmentation image will both appear on the screen.
   * This data will exist under the “Cor/Seg” tab at the top of the GUI.
 
-<figure><img src="../../.gitbook/assets/Screenshot 2025-06-30 at 3.34.23 PM.png" alt="After running the “Segment” step, the “Cor/Seg” tab will update to show the previous coregistration image, as well as a new segmentation image. The segmentation view of the brain shows the voxel fractions of gray matter, white matter, and CSF. "><figcaption><p>Output of the "Segment" step. Again, this can be viewed in the same "Cor/Seg" tab as the previous step. </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2025-06-30 at 3.34.23 PM.png" alt="After running the “Segment” step, the “Cor/Seg” tab will update to show the previous coregistration image, as well as a new segmentation image. The segmentation view of the brain shows the voxel fractions of gray matter, white matter, and CSF."><figcaption><p>Output of the "Segment" step. Again, this can be viewed in the same "Cor/Seg" tab as the previous step.</p></figcaption></figure>
 
 {% hint style="info" %}
-This step will fail if it is handed an unzipped NIFTI (\*.nii.gz) for the T1w anatomical scan. This may happen for two reasons: 1) You may have entered the zipped NIFTI in the job file generator by mistake, in which case you must remake the job file and start over. 2) There seems to be a bug in Osprey, where the T1 anatomical NIFTI is sometimes automatically deleted after the "CoRegistration" step. If you are seeing that your Segmentation step is failing, and you put the correct file in the job file generator, try looking inside your `anat` directory. If the \*.nii file is missing, you can unzip the \*.nii.gz file, go back into the Osprey GUI, and press "Segmentation" again.&#x20;
+This step will fail if it is handed an unzipped NIFTI (\*.nii.gz) for the T1w anatomical scan. This may happen for two reasons: 1) You may have entered the zipped NIFTI in the job file generator by mistake, in which case you must remake the job file and start over. 2) There seems to be a bug in Osprey, where the T1 anatomical NIFTI is sometimes automatically deleted after the "CoRegistration" step. If you are seeing that your Segmentation step is failing, and you put the correct file in the job file generator, try looking inside your `anat` directory. If the \*.nii file is missing, you can unzip the \*.nii.gz file, go back into the Osprey GUI, and press "Segmentation" again.
 {% endhint %}
 
 #### Quantify
 
 Finally, click the “Quantify” button. This step provides your final metabolite values that are corrected for water, T1 & T2 relaxation constants, and CSF.
 
-* Under the “Quantified” tab, you will see a table of your metabolite values with tCr referencing, raw water scaling, CSF and water scaling, and tissue correction and water scaling using the Gasparovic method. To choose which type of corrected metabolite values are best for you, see the Osprey paper by [Oeltzschner et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/32603810/).&#x20;
+* Under the “Quantified” tab, you will see a table of your metabolite values with tCr referencing, raw water scaling, CSF and water scaling, and tissue correction and water scaling using the Gasparovic method. To choose which type of corrected metabolite values are best for you, see the Osprey paper by [Oeltzschner et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/32603810/).
   * These results are in individual tsv files in the `QuantifyResults` folder in `$bidsroot/bnc/study-demodat2/bids/derivatives/osprey/sub-101/ses-01/` .
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-30 at 3.54.34 PM.png" alt=""><figcaption><p>Table of metabolite values with various forms of scaling/correcting, viewed in the "Quantified" tab of the Osprey GUI.</p></figcaption></figure>
 
 {% hint style="info" %}
-A quick note on the "Quantified" tab on Oscar:&#x20;
+A quick note on the "Quantified" tab on Oscar:
 
-In January 2026, the modules of Oscar were updated and the 2025 version of matlab became available. This tutorial was then updated to reflect those changes. However, there are small incompatibilities which affect the GUI: notably, the entries listed in the metabolite table shown above. If you are having trouble viewing the metabolite values in the Osprey GUI, you can find them in the output tsv files.&#x20;
+In January 2026, the modules of Oscar were updated and the 2025 version of matlab became available. This tutorial was then updated to reflect those changes. However, there are small incompatibilities which affect the GUI: notably, the entries listed in the metabolite table shown above. If you are having trouble viewing the metabolite values in the Osprey GUI, you can find them in the output tsv files.
 {% endhint %}
 
 #### Overview
@@ -267,4 +268,4 @@ In January 2026, the modules of Oscar were updated and the 2025 version of matla
 * Finally, in the “Overview” tab you can view the mean spectra across all datasets (if you have multiple rda files) and individual quantification tables.
 * Save your MRS container by clicking “Save MRSCont” before you exit out of Osprey.
 * If you did not select “Save PDF” in step 2 of the “Interactive Osprey jobfile generator,” and would like the images of your spectrum and your coregistered voxel, you can click the “Save PDF” button in the upper righthand corner to export it and it will be in the `Figures` folder under your subject/session folder in `derivatives`.
-* Further tutorials of the GUI can be found on the [Osprey website.](https://schorschinho.github.io/osprey/)&#x20;
+* Further tutorials of the GUI can be found on the [Osprey website.](https://schorschinho.github.io/osprey/)

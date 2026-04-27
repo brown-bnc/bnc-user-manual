@@ -6,15 +6,15 @@ There are two easy ways to add new assets
 
 ***
 
-### Adding Custom Videos
+## Adding Custom Videos
 
-#### Option 1: Drop into the Videos Folder
+### Option 1: Drop into the Videos Folder
 
 1. Navigate to the videos assets directory `C:\Users\MRF Users\AppData\Roaming\MotionTrainer\assets\videos`
 2. Add your video files here
 3. Your video will automatically appear in the **Video File** dropdown on the Settings Page
 
-#### Option 2: Use File Browser in the Settings Page
+### Option 2: Use File Browser in the Settings Page
 
 1. On the **Settings Page**, look for the “Choose File” button next to **Video File**
 2. Click to open a file browser
@@ -22,7 +22,7 @@ There are two easy ways to add new assets
 
 ***
 
-### Adding a Custom Fixation Graphic
+## Adding a Custom Fixation Graphic
 
 To use a custom image instead of the default fixation graphic:
 
@@ -32,7 +32,7 @@ To use a custom image instead of the default fixation graphic:
 
 ***
 
-### Supported File Types
+## Supported File Types
 
 * **Videos:** `.mp4`
 * **Images:** `.png`, `.jpg`, `.jpeg`, `.svg`
