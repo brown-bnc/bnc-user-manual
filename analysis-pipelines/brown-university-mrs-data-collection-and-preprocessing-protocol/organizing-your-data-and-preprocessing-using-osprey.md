@@ -69,7 +69,7 @@ The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started
 
 Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.&#x20;
 
-#### Create subfolders&#x20;
+#### Place all necessary files into sourcedata&#x20;
 
 * As explained in the section above, mrs data must be organized into separate subfolders within sourcedata in order to be used by Osprey
 * Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
