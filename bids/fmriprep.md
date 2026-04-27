@@ -15,6 +15,7 @@ description: >-
 We keep up-to-date Singularity images for `fmriprep` for the community. (Look in `/oscar/data/bnc/simgs/nipreps/` to see which versions we currently have available.) In order to run `fmriprep` on Oscar, you'll need to write a batch script. Here is an example:
 
 {% code title="demodat_fmriprep_example.sh -- Filename and not part of the script!" %}
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -45,6 +46,7 @@ singularity run --cleanenv                                         \
   --omp-nthreads 16 --nthreads 16 --stop-on-first-crash
 
 ```
+
 {% endcode %}
 
 ### ✋Understanding the batch script
@@ -57,7 +59,7 @@ singularity run --cleanenv                                         \
 
 ## 2. Run the batch script
 
-```
+```bash
 cd /path/to/sbatch/script
 sbatch demodat_fmriprep_example.sh
 ```
@@ -87,7 +89,7 @@ If you wish to use a version not available under `/oscar/data/bnc/simg/nipreps`,
 
 To build the image, you can run:
 
-```
+```bash
 version=22.0.0
 singularity build fmriprep-${version}.sif docker://nipreps/fmriprep:${version}
 ```

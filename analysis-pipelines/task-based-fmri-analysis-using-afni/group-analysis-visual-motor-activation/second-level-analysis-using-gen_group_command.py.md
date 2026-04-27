@@ -8,7 +8,7 @@ In some studies, researchers might compare different groups (e.g., males vs. fem
 Since we are working with a low n in this tutorial, it is not unusual to observe very few clusters that survive thresholding at the group level. This script is meant to serve as an example and should be adapted for a larger dataset.&#x20;
 {% endhint %}
 
-### The Full Script&#x20;
+## The Full Script&#x20;
 
 Below you can find the full group analysis preprocessing example script.&#x20;
 
@@ -18,7 +18,7 @@ Below you can find the full group analysis preprocessing example script.&#x20;
 
 To run this script, change your email and bids path, and then type: sbatch group\_analysis.sh
 
-```
+```bash
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -c 8
@@ -203,9 +203,9 @@ exit 0
 
 </details>
 
-### Understanding the Script
+## Understanding the Script
 
-#### Overview
+### Overview
 
 AFNI provides an example script ([s.nimh\_group\_level\_02\_mema\_bisided.tcsh](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/_downloads/5103e80a1c9db27d1b69bf62acc51f2e/s.nimh_group_level_02_mema_bisided.tcsh)) that accepts output from afniproc.py, and puts that output through a series of steps to run group analysis. The general workflow is as follows:&#x20;
 
@@ -217,7 +217,7 @@ AFNI provides an example script ([s.nimh\_group\_level\_02\_mema\_bisided.tcsh](
 
 Here we provide a version of this script that is written in bash and intended to be launched as a batch script on Oscar.&#x20;
 
-#### Step 1: Set up paths and parameters&#x20;
+### Step 1: Set up paths and parameters&#x20;
 
 ```bash
 #!/bin/bash
@@ -269,7 +269,7 @@ cd "$outdir"
 
 ```
 
-#### Step 2: Voxelwise modeling via gen\_group\_command.py
+### Step 2: Voxelwise modeling via gen\_group\_command.py
 
 Similar to how afniproc.py generates a processing script per subject, AFNI's [gen\_group\_command.py](https://afni.nimh.nih.gov/pub/dist/doc/program_help/gen_group_command.py.html) generates group analyses scripts. We will be using this meta-script to write a group analysis command that uses `3dMEMA`.&#x20;
 
@@ -313,7 +313,7 @@ echo "++ Finished MEMA"
 
 gen\_group\_command.py generates the group analysis script in tcsh, but does not execute it. Following file creation, it is launched via the line `tcsh -ef "${outdir}/${script_mema}"`
 
-#### Step 2: Make a group mask using AFNI's 3dmask\_tool
+### Step 3: Make a group mask using AFNI's 3dmask\_tool
 
 Next, AFNI's 3dmask\_tool is used to collect all subject-level masks created during single-subject processing, and combine them into one group level intersection mask. This mask will be used in subsequent steps.
 
@@ -331,7 +331,7 @@ echo "++ Created group mask"
 
 ```
 
-#### Step 3: Calculate the average smoothness&#x20;
+### Step 4: Calculate the average smoothness&#x20;
 
 Along with the mask, group‐level cluster correction in AFNI (via 3dClustSim) requires estimates of spatial smoothness. These estimates come from each subject’s residuals and must be averaged across subjects.
 
@@ -368,7 +368,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
    * Finds the REML ACF line inside each subject’s `blur_est` file.
    *   Each subject’s `blur_est` file contains several lines; we want the one that includes REML ACF measurements:
 
-       ```
+       ```bash
        /path/.../blur_est.sub-101.1D: 0.727118 2.91228 10.7089 7.6267   # err_reml ACF blur estimates
        ```
 
@@ -378,18 +378,19 @@ echo "++ Group average ACF params: ${blur_est[@]}"
 2. `awk -F':' '{print $2}'`
    *   Removes the filename prefix and keeps just:
 
-       ```
+       ```text
        0.727118 2.91228 10.7089 7.6267
        ```
+       
 3. `awk '{print $1, $2, $3}'`
    * Takes only the first 3 numbers, which are all that's needed by 3dClustSim.
    * The resulting variable `blur_est_lines` is:
 
-```
-0.727118 2.91228 10.7089
-0.746814 2.93786 10.8411
-0.754144 2.9418 10.3588
-```
+    ```text
+    0.727118 2.91228 10.7089
+    0.746814 2.93786 10.8411
+    0.754144 2.9418 10.3588
+    ```
 
 4. A check is included at the end ("`if [[ -z "$blur_est_lines" ]]; then` ...") to ensure that the values were properly parsed from the `blur_est*` file.&#x20;
 
@@ -402,7 +403,7 @@ echo "++ Group average ACF params: ${blur_est[@]}"
 
 1. A new variable is created called `blur_est`, which contains the mean of each ACF parameter across subjects. This will be used in 3dClustSim.
 
-#### Step 4: Cluster Simulations using 3dClustSim
+### Step 5: Cluster Simulations using 3dClustSim
 
 [3dClustSim](https://afni.nimh.nih.gov/pub/dist/doc/program_help/3dClustSim.html) is AFNI’s tool for estimating family-wise error (FWE)–corrected cluster-size thresholds based on the spatial smoothness of your data. This is done using Monte Carlo simulations, to determine how large a cluster must be to be unlikely to appear by chance, given:
 
@@ -473,7 +474,7 @@ echo "++ Stat threshold CHX: $voxstat_thr_chx"
 echo "++ Stat threshold Keypress: $voxstat_thr_kp"
 ```
 
-#### Step 6: Make thresholded cluster maps
+### Step 6: Make thresholded cluster maps
 
 This final section produces thresholded activation maps, using many of the variables and outputs defined in previous code. Notably, it uses 1) the voxelwise threshold, 2) the cluster-size threshold, 3) test sidedness (e.g., bisided), and 4) the neighborhood definition (NN1, NN2, NN3).&#x20;
 
@@ -524,7 +525,7 @@ echo -e "\n++ DONE with group-level stats and clustering! ++\n"
 exit 0
 ```
 
-#### View the Output
+### View the Output
 
 First, let's view the output of 3dMEMA. In a terminal, navigate to the output directory (`$bids_dir/derivatives/afni/GROUP_ANALYSIS`) and open afni by typing `afni` on the command line. Using the afni GUI, select `MNI152_2009_template.nii.gz` as the Underlay, and `mema_results.nii.gz` as the Overlay.&#x20;
 

@@ -4,7 +4,7 @@
 
 Running xnat2bids on the command line in Oscar will download the data we need, convert it to BIDS format, and run the BIDS validator to check for any issues. We will be using the [xnat-tools Oscar utility script](../../../xnat-to-bids-intro/using-oscar/oscar-utility-script/). The Demodat2 dataset has 3 subjects with 2 sessions each. We will be exporting this entire project.&#x20;
 
-#### Create a configuration file&#x20;
+### Create a configuration file&#x20;
 
 The xnat2bids configuration .toml file contains information that xnat-tools needs to download the correct data and put it where we want. Name this file x2b\_demodat2\_config.toml and place it wherever you'd like. Paste the following into your .toml file, and change `mail-user` to your email address. The script will default to placing the downloaded and BIDS-converted data in a folder called "bids-export" in your home directory; if you'd like to change this location, add a new line at the bottom with your desired path, i.e.: `bids_root="/oscar/home/<yourusername>/data/<projectname>/xnat-export"`. Make sure to save this .toml file when you are done editing.&#x20;
 
@@ -21,13 +21,14 @@ project="BNC_DEMODAT2"
 verbose=2
 ```
 
-#### Run the xnat2bids command
+### Run the xnat2bids command
 
 To run the xnat-tools export and BIDS conversion, ensure that you are working in a terminal in the same directory where you stored this .toml file (and if not, then give the full path to the .toml file in your command). On the command line, type:
 
-`module load anaconda3`
-
-`python /oscar/data/bnc/scripts/run_xnat2bids.py --config x2b_demodat2_config.toml`
+```bash
+module load anaconda3
+python /oscar/data/bnc/scripts/run_xnat2bids.py --config x2b_demodat2_config.toml
+```
 
 Enter your XNAT username and password when prompted.
 
@@ -51,7 +52,7 @@ How will these timing files differ from those in a single subject pipeline?&#x20
 * For the second level analysis, the AFNI 1D files will contain 4 rows. These rows correspond to the two runs from session 1 and the two runs from session 2. By including all runs from both sessions in one file, we can include all data per subject in the regression.
 {% endhint %}
 
-#### Download the psychopy behavioral timing files (csv)
+### Download the psychopy behavioral timing files (csv)
 
 First, download the participant's behavioral timing files (in our case, created by PsychoPy) and manually place them in a directory named 'beh', in the `sourcedata` subfolder of your BIDS directory. For each individual subject and session, the full path should be: `$bidsdir/sourcedata/sub-xxx/ses-xx/beh`.&#x20;
 
@@ -63,7 +64,7 @@ Repeat this step for each subject and session, placing the files in their respec
 
 {% file src="../../../.gitbook/assets/sub-103-beh.zip" %}
 
-#### Convert the timing files using a batch script&#x20;
+### Convert the timing files using a batch script&#x20;
 
 Batch scripting improves the efficiency of data processing because it allows you to automatically launch the same job on all individual subjects/sessions, rather than running the script/command one by one. It takes advantage of the many resources available on our HPC (CPU, cores, etc) and runs the same script on all your subjects in parallel (rather than sequentially).
 
@@ -91,7 +92,7 @@ Here you can download our example python processing script (`preprocess_behavior
 
 {% file src="../../../.gitbook/assets/subjects.txt" %}
 
-#### Run the batch script&#x20;
+### Run the batch script&#x20;
 
 To run the batch script, which will then launch multiple iterations of the preprocess\_behavior.py script (one job/launch per subject), navigate to the directory where you saved these 3 files. On the command line, type `sbatch run_preprocess_behavior.sh`. Since you filled in your email, you should receive a message when each of the 3 jobs have launched.    &#x20;
 
@@ -108,6 +109,7 @@ It is possible to quickly warp your data into standard space within the afniproc
 Copy and paste this script into a file called `SSW.sh`. Change the example email to your own, and edit the path to your bids directory. Ensure that it is saved in the same location as your subjects file (`subjects.txt`). To launch this script on all 3 subjects sequentially, navigate to the directory on the command line and type `sbatch SSW.sh`.&#x20;
 
 {% code title="SSW.sh <- This is the filename and should not be copy/pasted in the script" %}
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -137,8 +139,8 @@ sswarper2             \
         -input $bidsdir/$subID/ses-01/anat/${subID}_ses-01_acq-memprageRMS_T1w.nii.gz    \
         -base MNI152_2009_template_SSW.nii.gz             \
         -subid ${subID} -odir ${outdir} 
-
 ```
+
 {% endcode %}
 
 <figure><img src="../../../.gitbook/assets/sswarper_image.png" alt="A Demodat2 anatomical brain scan before and after warping it to MNI space (using the AFNI tool sswarper2). "><figcaption></figcaption></figure>
@@ -147,7 +149,7 @@ sswarper2             \
 
 This basic example of a univariate analysis with AFNI is based on [example 6b of the afni\_proc.py documentation](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html).&#x20;
 
-#### Run the afniproc.py batch script
+### Run the afniproc.py batch script
 
 {% hint style="info" %}
 afniproc.py will create its output folders in the directory that it is run from. To ensure all outputs are organized in the appropriate BIDS derivatives folder, the batch script will navigate to an output directory before launching afniproc.py. However, the log file for each job is created by SLURM, not by the script itself. It is recommend that you launch the batch script from the directory where you want your log files to be saved (for example, within a scripts directory).&#x20;
@@ -162,6 +164,7 @@ The next step after afniproc.py is to do a group analysis using afni's 3dMEMA. 3
 {% endhint %}
 
 {% code title="afniproc.sh" %}
+
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -227,6 +230,7 @@ afni_proc.py \
     -html_review_style pythonic \
     -execute
 ```
+
 {% endcode %}
 
 <details>
