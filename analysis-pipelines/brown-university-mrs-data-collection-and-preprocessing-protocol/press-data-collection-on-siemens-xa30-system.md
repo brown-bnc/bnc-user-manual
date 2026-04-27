@@ -1,6 +1,6 @@
 # PRESS Data Collection on Siemens XA30 System
 
-### Placing the Reference and Metabolite Voxels
+## Placing the Reference and Metabolite Voxels
 
 * After collecting your anatomical scan (MPRAGE), drag the small gray head icon from the scan to the viewing windows. All three planes should show up automatically. If not, go to the MR View & GO tab and drag over the axial and coronal images.
 
@@ -58,7 +58,7 @@ Tips on voxel placement:
 
 <figure><img src="../../.gitbook/assets/image (39).png" alt="The “Auto Start MR Spectro” sequence is shown in the list of runs on the Siemens console. After dragging it over, open it by double clicking and press “Go”."><figcaption><p>Running "Auto Start MR Spectro" is a necessary step to create RDA files. Run this sequence at the end of your MRS acquisition.</p></figcaption></figure>
 
-### Exporting the Data (RDA and twix files)
+## Exporting the Data (RDA and twix files)
 
 * To export the RDA files, go into the files tab and select both the water reference file and metabolite file. Right click on them and select the “MR Spectro” option.
 

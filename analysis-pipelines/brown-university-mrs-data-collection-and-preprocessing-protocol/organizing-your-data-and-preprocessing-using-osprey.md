@@ -70,7 +70,7 @@ The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started
 
 Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.
 
-**Place all necessary files into sourcedata**
+#### Place all necessary files into sourcedata
 
 * As explained in the section above, mrs data must be organized into separate subfolders within sourcedata in order to be used by Osprey
 * Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).
@@ -82,7 +82,7 @@ Osprey only requires a few files to successfully run (T1 anatomical NIFTI and th
 * spec2nii is a package that allows you to convert spectroscopy dicoms into NIFTIs, rename them, and move them to any desired directory. It is built into FSL, so you can access it by typing `module load fsl` in the OOD terminal. We will now use this command to convert the dicoms and ensure BIDS compatibility in our dataset.
   * From within the `mrs-mrsref_acq-PRESS_voi-Lacc` directory, type:
 
-```
+```bash
 spec2nii dicom -j -f sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref -o <$bidsroot>/bnc/study-demodat2/bids/sub-101/ses-01/mrs/ 1.3.12.2.1107.5.2.43.67050.30000025030414003908900000017-24-1-zkc899.dcm
 ```
 
@@ -102,12 +102,12 @@ Lastly, include the name of the dicom file which will be converted.
 
 * Although this step is not necessary in order to run a preprocessing pipeline using Osprey, it is recommended so that your data is consistent with the BIDS specification.
 
-**Unzip the T1w Anatomical Scans So They Can Be Read by Osprey**
+#### Unzip the T1w Anatomical Scans So They Can Be Read by Osprey
 
 * Osprey requires an unzipped NIFTI file for your T1w anatomical input. xnat2bids outputs a zipped NIFTI which can be found here: `$bidsroot/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w.nii.gz` .
 * Navigate to the directory containing this file and type this command:
 
-```
+```bash
 gunzip sub-101_ses-01_acq-memprageRMS_T1w.nii.gz
 ```
 
@@ -123,20 +123,20 @@ In your BIDS `derivatives` folder, make a new folder called `osprey` . Within th
 
 * In the OOD Virtual Desktop, download SPM12 (not 25) to your home directory from the [SPM github](https://github.com/spm/spm12) and unzip the file. The SPM site offers [instructions on downloading SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/).
 
-```
+```bash
 unzip spm12.zip
 ```
 
 * Download Osprey to your home directory from github by opening a new terminal and enter the following command:
 
-```
+```bash
 git clone https://github.com/schorschinho/osprey.git 
 ```
 
 * It is important that both Osprey and SPM12 are located in the same directory (even if you choose to save them into something other than `/oscar/home/<example-username>` ).
 * To use Osprey, you need to open Matlab:
 
-```
+```bash
 module load matlab/R2025a-bcih
 matlab-threaded
 ```
@@ -164,7 +164,7 @@ addpath(genpath('/oscar/home/example-username/$bidsroot'))
 
 • Launch the Osprey GUI from the Matlab command line (code is case sensitive).
 
-```
+```bash
 Osprey
 ```
 

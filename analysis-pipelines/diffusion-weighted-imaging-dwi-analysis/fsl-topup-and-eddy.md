@@ -17,7 +17,7 @@ To follow this tutorial using the DWI runs acquired in demodat2, please download
 
 The first 8 volumes of each demodat2 DWI run are b0 images. We will extract the first volume of both runs using the command `fslroi`, and merge them over time using `fslmerge`. The result of these transformations is one image named AP\_PA\_b0, which contains 2 b0 volumes: one in each PE direction.
 
-```
+```bash
 fslroi sub-101_ses-01_acq-b1500_dir-ap_dwi.nii.gz AP_b0.nii.gz 0 1 \
 fslroi sub-101_ses-01_acq-b1500_dir-pa_dwi.nii.gz PA_b0.nii.gz 0 1 \
 fslmerge  -t  AP_PA_b0 AP_b0.nii.gz PA_b0.nii.gz
@@ -35,7 +35,7 @@ For each row, the first three values describe the phase encoding direction vecto
 
 Name this file acqparams.txt. Its contents should look like this:
 
-```
+```text
 0 -1 0 0.0903501
 0 1 0 0.0903501
 ```
@@ -44,7 +44,7 @@ A -1 in the second column means that k-space was traversed Anterior→Posterior 
 
 ### 3: Run topup
 
-```
+```bash
 topup --imain=AP_PA_b0 \
 --datain=acqparams.txt \
 --config=b02b0.cnf \
@@ -66,7 +66,7 @@ If you would like both susceptibility and eddy current distortion correction, yo
 
 The text-file index.txt contains a row of numbers, one for each volume in your dwi data, specifying that those volumes were acquired with the parameters specified by the corresponding row in acqparams.txt. We will be inputting the AP dwi scan into eddy, thus our index.txt file will contain a row of 1s. If we were to input the PA run, it would contain a row of 2s.&#x20;
 
-```
+```text
 #contents of index.txt
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 ```
@@ -79,7 +79,7 @@ Regardless of the pipeline you are using, it is recommended that the brain mask 
 
 First, use fslmaths to combine the AP and PA outputs of topup into one file. the -Tmean option tells `fslmaths` to take the mean across time, resulting in a 3D dataset (one volume) named hifi\_nodif (high fidelity, no diffusion). Then, that volume will be input into `bet` (Brain Extraction Tool) to create a brain mask.&#x20;
 
-```
+```bash
 fslmaths topup_AP_PA_b0_iout -Tmean hifi_nodif
 bet hifi_nodif hifi_nodif_brain -m -f 0.2
 ```
@@ -88,7 +88,7 @@ bet hifi_nodif hifi_nodif_brain -m -f 0.2
 
 ### 3: Run eddy
 
-```
+```bash
 eddy --imain=sub-101_ses-01_acq-b1500_dir-ap_dwi.nii.gz \
 --mask=hifi_nodif_brain_mask \
 --index=index.txt \
