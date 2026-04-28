@@ -12,7 +12,7 @@ This script is a Python-based command-line tool that is designed to help neuroim
 
 ***
 
-### 1. Start an interactive session
+## 1. Start an interactive session
 
 {% tabs %}
 {% tab title="Desktop app on Open OnDemand" %}
@@ -28,7 +28,7 @@ To instead connect via SSH, you type `ssh username@ssh.ccv.brown.edu` from a ter
 
 At this point you arrive at a login node. **We will need to start an interactive session/job** by typing
 
-```
+```bash
 interact -n 2 -t 01:00:00 -m 8g
 ```
 
@@ -38,7 +38,7 @@ This starts an interactive job for one hour.
 
 ***
 
-### 2.  Configuring Slurm and XNAT2BIDS
+## 2.  Configuring Slurm and XNAT2BIDS
 
 Before we are ready to kick off the script, it will be necessary to understand how each job is configured. Each job consists of two essential pieces: the program and the resources it needs to successfully execute. Some common resources that we will assign for our job are time, memory, cpus-per-task, and the number of compute nodes we want to allocate. In this case, our program of interest will be `xnat2bids`, so we will need to configure its parameter options, as well.
 

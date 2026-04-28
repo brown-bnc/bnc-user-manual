@@ -1,6 +1,6 @@
 # Uploading Data
 
-### Uploading data from the scanner
+## Uploading data from the scanner
 
 After data collection, data can be sent to XNAT directly from the scanner. Partial data transfers will get stuck, so **transfer an entire scan session at once**, rather than run-by-run. If you are the operator at the console, select your dataset in the patient browser, then click Export.
 
@@ -10,11 +10,11 @@ Make sure all the series you want to send are checked, then select XNAT and clic
 
 <figure><img src="../../.gitbook/assets/xnat (1).png" alt="View of the pop up window on the Siemens MRI console that appears after selecting &#x22;Export&#x22; in the Patient Browser. In the pop up, you can ensure that each sequence in the MRI session has a checked box next to it, meaning that it is selected to export. Then, check the box next to “XNAT”, and press “Export”. "><figcaption></figcaption></figure>
 
-### Automated routing from scanner to XNAT
+## Automated routing from scanner to XNAT
 
 If your XNAT project has been created and named to match your protocol on the scanner, XNAT will attempt to place the data coming from the scanner in the appropriate project using information from the DICOM metadata.&#x20;
 
-### Naming for multi-session studies
+## Naming for multi-session studies
 
 If your study involves multiple scan sessions per participant, following a specific consistent naming scheme will allow XNAT to nicely organize your data so that each scan session is nested under the the correct participant like this:
 
@@ -29,8 +29,7 @@ If you scan the same participant multiple times and re-use the same **Patient ID
 {% endhint %}
 
 
-
-### Uploading Non-MR Data
+## Uploading Non-MR Data
 
 To upload your EEG or Physio data onto XNAT, see the instruction steps at page below.
 

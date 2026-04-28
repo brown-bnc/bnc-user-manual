@@ -20,7 +20,7 @@ To create the final name, the different parts shown above are concatenated using
 
 ## Additional Sample Protocols
 
-```
+```text
 anat-scout_acq-aascout
 anat-scout_acq-localizer
 anat-T1w_acq-memprage
@@ -28,7 +28,7 @@ fmap_acq-greAP
 func-bold_task-TSSblock_acq-2dot4mmSMS4TR1200AP_run+
 ```
 
-```
+```text
 anat-scout_acq-localizer
 anat-scout_acq-aascout
 anat-t1w_acq-memprage

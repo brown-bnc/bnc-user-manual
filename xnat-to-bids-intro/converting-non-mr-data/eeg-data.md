@@ -14,7 +14,7 @@ On this page, learn:
 
 ***
 
-### Naming Convention: How to Name Your EEG Data Files
+## Naming Convention: How to Name Your EEG Data Files
 
 [The BIDS format](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/03-electroencephalography.html) requires/allows specific information to be saved in data filenames. Specifically, "BIDS entities" are saved as key-value pairs (i.e. "sub-101") separated by underscores. For example, the filename "sub-101\_ses-01\_task-checks\_run-01" contains keys and associated values for subject, session, task, and run. For our automatic XNAT to BIDS conversion to appropriately include these pieces of information in the BIDS-format filenames, the EEG data you upload to XNAT should include all relevant key-value pairs in the filename, separated by underscores. "Subject" and "session" information will be gathered from XNAT, and you can use any of the following keys to provide additional information:
 
@@ -46,9 +46,9 @@ On this page, learn:
 
 ***
 
-### Uploading concurrent EEG-fMRI data
+## Uploading concurrent EEG-fMRI data
 
-#### One-time XNAT project configuration
+### One-time XNAT project configuration
 
 For EEG data collected concurrently with fMRI data, we recommend following these setup steps to configure an EEG resource uploader for your XNAT project. These steps should be able to be completed by anyone with an "owner" status on your XNAT project, but please reach out if you would like BNC staff to set it up for you or walk you through it.
 
@@ -61,7 +61,7 @@ For EEG data collected concurrently with fMRI data, we recommend following these
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-10-05 at 2.34.00 PM.png" alt="Customizing the &#x22;Project Resource Settings&#x22; on XNAT for simultaneous EEG+MRI. Under the prompt: &#x22;Select data-type&#x22;, choose &#x22;MR Session&#x22;. Next to &#x22;Resource Folder&#x22;, type &#x22;eeg&#x22;. Then press &#x22;Add&#x22;. "><figcaption><p>Configuring an EEG resource uploader for concurrent EEG-fMRI data</p></figcaption></figure>
 
-#### Uploading EEG data to an MR Session
+### Uploading EEG data to an MR Session
 
 Then, when you complete an EEG-fMRI session, first follow the usual procedure to [transfer your MR data from the scanner to XNAT](../../xnat/uploading-data/). Once your data has appeared on XNAT (typically within an hour), you can navigate to the MR Session that was just created, and click "Upload Additional Files" to upload the associated EEG data:
 
@@ -71,9 +71,9 @@ Then, when you complete an EEG-fMRI session, first follow the usual procedure to
 
 ***
 
-### Uploading stand-alone EEG data
+## Uploading stand-alone EEG data
 
-#### One-time XNAT project configuration
+### One-time XNAT project configuration
 
 If you only intend to upload EEG data, or if your EEG data was collected in a separate session(s) from any MRI data, we recommend storing your data in an "EEG Session", just as XNAT stores data transferred from the scanner in an "MR Session". You will need to complete these one-time setup steps to enable the creation of EEG Sessions for your XNAT project:
 
@@ -88,7 +88,7 @@ These steps should be able to be completed by anyone with an "owner" status on y
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-10-05 at 2.34.49 PM.png" alt="When configuring an XNAT project to accept standalone EEG data, ensure that &#x22;Select data-type&#x22; is set to EEG Sessions (under &#x22;Project Resource Settings&#x22; -> &#x22;Image Sessions&#x22;). "><figcaption><p>Configuring an EEG resource uploader for your XNAT project</p></figcaption></figure>
 
-#### Creating a new EEG Session and uploading data
+### Creating a new EEG Session and uploading data
 
 After navigating to your project on XNAT, click Add -> EEG Session
 
