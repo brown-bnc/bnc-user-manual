@@ -8,11 +8,11 @@ To help users comply with data sharing requirements from the NIMH, we are extend
 
 ### Step 1: Get data into valid [BIDS format](https://bids-specification.readthedocs.io/en/stable/)
 
-If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow the steps in [our Oscar Utility Script](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.&#x20;
+If you are using XNAT and have worked with us to set up your protocol to be [BIDS-friendly](../xnat/bids-compliant-protocols.md), follow the steps in [our Oscar Utility Script](../xnat-to-bids-intro/using-oscar/oscar-utility-script/) to pull your data from XNAT to Oscar and automatically convert it into BIDS format.
 
 ### Step 2: Convert behavioral data into BIDS format
 
-If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an exampleof this in [our task-based fMRI analysis pipeline](../analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).&#x20;
+If you are converting fMRI task data, you will need to do some additional work to also convert your behavioral data into the [\_events.tsv files required by BIDS](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/task-events.html). You can find an example of this in [our task-based fMRI analysis pipeline](../analysis-pipelines/task-based-fmri-analysis-using-afni/single-subject-analysis-visual-motor-activation.md#step-2-extract-stimulus-timing-information-from-stimulus-presentation-output-files).
 
 ### Step 3: Add stimulus information and stimulus files
 
@@ -20,9 +20,9 @@ If you have stimulus files that you would also like to include in your upload to
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.33.53 PM.png" alt="An example _events.tsv file, where the &#x22;stim_file&#x22; column is populated with image filenames."><figcaption></figcaption></figure>
 
-The BIDS spec assumes that these files live in a "stimuli" folder at the top level of your BIDS directory like this:&#x20;
+The BIDS spec assumes that these files live in a "stimuli" folder at the top level of your BIDS directory like this:
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.38.36 PM.png" alt="Any images listed in the &#x22;stim_files&#x22; column of your _events.tsv file should be saved in a directory titled &#x22;stimuli&#x22;, nested under your &#x22;bids&#x22; directory. "><figcaption><p>Including stimuli in your BIDS structure</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-03 at 3.38.36 PM.png" alt="Any images listed in the &#x22;stim_files&#x22; column of your _events.tsv file should be saved in a directory titled &#x22;stimuli&#x22;, nested under your &#x22;bids&#x22; directory."><figcaption><p>Including stimuli in your BIDS structure</p></figcaption></figure>
 
 If you want to organize the stimuli further, you can have subfolders within your "stimuli" folder, and then include the subfolder in the stim\_file field. For example, if you want to put all the stimuli sub-001 saw in a folder called "001" within the "stimuli" folder, your events.tsv file would have 001/001\_stim1.png, etc. in the stim\_file column.
 
@@ -46,7 +46,7 @@ Save this file (i.e. expIDs.txt) in the same folder as your BIDS directory, but 
 
 ### Step 6: (optional) Create a BIDS subject number-to-birthdate mapping file
 
-The NDA requires that participant age at the time of data collection be specified in months, while the BIDS dataset only includes an age in years in the participants.tsv file.&#x20;
+The NDA requires that participant age at the time of data collection be specified in months, while the BIDS dataset only includes an age in years in the participants.tsv file.
 
 If you would like the conversion tool to calculate the age in months, you can provide a file with each participant's birthdate (MM/DD/YYYY), formatted like this:
 
@@ -71,13 +71,13 @@ Save this csv in the same folder as your BIDS directory, but not inside the BIDS
 To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu/oscar/software/python-installs#using-python-enviroments-venv):
 
 1. Change to your home directory\
-   `cd ~`&#x20;
+   `cd ~`
 2. Create a new python environment called "bids2nda"\
-   `python -m venv bids2nda`&#x20;
+   `python -m venv bids2nda`
 3. Activate the new environment\
-   `source ~/bids2nda/bin/activate`&#x20;
+   `source ~/bids2nda/bin/activate`
 4. Install our version of the BIDS to NDA conversion tool\
-   `pip install https://github.com/brown-bnc/bids2nda/archive/master.zip`&#x20;
+   `pip install https://github.com/brown-bnc/bids2nda/archive/master.zip`
 5. Install the [NDA validator](https://github.com/NDAR/nda-tools/tree/main) that will let us test whether the data is NDA-compliant\
    `pip install nda-tools`
 
@@ -85,7 +85,7 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
 
 ## Running the BIDS to NDA conversion
 
-1. First, make sure that you are in your bids2nda environment. It should say `(bids2nda)` in front of your terminal command prompt. If it does not, activate the environment with  \
+1. First, make sure that you are in your bids2nda environment. It should say `(bids2nda)` in front of your terminal command prompt. If it does not, activate the environment with\
    `source ~/bids2nda/bin/activate`
 2. Change to your directory that contains your BIDS directory, GUID mapping file, and experiment ID mapping file.
 3.  Make a new directory for your NDA-formatted data
@@ -97,16 +97,16 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
 
     `mr_bids2nda bids guids.txt nda_output -e expIDs.txt -b birthdates.txt --lookup_csv ndar_subject01.csv --lookup_fields interview_date`\
     \
-    The -e, -b, --lookup\_csv, and --lookup\_fields are optional. In this example with MR data, we are grabbing the interview date from the ndar\_subject01.csv file and using it to fill in the interview\_date column in the image03.csv file. \
+    The -e, -b, --lookup\_csv, and --lookup\_fields are optional. In this example with MR data, we are grabbing the interview date from the ndar\_subject01.csv file and using it to fill in the interview\_date column in the image03.csv file.\
     \
     **For EEG data:**\
     You can instead launch the converter with `eeg_bids2nda`. All options are the same.<br>
 5.  If successful, you should see the message "Metadata extraction complete.", and the nda\_output folder will contain different files, depending on whether you converted MR or EEG data.\
     \
     **For MR data:**\
-    The output folder should contain one image03.csv file and a series of .metadata.zip files. These zip files are referenced in the data\_file2 column of the image03.csv and will ultimately be uploaded with your data. \
+    The output folder should contain one image03.csv file and a series of .metadata.zip files. These zip files are referenced in the data\_file2 column of the image03.csv and will ultimately be uploaded with your data.\
     \
-    They contain:&#x20;
+    They contain:
 
     1. The BIDS json sidecars that go along with each of your NIFTIs
     2. the \_events.tsv behavioral files
@@ -116,9 +116,9 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
     \
     \
     **For EEG data:**\
-    The output folder should contain an eeg\_sub\_files01.csv file, an eeg\_details01.csv file, and a series of .metadata.zip files. These zip files are referenced in the data\_file4 column of the eeg\_sub\_files01.csv and will ultimately be uploaded with your data. \
+    The output folder should contain an eeg\_sub\_files01.csv file, an eeg\_details01.csv file, and a series of .metadata.zip files. These zip files are referenced in the data\_file4 column of the eeg\_sub\_files01.csv and will ultimately be uploaded with your data.\
     \
-    They contain:&#x20;
+    They contain:
 
     1. The BIDS json sidecars that go along with each of your .eeg files
     2. The channels.tsv file
@@ -140,12 +140,12 @@ To run the validator tool supplied by the NDA:
    `cd nda_output`
 2. Run the validator, passing in the new image03.csv, eeg\_sub\_files01.csv, or eeg\_details01.csv file\
    `vtcmd image03.csv`
-3. The tool will print information about whether or not your data passed validation. If it failed, open the validation report and address any identified issues.&#x20;
+3. The tool will print information about whether or not your data passed validation. If it failed, open the validation report and address any identified issues.
 
 ***
 
 ## Tips
 
-1. Make sure your dataset is BIDS-valid. The conversion tool will attempt to add any files in your BIDS directory that follow the `sub-*.nii.gz`  pattern for MR or `sub-*.eeg` pattern for EEG, so any extra files in your BIDS directory (from analyses, etc.) may cause errors.
+1. Make sure your dataset is BIDS-valid. The conversion tool will attempt to add any files in your BIDS directory that follow the `sub-*.nii.gz` pattern for MR or `sub-*.eeg` pattern for EEG, so any extra files in your BIDS directory (from analyses, etc.) may cause errors.
 2. If you are uploading data to the NDA in batches, you'll need to temporarily copy just the data for the current upload into a separate BIDS directory, so that the tool doesn't attempt to parse any previously uploaded data. When you do that, make sure to also copy over the participants.tsv file and edit it to only contain the participants for the current upload.
 3. If you manually modify the participants.tsv file (in MATLAB especially), be careful that it retains its tab-delimited format. Otherwise, it will not be read in properly.
