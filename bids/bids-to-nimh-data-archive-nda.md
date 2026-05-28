@@ -108,7 +108,7 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
     \
     They contain:
 
-    1. The BIDS json sidecars that go along with each of your NIFTIs
+    1. the BIDS json sidecars that go along with each of your NIFTIs
     2. the \_events.tsv behavioral files
     3. any stimulus files you supplied
     4. physio tsv and json files, if present in the BIDS directory
@@ -120,8 +120,8 @@ To install in a [Python virtual environment on Oscar](https://docs.ccv.brown.edu
     \
     They contain:
 
-    1. The BIDS json sidecars that go along with each of your .eeg files
-    2. The channels.tsv file
+    1. the BIDS json sidecars that go along with each of your .eeg files
+    2. the channels.tsv file
     3. the events.tsv and events.json behavioral files
     4. any stimulus files you supplied
     5. physio tsv and json files, if present in the BIDS directory
