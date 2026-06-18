@@ -4,7 +4,7 @@
 
 ## Running XNAT2BIDS
 
-The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented on [the BNC github](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.&#x20;
+The xnat-tools package provides a convenient `xnat2bids` script to facilitate data export and conversion to BIDS. The script is documented on [the BNC github](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/), and the package documentation is useful for knowing the full list of inputs and defaults. We will demonstrate how to call that script within Oscar using the BNC's demo dataset.
 
 ### 0. Summary of commands
 
@@ -17,7 +17,7 @@ bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 XNAT_USER=${USER} 
-XNAT_SESSION="XNAT_E01849"
+XNAT_SESSION="XNAT_E03266"
 singularity exec --no-home --bind ${bids_root_dir} \
     ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
@@ -25,25 +25,23 @@ singularity exec --no-home --bind ${bids_root_dir} \
     -i 6
 ```
 
-
-
 ### 1. Start an interactive session
 
-#### 1.1 Desktop app on Open OnDemand&#x20;
+#### 1.1 Desktop app on Open OnDemand
 
-Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.&#x20;
+Connecting via the Desktop app on Open OnDemand is a friendly way to request an graphical interactive session in Brown's supercomputer - Oscar. When you request a new Desktop session, you will be asked to specify the necessary resources. For this example, you can choose the basic job with `2 Cores and 7GB Memory`. Once logged in, you are already inside an interactive session.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 3.59.53 PM.png" alt="After logging in to Oscar Open On Demand, you can start a virtual desktop session by navigating to &#x22;Home/Interactive Sessions/Desktop&#x22;"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/requestOODsession.png" alt="After logging in to Oscar Open On Demand, you can start a virtual desktop session by navigating to &#x22;Home/Interactive Sessions/Desktop&#x22;"><figcaption></figcaption></figure>
 
 Once your requested session is running, you can launch it by clicking the Launch Desktop button.
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt="Launch a virtual desktop on Oscar OOD by pressing the &#x22;Launch Desktop&#x22; button. "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.37.12 PM.png" alt="Launch a virtual desktop on Oscar OOD by pressing the &#x22;Launch Desktop&#x22; button."><figcaption></figcaption></figure>
 
 At this point, simply open the terminal
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png" alt="In the OOD Desktop, you can open a terminal by pressing the icon on the bottom of the screen. "><figcaption><p>OOD Desktop app. Teal arrow points to Terminal icon to be launched</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-25 at 4.02.19 PM.png" alt="In the OOD Desktop, you can open a terminal by pressing the icon on the bottom of the screen."><figcaption><p>OOD Desktop app. Teal arrow points to Terminal icon to be launched</p></figcaption></figure>
 
-#### 1.2 SSH&#x20;
+#### 1.2 SSH
 
 To connect via SSH, you type `ssh username@ssh.ccv.brown.edu`. If this is your first time connecting via ssh, you will be asked to trust the remote computer (Oscar), your Brown credentials, and unless you are connected to VPN, you will be required to use DUO.
 
@@ -57,7 +55,7 @@ This starts an interactive job for one hour.
 
 ### 2. Define variables
 
-We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.&#x20;
+We will now define a series of shell variables that will allow us to keep our commands more reusable. This will also be useful if you later decide to move to [batch scripts](../../xnat-to-bids-dive-in/oscar-sbatch-scripts.md), which provide a better way to run jobs simultaneously and without constant interaction.
 
 {% hint style="info" %}
 When defining shell Variables, make sure to not have any spaces in the variable name, the assigned value or in between the equal sign
@@ -77,11 +75,11 @@ We recommend using the latest available version. We keep a list of the released 
 version=v2.3.0
 ```
 
-#### &#x20;2.2 Set up paths
+#### 2.2 Set up paths
 
-##### BIDS Root directory
+**BIDS Root directory**
 
-This is the directory where data will be written. If the directory does not exist then it needs to be created.&#x20;
+This is the directory where data will be written. If the directory does not exist then it needs to be created.
 
 {% hint style="info" %}
 For this sample walkthrough, you can use the path exactly as shown below. The `${USER}` variable is a systemwide variable and it is automatically interpreted as your OSCAR user. However, once you are using your own data, you should export to directories in your PI's data folder, which typically follows the pattern `/gpfs/data/<PI oscar user>`
@@ -92,7 +90,7 @@ bids_root_dir=${HOME}/xnat-exports
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 ```
 
-**Path to Singularity Image**&#x20;
+**Path to Singularity Image**
 
 This is maintained by bnc and we will be pointing to the version defined above
 
@@ -100,16 +98,16 @@ This is maintained by bnc and we will be pointing to the version defined above
 simg=/oscar/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 ```
 
-#### XNAT USER and SESSION&#x20;
+#### XNAT USER and SESSION
 
 Typically, your XNAT user is the same as your Brown user. Finding the session ID was explained in [our "Getting Started" section](../getting-started.md#requirements). In this example we leverage the `$USER` variable to set your XNAT user. This is possible because both oscar username and XNAT username are typically the same (i.e your Brown username). For the session, we are using the accession number for participant 101 of the demo dataset
 
 ```bash
 XNAT_USER=${USER} #only change if oscar user doesn't match XNAT user (rare)
-XNAT_SESSION="XNAT_E01849" #ACCESSION of participant 101 session 01 in sample data
+XNAT_SESSION="XNAT_E03266" #ACCESSION of participant 101 session 01 in sample data
 ```
 
-### 3. Understanding Singularity Containers&#x20;
+### 3. Understanding Singularity Containers
 
 In the following section we will demonstrate how to run our software. Instead of directly installing the Python package `xnat-tools` we are going to run it from inside a **container**, which we have been referring to as "the singularity image/container". If you are new to containers, in a nutshell, a container allows for packaging all OS and package dependencies together so it can run in any computer. Docker containers have become very popular, you can learn a bit more about them [on Docker's resource site](https://www.docker.com/resources/what-container). Singularity is a type of container that has specialized on running on shared HPC clusters. You can learn little more about Singularity from this [Apptainer user manual](https://singularity.hpcng.org/user-docs/master/introduction.html#why-use-singularity). We refer to docker containers and singularity containers interchangeably, as they can easily be converted from one format to another.
 
@@ -173,7 +171,7 @@ Let's expand on the above command:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case `--help`
 
@@ -226,7 +224,7 @@ Options:
 
 #### Running XNAT2BIDS (test only on one series)
 
-The following command will run the executable `xnat2bids` (via singularity) command to extract DICOMs from XNAT and export to BIDS.&#x20;
+The following command will run the executable `xnat2bids` (via singularity) command to extract DICOMs from XNAT and export to BIDS.
 
 ```bash
 singularity exec --no-home --bind ${bids_root_dir} ${simg} \
@@ -241,7 +239,7 @@ Once again, let's expand on the command above:
 
 `exec`: tells singularity we will be executing a command, in this case the command is `xnat2bids`
 
-`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`&#x20;
+`${simg}`: is the singularity image/container that we will be using. We are passing the value of the variable we defined in Step 2. In our case, this is interpreted/evaluated as `/oscar/data/bnc/simgs/brownbnc/xnat-tools-v1.1.1.sif`
 
 `xnat2bids`: is the command to be executed, and it is followed by any necessary inputs. In this case we are passing it the positional arguments `${XNAT_SESSION}` and `${bids_root_dir}` and we are also passing the arguments `-u ${XNAT_USER}` and `-i 6`. The `-i` is asking to only process the first sequence. For a full list of inputs, please see the [xnat-tools documentation](https://brown-bnc.github.io/xnat-tools/1.0.0/xnat2bids/)
 
@@ -310,11 +308,11 @@ singularity exec --no-home --bind ${bids_root_dir} ${simg} \
     -u ${XNAT_USER} 
 ```
 
-The command above is almost identical to the one executed earlier, except we removed the line that selecteed only one run to be exported (`-i 6`) .&#x20;
+The command above is almost identical to the one executed earlier, except we removed the line that selecteed only one run to be exported (`-i 6`) .
 
 ### 5. Checking XNAT2BIDS results
 
-While running `xnat2bids` singularity container in an interactive session it is important to keep the session alive throughout the run of the container. However, sometimes due to connection drops this might not always be possible. So here we provide a heuristic way of checking if `xnat2bids` ran successfully by checking the directory structure.&#x20;
+While running `xnat2bids` singularity container in an interactive session it is important to keep the session alive throughout the run of the container. However, sometimes due to connection drops this might not always be possible. So here we provide a heuristic way of checking if `xnat2bids` ran successfully by checking the directory structure.
 
 #### 1. Checking logs
 
@@ -326,7 +324,7 @@ You can check these logs for any errors or warning messages.
 
 #### 2. Checking the file structure
 
-If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the data from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -&#x20;
+If xnat2bids ran successfully, you should have 2 folders relating to the 2 steps in the pipeline `xnat-exports/` relating to downloading the data from XNAT server and `bids` relating to bidsification of the data. One easy way of checking the directory structure is to run the `tree` command -
 
 ```bash
 module load tree
@@ -387,4 +385,3 @@ xnat-exports/
 ### 6. Validate the BIDS output
 
 After successfully running `xnat2bids` you'll need to make sure that BIDS validation passes. This process is explained in the [BIDS Validation Section](../bids-validation/)
-

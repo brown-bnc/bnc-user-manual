@@ -14,7 +14,7 @@ mail-type = "ALL"
 
 [xnat2bids-args]
 sessions = [
-    "XNAT_E01849"
+    "XNAT_E03266"
     ]
 overwrite=true
 verbose=1
@@ -38,7 +38,7 @@ The script will default to placing the BIDS-converted data in a folder called "b
 
 ### Organizing the Spectroscopy Data According to the BIDS Specification (RDA Files)
 
-If you export your data with xnat2bids, the spectroscopy DICOMs collected at the scanner will be converted to NIFTIs and placed in a BIDS directory (along with your T1 anatomical files and all other sequences/runs). However, there are additional file types acquired, which are not automatically sent to XNAT by the scanner. These file types (RDA and twix files) can either be [uploaded to XNAT with our custom webapp](../../xnat/uploading-data/uploading-raw-spectroscopy-data.md) (and then exported along with the DICOMs by xnat2bids) or saved to a drive and manually uploaded to Oscar.&#x20;
+If you export your data with xnat2bids, the spectroscopy DICOMs collected at the scanner will be converted to NIFTIs and placed in a BIDS directory (along with your T1 anatomical files and all other sequences/runs). However, there are additional file types acquired, which are not automatically sent to XNAT by the scanner. These file types (RDA and twix files) can either be [uploaded to XNAT with our custom webapp](../../xnat/uploading-data/uploading-raw-spectroscopy-data.md) (and then exported along with the DICOMs by xnat2bids) or saved to a drive and manually uploaded to Oscar.
 
 #### Place all necessary files into sourcedata
 
@@ -46,15 +46,15 @@ If you export your data with xnat2bids, the spectroscopy DICOMs collected at the
 The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started.html#how-to-organize-your-raw-data) notes that when performing MRS preprocessing on data acquired on a Siemens MRI, it is absolutely necessary to separate the dicoms/RDAs into separate folders based on scan.
 {% endhint %}
 
-* You will find that after running xnat2bids, there are spectroscopy subfolders called `mrs` in the `sourcedata` directory. In that subfolder you will find one subject/session's MRS DICOMs. If you also uploaded your .dat and .rda files to XNAT, each DICOM will also have a corresponding .tar.gz archive that contains those raw data files (e.g. sub-101\_ses-01\_acq-PRESS\_voi-Lacc\_mrsref\_rawMRSfiles.tar.gz).&#x20;
-* There are no further subfolders automatically created for each spectroscopy run , so we will need to manually make them (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.&#x20;
-* In this example there was only one VOI, the left anterior cingulate cortex (Lacc). Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).&#x20;
+* You will find that after running xnat2bids, there are spectroscopy subfolders called `mrs` in the `sourcedata` directory. In that subfolder you will find one subject/session's MRS DICOMs. If you also uploaded your .dat and .rda files to XNAT, each DICOM will also have a corresponding .tar.gz archive that contains those raw data files (e.g. sub-101\_ses-01\_acq-PRESS\_voi-Lacc\_mrsref\_rawMRSfiles.tar.gz).
+* There are no further subfolders automatically created for each spectroscopy run , so we will need to manually make them (i.e., there should be separate folders for each VOI and for the water reference and metabolite runs). These can be named anything you want.
+* In this example there was only one VOI, the left anterior cingulate cortex (Lacc). Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).
 
 <figure><img src="../../.gitbook/assets/Screenshot 2025-06-27 at 2.08.57 PM.png" alt="Folder tree showing Demodat2_documentation directory structure. The bids folder is expanded to show sourcedata containing sub-101/ses-01, which holds anat, beh, dwi, fmap, func, and mrs (with Lacc_mrsref and Lacc_svs subfolders). Bids also contains a separate sub-101 folder. Other top-level folders include logs and xnat-export."><figcaption></figcaption></figure>
 
 * Move the DICOMs into their respective subfolders (Lacc\_mrsref and Lacc\_svs).
-* Then copy in the corresponding RDA and twix files (either saved to your drive via scannershare or in a tar.gz archive from xnat2bids). To extract the raw data files from a .tar.gz archive, you can run `tar -xf sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref_rawMRSfiles.tar.gz`  in a terminal.
-* You can download the RDA files for sub-101 ses-01 of demodat2 here:&#x20;
+* Then copy in the corresponding RDA and twix files (either saved to your drive via scannershare or in a tar.gz archive from xnat2bids). To extract the raw data files from a .tar.gz archive, you can run `tar -xf sub-101_ses-01_acq-PRESS_voi-Lacc_mrsref_rawMRSfiles.tar.gz` in a terminal.
+* You can download the RDA files for sub-101 ses-01 of demodat2 here:
 
 {% file src="../../.gitbook/assets/101.MR.BNCDEMODAT2.mrsref.rda.zip" %}
 
@@ -70,7 +70,7 @@ The [Osprey documentation](https://schorschinho.github.io/osprey/getting-started
 
 Osprey only requires a few files to successfully run (T1 anatomical NIFTI and the water reference/metabolite RDAs), but it is good practice to organize all of your data in accordance with the [BIDS Specification](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-spectroscopy.html). If you would like to organize your data in a BIDS-friendly manner, and you are not performing automatic conversion via xnat2bids, then follow these instructions.
 
-#### Place all necessary files into sourcedata
+**Place all necessary files into sourcedata**
 
 * As explained in the section above, mrs data must be organized into separate subfolders within sourcedata in order to be used by Osprey
 * Manually create the subfolders for the water reference and metabolite scans (named Lacc\_mrsref and Lacc\_svs, respectively).
@@ -102,7 +102,7 @@ Lastly, include the name of the dicom file which will be converted.
 
 * Although this step is not necessary in order to run a preprocessing pipeline using Osprey, it is recommended so that your data is consistent with the BIDS specification.
 
-#### Unzip the T1w Anatomical Scans So They Can Be Read by Osprey
+**Unzip the T1w Anatomical Scans So They Can Be Read by Osprey**
 
 * Osprey requires an unzipped NIFTI file for your T1w anatomical input. xnat2bids outputs a zipped NIFTI which can be found here: `$bidsroot/bnc/study-demodat2/bids/sub-101/ses-01/anat/sub-101_ses-01_acq-memprageRMS_T1w.nii.gz` .
 * Navigate to the directory containing this file and type this command:
