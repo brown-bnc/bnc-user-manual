@@ -12,6 +12,7 @@
 * [Uploading Data](xnat/uploading-data/README.md)
   * [Uploading raw spectroscopy data](xnat/uploading-data/uploading-raw-spectroscopy-data.md)
 * [Downloading Data](xnat/downloading-data.md)
+* [Project Level De-Identification on XNAT](xnat/project-level-de-identification-on-xnat.md)
 
 ## Demo Dataset
 
@@ -34,7 +35,7 @@
   * [Oscar](xnat-to-bids-intro/bids-validation/oscar.md)
   * [Oscar - legacy validator](xnat-to-bids-intro/bids-validation/oscar-legacy-validator.md)
   * [Docker](xnat-to-bids-intro/bids-validation/docker.md)
-* [Converting non-MR data ](xnat-to-bids-intro/converting-non-mr-data/README.md)
+* [Converting non-MR data](xnat-to-bids-intro/converting-non-mr-data/README.md)
   * [Physiological data](xnat-to-bids-intro/converting-non-mr-data/physiological-data.md)
   * [EEG data](xnat-to-bids-intro/converting-non-mr-data/eeg-data.md)
 

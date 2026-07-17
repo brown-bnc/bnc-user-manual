@@ -10,12 +10,11 @@ description: >-
 
 {% tabs %}
 {% tab title="Oscar" %}
-## 1. Write a batch script
+### 1. Write a batch script
 
 We keep up-to-date Singularity images for `fmriprep` for the community. (Look in `/oscar/data/bnc/simgs/nipreps/` to see which versions we currently have available.) In order to run `fmriprep` on Oscar, you'll need to write a batch script. Here is an example:
 
 {% code title="demodat_fmriprep_example.sh -- Filename and not part of the script!" %}
-
 ```bash
 #!/bin/bash
 #SBATCH -N 1
@@ -46,18 +45,17 @@ singularity run --cleanenv                                         \
   --omp-nthreads 16 --nthreads 16 --stop-on-first-crash
 
 ```
-
 {% endcode %}
 
-### ✋Understanding the batch script
+#### ✋Understanding the batch script
 
 * The first part of the script configures the variables (e.g., number of cores, memory, etc) for your JOB. Make sure to update the email address if you'd like to get email updates about your job.
 * The second part invokes `fmriprep` singularity image. Keep in mind the following considerations:
   * Singularity containers run as your user, and therefore should have the same read/write permissions as your local user in the cluster
-  * Singularity containers only share  `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to  `/oscar/data/<group>` in that case we must **bind `/oscar/data/<group>`**
+  * Singularity containers only share `$HOME` with the Oscar file system. Therefore, any other location that we want to read and write to/from, needs to be specified using the `--bind hostfolder:containerfolder` input. **This includes any directory in your home directory that is a symbolic link.** For instance `$HOME/data` usually points to `/oscar/data/<group>` in that case we must **bind `/oscar/data/<group>`**
   * You must specify the location **inside the container** of the FreeSurfer license.
 
-## 2. Run the batch script
+### 2. Run the batch script
 
 ```bash
 cd /path/to/sbatch/script
@@ -65,8 +63,6 @@ sbatch demodat_fmriprep_example.sh
 ```
 
 For more information about managing your job, see the [Oscar documentation](https://docs.ccv.brown.edu/oscar/submitting-jobs/managing-jobs)
-
-
 
 ✋ **Troubleshooting:**
 
@@ -97,5 +93,5 @@ singularity build fmriprep-${version}.sif docker://nipreps/fmriprep:${version}
 Replace `version` in the command above with the desired docker tag. You can find the latest tags of fmriprep on [the fmriprep docker page.](https://hub.docker.com/r/nipreps/fmriprep/tags)
 
 {% hint style="info" %}
-&#x20;To support scientific reproducibility, it is recommended to use a specific tag e.g., `22.0.0` instead of `latest`&#x20;
+To support scientific reproducibility, it is recommended to use a specific tag e.g., `22.0.0` instead of `latest`
 {% endhint %}

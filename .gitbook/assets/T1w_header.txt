@@ -1,0 +1,2255 @@
+The DICOM tags for the first dicom file in this scan.
+Tag	Description	Value
+(0002,0001)	File Meta Information Version	00\01
+(0002,0002)	Media Storage SOP Class UID	1.2.840.10008.5.1.4.1.1.4.1
+(0002,0003)	Media Storage SOP Instance UID	1.3.12.2.1107.5.2.43.67050.2025030515372349046402286
+(0002,0010)	Transfer Syntax UID	1.2.840.10008.1.2.1
+(0002,0012)	Implementation Class UID	1.2.40.0.13.1.1
+(0002,0013)	Implementation Version Name	dcm4che-2.0
+(0002,0016)	Source Application Entity Title	AWP67050
+(0008,0005)	Specific Character Set	ISO_IR 100
+(0008,0008)	Image Type	ORIGINAL\PRIMARY\OTHER\NONE
+(0008,0012)	Instance Creation Date	20250305
+(0008,0013)	Instance Creation Time	153118.732500
+(0008,0016)	SOP Class UID	1.2.840.10008.5.1.4.1.1.4.1
+(0008,0018)	SOP Instance UID	1.3.12.2.1107.5.2.43.67050.2025030515372349046402286
+(0008,0020)	Study Date	20250305
+(0008,0021)	Series Date	20250305
+(0008,0023)	Content Date	20250305
+(0008,002A)	Acquisition DateTime	20250305153118.732500
+(0008,0030)	Study Time	152347.800000
+(0008,0031)	Series Time	153723.474000
+(0008,0033)	Content Time	153742.101000
+(0008,0050)	Accession Number	
+(0008,0060)	Modality	MR
+(0008,0070)	Manufacturer	Siemens Healthineers
+(0008,0080)	Institution Name	Brown University
+(0008,0081)	Institution Address	Olive Street 60,Providence,RI,US,02912
+(0008,0090)	Referring Physicians Name	
+(0008,1010)	Station Name	AWP67050
+(0008,1030)	Study Description	BNC_DEMODAT2
+(0008,103E)	Series Description	anat-t1w_acq-memprage RMS
+(0008,1090)	Manufacturers Model Name	MAGNETOM Prisma Fit
+(0008,1111)	Referenced Performed Procedure Step Sequence	
+(0008,1111)	Referenced SOP Class UID	1.2.840.10008.3.1.2.3.3
+(0008,1111)	Referenced SOP Instance UID	1.3.12.2.1107.5.2.43.67050.30000025030414003908900000018
+(0008,9092)	Referenced Image Evidence Sequence	
+(0008,9092)	Referenced Series Sequence	
+(0008,9092)	Study Instance UID	1.3.12.2.1107.5.2.43.67050.30000025030414003908900000017
+(0008,9205)	Pixel Presentation	MONOCHROME
+(0008,9206)	Volumetric Properties	VOLUME
+(0008,9207)	Volume Based Calculation Technique	NONE
+(0008,9208)	Complex Image Component	MAGNITUDE
+(0008,9209)	Acquisition Contrast	UNKNOWN
+(0009,0010)	Private Creator Data Element	SIEMENS SYNGO INDEX SERVICE
+(0009,108C)	?	
+(0010,0010)	Patients Name	101
+(0010,0020)	Patient ID	101_01
+(0010,0021)	Issuer of Patient ID	
+(0010,0030)	Patients Birth Date	19630101
+(0010,0040)	Patients Sex	M
+(0010,1010)	Patients Age	062Y
+(0010,1020)	Patients Size	1.6256
+(0010,1030)	Patients Weight	63.5029
+(0010,2000)	Medical Alerts	
+(0010,2110)	Allergies	
+(0012,0062)	Patient Identity Removed	NO
+(0018,0015)	Body Part Examined	BRAIN
+(0018,0023)	MR Acquisition Type	3D
+(0018,0087)	Magnetic Field Strength	3
+(0018,1000)	Device Serial Number	67050
+(0018,1020)	Software Version(s)	syngo MR XA30
+(0018,1030)	Protocol Name	anat-t1w_acq-memprage
+(0018,1320)	?	0.71400654
+(0018,5100)	Patient Position	HFS
+(0018,9004)	Content Qualification	RESEARCH
+(0018,9005)	Pulse Sequence Name	tfl_me3d4_16ns
+(0018,9008)	Echo Pulse Sequence	GRADIENT
+(0018,9012)	Multi-planar Excitation	NO
+(0018,9014)	Phase Contrast	NO
+(0018,9015)	Time of Flight Contrast	NO
+(0018,9017)	Steady State Pulse Sequence	NONE
+(0018,9018)	Echo Planar Pulse Sequence	NO
+(0018,9024)	Saturation Recovery	NO
+(0018,9025)	Spectrally Selected Suppression	NONE
+(0018,9029)	Oversampling Phase	NONE
+(0018,9032)	Geometry of k-Space Traversal	RECTILINEAR
+(0018,9033)	Segmented k-Space Traversal	SINGLE
+(0018,9034)	Rectilinear Phase Encode Reordering	LINEAR
+(0018,9064)	k-space Filtering	NONE
+(0018,9073)	Acquisition Duration	360.982
+(0018,9093)	Number of k-Space Trajectories	1
+(0018,9094)	Coverage of k-Space	FULL
+(0018,9100)	Resonant Nucleus	1H
+(0018,9174)	Applicable Safety Standard Agency	IEC
+(0020,000D)	Study Instance UID	1.3.12.2.1107.5.2.43.67050.30000025030414003908900000017
+(0020,000E)	Series Instance UID	1.3.12.2.1107.5.2.43.67050.2025030515372298571602211.0.0.0
+(0020,0010)	Study ID	356ccb00-0bb7-44
+(0020,0011)	Series Number	6
+(0020,0012)	Acquisition Number	1
+(0020,0013)	Instance Number	1
+(0020,0052)	Frame of Reference UID	1.3.12.2.1107.5.2.43.67050.2.20250305152809897.0.0.0
+(0020,0105)	Number of Temporal Positions	1
+(0020,1040)	Position Reference Indicator	
+(0020,9221)	Dimension Organization Sequence	
+(0020,9221)	Dimension Organization UID	1.3.12.2.1107.5.2.43.67050.2025030515372349902102287
+(0020,9222)	Dimension Index Sequence	
+(0020,9222)	Dimension Organization UID	1.3.12.2.1107.5.2.43.67050.2025030515372349902102287
+(0020,9222)	Dimension Index Pointer	00209056
+(0020,9222)	Functional Group Pointer	00209111
+(0020,9222)	Dimension Index Sequence	
+(0020,9222)	Dimension Organization UID	1.3.12.2.1107.5.2.43.67050.2025030515372349902102287
+(0020,9222)	Dimension Index Pointer	00209057
+(0020,9222)	Functional Group Pointer	00209111
+(0020,9222)	Dimension Index Sequence	
+(0020,9222)	Dimension Organization UID	1.3.12.2.1107.5.2.43.67050.2025030515372349902102287
+(0020,9222)	Dimension Index Pointer	00209128
+(0020,9222)	Functional Group Pointer	00209111
+(0021,0012)	Private Creator Data Element	SIEMENS MR SDR 01
+(0021,1201)	?	ACQUISITION
+(0021,1202)	?	ACQUISITION
+(0028,0002)	Samples per Pixel	1
+(0028,0004)	Photometric Interpretation	MONOCHROME2
+(0028,0008)	Number of Frames	176
+(0028,0010)	Rows	256
+(0028,0011)	Columns	256
+(0028,0100)	Bits Allocated	16
+(0028,0101)	Bits Stored	12
+(0028,0102)	High Bit	11
+(0028,0103)	Pixel Representation	0
+(0028,0106)	Smallest Image Pixel Value	0
+(0028,0107)	Largest Image Pixel Value	633
+(0028,0301)	Burned In Annotation	NO
+(0028,2110)	Lossy Image Compression	00
+(0040,0244)	Performed Procedure Step Start Date	20250305
+(0040,0245)	Performed Procedure Step Start Time	152347.800000
+(0040,0250)	Performed Procedure Step End Date	20250305
+(0040,0253)	Performed Procedure Step ID	US6cf7f38bc76e48
+(0040,0254)	Performed Procedure Step Description	BNC DEMODAT2
+(0040,2004)	Issue Date of Imaging Service Request	20250305
+(2050,0020)	Presentation LUT Shape	IDENTITY
+(5200,9229)	Shared Functional Groups Sequence	
+(5200,9229)	Referenced Image Sequence	
+(5200,9229)	MR Imaging Modifier Sequence	
+(5200,9229)	MR Receive Coil Sequence	
+(5200,9229)	MR Transmit Coil Sequence	
+(5200,9229)	MR Spatial Saturation Sequence	
+(5200,9229)	MR Timing and Related Parameters Sequence	
+(5200,9229)	MR Modifier Sequence	
+(5200,9229)	MR FOV/Geometry Sequence	
+(5200,9229)	Frame Anatomy Sequence	
+(5200,9229)	Private Creator Data Element	SIEMENS MR SDS 01
+(5200,9229)	?	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+(5200,9230)	Per-frame Functional Groups Sequence	
+(5200,9230)	MR Echo Sequence	
+(5200,9230)	MR Averages Sequence	
+(5200,9230)	MR Image Frame Type Sequence	
+(5200,9230)	Frame Content Sequence	
+(5200,9230)	Plane Position Sequence	
+(5200,9230)	Plane Orientation Sequence	
+(5200,9230)	Private Creator Data Element	SIEMENS MR SDI 02
+(5200,9230)	?	
+(5200,9230)	Pixel Measures Sequence	
+(5200,9230)	Frame VOI LUT Sequence	
+(5200,9230)	Pixel Value Transformation Sequence	
+ 

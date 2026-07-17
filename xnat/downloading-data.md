@@ -12,7 +12,7 @@ description: Details of the different options available to download your data fr
 | Download via XNAT Desktop Client       | Download DICOM data with greater granularity and for large number of participants. Pausing, resuming and reporting is available | App installed. Doesn't work in OSCAR                                                                                                                                                              |
 | Download via xnat-tools python package | Programmatic download. Great for batch uploads and for combining with **BIDS conversion**                                       | Installation of xnat-tools python package. This can be done from local computer or Oscar as explained in the [XNAT2BIDS section of this documentation](../xnat-to-bids-intro/xnat2bids-software/) |
 
-## 1. Download via Web UI&#x20;
+## 1. Download via Web UI
 
 This is the **simplest but slowest** way to download data. If you'll be downloading multiple imaging sessions, you may want to refer to other options below
 
@@ -34,11 +34,11 @@ You have multiple options here
 
 Depending on the size of your data, this may take a while
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.41.06 PM.png" alt="To download one entire session of data on XNAT, use the check box to select all runs, and press &#x22;Download&#x22;. "><figcaption><p>Highlighting SELECT ALL and BULK DOWNLOAD BUTTONS</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.41.06 PM.png" alt="To download one entire session of data on XNAT, use the check box to select all runs, and press &#x22;Download&#x22;."><figcaption><p>Highlighting SELECT ALL and BULK DOWNLOAD BUTTONS</p></figcaption></figure>
 
 ### 1.4 Download with granularity
 
-If you wish to have greater granularity on the types of resources downloaded you can use the menu under **Actions -> Download -> Images.**&#x20;
+If you wish to have greater granularity on the types of resources downloaded you can use the menu under **Actions -> Download -> Images.**
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-03-23 at 1.45.08 PM.png" alt="Data can be downloaded on XNAT by selecting one of the options in the &#x22;Download&#x22; tab, nested below &#x22;Actions&#x22;."><figcaption><p>Highlighting the Actions -> Download menu to access detailed downloading options</p></figcaption></figure>
 
@@ -50,6 +50,6 @@ The [documentation for the Desktop Client](https://wiki.xnat.org/xnat-tools/xnat
 
 ## 3. Download data programmatically
 
-We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates downloading your data and converting it to BIDS. The optimal way to install and run the code depends on your computation environment. [The xnat-tools package documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user.&#x20;
+We maintain a python package [xnat-tools](https://github.com/brown-bnc/xnat-tools) that facilitates downloading your data and converting it to BIDS. The optimal way to install and run the code depends on your computation environment. [The xnat-tools package documentation](https://brown-bnc.github.io/xnat-tools/) explains different installation and execution methods for a general user.
 
-If you do not need BIDS, you'll only need the [xnat-dicom-export utility](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/). If you will be downloading and converting to BIDS, then please follow the instructions in the [ XNAT2BIDS section of this documentation](/broken/pages/-M6_pXSCdmjerCli9EpX).
+If you do not need BIDS, you'll only need the [xnat-dicom-export utility](https://brown-bnc.github.io/xnat-tools/1.0.6/dicom_export/). If you will be downloading and converting to BIDS, then please follow the instructions in the [XNAT2BIDS section of this documentation](https://app.gitbook.com/s/-LtSg7ZEM6EHbi9iE84a/xnat-to-bids-intro).
