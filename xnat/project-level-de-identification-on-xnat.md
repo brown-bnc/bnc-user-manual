@@ -11,7 +11,7 @@ description: >-
 
 [DicomEdit](https://bitbucket.org/xnatdcm/dicom-edit6/src/master/) is a software library written in ANTLR and Java that is used to edit DICOM tags. It can be downloaded locally and applied to MR data, but notably, it is built into XNAT to allow project-wide custom de-identification. Custom de-identification scripts are saved in the project settings and are applied to incoming data as it is archived.
 
-There are multiple other methods of de-identifying MRI data, such as the [HOROS](https://horosproject.org/) GUI or the coding library [Pydicom](https://pydicom.github.io/). However, DicomEdit via XNAT is particularly useful for labs that would like _store_ their data in it's de-identified form, so as to further maximize data safety.&#x20;
+There are multiple other methods of de-identifying MRI data, such as the [HOROS](https://horosproject.org/) GUI or the coding library [Pydicom](https://pydicom.github.io/). However, DicomEdit via XNAT is particularly useful for labs that would like to _store_ their data in its de-identified form, so as to further maximize data safety.&#x20;
 
 {% hint style="info" %}
 Note: DICOM tags are not edited until after data is stored on the XNAT server. Data in the rest API and the XNAT prearchive (only accessible to XNAT admins) is not yet anonymized.
@@ -23,7 +23,7 @@ The XNAT website provides a [DicomEdit Language Reference](https://wiki.xnat.org
 
 ### 1. Select a DicomEdit version
 
-Brown University's current version of XNAT (1.9) is compatible with DicomEdit 6.0-6.8 and DicomEdit 4.2. Details on version compatibility can be found in [XNAT's Version Compatibility Matrix](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference#DicomEdit6LanguageReference-VersionCompatibilityMatrix). Syntax varies between DicomEdit versions, and is backwards compatible in some instances (but not all). In this tutorial, we will be writing code using DicomEdit version 6.6.&#x20;
+Brown University's current version of XNAT (1.9) is compatible with DicomEdit 6.0-6.8 and DicomEdit 4.2. Details on version compatibility can be found in [XNAT's Version Compatibility Matrix](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference#DicomEdit6LanguageReference-VersionCompatibilityMatrix). Syntax varies between DicomEdit versions, and it is backwards compatible in some instances (but not all). In this tutorial, we will be writing code using DicomEdit version 6.6.&#x20;
 
 ### 2. Determine what DICOM tags need to be anonymized
 
