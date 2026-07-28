@@ -14,7 +14,7 @@ description: >-
 There are multiple other methods of de-identifying MRI data, such as the [HOROS](https://horosproject.org/) GUI or the coding library [Pydicom](https://pydicom.github.io/). However, DicomEdit via XNAT is particularly useful for labs that would like to _store_ their data in its de-identified form, so as to further maximize data safety.&#x20;
 
 {% hint style="info" %}
-Note: DICOM tags are not edited until after data is stored on the XNAT server. Data in the rest API and the XNAT prearchive (only accessible to XNAT admins) is not yet anonymized.
+Note: DICOM tags are not edited until after data is stored on the XNAT server. Data in the XNAT prearchive (only accessible to XNAT admins) is not yet anonymized.
 {% endhint %}
 
 The XNAT website provides a [DicomEdit Language Reference](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference), which familiarizes users to the DicomEdit syntax. This can be used as a guide to create your own anonymization script. This tutorial provides an example DicomEdit script and instructions on how to enable this script on your XNAT project.
