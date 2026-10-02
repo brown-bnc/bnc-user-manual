@@ -23,7 +23,7 @@ The XNAT website provides a [DicomEdit Language Reference](https://wiki.xnat.org
 
 ### 1. Select a DicomEdit version
 
-Brown University's current version of XNAT (1.9) is compatible with DicomEdit 6.0-6.8 and DicomEdit 4.2. Details on version compatibility can be found in [XNAT's Version Compatibility Matrix](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference#DicomEdit6LanguageReference-VersionCompatibilityMatrix). Syntax varies between DicomEdit versions, and it is backwards compatible in some instances (but not all). In this tutorial, we will be writing code using DicomEdit version 6.6.&#x20;
+Brown University's current version of XNAT (1.10.0) is compatible with DicomEdit 6.0-6.9 and DicomEdit 4.2. Details on version compatibility can be found in [XNAT's Version Compatibility Matrix](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference#DicomEdit6LanguageReference-VersionCompatibilityMatrix). Syntax varies between DicomEdit versions, and it is backwards compatible in some instances (but not all). In this tutorial, we will be writing code using DicomEdit version 6.6.&#x20;
 
 ### 2. Determine what DICOM tags need to be anonymized
 
@@ -100,7 +100,7 @@ Some DICOM tags can be removed from the DICOM header completely, while others mu
 
 ### De-identification Action Codes
 
-This table from NEMA's [_DICOM PS3.15 2026c - Security and System Management Profiles (E Attribute Confidentiality Profiles)_](https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_e.html) provides definitions of the various actions available when de-identifying DICOM tags. This table is a guide for how to handle each individual tag we wish to edit.&#x20;
+This table from NEMA: [_DICOM PS3.15 2026c - Security and System Management Profiles (E Attribute Confidentiality Profiles)_](https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_e.html) provides definitions of the various actions available when de-identifying DICOM tags. This table is a guide for how to handle each individual tag we wish to edit.&#x20;
 
 <table><thead><tr><th width="126.4609375">Indicator</th><th>Meaning</th></tr></thead><tbody><tr><td>D</td><td>replace with a non-zero length value that may be a dummy value and consistent with the VR</td></tr><tr><td>Z</td><td>replace with a zero length value, or a non-zero length value that may be a dummy value and consistent with the VR</td></tr><tr><td>X</td><td>remove Attribute, and if the Attribute is a Sequence, remove all Sequence Items and their contained Attributes</td></tr><tr><td>K</td><td>keep (unchanged for non-Sequence Attributes, cleaned for Sequences)</td></tr><tr><td>U</td><td>replace with a non-zero length UID that is internally consistent within a set of Instances</td></tr><tr><td>Z/D</td><td>Z unless D is required to maintain IOD conformance (Type 2 versus Type 1)</td></tr><tr><td>X/Z</td><td>X unless Z is required to maintain IOD conformance (Type 3 versus Type 2)</td></tr><tr><td>X/D</td><td>X unless D is required to maintain IOD conformance (Type 3 versus Type 1)</td></tr><tr><td>X/Z/D</td><td>X unless Z or D is required to maintain IOD conformance (Type 3 versus Type 2 versus Type 1)</td></tr></tbody></table>
 
@@ -248,16 +248,14 @@ Please note that some DICOM tags are missing from this script because they are a
 
 ## Applying Your DicomEdit Script to an XNAT Project
 
-XNAT offers a built in setting where project owners can save a DicomEdit script. When enabled, this script is applied to all incoming data for that specific project. The anonymization script is saved in the manage tab within any XNAT project.
+{% hint style="info" %}
+This section is for educational purposes. If you are interested in applying a deidentification script to your data, this will be completed by an XNAT admin.&#x20;
+{% endhint %}
+
+XNAT offers a built in setting where project owners can save a DicomEdit script. When enabled, this script is applied to all incoming data for that specific project. The anonymization script is saved in the manage tab within any XNAT project, which is accessible to project owners and XNAT admins.&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-07-17 at 10.02.01 AM.png" alt="The &#x22;Manage&#x27; tab is located in the project page on XNAT."><figcaption></figcaption></figure>
 
 After selecting the "Manage" tab, Go to the section titled "Anonymization Script". There, you can paste your DicomEdit script. Ensure that the "Enable Script" box is checked, and then press save. Now, all incoming data to this project will have the script applied to it!
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-07-17 at 10.03.31 AM.png" alt="In the manage tab, there is a section called &#x22;Anonymization Script&#x22;. Here, we have pasted the example DicomEdit script. The &#x22;Enable Script&#x22; box is checked and the &#x22;Save&#x22; button is pressed. "><figcaption></figcaption></figure>
-
-Here you can view the DICOM headers for a T1-weighted MEMPRAGE (Demodat2 subject 101 session 01) both before and after the example anonymization script was applied. Always make sure to check the final header when developing/editing an anonymization script, to ensure that all PII has been properly de-identified!
-
-{% file src="../.gitbook/assets/T1w_header.txt" %}
-
-{% file src="../.gitbook/assets/anonymized_T1w_header.txt" %}
