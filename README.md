@@ -8,7 +8,7 @@ Welcome to the User Guide to different services, software, and analysis pipeline
 
 ## Contact us
 
-* **Support email:** cobre-bnc@brown.edu, bnc-it@brown.edu
+* **Support email:** cobre-bnc@brown.edu
 * **Neuroimaging conversation on slack:** [Neuroimaging channel on ccv-share.slack.com](https://ccv-share.slack.com/app_redirect?channel=neuroimaging) **-** XNAT, BIDS and more
 * **Issues or suggestions about this documentation:** Submit an issue in [our github repository](https://github.com/brown-bnc/bnc-user-manual).
 
