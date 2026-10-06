@@ -12,7 +12,9 @@
 * [Uploading Data](xnat/uploading-data/README.md)
   * [Uploading raw spectroscopy data](xnat/uploading-data/uploading-raw-spectroscopy-data.md)
 * [Downloading Data](xnat/downloading-data.md)
-* [Project Level De-Identification on XNAT](xnat/project-level-de-identification-on-xnat.md)
+* [Anonymization and Defacing on XNAT](xnat/anonymization-and-defacing-on-xnat/README.md)
+  * [Project Level De-Identification](xnat/anonymization-and-defacing-on-xnat/project-level-de-identification.md)
+  * [Removing identifiable facial features](xnat/anonymization-and-defacing-on-xnat/removing-identifiable-facial-features.md)
 
 ## Demo Dataset
 

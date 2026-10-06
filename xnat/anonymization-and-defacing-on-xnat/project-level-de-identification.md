@@ -5,7 +5,7 @@ description: >-
   XNAT, and is used to change/remove DICOM tags.
 ---
 
-# Project Level De-Identification on XNAT
+# Project Level De-Identification
 
 ## What is DicomEdit?&#x20;
 
@@ -254,8 +254,8 @@ This section is for educational purposes. If you are interested in applying a de
 
 XNAT offers a built in setting where project owners can save a DicomEdit script. When enabled, this script is applied to all incoming data for that specific project. The anonymization script is saved in the manage tab within any XNAT project, which is accessible to project owners and XNAT admins.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-07-17 at 10.02.01 AM.png" alt="The &#x22;Manage&#x27; tab is located in the project page on XNAT."><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-07-17 at 10.02.01 AM.png" alt="The &#x22;Manage&#x27; tab is located in the project page on XNAT."><figcaption></figcaption></figure>
 
 After selecting the "Manage" tab, Go to the section titled "Anonymization Script". There, you can paste your DicomEdit script. Ensure that the "Enable Script" box is checked, and then press save. Now, all incoming data to this project will have the script applied to it!
 
-<figure><img src="../.gitbook/assets/Screenshot 2026-07-17 at 10.03.31 AM.png" alt="In the manage tab, there is a section called &#x22;Anonymization Script&#x22;. Here, we have pasted the example DicomEdit script. The &#x22;Enable Script&#x22; box is checked and the &#x22;Save&#x22; button is pressed. "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2026-07-17 at 10.03.31 AM.png" alt="In the manage tab, there is a section called &#x22;Anonymization Script&#x22;. Here, we have pasted the example DicomEdit script. The &#x22;Enable Script&#x22; box is checked and the &#x22;Save&#x22; button is pressed. "><figcaption></figcaption></figure>
