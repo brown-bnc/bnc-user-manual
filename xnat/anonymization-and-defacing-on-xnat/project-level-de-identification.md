@@ -37,7 +37,7 @@ DICOM metadata is attached to the image in the form of DICOM tags. Tags are uniq
 | (0008,0080) | Institution Name | Long String | 1   | Institution where the equipment that produced the Composite Instances is located.                       | Brown University |
 | (0010,2000) | Medical Alerts   | Long String | 1-n | Conditions to which medical staff should be alerted (e.g., contagious condition, drug allergies, etc.). | ACE Inhibitors   |
 
-A full list of DICOM tags can be found on the [DICOM Library website](https://www.dicomlibrary.com/dicom/dicom-tags/). These tags are stored in the DICOM header and can not be separated from the image, thus requiring manual or programmatic editing.&#x20;
+A full list of DICOM tags can be found on the [DICOM Library website](https://www.dicomlibrary.com/dicom/dicom-tags/). These tags are stored in the DICOM header and cannot be separated from the image, thus requiring manual or programmatic editing.&#x20;
 
 #### De-Identifying Personally Identifiable Information (PII)
 
@@ -119,7 +119,9 @@ Next, we provide a table detailing:
 
 ### 3. Writing the Script
 
-This script de-identifies the list of DICOM tags in the table above (tags present in the MRI scans exported from our scanner which contain Personally Identifiable Information).  XNAT provides documentation on [the syntax of DicomEdit versions 6+](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference).&#x20;
+This script de-identifies the list of DICOM tags in the table above. It applies to both Enhanced and Legacy MR DICOMS.&#x20;
+
+XNAT provides documentation on [the syntax of DicomEdit versions 6+](https://wiki.xnat.org/xnat-tools/dicomedit-6-language-reference).&#x20;
 
 ```
 version "6.6"
@@ -477,7 +479,7 @@ shiftDateTimeListByIncrement[ nestedTagPathsToShift, 14, "days"]
 ```
 
 {% hint style="info" %}
-Please note that some DICOM tags are missing from this script because they are already de-identified when the file is created (for example, Subject ID/Name).&#x20;
+Please note that some DICOM tags are missing from this script because they are already de-identified when the file is created (for example: Subject ID/Name).&#x20;
 {% endhint %}
 
 ## Applying Your DicomEdit Script to an XNAT Project
@@ -494,3 +496,12 @@ After selecting the "Manage" tab, Go to the section titled "Anonymization Script
 
 <figure><img src="../../.gitbook/assets/Screenshot 2026-07-17 at 10.03.31 AM.png" alt="In the manage tab, there is a section called &#x22;Anonymization Script&#x22;. Here, we have pasted the example DicomEdit script. The &#x22;Enable Script&#x22; box is checked and the &#x22;Save&#x22; button is pressed. "><figcaption></figcaption></figure>
 
+### Check Your Files
+
+Here you can view the DICOM files for a T1-weighted MEMPRAGE (Demodat2 subject 101 session 01) both before and after the example anonymization script was applied. Always make sure to check the final header when developing/editing an anonymization script, to ensure that all PII has been properly de-identified! It is also good practice to test the anonymized data on vaious analysis pipelines you will be using, to ensure no metadata was deleted that the software relies on.&#x20;
+
+Once you are comfortable with the anonymiaztion, the dicomedit script can be applied to your data! Please reach out to the BNC if you are interested in using this.&#x20;
+
+{% file src="../../.gitbook/assets/anat-t1w_RAW.dcm" %}
+
+{% file src="../../.gitbook/assets/anat-t1w_ANON.dcm" %}
