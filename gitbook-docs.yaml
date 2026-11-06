@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Behavior and Neuroimaging Core User Manual
+  structure:
+    - type: space
+      key: space-1
+      title: Behavior and Neurodata Core User Manual
+      path: bnc-user-manual
+      default: true
+      content:
+        directory: ./bnc-user-manual
