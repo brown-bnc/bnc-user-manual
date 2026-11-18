@@ -47,8 +47,7 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/getting-started/qu
 
     <figure><img src="../.gitbook/assets/qsmxt_bids (1).png" alt="enter the full path to the bids directory under &#x22;BIDS directory&#x22;"><figcaption></figcaption></figure>
 5. The defaults in the Preprocessing, QSM, and χ-separation tabs are reasonable, so we'll leave them. In the future, you can tailor these further to your analysis needs if you'd like.
-6. Choose any additional outputs you'd like the toolbox to create. Our MEGRE protocol is sufficient for the creation of SWI, SMWI, T2\*, and R2\* maps, segmentation, and the calculation of per-structure statistics. Take a look at the [toolbox documentation](https://qsmxt.github.io/QSMxT/getting-started/quick-start/) for more information on each of these outputs.
-7.  Choose any additional outputs you'd like the toolbox to create. Our MEGRE protocol is sufficient for the creation of SWI, SMWI, T2\*, and R2\* maps, segmentation, and the calculation of per-structure statistics. Take a look at the [toolbox documentation](https://qsmxt.github.io/QSMxT/getting-started/quick-start/) for more information on each of these outputs.
+6.  Choose any additional outputs you'd like the toolbox to create. Our MEGRE protocol is sufficient for the creation of SWI, SMWI, T2\*, and R2\* maps, segmentation, and the calculation of per-structure statistics. Take a look at the [toolbox documentation](https://qsmxt.github.io/QSMxT/getting-started/quick-start/) for more information on each of these outputs.
 
     <figure><img src="../.gitbook/assets/Screenshot 2026-11-10 at 11.55.35 AM.png" alt=""><figcaption><p>selecting the SWI/SMWI output options</p></figcaption></figure>
 
@@ -61,10 +60,10 @@ Visit the [QSMxT documentation](https://qsmxt.github.io/QSMxT/getting-started/qu
     <figure><img src="../.gitbook/assets/Screenshot 2026-11-10 at 11.56.25 AM.png" alt=""><figcaption><p>selecting the segmentation output options</p></figcaption></figure>
 
 
-8. Select "Run" under the "Execution" tab. Keep an eye on your terminal window to monitor progress; you should see the message "All runs completed successfully" when it completes.
-9.  Check out the outputs! Unless you specified otherwise, all output files will be in /bids/derivatives/qsmxt.&#x20;
+7. Select "Run" under the "Execution" tab. Keep an eye on your terminal window to monitor progress; you should see the message "All runs completed successfully" when it completes.
+8.  Check out the outputs! Unless you specified otherwise, all output files will be in /bids/derivatives/qsmxt.&#x20;
 
     <figure><img src="../.gitbook/assets/Screenshot 2026-11-10 at 12.21.15 PM.png" alt=""><figcaption></figcaption></figure>
-10. The outputs are [described in the qsmxt documentation here](https://qsmxt.github.io/QSMxT/reference/outputs/).&#x20;
+9. The outputs are [described in the qsmxt documentation here](https://qsmxt.github.io/QSMxT/reference/outputs/).&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-12-10 at 1.31.15 PM copy.png" alt="An example chimap of the brain, output from qsmxt. This chimpa is overlaid onto the anatomical scan and is viewed from the three planes (coronal, transverse, and sagittal)."><figcaption><p>example chimap</p></figcaption></figure>
